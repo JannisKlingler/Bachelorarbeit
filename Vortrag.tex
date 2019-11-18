@@ -67,10 +67,15 @@
 		wobei $\alpha\in V^*\setminus\{0\}$ und $r\in\setR$.
 	\end{definition}
 	
-	\begin{definition}[Polytop]
-		Ein $d$-Polytop $P$ in einem $d$-dimensionalen reellen Vektorraum $V$ ist der Schnitt endlich vieler 
+	\begin{definition}[konvexes Polytop]
+		Ein konvexes $d$-Polytop $P$ in einem $d$-dimensionalen reellen Vektorraum $V$ ist der Schnitt endlich vieler 
 		Halbräume. $P$ ist beschränkt, falls für jedes $\alpha\in V^*\setminus\{0\}$ ein $r\in \setR$ existiert, sd. 
-		$\alpha(x)\leq r$ für alle $x\in P$ gilt. \\
+		$\alpha(x)\leq r$ für alle $x\in P$ gilt.
+	\end{definition}
+	
+	\begin{definition}[Polytop]
+		Ein $d$-Polytop $P$ in einem $d$-dimensionalen reellen Vektorraum ist die Vereinigung endlich vieler 
+		konvexer $d$-Polytope. \\
 		Für $d=0$ ist $P$ eine Ecke, für $d=1$ ist $P$ eine Strecke, für $d=2$ ist $P$ ein Polytop und für $d=3$ 
 		ist $P$ ein Polyeder.
 	\end{definition}
@@ -174,12 +179,12 @@
 	
 	\begin{figure}[!htbp]
 		\centering
-		\includegraphics[scale=1.8]{DreieckLemma}
+		\includegraphics[scale=1.6]{DreieckLemma}
 		\caption{Zerlegung eines Dreiecks in ein Rechteck}
 		\label{Abb.1}
 	\end{figure}
 	
-	\begin{lemma}
+	\begin{lemma} \label{lemma:rechtecke}
 		Zwei beliebige Rechtecke mit dem gleichen Flächeninhalt, sind zerlegungsgleich.
 	\end{lemma}
 	
@@ -190,24 +195,82 @@
 		\begin{align}
 			\frac{b_P}{h_Q}=\frac{b_Q}{h_P}. \label{lemma:rechteck;1}
 		\end{align}
-		Seien $o,a,b,c$ die Eckpunkte des Dreiecks $P$ und $o,m,n,p$ die Eckpunkte des Dreiecks $Q$. Wir 
-		verschieben hier $Q$ so auf auf $P$, dass beide eine gemeinsame Ecke $o$ mit rechtem Winkel haben. 
+		\begin{figure}[!htbp]
+			\centering
+			\includegraphics[scale=1.4]{Rechteck}
+			\caption{Zerlegung zweier Rechtecke}
+			\label{Abb.2}
+		\end{figure}
+		Seien $o,a,b,c$ die Eckpunkte des Dreiecks $P$ und $o,m,n,p$ die Eckpunkte des Dreiecks $Q$, siehe 
+		Abbildung \ref{Abb.2}. 
+		Wir verschieben hier $Q$ so auf auf $P$, dass beide eine gemeinsame Ecke $o$ mit rechtem Winkel haben. 
 		Dies ändert nichts am Resultat. 
-		
-		
-		
-		%.....
-		
-		
-		
+		Die Höhe $h_P$ soll also der Länge der Strecken $\overline{co}$ und $\overline{ab}$ entsprechen. Die 
+		Breite $b_P$ soll der Länge der Strecken $\overline{oa}$ und $\overline{bc}$ entsprechen. Analog soll 
+		$h_Q$ der Länge der Strecken $\overline{po}$ und $\overline{mn}$ und $b_Q$ der Länge der Strecken 
+		$\overline{om}$ und $\overline{np}$ entsprechen. Wegen \ref{lemma:rechteck;1} sehen wir also, dass 
+		die Strecken $\overline{mc}$ und $\overline{ap}$ parallel sind. Außerdem stellen wir fest, dass gilt
+		\[ (b_P-b_Q)h_P=b_P h_P-b_Q h_P=h_Qb_Q-b_Qh_P=b_Q(h_Q-h_P) \]
+		also auch
+		\[\frac{b_P-b_Q}{h_Q-h_P}=\frac{b_Q}{h_P}. \]
+		Damit folgt, dass die Dreiecke $oap$ und $dbn$ ähnlich sind und folglich sind die Strecken $\overline{ap}$ 
+		und $\overline{nb}$ parallel. Hierbei sei $d$ der Schnittpunkt der Strecken $\overline{mn}$ und 
+		$\overline{bc}$. Also sind die drei Strecken $\overline{mc}$, $\overline{ap}$ und $\overline{nb}$ 
+		parallel. Nun unterscheiden wir zwei Fälle
+		\begin{enumerate}
+			\item \textsl{Fall:} Die Verbindungsstrecke $\overline{ap}$ der Eckpunkte schneidet das 
+			Rechteck $omdc$ in den Punkten $e$, mit der Seite $\overline{dc}$ und $f$, mit der Seite $\overline{md}$ 
+			, siehe Abbildung \ref{Abb.2}. Es gilt $2b_Q\geq b_P$.
+			Also sind die beiden in der Abbildung grau hinterlegten Dreiecke $maf$ und $cep$ und die beiden 
+			in der Abbildung hellgrau hinterlegten Dreiecke $abe$ und $fnp$ kongruent. Mit dem übrig gebliebenen 
+			in der Abbildung schraffierten Fünfeck $omfec$ ist unsere Zerlegung komplett.
+			
+			\item \textsl{Fall:} Die Verbindungsstrecke $\overline{ap}$ der Eckpunkte schneidet das 
+			Rechteck $omdc$ nicht, siehe Abbildung \ref{Abb.3}. 
+			Es gilt also $2b_Q<b_P$. Sei nun $e$ hierbei der Mittelpunkt der Strecke $\overline{oa}$ und $k$ die 
+			kleinste natürliche Zahl, wie oft man die Strecke $\overline{om}$ entlang der Strecke $\overline{oa}$ 
+			legen muss, sd. wir einen Punkt $t$ erhalten der nicht mehr auf der Strecke $\overline{oe}$ liegt 
+			sondern auf der Strecke $\overline{ea}$. Nun zerlegen wir das Rechteck $Q$ in $k$ Rechtecke, deren 
+			Basis parallel ist zur Strecke $\overline{om}$, die wir nun entlang der neu enstandenen Strecke 
+			$\overline{ot}$ legen. Wir erhalten, somit das zu $Q$ zerlegungsgleiche Rechteck $otuv$. 
+			Sei die Breite dieses Rechtecks nun $b'$, die offensichtlich die Bedingung
+			\[ 2b'>b_P \]
+			erfüllt. Damit können wir nach dem ersten Fall sagen, dass die Rechtecke $P$ und $otuv$ 
+			zerlegungsgleich sind. Nach Lemma \ref{lemma:transitiv} sind also auch $P$ und $Q$ zerlegungsgleich.
+		\end{enumerate}
+		Damit sind $P$ und $Q$ zerlegungsgleich.
 	\end{proof}
+	
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[scale=0.8]{Rechteck2}
+		\caption{Zerlegung zweier Rechtecke}
+		\label{Abb.3}
+	\end{figure}
 	
 	\begin{theorem}[Bolyai-Gerwien Theorem] \label{theorem:bolyai-gerwien}
 		Zwei beliebige Polygone mit dem gleichen Flächeninhalt sind zerlegungsgleich.
 	\end{theorem}
 	
 	\begin{proof}
-		Kommt noch.
+		Sei $P$ ein Polygon. Dann kann $P$ in endlich viele disjunkte Dreiecke zerlegt werden und jedes dieser 
+		Dreiecke ist nach Lemma \ref{lemma:dreieck,rechteck} zerlegungsgleich zu einem Rechteck. Wir finden 
+		also für $P$ die Darstellung
+		\[ P\sim P_1+\ldots+P_n,\]
+		wobei $P_1,\ldots,P_n$ Rechtecke sind. Nun nehmen wir eine beliebige Kante $\overline{a_0b_0}$ und 
+		stellen die Lotgeraden auf den Eckpunkten $a_0$ und $b_0$ auf. Anschließend ziehen wir $n$ 
+		parallele Strecken zu $\overline{a_0b_0}$, sd. der Flächeninhalt des Recheckts $a_{i-1}b_{i-1}b_ia_i$, 
+		welches wir $R_i$ nennen, dem Flächeninhalt des Rechtecks $P_i$ entspricht, wobei $i=1,\ldots,n$. 
+		Nach Lemma \ref{lemma:rechtecke} gilt also $P_i\sim R_i$ für alle $i$ und damit
+		\[ P_1+\ldots+P_n\sim R_1+\ldots+R_n. \]
+		Da $P\sim P_1+\ldots+P_n$ gilt also mit Lemma \ref{lemma:transitiv}
+		\[ P\sim R_1+\ldots+R_n\]
+		und damit zum Rechteck $a_0b_0b_na_n$. Damit ist jedes Polygon zerlegungsgleich mit einem Rechteck. \\
+		Seien nun $P$ und $Q$ zwei Polygone mit gleichem Flächeninhalt, dann finden wir wie oben gezeigt 
+		Rechtecke $R_1$ und $R_2$, sd.
+		\[ P\sim R_1,\quad Q\sim R_2.\]
+		Nach Lemma \ref{lemma:rechtecke} gilt also nun auch $R_1\sim R_2$ und damit folgt mit Lemma 
+		\ref{lemma:transitiv} $P\sim Q$.
 	\end{proof}
 	
 	Wir haben also nun gesehen, dass sich jedes beliebige Polygon in Dreiecke zerlegen lässt. Diese Dreiecke 
@@ -260,27 +323,27 @@
 	Wir kennen Tensoren bereits aus der linearen Algebra. Deshalb wiederholen wir noch einmal die universelle 
 	Eigenschaft dieser.
 	
-	\begin{proposition}[Universelle Eigenschaft]
-		Sei $R$ ein kommutativer Ring mit Eins und seien $M$ und $N$ zwei $R$-Moduln. Dann gilt
-		\begin{enumerate}
-			\item Die Abbildung $\otimes: M\times N \to M\otimes_R N$ ist $R$-bilinear.
-			\item Sei nun $L$ ein weiterer $R$-Modul und $\phi: M\times N \to L$ eine bilineare Abbildung. Dann 
-			existiert genau eine lineare Abbildung $\eta: M\otimes_R N \to L$, sd. das folgende Diagramm 
-			kommutiert:
-			\begin{center}
-				\begin{tikzpicture}
-					\node(R1) at (0,0){$M\times N$};
-					\node[right = 2 of R1](k){$L$};
-					\node[below = 1 of R1](R2){$M\otimes N$};
-					
-					\draw[->] (R1) -- (k) node[midway,above]{$\phi$};
-					\draw[->] (R1) -- (R2) node[midway,left]{$\otimes$};
-					\draw[->,dashed] (R2) -- (k) node[midway,below]{$\exists ! \eta$};
-				\end{tikzpicture}
-			\end{center}
-		\end{enumerate}
-		Der $R$-Modul $M\otimes N$ ist bis auf Isomorphie eindeutig.
-	\end{proposition}
+	%\begin{proposition}[Universelle Eigenschaft]
+	%	Sei $R$ ein kommutativer Ring mit Eins und seien $M$ und $N$ zwei $R$-Moduln. Dann gilt
+	%	\begin{enumerate}
+	%		\item Die Abbildung $\otimes: M\times N \to M\otimes_R N$ ist $R$-bilinear.
+	%		\item Sei nun $L$ ein weiterer $R$-Modul und $\phi: M\times N \to L$ eine bilineare Abbildung. Dann 
+	%		existiert genau eine lineare Abbildung $\eta: M\otimes_R N \to L$, sd. das folgende Diagramm 
+	%		kommutiert:
+	%		\begin{center}
+	%			\begin{tikzpicture}
+	%				\node(R1) at (0,0){$M\times N$};
+	%				\node[right = 2 of R1](k){$L$};
+	%				\node[below = 1 of R1](R2){$M\otimes N$};
+	%				
+	%				\draw[->] (R1) -- (k) node[midway,above]{$\phi$};
+	%				\draw[->] (R1) -- (R2) node[midway,left]{$\otimes$};
+	%				\draw[->,dashed] (R2) -- (k) node[midway,below]{$\exists ! \eta$};
+	%			\end{tikzpicture}
+	%		\end{center}
+	%	\end{enumerate}
+	%	Der $R$-Modul $M\otimes N$ ist bis auf Isomorphie eindeutig.
+	%\end{proposition}
 	
 	\begin{proposition}[Universelle Eigenschaft]
 		Sei $R$ ein kommutativer Ring mit Eins und seien $M$ und $N$ zwei $R$-Moduln. Dann ist das 
@@ -317,7 +380,7 @@
 	\end{align*}
 	
 	Damit ist der bilineare Operator gefunden. Wir wollen für unser Problem den Spezialfall 
-	$\setR \otimes_{\setZ} \setR / 2\pi\setZ$ betrachen. Hierbei identifizieren wir die Länge einer Kante mit dem 
+	$\setR \otimes_{\setZ} \setR / \pi\setZ$ betrachen. Hierbei identifizieren wir die Länge einer Kante mit dem 
 	ersten Argument und tensorieren dies mit einem Winkel, wobei wir den Winkel $\pi$ mit 0 identifizieren.
 	
 	\begin{definition}[Dehn-Invariante]
@@ -383,7 +446,7 @@
 	
 	\begin{example}[regulärer Tetraeder] \label{exp:regTetr}
 		Sei $P$ ein dreidimensionaler regulärer Tetraeder, also haben alle Kanten von $P$ die gleiche Länge $l$ und 
-		den gleichen Diederwinkel $\alpha$. Seien $A,B,C,D$ die Ecken von $P$ wie in Abbildung \ref{Abb.2}. 
+		den gleichen Diederwinkel $\alpha$. Seien $A,B,C,D$ die Ecken von $P$ wie in Abbildung \ref{Abb.4}. 
 		Sei $F$ der Mittelpunkt der Strecke $\overline{BC}$, also $|BC|=\frac{l}{2}$ und damit ist nach Pythagoras 
 		$|AF|=\frac{\sqrt{3}}{2}l=|DF|$. Der Mittelpunkt $E$ des Dreiecks $ABC$ hat gerade den Abstand 
 		$\frac{\sqrt{3}}{3 \cdot 2}l=\frac{l}{2\sqrt{3}}$ zu $F$ und schließlich gilt mit Pythagoras
@@ -398,7 +461,7 @@
 		\centering
 		\includegraphics[scale=0.2]{RegulTetraeder}
 		\caption{Ein regulärer Tetraeder}
-		\label{Abb.2}
+		\label{Abb.4}
 	\end{figure}
 	
 	\begin{proposition} \label{prop:irr}
@@ -497,19 +560,18 @@
 	%		T =& \{ (m+m',n)-(m,n)-(m',n)\ \vert\ m,m'\in M, n\in N\} \\
 	%		\cup& \{ (mr,n)-(m,n)\cot r \ \vert\ m\in M, n\in N, r\in R\} \\
 	%		\cup& \{ (
-	
-	\section{Zerlegungsgleichheit von Polyedern; Bricard}
-	
-	
-	
-	\section{Ausblicke}
-	
-	Im folgenden wollen wir uns anschauen, ob es ähnliche Resultate auch im sphärischen oder hyperbolischen Raum 
-	gibt.
-	
-	\subsection{Zerlegungsgleichheit im Sphärischen}
-	
-	\subsection{Zerlegungsgleichheit im Hyperbolischen}
-		
-	
+	%
+	%\section{Zerlegungsgleichheit von Polyedern; Bricard}
+	%
+	%
+	%
+	%\section{Ausblicke}
+	%
+	%Im folgenden wollen wir uns anschauen, ob es ähnliche Resultate auch im sphärischen oder hyperbolischen Raum 
+	%gibt.
+	%
+	%\subsection{Zerlegungsgleichheit im Sphärischen}
+	%
+	%\subsection{Zerlegungsgleichheit im Hyperbolischen}
+	%
 \end{document}
