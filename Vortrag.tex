@@ -100,23 +100,31 @@
 		für alle $i\in\{1,\ldots,n\}$. Wir schreiben $P\sim Q$.
 	\end{definition}
 	
-	\begin{definition}[Ergänzungsgleich]
-		Zwei $d$-Polytope $P$ und $Q$ heißen \textsl{ergänzungsgleich}, wenn es endlich viele $d$-Polytope 
-		$P_1,\ldots,P_n$, $Q_1,\ldots,Q_n$ gibt, wobei gilt $P_i\cong Q_i$ für alle $i\in\{1,\ldots,n\}$, sd. die Polytope
-		\[P'=P+P_1+\ldots+P_n,\qquad Q'=Q+Q_1+\ldots+Q_n\]
-		zerlegungsgleich sind.
-	\end{definition}
-	
-	Man sieht leicht, dass folgendes gilt:
-	
-	\begin{proposition} \label{prop:zerl,erg}
-		Zerlegungsgleiche Polytope sind ergänzungsgleich.
+	%\begin{definition}[Ergänzungsgleich]
+	%	Zwei $d$-Polytope $P$ und $Q$ heißen \textsl{ergänzungsgleich}, wenn es endlich viele $d$-Polytope 
+	%	$P_1,\ldots,P_n$, $Q_1,\ldots,Q_n$ gibt, wobei gilt $P_i\cong Q_i$ für alle $i\in\{1,\ldots,n\}$, sd. die Polytope
+	%	\[P'=P+P_1+\ldots+P_n,\qquad Q'=Q+Q_1+\ldots+Q_n\]
+	%	zerlegungsgleich sind.
+	%\end{definition}
+	%
+	\begin{proposition} \label{prop:cong,vol}
+		Seien $P$ und $Q$ zwei $d$-Polytope, sd. $P\cong Q$, dann gilt $vol(P)=vol(Q)$.
 	\end{proposition}
 	
 	\begin{proof}
-		Klar.
+		Klar, da Isometrien abstandserhaltende Funktionen sind.
 	\end{proof}
 	
+	%Man sieht leicht, dass folgendes gilt:
+	%
+	%\begin{proposition} \label{prop:zerl,erg}
+	%	Zerlegungsgleiche Polytope sind ergänzungsgleich.
+	%\end{proposition}
+	%
+	%\begin{proof}
+	%	Klar.
+	%\end{proof}
+	%
 	\subsection{Bolyai-Gerwien Theorem}
 	
 	Im Folgenden setzen wir $d=2$ und betrachten also Polygone.
@@ -396,6 +404,8 @@
 	$\setR \otimes_{\setZ} \setR / \pi\setZ$ betrachen. Hierbei identifizieren wir die Länge einer Kante mit dem 
 	ersten Argument und tensorieren dies mit einem Winkel, wobei wir den Winkel $\pi$ mit 0 identifizieren.
 	
+	\subsection{Die Dehn-Invariante}
+	
 	\begin{definition}[Dehn-Invariante]
 		Sei $P$ ein dreidimensionaler beschränkter Polyeder mit den Kanten $k_1,\ldots,k_n$. Dann definieren wir die 
 		\textsl{Dehn-Invariante} $D(P)\in \setR \otimes_{\setZ}\setR/\pi \setZ$ durch
@@ -417,7 +427,7 @@
 	Wir müssen nun zeigen, dass die Dehn-Invariante sich beim Zerschneiden eines Polyeders sich nicht 
 	verändert und somit eine Invariante ist.
 	
-	\begin{proposition}[Invarianz]
+	\begin{proposition}[Invarianz] \label{prop:invarianz}
 		Die Dehn-Invariante verändert sich beim Zerschneiden oder Zusammensetzen eines Polyeders 
 		nicht. Sie ist invariant unter euklidischen Isometrien.
 	\end{proposition}
@@ -447,6 +457,37 @@
 			Also ändert auch dies nichts an der Dehn-Invariante.
 		\end{itemize}
 		Im Beweis haben wir lediglich die Bilinearität des Tensorprodukts ausgenutzt.		
+	\end{proof}
+	
+	\begin{proposition} \label{prop:cong,dehn}
+		Seien $P$ und $Q$ zwei Polyeder, sd. $P\cong Q$, dann gilt $D(P)=D(Q)$.
+	\end{proposition}
+	
+	\begin{proof}
+		Isometrien erhalten sowohl Kantenlängen, als auch Diederwinkel der Polyeder und damit bleibt auch 
+		die Dehn-Invariante unverändert.
+	\end{proof}
+	
+	\begin{proposition} \label{prop:zerl,vol}
+		Seien $P$ und $Q$ zerlegungsgleiche Polyeder, dann gilt $vol(P)=vol(Q)$.
+	\end{proposition}
+	
+	\begin{proof}
+		Seien $P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots+Q_n$ die Zerlegungen von $P$ und 
+		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Dann gilt mit Proposition \ref{prop:cong,vol}
+		\[vol(P)=vol(P_1+\ldots+P_n)=\sum_{i=1}^n vol(P_i)=\sum_{i=1}^n vol(Q_i)=vol(Q_1+\ldots+Q_n)=vol(Q).\]
+	\end{proof}
+	
+	\begin{theorem}[Dehn] \label{thm:dehn}
+		Seien $P$ und $Q$ zerlegungsgleiche Polyeder, dann gilt $D(P)=D(Q)$ und $vol(P)=vol(Q)$.
+	\end{theorem}
+	
+	\begin{proof}
+		Seien $P=P_1,\ldots,P_n$ und $Q=Q_1,\ldots,Q_n$ die Zerlegungen von $P$ und 
+		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Dann folgt mit Proposition \ref{prop:zerl,vol}
+		dass $vol(P)=vol(Q)$. Außerdem gilt mit Proposition \ref{prop:cong,dehn}
+		und mit Proposition \ref{prop:invarianz}
+		\[D(P)=D(P_1+\ldots+P_n)=\sum_{i=1}^n D(P_i) =\sum_{i=1}^n D(Q_i)=D(Q_1+\ldots+Q_n)=D(Q).\]
 	\end{proof}
 	
 	Wir können nun die Dehn-Invarianten einiger Polyeder berechnen.
@@ -528,21 +569,18 @@
 	folgendes Resultat.
 	
 	\begin{corollary}[Dehns Lösung]
-		Sei $Q$ ein Quader und $T$ ein regulärer Tetraeder mit gleichem Volumen und Kantenlänge $l$. 
-		Dann gilt nach Beispiel \ref{exp:quader} $D(Q)=0$ und nach Beispiel \ref{exp:regTetr}
+		Sei $Q$ ein Quader und $T$ ein regulärer Tetraeder mit Kantenlänge $l$. Angenommen 
+		$Q$ und $T$ sind zerlegungsgleich, dann gilt mit Satz \ref{thm:dehn} sowohl $vol(Q)=vol(T)$, als auch 
+		$D(Q)=D(T)$. 
+		Nach Beispiel \ref{exp:quader} gilt $D(Q)=0$ und nach Beispiel \ref{exp:regTetr} gilt
 		\[D(T)=6l\otimes_{\setZ}\arccos\left(\frac{1}{3}\right).\]
 		Da nach Proposition \ref{prop:irr} $\frac{1}{\pi}\arccos\left(\frac{1}{3}\right)$ irrational ist, liegt
 		$\arccos\left(\frac{1}{3}\right)$ nicht in $\pi\setQ$ und damit ist nach Bemerkung \ref{bem:dehn=0} 
 		mit $l\neq 0$ auch $6l\otimes_{\setZ}\arccos\left(\frac{1}{3}\right)\neq 0$. Also gilt
 		\[ D(Q)=0\neq 6l\otimes_{\setZ}\arccos\left(\frac{1}{3}\right)=D(T).\]
-		Also sind $Q$ und $T$ nicht zerlegungsgleich.
-		% und
-		%
-		%...
-		%
-		% damit auch nicht ergänzungsgleich.
-	\end{corollary}
-	
+		Was ein Widerspruch ist. \\
+		Damit sind $Q$ und $T$ nicht zerlegungsgleich.
+	\end{corollary}	
 	%
 	%Wir werden im folgenden immer kommutative Ringe mit Eins betrachen.
 	%
