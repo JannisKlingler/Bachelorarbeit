@@ -70,23 +70,27 @@
 	\begin{definition}[konvexes Polytop]
 		Ein konvexes $d$-Polytop $P$ in einem $d$-dimensionalen reellen Vektorraum $V$ ist der Schnitt endlich vieler 
 		Halbräume. $P$ ist beschränkt, falls für jedes $\alpha\in V^*\setminus\{0\}$ ein $r\in \setR$ existiert, sd. 
-		$\alpha(x)\leq r$ für alle $x\in P$ gilt.
-	\end{definition}
-	
-	\begin{definition}[Polytop]
-		Ein $d$-Polytop $P$ in einem $d$-dimensionalen reellen Vektorraum ist die Vereinigung endlich vieler 
-		konvexer $d$-Polytope. \\
+		$\alpha(x)\leq r$ für alle $x\in P$ gilt. \\
 		Für $d=0$ ist $P$ eine Ecke, für $d=1$ ist $P$ eine Strecke, für $d=2$ ist $P$ ein Polytop und für $d=3$ 
 		ist $P$ ein Polyeder.
 	\end{definition}
 	
+	Wir werden im Folgenden immer beschränkte konvexe $d$-Polytope betrachten.
+	
+	%\begin{definition}[Polytop]
+	%	Ein $d$-Polytop $P$ in einem $d$-dimensionalen reellen Vektorraum ist die Vereinigung endlich vieler 
+	%	konvexer $d$-Polytope.
+	%\end{definition}
+	%
 	\begin{definition}[Kongruenz]
 		Wir nennen zwei Polytope $P$ und $Q$ \textsl{kongruent}, wenn es eine Isometrie $g$ gibt, sd. 
 		$g(P)=Q$. Eine Isometrie ist hierbei eine Abbildung, die die Abstände zweier beliebiger Punkte erhält. 
 		Wir schreiben dann $P\cong Q$.
 	\end{definition}
 	
-	Im folgenden meinen wir mit $P_1+\ldots+P_n$ die disjunkte Vereinigung.
+	Im Folgenden meinen wir mit $P_1+\ldots+P_n$ die bis auf $(d-1)$-Facetten disjunkte Vereinigung. Wobei 
+	eine $(d-1)$-Facette beispielsweise für $d=2$, also eine Fläche, eine Kante ist und für $d=1$, also eine Strecke, 
+	ein Eckpunkt.
 	
 	\begin{definition}[Zerlegungsgleichheit]
 		Zwei $d$-Polytope $P$ und $Q$ heißen \textsl{zerlegungsgleich}, wenn es endlich viele $d$-Polytope 
@@ -115,6 +119,8 @@
 	
 	\subsection{Bolyai-Gerwien Theorem}
 	
+	Im Folgenden setzen wir $d=2$ und betrachten also Polygone.
+	
 	\begin{lemma} \label{lemma:transitiv}
 		Seien $P$, $Q$ und $R$ Polygone und es gilt $P\sim Q$ und $Q\sim R$. Dann folgt $P\sim R$.
 	\end{lemma}
@@ -127,18 +133,21 @@
 			R &= R_1+\ldots+R_m,
 		\end{align*}
 		wobei $P_i\cong Q_i$ für alle $i\in\{1,\ldots,n\}$ und $Q_j'\cong R_j$ für alle $j\in\{1,\ldots,m\}$. 
-		Seien $f_1,\ldots,f_n$ die Isometrien, die alle $P_i$ in $Q_i$ überführen (d. h. $f_i(P_i)=Q_i$) und 
-		$g_1,\ldots,g_m$ die Isometrien, die alle $Q_j'$ in $R_j$ überführen (d. h. $g_j(Q_j')=R_j$).
+		Seien $f_1,\ldots,f_n$ die Isometrien, die alle $Q_i$ in $P_i$ überführen (d. h. $f_i(Q_i)=P_i$) und 
+		$g_1,\ldots,g_m$ die Isometrien, die alle $R_j$ in $Q_j'$ überführen (d. h. $g_j(R_j)=Q_j'$).
 		Wir definieren
 		\[ F_{ij}:=Q_i\cap Q_j',\]
 		für $i\in\{1,\ldots,n\}$ und $j\in\{1,\ldots,m\}$ (Beachte, dass $F_{ij}$ leer sein kann). Zwei verschiedene 
 		$F_{ij}$ sind disjunkt, denn für $i_1,i_2\in\{1,\ldots\,n\}$ mit $i_1\neq i_2$ gilt $F_{i_1 j}\subset Q_{i_1}$, 
 		$F_{i_2 j}\subset Q_{i_2}$ und da $Q_{i_1}$ und $Q_{i_2}$ disjunkt sind folgt, dass $F_{i_1 j}$ und 
 		$F_{i_2 j}$ disjunkt sind. Außerdem gilt
-		\[\bigcup_{j=1}^m F_{ij} = \bigcup_{j=1}^m \left( Q_i \cap Q_j' \right) = Q_i \cap \left( \bigcup_{j=1}^m Q_j' \right)
-		=Q_i \cap Q = Q_i. \]
+		\begin{align}
+			\bigcup_{j=1}^m F_{ij} = \bigcup_{j=1}^m \left( Q_i \cap Q_j' \right) = 
+			Q_i \cap \left( \bigcup_{j=1}^m Q_j' \right)=Q_i \cap Q = Q_i. \label{lemma:transitiv;1}
+		\end{align}
 		Also lassen sich $P$ und $R$ folgendermaßen darstellen
-		\[ P=\bigcup_{i=1}^n P_i = \bigcup_{i=1}^n f_i(Q_i) =\bigcup_{i=1}^n f_i \left(\bigcup_{j=1}^m F_{ij} \right) =
+		\[ P=\bigcup_{i=1}^n P_i = \bigcup_{i=1}^n f_i(Q_i) \overset{\ref{lemma:transitiv;1}}{=}\bigcup_{i=1}^n f_i 
+		\left(\bigcup_{j=1}^m F_{ij} \right) =
 		\bigcup_{i=1}^n \bigcup_{j=1}^m f_i(F_{ij}), \]
 		und
 		\[ R=\bigcup_{i=1}^n \bigcup_{j=1}^m g_j(F_{ij}). \]
@@ -163,16 +172,19 @@
 		Sei $P$ das Dreieck mit den Ecken $a,b,c$ und sei o.B.d.A $\overline{ab}$ die längste Seite. Wir zeichnen 
 		nun die Lotstrecke auf der Strecke $\overline{ab}$ durch den Punkt $c$ ein und nennen den Lotfußpunkt $d$. 
 		Der Punkt $d$ liegt auf der Strecke $\overline{ab}$, da sonst $\overline{ab}$ nicht die längste Seite war. 
-		Nun halbieren wir die Lotstrecke $\overline{cd}$ und zeichnen die Lotgerade $\overline{mn}$ auf der 
-		Strecke $\overline{cd}$ durch den Mittelpunkt $e$ der Strecke ($m$ und $n$ sind hierbei die Schnittpunkte 
-		dieser Lotgeraden mit dem Dreieck $P$). Da $\overline{cd}$ senkrecht auf $\overline{ab}$ und $\overline{mn}$ 
-		senkrecht auf $\overline{cd}$ ist, sind $\overline{ab}$ und $\overline{mn}$ parallel. Wir bilden erneut die 
+		Nun halbieren wir die Lotstrecke $\overline{cd}$ und zeichnen die Lotgerade durch die Punkte $m$ und $n$ 
+		auf dem Mittelpunkt $e$ der Strecke $\overline{cd}$ ein ($m$ und $n$ sind hierbei die Schnittpunkte 
+		dieser Lotgeraden mit dem Dreieck $P$). Da $\overline{cd}$ senkrecht auf $\overline{ab}$ und die Lotgerade 
+		durch die Punkte $m$ und $n$ 
+		senkrecht auf $\overline{cd}$ ist, sind $\overline{ab}$ und die Lotgerade parallel. Wir bilden erneut die 
 		Lotgeraden auf $\overline{ab}$ durch die Punkte $a$ und $b$ und nennen den Schnittpunkt der Lotgerade 
-		durch $a$ mit der Gerade, die durch $m$ und $n$ verläuft, $f$ und den Schnittpunkt der Lotgerade durch 
-		$b$ mit der Gerade, die durch $m$ und $n$ verläuft, $g$. Dadurch erhalten wir ein Rechteck $Q$ mit den 
-		Eckpunkten $a,b,f,g$. Wir stellen fest, dass die Dreiecke mit den Eckpunkten $m,e,c$ und $a,m,f$, welche in 
-		Abbildung \ref{Abb.1} grau hinterlegt sind, kongruent sind. Weiterhin sind die Dreiecke mit den Eckpunkten 
-		$e,n,c$ und $b,g,n$, welche weiß hinterlegt sind, kongruent. Damit lassen sich $P$ und $Q$ in die beiden 
+		durch $a$ mit der Lotgerade, die durch $m$ und $n$ verläuft, $f$ und den Schnittpunkt der Lotgerade durch 
+		$b$ mit der Lotgerade, die durch $m$ und $n$ verläuft, $g$. Dadurch erhalten wir ein Rechteck $Q$ mit den 
+		Eckpunkten $a,b,g,f$. Wir stellen fest, dass die Dreiecke mit den Eckpunkten $m,e,c$ und $a,m,f$, welche in 
+		Abbildung \ref{Abb.1} grau hinterlegt sind, kongruent sind, da mit dem Strahlensatz der Winkel an dem 
+		Punkt $m$ in den beiden Dreiecken gleich ist und somit beiden Dreiecke gleiche Basis und Höhe haben. 
+		Weiterhin sind mit dem gleichen Argument die Dreiecke mit den Eckpunkten $e,n,c$ und $b,g,n$, welche weiß 
+		hinterlegt sind, kongruent. Damit lassen sich $P$ und $Q$ in die beiden 
 		kongruenten Dreiecke und den schraffierten Trapezoid, mit den Eckpunkten $a,b,n,m$, zerlegen und sind somit 
 		zerlegungsgleich.
 	\end{proof}
@@ -258,14 +270,15 @@
 		also für $P$ die Darstellung
 		\[ P\sim P_1+\ldots+P_n,\]
 		wobei $P_1,\ldots,P_n$ Rechtecke sind. Nun nehmen wir eine beliebige Kante $\overline{a_0b_0}$ und 
-		stellen die Lotgeraden auf den Eckpunkten $a_0$ und $b_0$ auf. Anschließend ziehen wir $n$ 
+		stellen die Lotgeraden auf den Eckpunkten $a_0$ und $b_0$ durch die Strecke $\overline{a_0b_0}$ 
+		auf. Anschließend ziehen wir $n$ 
 		parallele Strecken zu $\overline{a_0b_0}$, sd. der Flächeninhalt des Recheckts $a_{i-1}b_{i-1}b_ia_i$, 
 		welches wir $R_i$ nennen, dem Flächeninhalt des Rechtecks $P_i$ entspricht, wobei $i=1,\ldots,n$. 
 		Nach Lemma \ref{lemma:rechtecke} gilt also $P_i\sim R_i$ für alle $i$ und damit
 		\[ P_1+\ldots+P_n\sim R_1+\ldots+R_n. \]
 		Da $P\sim P_1+\ldots+P_n$ gilt also mit Lemma \ref{lemma:transitiv}
 		\[ P\sim R_1+\ldots+R_n\]
-		und damit zum Rechteck $a_0b_0b_na_n$. Damit ist jedes Polygon zerlegungsgleich mit einem Rechteck. \\
+		und damit zum Rechteck $a_0b_0b_na_n$. Damit ist jedes Polygon zerlegungsgleich zu einem Rechteck. \\
 		Seien nun $P$ und $Q$ zwei Polygone mit gleichem Flächeninhalt, dann finden wir wie oben gezeigt 
 		Rechtecke $R_1$ und $R_2$, sd.
 		\[ P\sim R_1,\quad Q\sim R_2.\]
@@ -274,23 +287,23 @@
 	\end{proof}
 	
 	Wir haben also nun gesehen, dass sich jedes beliebige Polygon in Dreiecke zerlegen lässt. Diese Dreiecke 
-	sind nach Lemma \ref{lemma:dreieck,rechteck} zerlegungsgleich Rechtecken mit gleichem 
-	Flächeninhalt. Zuletzt können wir mit Satz \ref{theorem:bolyai-gerwien} die Rechtecke in normierte Rechtecke (d. h. 
-	Rechtecke mit Höhe $1$)
-	zerlegen. Haben wir nun zwei beliebige Polygone $P$ und $Q$ mit gleichem Flächeninhalt $a$ gegeben, so sind 
-	beide Polygone 
-	nach Lemma \ref{lemma:transitiv} zerlegungsgleich mit einem normierten Rechteck $R$, das die Breite $a$ hat und 
-	wiederum folgt mit der Transitivität der Zerlegungsgleichheit, dass $P$ und $Q$ zerlegungsgleich sind. Damit sind 
-	zwei beliebige Polygone zerlegungsgleich und mit Proposition \ref{prop:zerl,erg} auch ergänzungsgleich. 
-	Dies führt uns zu der Frage, ob das gleiche auch für 3-dimensionale Polytope, also Polyeder, möglich ist.
+	sind nach Lemma \ref{lemma:dreieck,rechteck} zerlegungsgleich zu Rechtecken mit gleichem 
+	Flächeninhalt. Zuletzt können wir mit Satz \ref{theorem:bolyai-gerwien} die Rechtecke zerlegen zu Rechtecken 
+	mit gleicher Grundseite. Dieses Verfahren können wir nun auf beliebige Polygone mit gleichem Flächeninhalt 
+	anwenden. Da diese Rechtecke nach Lemma \ref{lemma:rechtecke} zerlegungsgleich sind folgt mit der 
+	Transitivität der Zerlegungsgleichheit aus Lemma \ref{lemma:transitiv} die Zerlegungsgleichheit der Polygone und 
+	mit Proposition \ref{prop:zerl,erg} auch die Ergänzungsgleichheit. 
+	Dies führt uns zu der Frage, ob das gleiche auch für dreidimensionale Polytope, also Polyeder, möglich ist.
 	
 	\textsl{Motivation:} Als Hilbert 1900 diese Frage auf dem internationalen Mathematikerkongress in Paris als 
-	sein drittes von 23 Problemen stellte, vermutete er wohl schon, dass die Antwort 'Nein' ist. Im folgenden wollen wir 
+	sein drittes von 23 Problemen stellte, vermutete er wohl schon, dass die Antwort 'Nein' ist. Im Folgenden wollen wir 
 	uns zwei Beweise anschauen, die zeigen, dass es Polyeder gibt, die nicht zerlegungs- und ergänzungsgleich sind. 
 	Der erste bezieht sich auf die Arbeit Max Dehn's, ein Schüler Hilberts, der ein Jahr später in seiner Habitilationsarbeit 
 	die Aussage mithilfe der von ihm erfundenen Dehn-Invariante widerlegte. Der zweite Beweis...
 	
 	\section{Zerlegungsgleichheit von Polyedern; Dehn-Invariante}
+	
+	Im Folgenden setzen wir $d=3$ und betrachten Polyeder.
 	
 	Wir müssen uns zunächst überlegen, was mit den Kanten eines Polyeders $P$ passiert, wenn wir diesen in zwei 
 	Polyeder $P_1$ und $P_2$ zerlegen. Sei $k$ also eine Kante des Polyeders $P$. Diese Kante hat die Länge 
@@ -447,7 +460,7 @@
 	\begin{example}[regulärer Tetraeder] \label{exp:regTetr}
 		Sei $P$ ein dreidimensionaler regulärer Tetraeder, also haben alle Kanten von $P$ die gleiche Länge $l$ und 
 		den gleichen Diederwinkel $\alpha$. Seien $A,B,C,D$ die Ecken von $P$ wie in Abbildung \ref{Abb.4}. 
-		Sei $F$ der Mittelpunkt der Strecke $\overline{BC}$, also $|BC|=\frac{l}{2}$ und damit ist nach Pythagoras 
+		Sei $F$ der Mittelpunkt der Strecke $\overline{BC}$, also $|BF|=\frac{l}{2}$ und damit ist nach Pythagoras 
 		$|AF|=\frac{\sqrt{3}}{2}l=|DF|$. Der Mittelpunkt $E$ des Dreiecks $ABC$ hat gerade den Abstand 
 		$\frac{\sqrt{3}}{3 \cdot 2}l=\frac{l}{2\sqrt{3}}$ zu $F$ und schließlich gilt mit Pythagoras
 		\[\cos(\alpha)=\frac{\frac{l}{2\sqrt{3}}}{\frac{\sqrt{3}}{2}l}=\frac{1}{3}\quad\text{also}
@@ -470,7 +483,7 @@
 	
 	\begin{proof}
 		Zuerst stellen wir fest, dass mit dem Additionstheorem
-		\[\cos(\alpha)+\cos(\beta)=2\cos(\frac{\alpha+\beta}{2})\cos(\frac{\alpha-\beta}{2}) \]
+		\[\cos(\alpha)+\cos(\beta)=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right) \]
 		für $\alpha=(k+1)\varphi$ und $\beta=(k-1)\varphi$ gilt
 		\begin{align*}
 			\cos\left((k+1)\varphi\right)+\cos\left((k-1)\varphi\right)=&2\cos\left(\frac{(k+1)\varphi+(k-1)\varphi}{2}\right)
@@ -481,7 +494,7 @@
 		\begin{align}
 			\cos((k+1)\varphi)=2\cos(k\varphi)\cos(\varphi)-\cos((k-1)\varphi). \label{prop:irr;1}
 		\end{align}
-		Wir definieren uns nun $\varphi_n=\arccos(\frac{1}{\sqrt{n}})$ für $n=2m+1$ mit $m\in\setN$. Dann ist 
+		Wir definieren uns nun $\varphi_n=\arccos(\frac{1}{\sqrt{n}})$ für $n=2l+1$ mit $l\in\setN$. Dann ist 
 		$\cos(\varphi_n)=\frac{1}{\sqrt{n}}$ und $0\leq\varphi_n\leq\pi$. \\
 		Mit Induktion über $k\in\setN_0$ zeigen wir, dass gilt
 		\begin{align}
