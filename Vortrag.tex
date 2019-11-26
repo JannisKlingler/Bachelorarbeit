@@ -71,11 +71,17 @@
 		Ein konvexes $d$-Polytop $P$ in einem $d$-dimensionalen reellen Vektorraum $V$ ist der Schnitt endlich vieler 
 		Halbräume. $P$ ist beschränkt, falls für jedes $\alpha\in V^*\setminus\{0\}$ ein $r\in \setR$ existiert, sd. 
 		$\alpha(x)\leq r$ für alle $x\in P$ gilt. \\
-		Für $d=0$ ist $P$ eine Ecke, für $d=1$ ist $P$ eine Strecke, für $d=2$ ist $P$ ein Polytop und für $d=3$ 
+		Für $d=0$ ist $P$ eine Ecke, für $d=1$ ist $P$ eine Strecke, für $d=2$ ist $P$ ein Polygon und für $d=3$ 
 		ist $P$ ein Polyeder.
 	\end{definition}
 	
-	Wir werden im Folgenden immer beschränkte konvexe $d$-Polytope betrachten.
+	Wir werden im Folgenden immer beschränkte konvexe $d$-Polytope betrachten. Wir stellen außerdem fest, dass 
+	der Schnitt konvexer Polytope wieder ein konvexes Polytop ist. Hierbei kann der Schnitt auch niedrigerdimensional 
+	sein. Wir sagen zwei Polytope $P_1$ und $P_2$ sind disjunkt, wenn $dim(P_1\cap P_2)<d$. Wir schreiben dann 
+	für die Vereinigung zweier disjunkter Polytope $P_1+P_2$.
+	
+	Wir definieren $dim(P_1\cap P_2):=max\{k\in\setN_0\ \vert\ \exists p_0,\ldots,p_k\in P_1\cap P_2\ :
+	\ (p_0-p_1),\dots,(p_{k-1}-p_k)\text{ linear unabhängig}\}$.
 	
 	%\begin{definition}[Polytop]
 	%	Ein $d$-Polytop $P$ in einem $d$-dimensionalen reellen Vektorraum ist die Vereinigung endlich vieler 
@@ -83,15 +89,16 @@
 	%\end{definition}
 	%
 	\begin{definition}[Kongruenz]
-		Wir nennen zwei Polytope $P$ und $Q$ \textsl{kongruent}, wenn es eine Isometrie $g$ gibt, sd. 
+		Wir nennen zwei $d$-Polytope $P$ und $Q$ \textsl{kongruent}, wenn es eine Isometrie $g$ gibt, sd. 
 		$g(P)=Q$. Eine Isometrie ist hierbei eine Abbildung, die die Abstände zweier beliebiger Punkte erhält. 
 		Wir schreiben dann $P\cong Q$.
 	\end{definition}
 	
-	Im Folgenden meinen wir mit $P_1+\ldots+P_n$ die bis auf $(d-1)$-Facetten disjunkte Vereinigung. Wobei 
-	eine $(d-1)$-Facette beispielsweise für $d=2$, also eine Fläche, eine Kante ist und für $d=1$, also eine Strecke, 
-	ein Eckpunkt.
-	
+	%Im Folgenden meinen wir mit $P_1+\ldots+P_n$ die bis auf $(d-1)$-Facetten bzw. niedriger dimensionale Seiten 
+	%disjunkte Vereinigung. Wobei 
+	%eine $(d-1)$-Facette beispielsweise für $d=2$, also eine Fläche, eine Kante ist und für $d=1$, also eine Strecke, 
+	%ein Eckpunkt.
+	%
 	\begin{definition}[Zerlegungsgleichheit]
 		Zwei $d$-Polytope $P$ und $Q$ heißen \textsl{zerlegungsgleich}, wenn es endlich viele $d$-Polytope 
 		$P_1,\ldots,P_n,Q_1,\ldots,Q_n$ mit $P=P_1 +\ldots +P_n$,  $Q=Q_1 +\ldots+Q_n$ 
@@ -112,7 +119,19 @@
 	\end{proposition}
 	
 	\begin{proof}
-		Klar, da Isometrien abstandserhaltende Funktionen sind.
+		Da sich eine Isometrie darstellen lässt als $f(x)=Ux+a$ für eine orthogonale Matrix $U\in O(d)$ und ein 
+		$a\in\setR^d$ ergibt sich die Aussage mit der Transformationsformel.
+	\end{proof}
+	
+	\begin{proposition} \label{prop:zerl,vol}
+		Seien $P$ und $Q$ zerlegungsgleiche $d$-Polytope, dann gilt $vol(P)=vol(Q)$.
+	\end{proposition}
+	
+	\begin{proof}
+		Seien $P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots+Q_n$ die Zerlegungen von $P$ und 
+		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Da das Maß von Schnitten niedrigerer Dimension, als die des 
+		zugrundeliegenden Vektorraums, eine Nullmenge ist gilt mit der Siebformel und Proposition \ref{prop:cong,vol}
+		\[vol(P)=vol(P_1+\ldots+P_n)=\sum_{i=1}^n vol(P_i)=\sum_{i=1}^n vol(Q_i)=vol(Q_1+\ldots+Q_n)=vol(Q).\]
 	\end{proof}
 	
 	%Man sieht leicht, dass folgendes gilt:
@@ -146,18 +165,19 @@
 		Wir definieren
 		\[ F_{ij}:=Q_i\cap Q_j',\]
 		für $i\in\{1,\ldots,n\}$ und $j\in\{1,\ldots,m\}$ (Beachte, dass $F_{ij}$ leer sein kann). Zwei verschiedene 
-		$F_{ij}$ sind disjunkt, denn für $i_1,i_2\in\{1,\ldots\,n\}$ mit $i_1\neq i_2$ gilt $F_{i_1 j}\subset Q_{i_1}$, 
-		$F_{i_2 j}\subset Q_{i_2}$ und da $Q_{i_1}$ und $Q_{i_2}$ disjunkt sind folgt, dass $F_{i_1 j}$ und 
-		$F_{i_2 j}$ disjunkt sind. Außerdem gilt
+		$F_{ij}$ sind disjunkt, denn für $i_1,i_2\in\{1,\ldots\,n\}$ mit $i_1\neq i_2$ gilt 
+		\[F_{i_1 j}\cap F_{i_2 j}=(Q_{i_1}\cap Q_j')\cap(Q_{i_2}\cap Q_j')=(Q_{i_1}\cap Q_{i_2})\cap Q_j'.\] 
+		Da $Q_{i_1}$ und $Q_{i_2}$ disjunkt sind, d. h. der Schnitt ist niedrigerdimensional, ist auch dieser Schnitt 
+		mit $Q_j'$ niedrigerdimensional, also sind $F_{i_1j}$ und $F_{i_2j}$ disjunkt. Außerdem gilt
 		\begin{align}
 			\bigcup_{j=1}^m F_{ij} = \bigcup_{j=1}^m \left( Q_i \cap Q_j' \right) = 
 			Q_i \cap \left( \bigcup_{j=1}^m Q_j' \right)=Q_i \cap Q = Q_i. \label{lemma:transitiv;1}
 		\end{align}
-		Also lassen sich $P$ und $R$ folgendermaßen darstellen
+		Also lässt sich $P$ folgendermaßen darstellen
 		\[ P=\bigcup_{i=1}^n P_i = \bigcup_{i=1}^n f_i(Q_i) \overset{\ref{lemma:transitiv;1}}{=}\bigcup_{i=1}^n f_i 
 		\left(\bigcup_{j=1}^m F_{ij} \right) =
 		\bigcup_{i=1}^n \bigcup_{j=1}^m f_i(F_{ij}), \]
-		und
+		und für $R$ gilt analog
 		\[ R=\bigcup_{i=1}^n \bigcup_{j=1}^m g_j(F_{ij}). \]
 		Als letztes überlegen wir uns, dass gilt $f_i(F_{ij})\cong g_j(F_{ij})$. Betrachte hierzu die Isometrie 
 		$g_j\circ f_i^{-1}$, dann gilt $g_j(f_i^{-1}(f_i(F_{ij})))=g_j(F_{ij})$. Also finden wir für $P$ und $R$ jeweils eine 
@@ -428,13 +448,15 @@
 	verändert und somit eine Invariante ist.
 	
 	\begin{proposition}[Invarianz] \label{prop:invarianz}
-		Die Dehn-Invariante verändert sich beim Zerschneiden oder Zusammensetzen eines Polyeders 
-		nicht. Sie ist invariant unter euklidischen Isometrien.
+		Sei $P$ ein Polyeder und $P=P_1+P_2$ eine Zerlegung von $P$ in zwei Polyeder $P_1$ und $P_2$, dann 
+		gilt $D(P_1+P_2)=D(P_1)+D(P_2)$.	
 	\end{proposition}
 	
 	\begin{proof}
-		Sei $P$ ein beschränkter Polyeder, den wir in zwei Polyeder $P_1$ und $P_2$ zerschneiden. Dann reicht 
-		es die Fälle zu betrachten, die wir am Anfang des Kapitels erwähnt haben.
+		Sei $P$ ein beschränkter Polyeder, den wir in zwei Polyeder $P_1$ und $P_2$ zerschneiden. 
+		Die Summe der  Dehn-Invarianten der einzelnen Polyeder soll also gerade der Dehn-Invariante von $P$ 
+		entsprechen. Dazu betrachten wir die Kanten der Polyeder und überlegen was für die Summanden gilt. Es 
+		reicht die Fälle zu betrachten, die wir am Anfang des Kapitels erwähnt haben.
 		\begin{itemize}
 			\item Zu \ref{bem:dehn;1}: Beim schneiden durch eine Kante $k$ von $P$ entstehen zwei 
 			neue Kanten $k_1$ von $P_1$ und $k_2$ von $P_2$, wobei die Längen sich addieren und der Winkel 
@@ -468,22 +490,12 @@
 		die Dehn-Invariante unverändert.
 	\end{proof}
 	
-	\begin{proposition} \label{prop:zerl,vol}
-		Seien $P$ und $Q$ zerlegungsgleiche Polyeder, dann gilt $vol(P)=vol(Q)$.
-	\end{proposition}
-	
-	\begin{proof}
-		Seien $P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots+Q_n$ die Zerlegungen von $P$ und 
-		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Dann gilt mit Proposition \ref{prop:cong,vol}
-		\[vol(P)=vol(P_1+\ldots+P_n)=\sum_{i=1}^n vol(P_i)=\sum_{i=1}^n vol(Q_i)=vol(Q_1+\ldots+Q_n)=vol(Q).\]
-	\end{proof}
-	
 	\begin{theorem}[Dehn] \label{thm:dehn}
 		Seien $P$ und $Q$ zerlegungsgleiche Polyeder, dann gilt $D(P)=D(Q)$ und $vol(P)=vol(Q)$.
 	\end{theorem}
 	
 	\begin{proof}
-		Seien $P=P_1,\ldots,P_n$ und $Q=Q_1,\ldots,Q_n$ die Zerlegungen von $P$ und 
+		Seien $P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots+Q_n$ die Zerlegungen von $P$ und 
 		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Dann folgt mit Proposition \ref{prop:zerl,vol}
 		dass $vol(P)=vol(Q)$. Außerdem gilt mit Proposition \ref{prop:cong,dehn}
 		und mit Proposition \ref{prop:invarianz}
@@ -626,3 +638,13 @@
 	%\subsection{Zerlegungsgleichheit im Hyperbolischen}
 	%
 \end{document}
+%
+%Sehr geehrter Herr Bräunling,
+%
+%mir ist aufgefallen, dass ich meine Definition falsch aufgeschrieben habe. Meine Version müsste genau mit dem Vorschlag %von Ihnen übereinstimmen
+%
+%
+%Sehr geehrter Herr Bräunling,
+%
+%mir ist aufgefallen, dass ich meine Definition falsch formuliert habe. Ich versuch es mal so:
+%dim(P_1\cap P_2)=max{k in IN | es existieren p_0,...,p_k ,sd. (p_0-p_1),...,(p_k-1 -p_k) linear unabhängig sind}. Damit %müsste ich ja gerade die Dimension eines affinen Untervektorraums, also gerade der, der von den Vektoren aufgespannt %wird, definieren. Ich hatte dann gestern noch gezeigt, dass das Maß einer Menge deren Dimension dann echt kleiner, als %die des Vektorraums ist, eine Nullmenge ist. Ich habe dies genau wie Sie beschrieben haben über eine kleine Box um %die Menge, deren Maß endlich i
