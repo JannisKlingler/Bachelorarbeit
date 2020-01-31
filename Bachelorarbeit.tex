@@ -4,7 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage[paper=a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
-\usepackage{geometry}
+%\usepackage{geometry}
 \usepackage{hyperref}
 \hypersetup{bookmarksnumbered}
 
@@ -477,18 +477,6 @@
 		\[ \sum_{i=1}^n \ell(k_i)\otimes [w(k_i)]. \]
 	\end{definition}
 	
-	\begin{remark} \label{bem:dehn=0}
-		Wir stellen fest, dass für alle $x\in \setR$ und $y\in\setR/\pi\setZ$ gilt
-		\[ x\otimes_{\setZ}\pi y =0 \quad \Leftrightarrow \quad x=0 \ \lor\ y\in\setQ, \]
-		denn für $x\in\setR$ mit $x\neq 0$ und $y=\frac{p}{q}\in\setQ$, wobei $p\in\setZ$ und $q\in\setN$, gilt
-		\[ x\otimes_{\setZ} \pi y =x\otimes_{\setZ}\pi \frac{p}{q} =xp\otimes_{\setZ}\frac{\pi}{q} =q\frac{xp}{q}
-		\otimes_{\setZ}\frac{\pi}{q} = \frac{xp}{q}\otimes_{\setZ}\pi =\frac{xp}{q}\otimes_{\setZ} 0=0.\]
-		Dabei haben wir $x\in\setZ$ zuerst nach links und danach $y\in\setN$ nach rechts bewegt. Folglich ist die 
-		Dehn-Invariante eines Polyeders $0$, falls dessen Diederwinkel alle in $\pi\setQ$ liegen. \\
-		Zusätzlich können wir folgern, dass für alle $x\in\setR$ und $y\in\setR/\pi\setZ$ gilt
-		\[ x\otimes_{\setZ}y\neq0\quad\Leftrightarrow\quad x\neq 0 \ \land\ y\notin\pi\setQ. \]
-	\end{remark}
-	
 	Wir müssen nun zeigen, dass die Dehn-Invariante sich beim Zerschneiden eines Polyeders sich nicht 
 	verändert und somit eine Invariante ist.
 	
@@ -546,6 +534,67 @@
 		und mit Proposition \ref{prop:invarianz}
 		\[D(P)=D(P_1+\ldots+P_n)=\sum_{i=1}^n D(P_i) =\sum_{i=1}^n D(Q_i)=D(Q_1+\ldots+Q_n)=D(Q).\]
 	\end{proof}
+	
+	Wir wollen uns nun zur Berechnung der Dehn-Invariante einiger Polyeder ein paar Eigenschaften des Tensorprodukts $\setR\otimes_{\setZ}\setR /\pi\setZ$ anschauen. Dazu wollen wir zeigen, dass unser Tensorprodukt isomorph zum Tensorprodukt  
+	$\setR\otimes_{\setQ}\setR /\pi\setQ$ ist, hierzu benötigen wir ein Resultat 
+	aus der Kommutativen Algebra. \\
+	Sei nun $R$ ein Integritätsring, wir wollen nun 
+	Brüche einführen. Sei dazu $S$ eine multiplikative Teilmenge von $R$, das heißt  
+	$1\in S$ und $S$ ist unter Multiplikation abgeschlossen, also ein Monoid. Wir 
+	definieren die Relation $\equiv$ auf $A\times S$ durch
+	\[(r_1,s_1)\equiv(r_2,s_2)\quad \Leftrightarrow\quad r_1 s_2 =r_2 s_1\]
+	für Elemente $r_1,r_2\in R$ und $s_1,s_2\in S$. \\
+	Wir stellen fest, dass diese Relation  eine Äquivalenzrelation ist. Die 
+	Reflexivität und Symmetrie ist klar, wir zeigen also noch die Transitivität.
+	Es gelte also $(r_1,s_1)\equiv(r_2,s_2)$ und $(r_2,s_2)\equiv(r_3,s_3)$ für 
+	$r_1,r_2,r_3\in R$ und $s_1,s_2,s_3\in S$, also gilt $r_1 s_2= r_2 s_1$ und 
+	$r_2 s_3 =r_3 s_2$ und damit $r_1 s_2 r_2 s_3 =r_2 s_1 r_3 s_2$. Falls $r_2=0$ 
+	ist klar das $(r_1,s_1)\equiv(r_3,s_3)$ gilt, falls $r_2\neq 0$ können wir $r_2$ aus der Gleichung streichen und es folgt 
+	$r_1 s_3=r_3 s_1$ und damit $(r_1,s_1)\equiv(r_3,s_3)$. \\
+	Wir schreiben $\frac{r}{s}$ für die Äquivalenzklasse von $(r,s)$ und $S^{-1}R$ 
+	für die Menge aller Äquivalenzklassen. Wir können $S^{-1}$ nun eine Ringstruktur 
+	geben, indem wir die Addition und Multiplikation wie folgt definieren
+	\begin{align*}
+		\left(\frac{r_1}{s_1}\right)+\left(\frac{r_2}{s_2}\right)
+		&=\left(\frac{r_1s_2+r_2s_1}{s_1s_2}\right) \\
+		\left(\frac{r_1}{s_2}\right)\cdot\left(\frac{r_2}{s_2}\right)
+		&=\left(\frac{r_1r_2}{s_1s_2}\right)
+	\end{align*}
+	für alle $r_1,r_2\in R$ und $s_1,s_2\in S$. Wir stellen fest, dass 
+	$S^{-1}R$ sogar ein kommutativer Ring mit Eins ist. \\
+	Nun zurück zu unserem Problem. Es lässt sich nun folgendes Resultat zeigen, siehe dazu auch 
+	
+	%...Atiyah MacDonald introduction to commutative algebra Proposition 3.7
+	
+	\begin{proposition}\label{prop:tensoriso}
+		Seien $M$ und $N$ zwei $R$-Moduln, dann gibt es einen eindeutigen 
+		Isomorphismus 
+		\[f:S^{-1}M\otimes_{S^{-1}R}S^{-1}N\to S^{-1}(M\otimes_R N)\]
+		zwischen den $S^{-1}R$-Moduln, sd.
+		\[f\left(\frac{m}{s_1}\otimes\frac{n}{s_2}\right)=\frac{m\otimes n}{s_1s_2}.\]
+	\end{proposition}
+	
+	Dies lässt sich nun auf unser Tensorprodukt 
+	$\setR\otimes_{\setZ}\setR /\pi\setZ$ anwenden, indem wir $R=\setZ$, $M=\setR$ und $N=\setR /\pi\setZ$ setzen und mit $S=\setN$ ergibt sich 
+	dann
+	\begin{align*}
+		S^{-1}R=\setN^{-1}\setZ=\setQ,\qquad S^{-1}M=\setN^{-1}\setR=\setR
+		\quad\text{ und }\quad S^{-1}N=\setN^{-1}\setR /\pi\setZ=\setR /\pi\setQ.
+	\end{align*}
+	Mit der Proposition 
+	
+	
+	\begin{remark} \label{bem:dehn=0}
+		Wir stellen fest, dass für alle $x\in \setR$ und $y\in\setR/\pi\setZ$ gilt
+		\[ x\otimes_{\setZ}\pi y =0 \quad \Leftrightarrow \quad x=0 \ \lor\ y\in\setQ, \]
+		denn für $x\in\setR$ mit $x\neq 0$ und $y=\frac{p}{q}\in\setQ$, wobei $p\in\setZ$ und $q\in\setN$, gilt
+		\[ x\otimes_{\setZ} \pi y =x\otimes_{\setZ}\pi \frac{p}{q} =xp\otimes_{\setZ}\frac{\pi}{q} =q\frac{xp}{q}
+		\otimes_{\setZ}\frac{\pi}{q} = \frac{xp}{q}\otimes_{\setZ}\pi =\frac{xp}{q}\otimes_{\setZ} 0=0.\]
+		Dabei haben wir $x\in\setZ$ zuerst nach links und danach $y\in\setN$ nach rechts bewegt. Folglich ist die 
+		Dehn-Invariante eines Polyeders $0$, falls dessen Diederwinkel alle in $\pi\setQ$ liegen. \\
+		Zusätzlich können wir folgern, dass für alle $x\in\setR$ und $y\in\setR/\pi\setZ$ gilt
+		\[ x\otimes_{\setZ}y\neq0\quad\Leftrightarrow\quad x\neq 0 \ \land\ y\notin\pi\setQ. \]
+	\end{remark}
 	
 	Wir können nun die Dehn-Invarianten einiger Polyeder berechnen.
 	
