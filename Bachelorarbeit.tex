@@ -562,7 +562,7 @@
 	\end{align*}
 	für alle $r_1,r_2\in R$ und $s_1,s_2\in S$. Wir stellen fest, dass 
 	$S^{-1}R$ sogar ein kommutativer Ring mit Eins ist. Außerdem ist 
-	$S^{-1}R$ gerade der Quotioentenkörper von $R$, falls $S=R\setminus\{0\}$ ist. Betrachten wir also beispielweise den Ring 
+	$S^{-1}R$ gerade der Quotientenkörper von $R$, falls $S=R\setminus\{0\}$ ist. Betrachten wir also beispielweise den Ring 
 	$\setZ$ mit der multiplikativen Teilmenge $S=\setZ\setminus\{0\}$, so 
 	ist $S^{-1}\setZ$ gerade der Quotientenkörper von $\setZ$, also 
 	$\setQ$. Wir können diese Konstruktion nun auch auf Moduln fortführen. 
@@ -584,7 +584,9 @@
 	\end{corollary}
 	
 	\begin{proof}
-		
+		Wir wenden hierfür $S^{-1}$ auf die exakte Sequenz
+		\[0\to N\to N\to M/N\to 0\]
+		an.
 	\end{proof}
 	
 	Wenden wir das nun auf das $\setZ$-Modul $\setR /\pi\setZ$ mit 
@@ -612,11 +614,11 @@
 	$S=\setZ\setminus\{0\}$ und dem obigen Resultat ergibt sich 
 	dann
 	\begin{align*}
-		S^{-1}R=\setQ,\qquad S^{-1}M=\setR
-		\quad\text{ und }\quad S^{-1}N=\setR /\pi\setQ.
+		S^{-1}R\simeq\setQ,\qquad S^{-1}M\simeq\setR
+		\quad\text{ und }\quad S^{-1}N\simeq\setR /\pi\setQ.
 	\end{align*}
 	Weiterhin gilt
-	\[S^{-1}(M\otimes_R N)\cong \setR/\pi\setQ,\]
+	\[S^{-1}(M\otimes_R N)\simeq \setR\otimes_\setZ\setR/\pi\setZ,\]
 	denn mit der Bilinearität des Tensorprodukt gilt für 
 	\begin{align*}
 		\setZ\setminus\{0\}^{-1}(\setR /\pi\setZ)&\simeq
@@ -628,8 +630,11 @@
 		 &\simeq \setR\otimes_\setZ \setR/\pi\setZ,
 	\end{align*}
 	wobei wir mit $\langle\ \cdot\ \rangle$ hier das Erzeugnis meinen.
-	Insgesamt erhalten wir also
-	\[\setR\otimes_\setZ\setR/\pi\setZ\simeq\setR\otimes_\setQ\setR/\pi\setQ.\]
+	Insgesamt erhalten wir also mit der Proposition
+	
+	\begin{align}
+		\setR\otimes_\setZ\setR/\pi\setZ\simeq\setR\otimes_\setQ\setR/\pi\setQ. \label{tensor=0}
+	\end{align}
 	Wir können die Dehn-Invariante also auch auf dem $\setQ$-Vektorraum 
 	$\setR\otimes_\setQ\setR/\pi\setQ$ betrachten, was uns zu der folgenden 
 	Tatsache führt.
@@ -644,7 +649,7 @@
 		\[ x\otimes y =x\otimes\pi \frac{p}{q} =xp\otimes\frac{\pi}{q} =q\frac{xp}{q}
 		\otimes\frac{\pi}{q} = \frac{xp}{q}\otimes\pi =\frac{xp}{q}\otimes 0=0.\]
 		Dabei haben wir $p$ zuerst nach links und danach $q$ nach rechts bewegt. \\
-		Zur Hinrichtung:
+		Zur Hinrichtung: 
 	\end{proof}
 	
 	Wir erhalten also auch:
