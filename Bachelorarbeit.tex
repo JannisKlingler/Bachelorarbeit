@@ -536,12 +536,13 @@
 	\end{proof}
 	
 	Wir wollen uns nun zur Berechnung der Dehn-Invariante einiger Polyeder ein paar Eigenschaften des Tensorprodukts $\setR\otimes_{\setZ}\setR /\pi\setZ$ anschauen. Dazu wollen wir zeigen, dass unser Tensorprodukt isomorph zum Tensorprodukt  
-	$\setR\otimes_{\setQ}\setR /\pi\setQ$ ist, hierzu benötigen wir ein Resultat 
+	$\setR\otimes_{\setQ}\setR /\pi\setQ$ ist, hierzu benötigen wir ein 
+	paar Resultate 
 	aus der Kommutativen Algebra. \\
 	Sei nun $R$ ein Integritätsring, wir wollen nun 
 	Brüche einführen. Sei dazu $S$ eine multiplikative Teilmenge von $R$, das heißt  
 	$1\in S$ und $S$ ist unter Multiplikation abgeschlossen, also ein Monoid. Wir 
-	definieren die Relation $\equiv$ auf $A\times S$ durch
+	definieren die Relation $\equiv$ auf $R\times S$ durch
 	\[(r_1,s_1)\equiv(r_2,s_2)\quad \Leftrightarrow\quad r_1 s_2 =r_2 s_1\]
 	für Elemente $r_1,r_2\in R$ und $s_1,s_2\in S$. \\
 	Wir stellen fest, dass diese Relation  eine Äquivalenzrelation ist. Die 
@@ -549,11 +550,10 @@
 	Es gelte also $(r_1,s_1)\equiv(r_2,s_2)$ und $(r_2,s_2)\equiv(r_3,s_3)$ für 
 	$r_1,r_2,r_3\in R$ und $s_1,s_2,s_3\in S$, also gilt $r_1 s_2= r_2 s_1$ und 
 	$r_2 s_3 =r_3 s_2$ und damit $r_1 s_2 r_2 s_3 =r_2 s_1 r_3 s_2$. Falls $r_2=0$ 
-	ist klar das $(r_1,s_1)\equiv(r_3,s_3)$ gilt, falls $r_2\neq 0$ können wir $r_2$ aus der Gleichung streichen und es folgt 
+	ist klar, dass $(r_1,s_1)\equiv(r_3,s_3)$ gilt, falls $r_2\neq 0$ können wir $r_2$ aus der Gleichung streichen und es folgt 
 	$r_1 s_3=r_3 s_1$ und damit $(r_1,s_1)\equiv(r_3,s_3)$. \\
 	Wir schreiben $\frac{r}{s}$ für die Äquivalenzklasse von $(r,s)$ und $S^{-1}R$ 
-	für die Menge aller Äquivalenzklassen. Wir können $S^{-1}$ nun eine Ringstruktur 
-	geben, indem wir die Addition und Multiplikation wie folgt definieren
+	für die Menge aller Äquivalenzklassen. Wir können $S^{-1}R$ nun eine Ringstruktur geben, indem wir die Addition und Multiplikation wie folgt definieren
 	\begin{align*}
 		\left(\frac{r_1}{s_1}\right)+\left(\frac{r_2}{s_2}\right)
 		&=\left(\frac{r_1s_2+r_2s_1}{s_1s_2}\right) \\
@@ -561,8 +561,41 @@
 		&=\left(\frac{r_1r_2}{s_1s_2}\right)
 	\end{align*}
 	für alle $r_1,r_2\in R$ und $s_1,s_2\in S$. Wir stellen fest, dass 
-	$S^{-1}R$ sogar ein kommutativer Ring mit Eins ist. \\
-	Nun zurück zu unserem Problem. Es lässt sich nun folgendes Resultat zeigen, siehe dazu auch 
+	$S^{-1}R$ sogar ein kommutativer Ring mit Eins ist. Außerdem ist 
+	$S^{-1}R$ gerade der Quotioentenkörper von $R$, falls $S=R\setminus\{0\}$ ist. Betrachten wir also beispielweise den Ring 
+	$\setZ$ mit der multiplikativen Teilmenge $S=\setZ\setminus\{0\}$, so 
+	ist $S^{-1}\setZ$ gerade der Quotientenkörper von $\setZ$, also 
+	$\setQ$. Wir können diese Konstruktion nun auch auf Moduln fortführen. 
+	Haben wir ein $R$-Modul $M$, dann definieren wir 
+	die Äquivalenzrelation wie oben, nur auf $M$, und erhalten die 
+	Äquivalenzklassen $\frac{m}{s}$ für Elemente $m\in M$ und $s\in S$. 
+	Dann ist $S^{-1}M$ gerade die Menge solcher Brüche und wir erhalten 
+	mit $S^{-1}M$ ein $S^{-1}R$-Modul mit der natürlichen Definition 
+	der Addition und skalaren Multiplikation.\\
+	Nun zurück zu unserem Problem. Wir wollen nun wissen, was passiert wenn 
+	wir in dem $\setZ$-Modul $\setR /\pi\setZ$ Brüche einführen. Um das 
+	zu verstehen, hilft uns das folgende Resultat.
+	
+	\begin{corollary}
+		Sei $R$ ein Integritätsring, $M$ ein $R$-Modul und 
+		$N$ ein $R$-Untermodul von $M$. Weiter sei $S$ eine multiplikative 
+		Teilmenge von $R$, dann sind die $S^{-1}R$-Moduln $S^{-1}(M/N)$ und 
+		$S^{-1}M/S^{-1}N$ isomorph.
+	\end{corollary}
+	
+	\begin{proof}
+		
+	\end{proof}
+	
+	Wenden wir das nun auf das $\setZ$-Modul $\setR /\pi\setZ$ mit 
+	$S=\setZ\{0\}$ an, dann sind die $\setZ\setminus\{0\}^{-1}\setZ$- also $\setQ$-Moduln 
+	$\setZ\setminus\{0\}^{-1}(\setR /\pi\setZ)$ und 
+	$\setZ\setminus\{0\}^{-1}\setR /\setZ\setminus\{0\}^{-1}\pi\setZ$ 
+	isomorph. Wir bemerken, dass $\setZ\setminus\{0\}^{-1}\setR=\setR$ und 
+	$\setZ\setminus\{0\}^{-1}\pi\setZ=\pi\setQ$. Damit gilt also 
+	\[ \setZ\setminus\{0\}^{-1}(\setR /\pi\setZ)\cong \setR/\pi\setQ.\]
+	
+	Es lässt sich nun folgendes Resultat zeigen, siehe dazu auch 
 	
 	%...Atiyah MacDonald introduction to commutative algebra Proposition 3.7
 	
@@ -575,26 +608,53 @@
 	\end{proposition}
 	
 	Dies lässt sich nun auf unser Tensorprodukt 
-	$\setR\otimes_{\setZ}\setR /\pi\setZ$ anwenden, indem wir $R=\setZ$, $M=\setR$ und $N=\setR /\pi\setZ$ setzen und mit $S=\setN$ ergibt sich 
+	$\setR\otimes_{\setZ}\setR /\pi\setZ$ anwenden, indem wir $R=\setZ$, $M=\setR$ und $N=\setR /\pi\setZ$ setzen und mit 
+	$S=\setZ\setminus\{0\}$ und dem obigen Resultat ergibt sich 
 	dann
 	\begin{align*}
-		S^{-1}R=\setN^{-1}\setZ=\setQ,\qquad S^{-1}M=\setN^{-1}\setR=\setR
-		\quad\text{ und }\quad S^{-1}N=\setN^{-1}\setR /\pi\setZ=\setR /\pi\setQ.
+		S^{-1}R=\setQ,\qquad S^{-1}M=\setR
+		\quad\text{ und }\quad S^{-1}N=\setR /\pi\setQ.
 	\end{align*}
-	Mit der Proposition 
+	Weiterhin gilt
+	\[S^{-1}(M\otimes_R N)\cong \setR/\pi\setQ,\]
+	denn mit der Bilinearität des Tensorprodukt gilt für 
+	\begin{align*}
+		\setZ\setminus\{0\}^{-1}(\setR /\pi\setZ)&\simeq
+		\left.\left\langle \left\{\frac{r\otimes s}{z}\right\vert
+		 r\in\setR,s\in\setR/\pi\setZ,s\in\setZ\setminus\{0\}^{-1}\right\}\right\rangle \\
+		 &\simeq \left.\left\langle \left\{\frac{r}{z}\otimes s\right\vert r\in\setR,s\in\setR/\pi\setZ,s\in\setZ\setminus\{0\}^{-1}\right\}
+		 \right\rangle \\
+		 &\simeq \setZ\setminus\{0\}^{-1}\setR\ \ \otimes_\setZ\  \setR/\pi\setZ \\
+		 &\simeq \setR\otimes_\setZ \setR/\pi\setZ,
+	\end{align*}
+	wobei wir mit $\langle\ \cdot\ \rangle$ hier das Erzeugnis meinen.
+	Insgesamt erhalten wir also
+	\[\setR\otimes_\setZ\setR/\pi\setZ\simeq\setR\otimes_\setQ\setR/\pi\setQ.\]
+	Wir können die Dehn-Invariante also auch auf dem $\setQ$-Vektorraum 
+	$\setR\otimes_\setQ\setR/\pi\setQ$ betrachten, was uns zu der folgenden 
+	Tatsache führt.
+	\begin{theorem} \label{bem:dehn=0}
+		Seien $x\in \setR$ und $y\in\setR/\pi\setQ$ Elemente, dann gilt
+		\[ x\otimes y =0 \quad \Leftrightarrow \quad x=0 \ \lor\ y\in\pi\setQ.\]
+	\end{theorem}
 	
+	\begin{proof}
+		Die Rückrichtung ist schnell gezeigt, 
+		denn für $x\in\setR$ mit $x\neq 0$ und $y=\pi\frac{p}{q}\in\setQ$, wobei $p\in\setZ$ und $q\in\setN$, gilt
+		\[ x\otimes y =x\otimes\pi \frac{p}{q} =xp\otimes\frac{\pi}{q} =q\frac{xp}{q}
+		\otimes\frac{\pi}{q} = \frac{xp}{q}\otimes\pi =\frac{xp}{q}\otimes 0=0.\]
+		Dabei haben wir $p$ zuerst nach links und danach $q$ nach rechts bewegt. \\
+		Zur Hinrichtung:
+	\end{proof}
 	
-	\begin{remark} \label{bem:dehn=0}
-		Wir stellen fest, dass für alle $x\in \setR$ und $y\in\setR/\pi\setZ$ gilt
-		\[ x\otimes_{\setZ}\pi y =0 \quad \Leftrightarrow \quad x=0 \ \lor\ y\in\setQ, \]
-		denn für $x\in\setR$ mit $x\neq 0$ und $y=\frac{p}{q}\in\setQ$, wobei $p\in\setZ$ und $q\in\setN$, gilt
-		\[ x\otimes_{\setZ} \pi y =x\otimes_{\setZ}\pi \frac{p}{q} =xp\otimes_{\setZ}\frac{\pi}{q} =q\frac{xp}{q}
-		\otimes_{\setZ}\frac{\pi}{q} = \frac{xp}{q}\otimes_{\setZ}\pi =\frac{xp}{q}\otimes_{\setZ} 0=0.\]
-		Dabei haben wir $x\in\setZ$ zuerst nach links und danach $y\in\setN$ nach rechts bewegt. Folglich ist die 
-		Dehn-Invariante eines Polyeders $0$, falls dessen Diederwinkel alle in $\pi\setQ$ liegen. \\
-		Zusätzlich können wir folgern, dass für alle $x\in\setR$ und $y\in\setR/\pi\setZ$ gilt
-		\[ x\otimes_{\setZ}y\neq0\quad\Leftrightarrow\quad x\neq 0 \ \land\ y\notin\pi\setQ. \]
-	\end{remark}
+	Wir erhalten also auch:
+	
+	\begin{corollary}
+		Seien $x\in\setR$ und $y\in\setR/\pi\setQ$ Elemente, dann gilt
+		\[ x\otimes y\neq0\quad\Leftrightarrow\quad x\neq 0 \ \land\ y\notin\pi\setQ. \]
+	\end{corollary}
+	
+	Folglich ist die Dehn-Invariante eines Polyeders $0$, falls dessen Diederwinkel alle in $\pi\setQ$ liegen. \\
 	
 	Wir können nun die Dehn-Invarianten einiger Polyeder berechnen.
 	
