@@ -3,8 +3,8 @@
 \usepackage{xcolor}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage[paper=a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
-%\usepackage{geometry}
+%\usepackage[paper=a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[twoside,lmargin=3.5cm,rmargin=2.5cm]{geometry}
 \usepackage{hyperref}
 \hypersetup{bookmarksnumbered}
 
@@ -14,6 +14,7 @@
 \usepackage{graphicx}
 \usepackage{bigints}
 \usepackage{bibgerm}
+\usepackage[onehalfspacing]{setspace}
 
 \usetikzlibrary{positioning}
 %\usetikzlibrary{arrows}
@@ -41,17 +42,92 @@
 \newtheorem*{repetition}{Wiederholung}
 \newtheorem*{remind}{Erinnerung}
 
-\title{Hilberts drittes Problems}
-\author{Jannis Klingler}
-\date{\today}
 
 \begin{document}
 
-	\maketitle
+	\setlength{\parindent}{0em}
+	\onehalfspacing
+	\begin{titlepage}
+		\begin{center}
+			\huge\textbf{Hilberts drittes Problem}\\
+			\vspace{1.2cm}
+			\LARGE\textbf{{Jannis Klingler}}\\
+			\vspace{0.5cm}
+			\LARGE\textbf{{Bachelorarbeit}}\\
+			\vspace{0.5cm}
+			\normalsize
+			Zur Erlangung des Akademischen Grades\\
+			Bachelor of Science\\
+			\vspace{0.3cm}
+			vorgelegt am 27. Februar 2020 \\
+			\vspace{0.7cm}
+			
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.07]{UniFreiburgLogo.png}
+			\end{figure}
+			
+			\vspace{0.7cm}
+			\large \textbf{Albert-Ludwigs-Universität Freiburg}\\
+			\vspace{0.2cm}
+			\large {Institut für Mathematik}\\
+			\vspace{1cm}
+			\large {Seminar: Numberphile}\\
+			\large {Betreuung: Dr. Oliver Bräunling}\\
+			\vspace{1.8cm}
+		\end{center}
+	\end{titlepage}
+	
+	\thispagestyle{empty}
+	\vspace*{17cm}
+	\begin{tabular}{ll}
+		Vorgelegt von: & Jannis Klingler \\
+		& Unterer Mühlenweg 57\\
+		& 79114 Freiburg im Breisgau\\
+		& jannis-klingler@web.de\\
+		Matrikelnummer: & {4331982} \\
+		Studiengang: & {Mathematik}\\
+		Nebenfach: & {Volkswirtschaftslehre}\\
+		Bearbeitungszeitraum: & {27.11.2019 bis 27.02.2020} \\
+	\end{tabular}\\
+	
+	\thispagestyle{empty}
+		\vspace*{1cm}
+		\LARGE\textsc{Erklärung zur Bachelorarbeit}
+		
+		\vspace{1.5cm}
+		
+		\normalsize 
+		Hiermit versichere ich, dass die vorliegende Arbeit von mir selbstständig verfasst wurde und dass keine anderen als die angegebenen Quellen und Hilfsmittel benutzt wurden.\\ Sämtliche Stellen der Arbeit, die im Wortlaut oder dem Sinn nach Publikationen anderer Autoren entsprechen wurden gekennzeichnet.\\
+		Diese Erklärung bezieht sich auch auf in der Arbeit enthaltene Grafiken und bildliche Darstellungen.\\
+		Darüber hinaus versichere ich, dass diese Arbeit nicht und auch nicht auszugsweise bereits für eine andere Prüfung angefertigt wurde. 
+		\ \\
+		\ \\
+		\ \\
+		\begin{minipage}{0.57\textwidth}
+			\begin{tabular}{@{}l@{}}\hline
+				Datum, Ort \hspace{4.2cm}
+			\end{tabular}
+		\end{minipage}%
+		\hfill
+		\begin{minipage}{0.43\textwidth} 
+			\begin{tabular}{@{}l@{}}\hline
+				Unterschrift \hspace{4.2cm}
+			\end{tabular}
+		\end{minipage}
+		
+	\newpage \ 
+	\thispagestyle{empty}
+	\newpage
+	\thispagestyle{empty}
 	
 	\tableofcontents
 	
+	
+	\newpage \
+	\thispagestyle{empty} 
 	\newpage
+	\setcounter{page}{1}
 	
 	\section{Zerlegungsgleichheit und Ergänzungsgleichheit von Polytopen}
 	
@@ -649,8 +725,56 @@
 		\[ x\otimes y =x\otimes\pi \frac{p}{q} =xp\otimes\frac{\pi}{q} =q\frac{xp}{q}
 		\otimes\frac{\pi}{q} = \frac{xp}{q}\otimes\pi =\frac{xp}{q}\otimes 0=0.\]
 		Dabei haben wir $p$ zuerst nach links und danach $q$ nach rechts bewegt. \\
-		Zur Hinrichtung: 
+		Zur Hinrichtung: Betrachte $\pi\setQ$ ist $1$-dimensionaler $\setQ$-
+		Vektorraum mit Basis $\{\pi\}$ und $\pi\setQ\subset\setR$ ist 
+		Untervektorraum von $\setR$ als $\setQ$-Vektorraum. Wir können also nun 
+		unsere Basis mit dem Lemma von Zorn auf ganz $\setR$ fortsetzen. 
+		Also hat $\setR$ als $\setQ$-Vektorraum die Basis
+		\[\{\pi\}\dot\bigcup B,\]
+		wobei $B$ die Menge ist mit der wir $\{\pi\}$ zu einer Basis von $\setR$ 
+		ergänzen. Weiterhin gilt auch
+		\begin{align*}
+			\setR&\simeq\pi\setQ\oplus\bigoplus_{b\in B}b\setQ\qquad\text{und}\\
+			\setR /\pi\setQ&\simeq\qquad\ \ \bigoplus_{b\in B}b\setQ.
+		\end{align*}
+		Damit ist
+		\[\left\{(b_1\otimes b_2)\left\vert b_1\in\pi\setQ\oplus\bigoplus_{b\in B}b\setQ,\ b_2\in \bigoplus_{b\in B}b\setQ\right\}\right.\]
+		eine Basis von $\setR\otimes_\setQ\setR/\pi\setQ$. \\
+		Zwei Elemente $x\in\setR$ und $y\in\setR/\pi\setQ$ haben also die 
+		Darstellung
+		\begin{align*}
+			x&=\alpha\pi+\sum_{b\in B}\beta_b b \\
+			y&= \qquad\ \sum_{b'\in B}\gamma_{b'}b,
+		\end{align*}
+		wobei $\alpha,\beta_b,\gamma_{b'}\in\setQ$ für alle $b,b'\in B$ sind. 
+		Falls nun $x\otimes y=0$ gilt also
+		\[0=x\otimes y=\left(\alpha\pi+\sum_{b\in B}\beta_b b\right)\otimes
+		\left(\sum_{b'\in B}\gamma_{b'}b\right)=\sum_{b'\in 
+		B}\alpha\gamma_{b'}(\pi\otimes b')+\sum_{\genfrac{}{}{0pt}{1}{b\in B}
+		{b'\in B}} \beta_b\gamma_{b'}(b\otimes b').\]
+		Da $(\pi\otimes b')$ und $(b\otimes b')$ linear unabhängig sind für alle  
+		$b,b'\in B$ folgt
+		\[\alpha\gamma_{b'}=0\qquad\text{und}\qquad \beta_b\gamma_{b'}=0\]
+		für alle $b,b'\in B$. 
+		\begin{enumerate}
+			\item Falls $\alpha\neq 0$, dann sind $\gamma_{b'}=0$ für alle 
+			$b'\in B$ und damit ist $y=0$, also $y\in \pi\setQ$.
+			\item Falls $\alpha=0$, dann sind die $\gamma_{b'}$ beliebig. 
+			Angenommen es gibt also ein $b\in B$, sd. $\beta_b \neq 0$, dann 
+			muss $\gamma_{b'}=0$ für alle $b'\in B$ damit $\beta_b\gamma_{b'}=0$ 
+			für alle $b'\in B$ gilt. Das wiederum bedeutet $y=0$ und wir sind hier 
+			fertig. Falls also $\beta_b=0$ für alle $b\in B$, folgt mit $\alpha=0$, 
+			dass $x=0$.
+		\end{enumerate}
+		Damit haben wir die Aussage gezeigt.
 	\end{proof}
+
+	Wir können bemerken, dass wir für die Hinrichtung also das Auswahl-Axiom 
+	benutzt haben. Jedoch ist klar, dass wir bei einer konkreten Berechnung der 
+	Dehn-Invariante nur endlich viele Polyeder haben, diese somit auch 
+	nur einen endlich-dimensionalen $\setQ$-Untervektorraum von $\setR$ aufspannen und wir somit nicht auf das Auswahl-Axiom angewiesen sind. Wir 
+	werden später sehen, dass wir im Beweis der Bricardschen Bedingung 
+	vollkommen auf dieses verzichten können.
 	
 	Wir erhalten also auch:
 	
@@ -795,5 +919,9 @@
 	%\subsection{Zerlegungsgleichheit im Sphärischen}
 	%
 	%\subsection{Zerlegungsgleichheit im Hyperbolischen}
-	%
+	%	
+	\cite[def 3.1]{Boltianskii}
+	\newpage
+	\bibliographystyle{plain}
+	\bibliography{MeineBib}
 \end{document}
