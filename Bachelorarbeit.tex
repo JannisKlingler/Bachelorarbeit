@@ -83,7 +83,8 @@
 	\begin{tabular}{ll}
 		Vorgelegt von: & Jannis Klingler \\
 		& Unterer Mühlenweg 57\\
-		& 79114 Freiburg im Breisgau\\
+		& 79114 Freiburg im Breisgau
+		\\
 		& jannis-klingler@web.de\\
 		Matrikelnummer: & {4331982} \\
 		Studiengang: & {Mathematik}\\
@@ -210,8 +211,9 @@
 	\end{proposition}
 	
 	\begin{proof}
-		Da sich eine Isometrie darstellen lässt als $f(x)=Ux+a$ für eine orthogonale Matrix $U\in O(d)$ und ein 
-		$a\in\setR^d$ ergibt sich die Aussage mit der Transformationsformel.
+		Da sich eine Isometrie für alle $x\in\setR$ darstellen lässt als $f(x)=Ux+a$ für eine orthogonale Matrix $U\in O(d)$ und ein 
+		$a\in\setR^d$ ergibt sich die Aussage mit der Transformationsformel 
+		aus der Analysis.
 	\end{proof}
 	
 	\begin{lemma}\label{lemma:nullmenge}
@@ -221,9 +223,10 @@
 
 	\begin{proof}
 		Sei $\setR^d$ der zugrundeliegende Vektorraum und $vol=vol_d$ das $d$-dimensionale 
-		Lebesgue-Maß. Mit der Siebformel erhalten wir nun
+		Lebesgue-Maß. Seien weiter $P$ und $Q$ zwei Polytope in $\setR^d$ 
+		mit $k:=dim(P\cap Q)<d$. Mit der Siebformel erhalten wir nun
 		\[vol(P+Q)=vol(P)+vol(Q)-vol(P\cap Q).\]
-		Wir wollen also zeigen, dass der Schnitt von niedrigerdimensionalen Mengen eine Nullmenge bezüglich unseres Maßes ist. $P$ und $Q$ sind nun zwei Polytope in $\setR^d$ mit $k:=dim(P\cap Q)<d$. 
+		Wir wollen also zeigen, dass der Schnitt von $P$ und $Q$ eine Nullmenge bezüglich unseres Maßes ist. 
 		Wir definieren $\mathfrak{L}:=P\cap Q \subset \setR^k$. Sei nun  $M:=\mathfrak{L}\times[0,1]^{d-k}\subset\setR^d$ ein $d$-dimensionaler Quader, der 
 		$\mathfrak{L}$ einschließt. Für die Aufzählung $\mathfrak{L}_q:=\mathfrak{L}+(0,q)$, wobei $q\in(\setQ\cap[0,1])^{d-k}$, gilt dann mit der $\sigma$-Additivität des Lebesgue-Maßes
 		\begin{align}
@@ -236,7 +239,7 @@
 		\[vol(P+Q)=vol(P)+vol(Q).\]
 	\end{proof}
 
-	Wir stellen fest, dass dieser Beweis über eine beliebige abzählbare Anzahl von disjunkten 
+	Wir stellen fest, dass dieser Beweis über eine beliebige endliche Anzahl von disjunkten 
 	Polytopen funktioniert. Mit diesem Resultat ergibt sich die folgende Proposition.
 	
 	\begin{proposition} \label{prop:zerl,vol}
@@ -245,8 +248,7 @@
 	
 	\begin{proof}
 		Seien $P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots+Q_n$ die Zerlegungen von $P$ und 
-		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Wir erhalten mit Proposition \ref{prop:cong,vol} und Lemma \ref{lemma:
-			nullmenge} 
+		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Wir erhalten mit Proposition \ref{prop:cong,vol} und Lemma \ref{lemma:nullmenge} 
 		\[vol(P)=vol(P_1+\ldots+P_n)=\sum_{i=1}^n vol(P_i)=\sum_{i=1}^n vol(Q_i)=vol(Q_1+\ldots+Q_n)=vol(Q).\]
 	\end{proof}
 
@@ -660,18 +662,17 @@
 	\end{corollary}
 	
 	\begin{proof}
-		Wir wenden hierfür $S^{-1}$ auf die exakte Sequenz
-		\[0\to N\to N\to M/N\to 0\]
-		an.
+		Wir betrachten hierzu die exakte Sequenz
+		\[0\to N\to N\to M/N\to 0.\]
 	\end{proof}
 	
 	Wenden wir das nun auf das $\setZ$-Modul $\setR /\pi\setZ$ mit 
-	$S=\setZ\{0\}$ an, dann sind die $\setZ\setminus\{0\}^{-1}\setZ$- also $\setQ$-Moduln 
-	$\setZ\setminus\{0\}^{-1}(\setR /\pi\setZ)$ und 
-	$\setZ\setminus\{0\}^{-1}\setR /\setZ\setminus\{0\}^{-1}\pi\setZ$ 
-	isomorph. Wir bemerken, dass $\setZ\setminus\{0\}^{-1}\setR=\setR$ und 
-	$\setZ\setminus\{0\}^{-1}\pi\setZ=\pi\setQ$. Damit gilt also 
-	\[ \setZ\setminus\{0\}^{-1}(\setR /\pi\setZ)\cong \setR/\pi\setQ.\]
+	$S=\setZ\setminus\{0\}$ an, dann sind die $(\setZ\setminus\{0\})^{-1}\setZ$- also $\setQ$-Moduln 
+	$(\setZ\setminus\{0\})^{-1}(\setR /\pi\setZ)$ und 
+	$\left((\setZ\setminus\{0\})^{-1}\setR\right) /\left((\setZ\setminus\{0\})^{-1}\pi\setZ\right)$ 
+	isomorph. Wir bemerken, dass $(\setZ\setminus\{0\})^{-1}\setR\simeq\setR$ und 
+	$(\setZ\setminus\{0\})^{-1}\pi\setZ\simeq\pi\setQ$. Damit gilt also 
+	\[ (\setZ\setminus\{0\})^{-1}(\setR /\pi\setZ)\cong \setR/\pi\setQ.\]
 	
 	Es lässt sich nun folgendes Resultat zeigen, siehe dazu auch 
 	
@@ -697,12 +698,12 @@
 	\[S^{-1}(M\otimes_R N)\simeq \setR\otimes_\setZ\setR/\pi\setZ,\]
 	denn mit der Bilinearität des Tensorprodukt gilt für 
 	\begin{align*}
-		\setZ\setminus\{0\}^{-1}(\setR /\pi\setZ)&\simeq
+		(\setZ\setminus\{0\})^{-1}(\setR /\pi\setZ)&\simeq
 		\left.\left\langle \left\{\frac{r\otimes s}{z}\right\vert
-		 r\in\setR,s\in\setR/\pi\setZ,s\in\setZ\setminus\{0\}^{-1}\right\}\right\rangle \\
-		 &\simeq \left.\left\langle \left\{\frac{r}{z}\otimes s\right\vert r\in\setR,s\in\setR/\pi\setZ,s\in\setZ\setminus\{0\}^{-1}\right\}
+		 r\in\setR,s\in\setR/\pi\setZ,s\in\setZ\setminus\{0\}\right\}\right\rangle \\
+		 &\simeq \left.\left\langle \left\{\frac{r}{z}\otimes s\right\vert r\in\setR,s\in\setR/\pi\setZ,s\in\setZ\setminus\{0\}\right\}
 		 \right\rangle \\
-		 &\simeq \setZ\setminus\{0\}^{-1}\setR\ \ \otimes_\setZ\  \setR/\pi\setZ \\
+		 &\simeq (\setZ\setminus\{0\})^{-1}\setR\ \ \otimes_\setZ\  \setR/\pi\setZ \\
 		 &\simeq \setR\otimes_\setZ \setR/\pi\setZ,
 	\end{align*}
 	wobei wir mit $\langle\ \cdot\ \rangle$ hier das Erzeugnis meinen.
