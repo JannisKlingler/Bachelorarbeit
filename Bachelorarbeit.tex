@@ -649,21 +649,74 @@
 	Äquivalenzklassen $\frac{m}{s}$ für Elemente $m\in M$ und $s\in S$. 
 	Dann ist $S^{-1}M$ gerade die Menge solcher Brüche und wir erhalten 
 	mit $S^{-1}M$ ein $S^{-1}R$-Modul mit der natürlichen Definition 
-	der Addition und skalaren Multiplikation.\\
+	der Addition und skalaren Multiplikation. Haben wir nun einen 
+	$R$-Modulhomomorphismus $f:M\to N$, dann führt uns dies zu einem 
+	$S^{-1}R$-Modulhomomorphismus $S^{-1}f:S^{-1}M\to S^{-1}N$, indem $S^{-1}f$ 
+	Elemente $\frac{m}{s}$ auf $\frac{f(m)}{s}$ abbildet. Damit gilt also 
+	\[S^{-1}(f\circ g)=(S^{-1}f)\circ(S^{-1}g),\]
+	für Modulhomomorphismen $f$ und $g$.
+	
+	\begin{lemma} \label{lemma:Buch;exakt}
+		Sei $R$ ein Integritätsring und $M,M_1,M_2$ seien $R$-Moduln. Weiter 
+		sei die Sequenz
+		\begin{align}
+			M_1\xrightarrow{f}M\xrightarrow{g}M_2 \label{lemma:exakt;1}
+		\end{align}
+		exakt in $M$. Dann ist die Sequenz
+		\[S^{-1}M_1 \xrightarrow{S^{-1}f}S^{-1}M\xrightarrow{S^{-1}g}S^{-1}M_2\]
+		exakt in $S^{-1}M$.
+	\end{lemma}
+	
+	\begin{proof}
+		Sei $m_1\in M_1$ dann gilt $f(m_1)\in im(f)=ker(g)$, wegen der Exaktheit 
+		von \ref{lemma:exakt;1} in $M$ und damit ist $f(m_1)=0$. Also gilt 
+		$f\circ g=0$ und weiterhin
+		\[S^{-1}f \circ S^{-1}g = S^{-1}(f\circ g)=S^{-1}(0)=0.\]
+		Wir erhalten also
+		\[im(S^{-1}f)\subset ker(S^{-1}g).\]
+		Um die umgekehrte Inklusion zu zeigen wählen wir 
+		$\frac{m}{s}\in ker(S^{-1}g)$, das heißt $\frac{g(m)}{s}=0$ in $S^{-1}M_2$. 
+		Das wiederum bedeutet, dass $g(m)=0$ in $M_2$, da $R$ ein Integritätsring 
+		ist, also auch $m\in ker(g)=im(f)$, wegen der Exaktheit von $M$ in 
+		\ref{lemma:exakt;1}. Also gibt es ein $m_1\in M_1$ mit $f(m_1)=m$ und damit 
+		gilt
+		\[\frac{m}{s}=\frac{f(m_1)}{s}=(S^{-1}f)\left(\frac{m_1}{s}\right)\in im(S^{-1}f).\]
+		Es folgt 
+		\[ker(S^{-1}g)\subset im(S^{-1}f).\]
+	\end{proof}
+
 	Nun zurück zu unserem Problem. Wir wollen nun wissen, was passiert wenn 
 	wir in dem $\setZ$-Modul $\setR /\pi\setZ$ Brüche einführen. Um das 
 	zu verstehen, hilft uns das folgende Resultat.
 	
-	\begin{corollary}
+	\begin{lemma}
 		Sei $R$ ein Integritätsring, $M$ ein $R$-Modul und 
 		$N$ ein $R$-Untermodul von $M$. Weiter sei $S$ eine multiplikative 
 		Teilmenge von $R$, dann sind die $S^{-1}R$-Moduln $S^{-1}(M/N)$ und 
 		$S^{-1}M/S^{-1}N$ isomorph.
-	\end{corollary}
+	\end{lemma}
 	
 	\begin{proof}
-		Wir betrachten hierzu die exakte Sequenz
-		\[0\to N\to N\to M/N\to 0.\]
+		Wir betrachten hierzu die Sequenz
+		\[0\to N\xrightarrow{f} M\xrightarrow{g} M/N\xrightarrow{h} 0,\]
+		wobei $f,g$ und $h$ hier Modulhomomorphismen sind. Die Funktion 
+		$f$ bettet das Untermodul $N$ in $M$ ein, also gilt 
+		$im(f)=N$. Weiter bildet die Funktion $g$ gerade die Elemente aus $M$ 
+		auf deren Äquivalenzklassen in $M/N$ ab und da für alle $n\in N\subset M$ 
+		gilt, dass $g(n)=[n]=0$ in $M/N$, folgt auch, dass $ker(g)=N$. Damit 
+		ist die Sequenz in $M$ exakt. \\
+		Weiter ist $im(g)=M/N$ und da $h$ die Nullabbildung ist, gilt $ker(h)=M/N$. 
+		Also ist die Sequenz auch in $M/N$ exakt. \\
+		Wir wenden nun $S^{-1}$ auf die exakte Sequenz an, dann ist die Sequenz
+		\begin{align}
+			0\to S^{-1}N \xrightarrow{S^{-1}f} S^{-1}M \xrightarrow{S^{-1}g}
+			S^{-1}(M/N)\to 0 \label{lemma:Brüche;1}
+		\end{align}
+		mit Lemma \ref{lemma:Buch;exakt} exakt. \\
+		Wir wollen nun den Homomorphiesatz auf den Modulhomomorphismus 
+		$S^{-1}g$ anwenden und erhalten mit der Exaktheit von \ref{lemma:Brüche;1} 
+		in $S^{-1}M$
+		\[ S^{-1}(M/N)=im(S^{-1}g)\simeq S^{-1}M/ker(S^{-1}g) =S^{-1}M/im(S^{-1}f)=S^{-1}M/S^{-1}N.\]
 	\end{proof}
 	
 	Wenden wir das nun auf das $\setZ$-Modul $\setR /\pi\setZ$ mit 
@@ -673,6 +726,34 @@
 	isomorph. Wir bemerken, dass $(\setZ\setminus\{0\})^{-1}\setR\simeq\setR$ und 
 	$(\setZ\setminus\{0\})^{-1}\pi\setZ\simeq\pi\setQ$. Damit gilt also 
 	\[ (\setZ\setminus\{0\})^{-1}(\setR /\pi\setZ)\cong \setR/\pi\setQ.\]
+	
+	\begin{lemma}
+		Sei $R$ ein Integritätsring und $M$ ein $R$-Modul. Dann gibt es einen 
+		eindeutigen Isomorphismus
+		\[f:S^{-1}R\otimes_R M\to S^{-1}M\]
+		zwischen den $S^{-1}R$-Moduln, sd.
+		\begin{align}
+			f\left(\frac{r}{s}\otimes m\right)=\frac{rm}{s} \label{lemma:lociso;1}
+		\end{align}
+		für alle $r\in R$, $m\in M$ und $s\in S$.
+	\end{lemma}
+	
+	\begin{proof}
+		Die Abbildung $g:S^{-1}R\times M\to S^{-1}M$ mit $g\left(\frac{r}{s},m\right)=\frac{rm}{s}$ ist bilinear, da 
+		\begin{align*}
+			g\left(\lambda_1\left(\frac{r_1}{s_1}+\frac{r_2}{s_2}\right),
+			\lambda_2 (m_1+m_2)\right)&=g\left(\frac{\lambda_1 (r_1 s_2+r_2
+			 s_1)}{s_1s_2},\lambda_2(m_1+m_2)\right)
+		\end{align*}
+		\begin{align*}
+			&=\frac{\lambda_1(r_1s_2+r_2s_1)\lambda_2(m_1+m_2)}{s_1s_2}\\
+			&=\lambda_1\lambda_2\left(\frac{r_1(m_1+m_2)}{s_1}+
+			\frac{r_2(m_1+m_2)}{s_2}\right) \\
+			&=\lambda_1\lambda_2 \left(g\left(\frac{r_1}{s_1},m_1\right)
+			+g\left(\frac{r_1}{s_1},m_2\right)+g\left(\frac{r_2}{s_2},m_1\right)+
+			g\left(\frac{r_2}{s_2},m_1\right)\right)
+		\end{align*}
+	\end{proof}
 	
 	Es lässt sich nun folgendes Resultat zeigen, siehe dazu auch 
 	
@@ -770,7 +851,7 @@
 		Damit haben wir die Aussage gezeigt.
 	\end{proof}
 
-	Wir können bemerken, dass wir für die Hinrichtung also das Auswahl-Axiom 
+	Wir bemerken, dass wir für die Hinrichtung also das Auswahl-Axiom 
 	benutzt haben. Jedoch ist klar, dass wir bei einer konkreten Berechnung der 
 	Dehn-Invariante nur endlich viele Polyeder haben, diese somit auch 
 	nur einen endlich-dimensionalen $\setQ$-Untervektorraum von $\setR$ aufspannen und wir somit nicht auf das Auswahl-Axiom angewiesen sind. Wir 
