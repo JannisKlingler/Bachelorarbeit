@@ -509,7 +509,7 @@
 	%	Der $R$-Modul $M\otimes N$ ist bis auf Isomorphie eindeutig.
 	%\end{proposition}
 	
-	\begin{proposition}[Universelle Eigenschaft]
+	\begin{proposition}[Universelle Eigenschaft] \label{prop:univeig}
 		Sei $R$ ein kommutativer Ring mit Eins und seien $M$ und $N$ zwei $R$-Moduln. Dann ist das 
 		\textsl{Tensorprodukt} $M\otimes_R N$ genau derjenige $R$-Modul zu dem es eine bilineare Abbildung 
 		$\otimes: M\times N \to M\otimes_R N$ gibt, die die folgende universelle Eigenschaft erfüllt:
@@ -667,6 +667,8 @@
 		exakt in $S^{-1}M$.
 	\end{lemma}
 	
+	Siehe dazu auch \cite[Proposition 3.3]{introductiontocomalg}.
+	
 	\begin{proof}
 		Sei $m_1\in M_1$ dann gilt $f(m_1)\in im(f)=ker(g)$, wegen der Exaktheit 
 		von \ref{lemma:exakt;1} in $M$ und damit ist $f(m_1)=0$. Also gilt 
@@ -695,6 +697,8 @@
 		Teilmenge von $R$, dann sind die $S^{-1}R$-Moduln $S^{-1}(M/N)$ und 
 		$S^{-1}M/S^{-1}N$ isomorph.
 	\end{lemma}
+	
+	Siehe \cite[Korollar 3.4 (iii)]{introductiontocomalg}.
 	
 	\begin{proof}
 		Wir betrachten hierzu die Sequenz
@@ -727,7 +731,7 @@
 	$(\setZ\setminus\{0\})^{-1}\pi\setZ\simeq\pi\setQ$. Damit gilt also 
 	\[ (\setZ\setminus\{0\})^{-1}(\setR /\pi\setZ)\cong \setR/\pi\setQ.\]
 	
-	\begin{lemma}
+	\begin{lemma} \label{lemma:lociso}
 		Sei $R$ ein Integritätsring und $M$ ein $R$-Modul. Dann gibt es einen 
 		eindeutigen Isomorphismus
 		\[f:S^{-1}R\otimes_R M\to S^{-1}M\]
@@ -738,14 +742,14 @@
 		für alle $r\in R$, $m\in M$ und $s\in S$.
 	\end{lemma}
 	
+	Der Beweis richtet sich nach \cite[Proposition 3.5]{introductiontocomalg}.
+	
 	\begin{proof}
 		Die Abbildung $g:S^{-1}R\times M\to S^{-1}M$ mit $g\left(\frac{r}{s},m\right)=\frac{rm}{s}$ ist bilinear, da 
 		\begin{align*}
-			g\left(\lambda_1\left(\frac{r_1}{s_1}+\frac{r_2}{s_2}\right),
-			\lambda_2 (m_1+m_2)\right)&=g\left(\frac{\lambda_1 (r_1 s_2+r_2
-			 s_1)}{s_1s_2},\lambda_2(m_1+m_2)\right)
-		\end{align*}
-		\begin{align*}
+			&g\left(\lambda_1\left(\frac{r_1}{s_1}+\frac{r_2}{s_2}\right),
+			\lambda_2 (m_1+m_2)\right)=g\left(\frac{\lambda_1 (r_1 s_2+r_2
+			 s_1)}{s_1s_2},\lambda_2(m_1+m_2)\right) \\
 			&=\frac{\lambda_1(r_1s_2+r_2s_1)\lambda_2(m_1+m_2)}{s_1s_2}\\
 			&=\lambda_1\lambda_2\left(\frac{r_1(m_1+m_2)}{s_1}+
 			\frac{r_2(m_1+m_2)}{s_2}\right) \\
@@ -753,11 +757,35 @@
 			+g\left(\frac{r_1}{s_1},m_2\right)+g\left(\frac{r_2}{s_2},m_1\right)+
 			g\left(\frac{r_2}{s_2},m_1\right)\right)
 		\end{align*}
+		für alle $r_1,r_2,\lambda_1,\lambda_2\in R$, $s_1,s_2 \in S$ und 
+		$m_1,m_2\in M$ gilt. Damit gibt es mit der universellen Eigenschaft 
+		des Tensorprodukts (Proposition \ref{prop:univeig}) einen 
+		$R$-Modulhomomorphismus $f:S^{-1}R\otimes_R M\to S^{-1}M$, sd. 
+		\ref{lemma:lociso;1} gilt. Es ist klar, dass $f$ surjektiv ist, 
+		dazu wählen wir $r=1$ und erhalten somit alle Elemente aus 
+		$S^{-1}M$. Weiter ist $f$ auch eindeutig bestimmt durch 
+		\ref{lemma:lociso;1}. \\
+		Wir zeigen also noch die Injektivität. Dazu betrachten wir die 
+		Elemente von $S^{-1}R\otimes_R M$. Sei also 
+		\[\sum_{i=1}^n \frac{r_i}{s_i}\otimes m_i \in S^{-1}R\otimes_R M\]
+		ein beliebiges Element, dann definieren wir
+		\[s:=\prod_{i=1}^n s_i\in S,\qquad t_i:=\prod_{\genfrac{}{}{0pt}{1}{j=1}{j\neq i}}^n s_j\in S\]
+		und es gilt 
+		\[\sum_{i=1}^n \frac{r_i}{s_i}\otimes m_i =
+		\sum_{i=1}^n \frac{r_it_i}{s}\otimes m_i =\sum_{i=1}^n 
+		\frac{1}{s}\otimes r_i t_i m_i =\frac{1}{s}\otimes\sum_{i=1}^n
+		\underbrace{r_it_im_i}_{\in M}.\]
+		Wir können also jedes Element aus $S^{-1}R\otimes_R M$ in der Form 
+		\[\frac{1}{s}\otimes m\]
+		schreiben. Betrachten wir nun den Kern von $f$. Sei also 
+		$\frac{1}{s}\otimes \in ker(f)\subset S^{-1}R\otimes_R M$, dh. 
+		$f\left(\frac{1}{s}\otimes m\right)=0$. Da $R$ ein 
+		Integritätsring ist folgt also mit $f\left(\frac{1}{s}\otimes m\right)=\frac{m}{s}=0$, dass $m=0$ und damit gilt
+		\[\frac{1}{s}\otimes m =\frac{1}{s}\otimes 0=0.\]
+		Damit ist $f$ bijektiv, also der gesuchte Isomorphismus.
 	\end{proof}
 	
-	Es lässt sich nun folgendes Resultat zeigen, siehe dazu auch 
-	
-	%...Atiyah MacDonald introduction to commutative algebra Proposition 3.7
+	Es lässt sich nun folgendes Resultat zeigen, siehe dazu auch \cite{introductiontocomalg}[Proposition 3.7].
 	
 	\begin{proposition}\label{prop:tensoriso}
 		Seien $M$ und $N$ zwei $R$-Moduln, dann gibt es einen eindeutigen 
@@ -766,6 +794,19 @@
 		zwischen den $S^{-1}R$-Moduln, sd.
 		\[f\left(\frac{m}{s_1}\otimes\frac{n}{s_2}\right)=\frac{m\otimes n}{s_1s_2}.\]
 	\end{proposition}
+
+	\begin{proof}
+		Es gilt mit Lemma \ref{lemma:lociso} und den kanonischen Isomorphismen des 
+		Tensorprodukts
+		\begin{align*}
+			S^{-1}M\otimes_{S^{-1}R}S^{-1}N &\overset{\ref{lemma:lociso}}{\simeq}
+			(S^{-1}R\otimes_R M)\otimes_{S^{-1}R}(S^{-1}R\otimes_R N) \\
+			&= M\otimes_R (\underbrace{S^{-1}R\otimes_{S^{-1}R S^{-1}R}}_{\simeq S^{-1}R})\otimes_R N \\
+			&\simeq M\otimes_R S^{-1}R \otimes_R N \\
+			&= S^{-1}R \otimes_R(M\otimes_R N) \\
+			&\overset{\ref{lemma:lociso}}{\simeq} S^{-1}(M\otimes_R N).
+		\end{align*}
+	\end{proof}
 	
 	Dies lässt sich nun auf unser Tensorprodukt 
 	$\setR\otimes_{\setZ}\setR /\pi\setZ$ anwenden, indem wir $R=\setZ$, $M=\setR$ und $N=\setR /\pi\setZ$ setzen und mit 
@@ -789,13 +830,13 @@
 	\end{align*}
 	wobei wir mit $\langle\ \cdot\ \rangle$ hier das Erzeugnis meinen.
 	Insgesamt erhalten wir also mit der Proposition
-	
 	\begin{align}
 		\setR\otimes_\setZ\setR/\pi\setZ\simeq\setR\otimes_\setQ\setR/\pi\setQ. \label{tensor=0}
 	\end{align}
 	Wir können die Dehn-Invariante also auch auf dem $\setQ$-Vektorraum 
 	$\setR\otimes_\setQ\setR/\pi\setQ$ betrachten, was uns zu der folgenden 
 	Tatsache führt.
+	
 	\begin{theorem} \label{bem:dehn=0}
 		Seien $x\in \setR$ und $y\in\setR/\pi\setQ$ Elemente, dann gilt
 		\[ x\otimes y =0 \quad \Leftrightarrow \quad x=0 \ \lor\ y\in\pi\setQ.\]
