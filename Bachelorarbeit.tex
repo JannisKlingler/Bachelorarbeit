@@ -533,7 +533,7 @@
 	\end{proposition}
 	
 	\begin{proof}
-		Für den Beweis sei auf Proposition 2.12 in Atiyah verwiesen.
+		Für den Beweis verweise ich auf \cite[Proposition 2.12]{introductiontocomalg} oder \cite[Satz 7.3]{SkriptLA}.
 	\end{proof}
 	
 	Also wissen wir nun, dass das Tensorprodukt folgende Eigenschaften erfüllt. Sei $R$ ein kommutitativer Ring 
@@ -617,14 +617,14 @@
 	$\setR\otimes_{\setQ}\setR /\pi\setQ$ ist, hierzu benötigen wir ein 
 	paar Resultate 
 	aus der Kommutativen Algebra. \\
-	Sei nun $R$ ein Integritätsring, wir wollen nun 
+	Sei im Folgenden $R$ ein Integritätsring, wir wollen nun 
 	Brüche einführen. Sei dazu $S$ eine multiplikative Teilmenge von $R$, das heißt  
 	$1\in S$ und $S$ ist unter Multiplikation abgeschlossen, also ein Monoid. Wir 
 	definieren die Relation $\equiv$ auf $R\times S$ durch
 	\[(r_1,s_1)\equiv(r_2,s_2)\quad \Leftrightarrow\quad r_1 s_2 =r_2 s_1\]
 	für Elemente $r_1,r_2\in R$ und $s_1,s_2\in S$. \\
 	Wir stellen fest, dass diese Relation  eine Äquivalenzrelation ist. Die 
-	Reflexivität und Symmetrie ist klar, wir zeigen also noch die Transitivität.
+	Reflexivität und Symmetrie sind klar, wir zeigen also noch die Transitivität.
 	Es gelte also $(r_1,s_1)\equiv(r_2,s_2)$ und $(r_2,s_2)\equiv(r_3,s_3)$ für 
 	$r_1,r_2,r_3\in R$ und $s_1,s_2,s_3\in S$, also gilt $r_1 s_2= r_2 s_1$ und 
 	$r_2 s_3 =r_3 s_2$ und damit $r_1 s_2 r_2 s_3 =r_2 s_1 r_3 s_2$. Falls $r_2=0$ 
@@ -662,7 +662,8 @@
 		\begin{align}
 			M_1\xrightarrow{f}M\xrightarrow{g}M_2 \label{lemma:exakt;1}
 		\end{align}
-		exakt in $M$. Dann ist die Sequenz
+		exakt\footnote{Zur Erinnerung: Eine Sequenz $M_1\xrightarrow{f}M\xrightarrow{g}M_2$ ist exakt in $M$, falls 
+			$im(f)=ker(g)$.} in $M$. Dann ist die Sequenz
 		\[S^{-1}M_1 \xrightarrow{S^{-1}f}S^{-1}M\xrightarrow{S^{-1}g}S^{-1}M_2\]
 		exakt in $S^{-1}M$.
 	\end{lemma}
@@ -671,13 +672,13 @@
 	
 	\begin{proof}
 		Sei $m_1\in M_1$ dann gilt $f(m_1)\in im(f)=ker(g)$, wegen der Exaktheit 
-		von \ref{lemma:exakt;1} in $M$ und damit ist $f(m_1)=0$. Also gilt 
-		$f\circ g=0$ und weiterhin
-		\[S^{-1}f \circ S^{-1}g = S^{-1}(f\circ g)=S^{-1}(0)=0.\]
+		von \ref{lemma:exakt;1} in $M$ und damit ist $g(f(m_1))=0$. Also gilt 
+		$g\circ f=0$ und weiterhin
+		\[S^{-1}g \circ S^{-1}f = S^{-1}(g\circ f)=S^{-1}(0)=0.\]
 		Wir erhalten also
 		\[im(S^{-1}f)\subset ker(S^{-1}g).\]
 		Um die umgekehrte Inklusion zu zeigen wählen wir 
-		$\frac{m}{s}\in ker(S^{-1}g)$, das heißt $\frac{g(m)}{s}=0$ in $S^{-1}M_2$. 
+		$\frac{m}{s}\in ker(S^{-1}g)$, das heißt $S^{-1}g\left(\frac{m}{s}\right)=\frac{g(m)}{s}=0$ in $S^{-1}M_2$. 
 		Das wiederum bedeutet, dass $g(m)=0$ in $M_2$, da $R$ ein Integritätsring 
 		ist, also auch $m\in ker(g)=im(f)$, wegen der Exaktheit von $M$ in 
 		\ref{lemma:exakt;1}. Also gibt es ein $m_1\in M_1$ mit $f(m_1)=m$ und damit 
@@ -692,9 +693,7 @@
 	zu verstehen, hilft uns das folgende Resultat.
 	
 	\begin{lemma}
-		Sei $R$ ein Integritätsring, $M$ ein $R$-Modul und 
-		$N$ ein $R$-Untermodul von $M$. Weiter sei $S$ eine multiplikative 
-		Teilmenge von $R$, dann sind die $S^{-1}R$-Moduln $S^{-1}(M/N)$ und 
+		Sei $M$ ein $R$-Modul und $N$ ein $R$-Untermodul von $M$. Dann sind die $S^{-1}R$-Moduln $S^{-1}(M/N)$ und 
 		$S^{-1}M/S^{-1}N$ isomorph.
 	\end{lemma}
 	
@@ -717,7 +716,9 @@
 			S^{-1}(M/N)\to 0 \label{lemma:Brüche;1}
 		\end{align}
 		mit Lemma \ref{lemma:Buch;exakt} exakt. \\
-		Wir wollen nun den Homomorphiesatz auf den Modulhomomorphismus 
+		Wir wollen nun den Homomorphiesatz\footnote{Für einen Modulhomomorphismus 
+		$f:M\to N$, induziert der Homomorphiesatz einen Isomorphismus 
+		$g:M/ker(f)\to im(f)$.} auf den Modulhomomorphismus 
 		$S^{-1}g$ anwenden und erhalten mit der Exaktheit von \ref{lemma:Brüche;1} 
 		in $S^{-1}M$
 		\[ S^{-1}(M/N)=im(S^{-1}g)\simeq S^{-1}M/ker(S^{-1}g) =S^{-1}M/im(S^{-1}f)=S^{-1}M/S^{-1}N.\]
@@ -778,7 +779,7 @@
 		Wir können also jedes Element aus $S^{-1}R\otimes_R M$ in der Form 
 		\[\frac{1}{s}\otimes m\]
 		schreiben. Betrachten wir nun den Kern von $f$. Sei also 
-		$\frac{1}{s}\otimes \in ker(f)\subset S^{-1}R\otimes_R M$, dh. 
+		$\frac{1}{s}\otimes m \in ker(f)\subset S^{-1}R\otimes_R M$, dh. 
 		$f\left(\frac{1}{s}\otimes m\right)=0$. Da $R$ ein 
 		Integritätsring ist folgt also mit $f\left(\frac{1}{s}\otimes m\right)=\frac{m}{s}=0$, dass $m=0$ und damit gilt
 		\[\frac{1}{s}\otimes m =\frac{1}{s}\otimes 0=0.\]
@@ -801,12 +802,17 @@
 		\begin{align*}
 			S^{-1}M\otimes_{S^{-1}R}S^{-1}N &\overset{\ref{lemma:lociso}}{\simeq}
 			(S^{-1}R\otimes_R M)\otimes_{S^{-1}R}(S^{-1}R\otimes_R N) \\
-			&= M\otimes_R (\underbrace{S^{-1}R\otimes_{S^{-1}R S^{-1}R}}_{\simeq S^{-1}R})\otimes_R N \\
+			&\overset{\footnotemark}{=}
+			 M\otimes_R (\underbrace{S^{-1}R\otimes_{S^{-1}R} S^{-1}R}_{\simeq S^{-1}R})\otimes_R N \\
 			&\simeq M\otimes_R S^{-1}R \otimes_R N \\
 			&= S^{-1}R \otimes_R(M\otimes_R N) \\
 			&\overset{\ref{lemma:lociso}}{\simeq} S^{-1}(M\otimes_R N).
 		\end{align*}
 	\end{proof}
+
+	\footnotetext{Wir können hier trotz der unterschiedlichen 
+		Tensorprodukte die Klammern vertauschen. Siehe dazu auch 
+		\cite[Formula 10]{Matsurama}}
 	
 	Dies lässt sich nun auf unser Tensorprodukt 
 	$\setR\otimes_{\setZ}\setR /\pi\setZ$ anwenden, indem wir $R=\setZ$, $M=\setR$ und $N=\setR /\pi\setZ$ setzen und mit 
@@ -1031,7 +1037,7 @@
 	%		\cup& \{ (
 	%
 	%\section{Zerlegungsgleichheit von Polyedern; Bricard}
-	%
+	% 
 	%
 	%
 	%\section{Ausblicke}

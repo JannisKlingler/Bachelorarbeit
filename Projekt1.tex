@@ -1,0 +1,161 @@
+\documentclass[11pt,titlepage]{article}
+\usepackage{amsmath,amssymb,amstext,mathtools,amsthm}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+%\usepackage[paper=a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[twoside,lmargin=3.5cm,rmargin=2.5cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{bookmarksnumbered}
+
+\usepackage{dsfont}
+%\usepackage{xfrac}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{bigints}
+\usepackage{bibgerm}
+\usepackage[onehalfspacing]{setspace}
+
+\usetikzlibrary{positioning}
+%\usetikzlibrary{arrows}
+
+\newcommand{\setN}{\mathbb{N}}
+\newcommand{\setZ}{\mathbb{Z}}
+\newcommand{\setQ}{\mathbb{Q}}
+\newcommand{\setR}{\mathbb{R}}
+\newcommand{\setC}{\mathbb{C}}
+\newcommand{\setH}{\mathbb{H}}
+\newcommand{\setI}{\mathbb{I}}
+\newcommand{\abs}[1]{{\left| #1 \right|}}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Satz}[section]
+\newtheorem{corollary}[theorem]{Folgerung}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Beispiel}
+\newtheorem*{axiom}{Axiom}
+\newtheorem{remark}[theorem]{Bemerkung}
+
+\theoremstyle{remark}
+\newtheorem*{repetition}{Wiederholung}
+\newtheorem*{remind}{Erinnerung}
+
+\begin{document}
+	\section{Ergänzungsgleichheit von Polytopen}
+	
+	Wir wollen uns nun dem zweiten Teil von Hilberts Problem widmen und zwar der 
+	Ergänzungsgleichheit von Polyedern. Wir wollen in diesem Kapitel zeigen, dass 
+	Zerlegungsgleichheit und Ergänzungsgleichheit gleichbedeutend sind. 
+	Im Folgenden meinen wir mit Polytopen wieder $d$-Polytope.
+	
+	Wir wollen noch einmal kurz die Definition der Zerlegungsgleichheit wiederholen.
+	
+	\begin{definition}[Zerlegungsgleichheit]
+		Zwei $d$-Polytope $P$ und $Q$ heißen \textsl{zerlegungsgleich}, wenn es endlich viele $d$-Polytope 
+		$P_1,\ldots,P_n,Q_1,\ldots,Q_n$ mit $P=P_1 +\ldots +P_n$,  $Q=Q_1 +\ldots+Q_n$ 
+		gibt, sd. 
+		\[P_i\cong Q_i\]
+		für alle $i\in\{1,\ldots,n\}$. Wir schreiben $P\sim Q$.
+	\end{definition}
+	
+	Nun können wir die Ergänzungsgleichheit definieren.
+	
+	\begin{definition}[Ergänzungsgleich]
+		Zwei $d$-Polytope $P$ und $Q$ heißen \textsl{ergänzungsgleich}, wenn es endlich viele $d$-Polytope 
+		$P_1,\ldots,P_n$, $Q_1,\ldots,Q_n$ gibt, wobei gilt $P_i\cong Q_i$ für alle $i\in\{1,\ldots,n\}$, sd. die Polytope
+		\[P'=P+P_1+\ldots+P_n,\qquad Q'=Q+Q_1+\ldots+Q_n\]
+		zerlegungsgleich sind.
+	\end{definition}
+	
+	Alternativ ist auch die schreibweise üblich, dass zwei Poltope $P$ und $Q$
+	ergänzungsgleich sind, falls es zwei zerlegungsgleiche Polytope 
+	$A$ und $B$ gibt, sd. $P+A\sim Q+B$ gilt. 
+	
+	
+	\begin{theorem}
+		Zwei Polyeder $P$ und $Q$ sind genau dann zerlegungsgleich, wenn sie 
+		ergänzungsgleich sind.
+	\end{theorem}
+	
+	Der Beweis richtet sich nach \cite[Satz III]{Hadwiger}.
+	
+	\begin{proof}
+		\noindent
+		\begin{itemize}
+			\item[$"\Rightarrow"$:] Haben wir zwei zerlegungsgleiche Polytope, so müssen wir kein weiteres Polytop ergänzen, damit die Ergänzungen zerlegungsgleich sind, also folgt bereits die Ergänzungsgleichheit.
+			
+			\item[$"\Leftarrow"$:] Die Rückrichtung funktioniert per 
+			Induktion über die Zylinderklassen. Seien also Polytope 
+			$P,Q,A,B$ gegeben, sd. 
+			\begin{align}
+				P+A\sim Q+B \label{thm:zerlerg;1}
+			\end{align}
+			und
+			\begin{align}
+				A\sim B. \label{thm:zerlerg;2}
+			\end{align}
+			Falls nun $P,Q\in \mathfrak{B}_d$ gilt, dann gibt es mit 
+			
+			%... Formel (72) Hadwiger
+			
+			$\lambda_1,\lambda_2 >0$, sd. $P\sim \lambda_1 W_d$ und 
+			$Q\sim \lambda_2 W_d$, wobei mit hier $W_d$ der $d$-dimensionale 
+			Einheitswürfel gemeint ist. Da mit 
+			
+			%... Aus ergänzungsgleich folgt gleiches Volumen
+			
+			folgt, dass $vol(P)=vol(Q)$, muss $\lambda_1 =\lambda_2$ und 
+			damit $P\sim Q$. \\
+			Wir nehmen nun also induktiv an, dass die Aussage bereits für alle 
+			Polytope $P,Q\in\mathfrak{B}_{i+1}$ gilt. Es sei nun also 
+			$P,Q\in\mathfrak{B}_i$ für ein beliebiges $1\leq i\leq d-1$. 
+			Da $d-i>0$ und o.B.d.A. $vol(A)>0$ gibt es eine natürliche Zahl $n$, sd. 
+			\begin{align}
+				n^{d-i}>1+\frac{vol(A)}{vol(P)}. \label{thm:zerlerg;3}
+			\end{align}
+			Weiterhin gilt mit \ref{thm:zerlerg;1} und 
+			
+			%... n(A+B)=nA+nB und aus A sim B folgt nA sim nB
+			
+			\begin{align}
+				nP+nA\sim nQ+nB \label{thm:zerlerg;4}
+			\end{align}
+			und
+			\begin{align}
+				nA\sim nB. \label{thm:zerlerg;5}
+			\end{align}
+			Mit 
+			
+			%... Hilfssatz I
+			
+			gibt es nun ein Polytop $P_0\in\mathfrak{B}_{i+1}$, sd.
+			\begin{align}
+				nP\sim P_0 +n^i\cdot P \label{thm:zerlerg;6}
+			\end{align}
+			und mit
+			
+			%... aus zerlegungsgleich folgt volumen gleich
+			
+			folgt dann
+			\begin{align*}
+				vol(nA)=vol(P_0+n^i\cdot P)=vol(P_0)+vol(n^i\cdot P)=vol(P_0)+
+				n^i\cdot vol(P).
+			\end{align*}
+			Nach 
+			
+			%... Volumen bei Dilation für d-dim. Polytop: vol(nP)=n^d vol(P)
+			
+			gilt $vol(nP)=n^d vol(P)$ und damit 
+			\begin{align}
+				vol(P_0)=(n^d -n^i)vol(P). \label{thm:zerlerg;7}
+			\end{align}
+		\end{itemize}
+	\end{proof}
+	
+	
+	\newpage
+	\bibliographystyle{plain}
+	\bibliography{MeineBib}
+\end{document}
