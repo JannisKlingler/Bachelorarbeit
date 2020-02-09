@@ -46,9 +46,26 @@
 	\section{Ergänzungsgleichheit von Polytopen}
 	
 	Wir wollen uns nun dem zweiten Teil von Hilberts Problem widmen und zwar der 
-	Ergänzungsgleichheit von Polyedern. Wir wollen in diesem Kapitel zeigen, dass 
-	Zerlegungsgleichheit und Ergänzungsgleichheit gleichbedeutend sind. 
-	Im Folgenden meinen wir mit Polytopen wieder $d$-Polytope.
+	Ergänzungsgleichheit von Polytopen. Wir wollen in diesem Kapitel zeigen, dass 
+	Zerlegungsgleichheit und Ergänzungsgleichheit gleichbedeutend sind. Der 
+	Beweis hierzu ist nicht gerade trivial, weswegen wir vorweg noch einige 
+	Kenntnisse über Polytope benötigen. Das Kapitel richtet sich nach 
+	\cite{Hadwiger}. 
+	Im Folgenden meinen wir mit Polytopen wieder $d$-Polytope. 
+	
+	\subsection{Ein wenig Polyedertheorie}
+	
+	
+	
+	\begin{definition}[$i$-stufiger Zylinder]
+		Ein Polytop $P$ ist ein $i$-stufiger Zylinder, falls es eine Darstellung 
+		der Form
+		\[P=P_1 \times\ldots\times P_i\]
+		gibt, wobei $P_i$ hier konvexe Polytope sind, die jeweils in einer $d_i$-dimensionalen Ebene $E_{d_i}$ liegen. Hierbei soll $\sum_1^i d_i =d$
+		gelten und die Ebenen $E_{d_i}$ befinden sich paarweise in allgemeiner Lage.
+	\end{definition}
+
+	\subsection{Ergänzungsgleich und Zerlegungsgleichheit}
 	
 	Wir wollen noch einmal kurz die Definition der Zerlegungsgleichheit wiederholen.
 	
@@ -71,8 +88,25 @@
 	
 	Alternativ ist auch die schreibweise üblich, dass zwei Poltope $P$ und $Q$
 	ergänzungsgleich sind, falls es zwei zerlegungsgleiche Polytope 
-	$A$ und $B$ gibt, sd. $P+A\sim Q+B$ gilt. 
+	$A$ und $B$ gibt, sd. $P+A\sim Q+B$ gilt. \\
+	Man sieht leicht, dass die Folgende Aussage gilt.
 	
+	\begin{corollary}\label{coroll:ergvol}
+		Seien $P$ und $Q$ ergänzungsgleiche Polytope, dann gilt
+		\[vol(P)=vol(Q).\]
+	\end{corollary}
+	
+	\begin{proof}
+		Seien $P$ und $Q$ ergänzungsgleich, also gibt es Polytope 
+		zerlegungsgleiche $R$ und $S$ mit $P+R\sim Q+S$. Mit
+		
+		%... aus Zerlegungsgleich folgt Volumen gleich folgt
+		
+		folgt mit der paarweisen Disjunktheit, dass 
+		\[vol(P)+vol(R)=vol(P+R)=vol(Q+S)=vol(Q)+vol(S).\]
+		Mit der Zerlegungsgleichheit von $R$ und $S$ gilt also auch $vol(R)=vol(S)$ 
+		und damit folgt $vol(P)=vol(Q)$.
+	\end{proof}
 	
 	\begin{theorem}
 		Zwei Polyeder $P$ und $Q$ sind genau dann zerlegungsgleich, wenn sie 
@@ -102,10 +136,7 @@
 			
 			$\lambda_1,\lambda_2 >0$, sd. $P\sim \lambda_1 W_d$ und 
 			$Q\sim \lambda_2 W_d$, wobei mit hier $W_d$ der $d$-dimensionale 
-			Einheitswürfel gemeint ist. Da mit 
-			
-			%... Aus ergänzungsgleich folgt gleiches Volumen
-			
+			Einheitswürfel gemeint ist. Da mit Folgerung \ref{coroll:ergvol} 
 			folgt, dass $vol(P)=vol(Q)$, muss $\lambda_1 =\lambda_2$ und 
 			damit $P\sim Q$. \\
 			Wir nehmen nun also induktiv an, dass die Aussage bereits für alle 
@@ -140,7 +171,7 @@
 			
 			folgt dann
 			\begin{align*}
-				vol(nA)=vol(P_0+n^i\cdot P)=vol(P_0)+vol(n^i\cdot P)=vol(P_0)+
+				vol(nP)=vol(P_0+n^i\cdot P)=vol(P_0)+vol(n^i\cdot P)=vol(P_0)+
 				n^i\cdot vol(P).
 			\end{align*}
 			Nach 
@@ -151,6 +182,42 @@
 			\begin{align}
 				vol(P_0)=(n^d -n^i)vol(P). \label{thm:zerlerg;7}
 			\end{align}
+			Weiter folgt mit der Ungleichung \ref{thm:zerlerg;3}, dass 
+			$n^d > n^i+n^i\frac{vol(A)}{vol(P)}$ und damit
+			\begin{align}
+				vol(P_0)=(n^d -n^i)vol(P)>n^i vol(A)=vol(n^i\cdot A) \label{thm:zerlerg;8}.
+			\end{align}
+			Mit
+			
+			%... Formel (37)
+			
+			ist $n^i\cdot A$ nun also zerlegungsgleich zu einem Teilpolytop von $P_0$, dh. es gibt Polytope $C,D\subset P_0$ mit $P+Q=P_0$ und $n^i\cdot A\sim C$, sd. 
+			\begin{align}
+				P_0=C+D\sim n^i\cdot A+D. \label{thm:zerlerg;9}
+			\end{align}
+			Damit gilt 
+			\begin{align}
+				nP &\overset{\ref{thm:zerlerg;9}}{\sim} P_0+n^i \cdot P \notag\\
+				&\sim n^iA +D+n^i \cdot P \notag\\
+				&=D+n^i\cdot(A+P) \notag\\ &\overset{\ref{thm:zerlerg;1}}{\sim} D+n^i\cdot(Q+B) \notag\\
+				&\overset{\ref{thm:zerlerg;2}}{\sim} D+n^i\cdot(Q+A) \notag\\
+				&=Q+n^i\cdot Q +n^i\cdot A \notag\\
+				&\overset{\ref{thm:zerlerg;9}}{\sim} P_0+n^i \cdot Q. \label{thm:zerlerg;10}
+			\end{align}
+			Analog zu \ref{thm:zerlerg;6} finden wir für $Q$ ebenso ein 
+			$Q_0\in\mathfrak{B}_{i+1}$ mit $nQ\sim Q_0+n^i\cdot Q$. Wir erhalten 
+			\[P_0+n^i\cdot Q+nA\overset{\ref{thm:zerlerg;10}}{\sim}
+			nP+nA\overset{\ref{thm:zerlerg;4}}{\sim}nQ+nB\sim Q_0+n^i\cdot Q+nB.\]
+			Wegen \ref{thm:zerlerg;5} gilt $n^i\cdot Q+nA\sim n^i\cdot Q +nB$ und 
+			mit der Induktionsvoraussetzung folgt für $P_0,Q_0\mathfrak{B}$, dass 
+			$P_0\sim Q_0$ und damit folgt mit \ref{thm:zerlerg;10} und der 
+			analogen Folgerung, dass 
+			\[nP\sim nQ\]
+			gilt. Mit
+			
+			%... aus nP sim nQ folgt P sim Q. Folgerung bei Dilation
+			
+			gilt also \[P\sim Q.\]
 		\end{itemize}
 	\end{proof}
 	
