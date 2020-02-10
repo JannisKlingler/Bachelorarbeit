@@ -55,7 +55,53 @@
 	
 	\subsection{Ein wenig Polyedertheorie}
 	
+	Wir wollen uns zunächst überlegen, wie wir Polytope vervielfältigen, sowie 
+	über eine Dilation stauchen und strecken können. 
 	
+	\begin{itemize}
+		\item \textsl{Dilation:} Unter einer Dilation mit einem Faktor $\lambda>0$ 
+		verstehen wir eine Streckung bzw. Stauchung aller Punkte 
+		im Koordinatensystem. Ein Punkt $p\in\setR^d$ wird also auf 
+		sein skalares Vielfaches $\lambda\cdot p$ abgebildet. Im Zusammenhang mit 
+		Polytopen erhalten wir mit dem Faktor $\lambda$ das dilatierte Polytop 
+		$\lambda P$. \\
+		Wir bemerken, dass wenn wir diese Abbildungen auf Polytope anwenden wir wieder Polytope erhalten, da Halbräume auf Halbräume abgebildet werden.
+		\item \textsl{Vervielfältigung:} Eine ganze Vervielfachung eines Polytop 
+		$P$, mit einer natürlichen Zahl $n$, ist ein Polytop $Q$, 
+		das sich in $n$ viele Polytope zerlegen lässt, die alle kongruent zu 
+		$P$ sind. Wir schreiben für das Polytop $Q$ auch $n\cdot P$. Formal 
+		bedeutet dies, dass es Polytope $P_1,\ldots,P_n$ gibt, sd.
+		\[n\cdot P=P_1+\ldots+P_n,\]
+		wobei $P_i\cong P$ für alle $i=1,\ldots,n$. \\
+		Wir bemerken, dass die Lage der Polyeder $P_i$ nicht eindeutig festgelegt 
+		ist, was jedoch beim eigentlichen zerlegen keine Rolle spielt.
+	\end{itemize}
+	
+	Es ergeben sich beim Vervielfältigen, wie man leicht sieht folgende Eigenschaften.
+	\begin{corollary} \label{coroll:vervielfältigung}
+		Seien $P$ und $Q$ zwei Polytope und $n$ eine natürliche Zahl, dann gilt
+		\[n\cdot(P+Q)\cong n\cdot P+n\cdot Q.\]
+	\end{corollary}
+	
+	\begin{proof}
+		Wir finden also $n$ viele Polytope $R_1,\ldots,R_n$ mit 
+		$R_i\cong (P+Q)$ für alle $i=1,\ldots,n$, sd. 
+		$n\cdot(P+Q)=R_1+\ldots+R_n$. Weiter finden wir auch jeweils $n$ viele 
+		$P_1,\ldots,P_n$ und $Q_1,\ldots,Q_n$ mit $P_i\cong P$ und $Q_i\cong Q$ 
+		für alle $i=1,\ldots,n$, sd. $n\cdot P=P_1+\ldots+P_n$ und 
+		$n\cdot Q=Q_1+\ldots+Q_n$. Mit $P_i\cong P$ und $Q_i\cong Q$ folgt 
+		also auch $P_i+Q_i\cong P+Q$ für alle $i=1,\ldots,n$ und damit 
+		$P_i+Q_i\cong R_i$. Wir erhalten also
+		\[n\cdot(P+Q)=R_1+\ldots+R_n\cong P_1+Q_1+\ldots+P_n+Q_n=P_1+\ldots+P_n+Q_1+\ldots+Q_n=n\cdot P+n\cdot Q.\]
+	\end{proof}
+	
+	\begin{definition}[Minkowski-Summe]
+		Seien $A$ und $B$ Mengen, dann ist die Minkowski-Summe $A\times B$ 
+		von $A$ und $B$ mit der vektoriellen Addition definiert als
+		\[A\times B=\left.\{a+b\ \right\vert\ a\in A,b\in B\}.\]
+	\end{definition}
+	
+	Die Minkowski-Addition ist offensichtlich kommutativ und assoziativ. 
 	
 	\begin{definition}[$i$-stufiger Zylinder]
 		Ein Polytop $P$ ist ein $i$-stufiger Zylinder, falls es eine Darstellung 
@@ -64,6 +110,48 @@
 		gibt, wobei $P_i$ hier konvexe Polytope sind, die jeweils in einer $d_i$-dimensionalen Ebene $E_{d_i}$ liegen. Hierbei soll $\sum_1^i d_i =d$
 		gelten und die Ebenen $E_{d_i}$ befinden sich paarweise in allgemeiner Lage.
 	\end{definition}
+	
+	\begin{definition}[Zylinderklassen]
+		Ein Polytop $P$ ist ein $i$-stufiges Zylinderpolytop, falls 
+		es endlich viele $i$-stufige Polytope $P_1,\ldots,P_n$ gibt, sd.
+		\[P=P_1+\ldots+P_n.\]
+		Wir wollen mit der Zylinderklasse $\mathfrak{B}_i$ die Menge aller 
+		Polytope, die zu einem $i$-stufigen Zylinderpolytop zerlegungsgleich 
+		sind, wobei $\emptyset\in\mathfrak{B}_i$. Die Stufenzahl $i$, 
+		mit $1\leq i\leq  d$, ist die Ordnung der Zylinderklasse $\mathfrak{B}_i$.
+	\end{definition}
+
+	Besonders interessant sind hierbei die erste und die $d$-te Zylinderklasse. 
+	Es lässt sich nämlich feststellen, dass die erste Zylinderklasse gerade 
+	der Menge aller Polytope entspricht. Jedes Polytop lässt sich nach 
+	
+	%... Jedes Polytop lässt sich in endlich viele Simplizes zerlegen
+	
+	in endlich viele Simplizes zerlegen und jedes Simplex ist ein $1$-stufiger 
+	Zylinder.
+	
+	%... Aussage oben drüber
+	
+	Die $d$te Zylinderklasse entspricht gerade Polytopen, welche mit einem 
+	Parallelotop zerlegungsgleich sind. Es gilt sogar die folgende Eigenschaft.
+	
+	\begin{remark} \label{bem:dteZylinderklasse}
+		Sei $P\in\mathfrak{B}_d$ ein Polytop, dann gibt es ein $\lambda>0$, sd. 
+		$P$ zerlegungsgleich mit $\lambda W_d$ ist. $W_d$ ist hierbei 
+		der $d$-dimensionale Einheitswürfel.
+		
+		%... evtl Begründung über Parallelotope siehe Hadwiger Formel (72)
+		
+	\end{remark}
+	
+	Wir stellen fest, dass jeder $i$-stufige Zylinder auch ein $j$-stufiger 
+	Zylinder für ein $j<i$ ist und damit erhalten wir
+	\[\mathfrak{B}_1\supset \mathfrak{B}_2\supset \ldots\supset\mathfrak{B}_d.\]
+	Die Zylinderklassen sind vor allem deswegen für uns interessant, da sie 
+	Beweisverfahren nach dem Prinzip der vollständigen Induktion ermöglichen. 
+	So können wir Aussagen für alle Polytope mittels Induktion über die 
+	Zylinderklassen beweisen. Wir werden dieses Verfahren beim Beweis zu Satz 
+	\ref{thm:zerlerg} verwenden.
 
 	\subsection{Ergänzungsgleich und Zerlegungsgleichheit}
 	
@@ -108,7 +196,7 @@
 		und damit folgt $vol(P)=vol(Q)$.
 	\end{proof}
 	
-	\begin{theorem}
+	\begin{theorem} \label{thm:zerlerg}
 		Zwei Polyeder $P$ und $Q$ sind genau dann zerlegungsgleich, wenn sie 
 		ergänzungsgleich sind.
 	\end{theorem}
@@ -130,10 +218,8 @@
 			\begin{align}
 				A\sim B. \label{thm:zerlerg;2}
 			\end{align}
-			Falls nun $P,Q\in \mathfrak{B}_d$ gilt, dann gibt es mit 
-			
-			%... Formel (72) Hadwiger
-			
+			Falls nun $P,Q\in \mathfrak{B}_d$ gilt, dann gibt es mit Bemerkung 
+			\ref{bem:dteZylinderklasse} 
 			$\lambda_1,\lambda_2 >0$, sd. $P\sim \lambda_1 W_d$ und 
 			$Q\sim \lambda_2 W_d$, wobei mit hier $W_d$ der $d$-dimensionale 
 			Einheitswürfel gemeint ist. Da mit Folgerung \ref{coroll:ergvol} 
@@ -199,9 +285,9 @@
 			\begin{align}
 				nP &\overset{\ref{thm:zerlerg;9}}{\sim} P_0+n^i \cdot P \notag\\
 				&\sim n^iA +D+n^i \cdot P \notag\\
-				&=D+n^i\cdot(A+P) \notag\\ &\overset{\ref{thm:zerlerg;1}}{\sim} D+n^i\cdot(Q+B) \notag\\
+				&\cong D+n^i\cdot(A+P) \notag\\ &\overset{\ref{thm:zerlerg;1}}{\sim} D+n^i\cdot(Q+B) \notag\\
 				&\overset{\ref{thm:zerlerg;2}}{\sim} D+n^i\cdot(Q+A) \notag\\
-				&=Q+n^i\cdot Q +n^i\cdot A \notag\\
+				&\cong Q+n^i\cdot Q +n^i\cdot A \notag\\
 				&\overset{\ref{thm:zerlerg;9}}{\sim} P_0+n^i \cdot Q. \label{thm:zerlerg;10}
 			\end{align}
 			Analog zu \ref{thm:zerlerg;6} finden wir für $Q$ ebenso ein 

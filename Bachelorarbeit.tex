@@ -152,6 +152,10 @@
 		ist $P$ ein Polyeder.
 	\end{definition}
 	
+	Hierbei ist es auch möglich, dass das, durch die Halbräume entstehende, Polytop 
+	von niedrigerer Dimension ist als der ursprünglich zugrunde liegende 
+	Vektorraum, das Polytop also keine inneren Punkte hat. Der Einfachheit halber 
+	wollen wir diese Polytope nicht zulassen. \\
 	Wir werden im Folgenden immer beschränkte konvexe $d$-Polytope betrachten. Wir stellen außerdem fest, dass 
 	der Schnitt konvexer Polytope wieder ein konvexes Polytop ist. Hierbei kann der Schnitt auch niedrigerdimensional 
 	sein. Wir sagen zwei Polytope $P_1$ und $P_2$ sind disjunkt, wenn $dim(P_1\cap P_2)<d$. Wir schreiben dann 
@@ -167,9 +171,19 @@
 	%
 	\begin{definition}[Kongruenz]
 		Wir nennen zwei $d$-Polytope $P$ und $Q$ \textsl{kongruent}, wenn es eine Isometrie $g$ gibt, sd. 
-		$g(P)=Q$. Eine Isometrie ist hierbei eine Abbildung, die die Abstände zweier beliebiger Punkte erhält. 
-		Wir schreiben dann $P\cong Q$.
+		$g(P)=Q$. Wir schreiben dann $P\cong Q$.
 	\end{definition}
+
+	 Eine Isometrie ist hierbei eine Abbildung, die die Abstände zweier beliebiger Punkte erhält. Sie lässt sich auch schreiben als die Summe einer 
+	 Translation und einer Drehung.
+
+	\begin{remark}
+		Isometrien sind bijektiv und die Umkehrfunktion ist wieder eine 
+		Isometrie. Betrachten wir dazu eine Isometrie $f:\setR^d\to \setR^d$ mit 
+		
+		Krongruenz ist eine Äquivalenzrelation, da Isometrien bijektiv sind und 
+		die Umkehrfunktion wieder eine Isometrie ist.
+	\end{remark}
 	
 	%Im Folgenden meinen wir mit $P_1+\ldots+P_n$ die bis auf $(d-1)$-Facetten bzw. niedriger dimensionale Seiten 
 	%disjunkte Vereinigung. Wobei 
