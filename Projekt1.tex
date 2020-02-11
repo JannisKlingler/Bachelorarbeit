@@ -80,19 +80,27 @@
 	Es ergeben sich beim Vervielfältigen, wie man leicht sieht folgende Eigenschaften.
 	\begin{corollary} \label{coroll:vervielfältigung}
 		Seien $P$ und $Q$ zwei Polytope und $n$ eine natürliche Zahl, dann gilt
-		\[n\cdot(P+Q)\cong n\cdot P+n\cdot Q.\]
+		\[n\cdot(P+Q)\sim n\cdot P+n\cdot Q.\]
 	\end{corollary}
 	
 	\begin{proof}
 		Wir finden also $n$ viele Polytope $R_1,\ldots,R_n$ mit 
 		$R_i\cong (P+Q)$ für alle $i=1,\ldots,n$, sd. 
-		$n\cdot(P+Q)=R_1+\ldots+R_n$. Weiter finden wir auch jeweils $n$ viele 
-		$P_1,\ldots,P_n$ und $Q_1,\ldots,Q_n$ mit $P_i\cong P$ und $Q_i\cong Q$ 
-		für alle $i=1,\ldots,n$, sd. $n\cdot P=P_1+\ldots+P_n$ und 
-		$n\cdot Q=Q_1+\ldots+Q_n$. Mit $P_i\cong P$ und $Q_i\cong Q$ folgt 
-		also auch $P_i+Q_i\cong P+Q$ für alle $i=1,\ldots,n$ und damit 
-		$P_i+Q_i\cong R_i$. Wir erhalten also
-		\[n\cdot(P+Q)=R_1+\ldots+R_n\cong P_1+Q_1+\ldots+P_n+Q_n=P_1+\ldots+P_n+Q_1+\ldots+Q_n=n\cdot P+n\cdot Q.\]
+		$n\cdot(P+Q)=R_1+\ldots+R_n$. Das heißt aber auch, dass sich jedes 
+		$R_i$ darstellen lässt durch Polytope $P_i$ und $Q_i$ für alle 
+		$i=1,\ldots,n$, wobei $P_i\cong P$ und $Q_i\cong Q$. Ebenso finden wir 
+		aber auch jeweils $n$ viele Polytope 
+		$P_1',\ldots,P_n'$ und $Q_1',\ldots,Q_n'$ mit $P_i'\cong P$ und 
+		$Q_i'\cong Q$ für alle $i=1,\ldots,n$, sd. $n\cdot P=P_1'+\ldots+P_n'$ und 
+		$n\cdot Q=Q_1'+\ldots+Q_n'$. Mit der Transitivität der Kongruenz 
+		gilt also auch $P_i\cong P_i'$ und $Q_i\cong Q_i'$ für alle 
+		$i=1,\ldots,n$. Wir erhalten also die Zerlegungen
+		\begin{align*}
+			n\cdot(P+Q)&=R_1+\ldots+R_n=P_1+Q_1+\ldots+P_n+Q_n \qquad\text{und}\\
+			n\cdot P+n\cdot Q&=P_1'+\ldots+P_n'+Q_1'+\ldots+Q_n'=
+			P_1'+Q_1'+\ldots+P_n'+Q_n'.
+		\end{align*}
+		Damit sind $n\cdot (P+Q)$ und $n\cdot P+n\cdot Q$ zerlegungsgleich.
 	\end{proof}
 	
 	\begin{definition}[Minkowski-Summe]
@@ -179,21 +187,18 @@
 	$A$ und $B$ gibt, sd. $P+A\sim Q+B$ gilt. \\
 	Man sieht leicht, dass die Folgende Aussage gilt.
 	
-	\begin{corollary}\label{coroll:ergvol}
-		Seien $P$ und $Q$ ergänzungsgleiche Polytope, dann gilt
-		\[vol(P)=vol(Q).\]
-	\end{corollary}
+	\begin{proposition}\label{coroll:ergvol}
+		Seien $P$ und $Q$ zwei ergänzungsgleiche Polytope, dann gilt $vol(P)=vol(Q)$.
+	\end{proposition}
 	
 	\begin{proof}
-		Seien $P$ und $Q$ ergänzungsgleich, also gibt es Polytope 
-		zerlegungsgleiche $R$ und $S$ mit $P+R\sim Q+S$. Mit
-		
-		%... aus Zerlegungsgleich folgt Volumen gleich folgt
-		
-		folgt mit der paarweisen Disjunktheit, dass 
-		\[vol(P)+vol(R)=vol(P+R)=vol(Q+S)=vol(Q)+vol(S).\]
-		Mit der Zerlegungsgleichheit von $R$ und $S$ gilt also auch $vol(R)=vol(S)$ 
-		und damit folgt $vol(P)=vol(Q)$.
+		Seien $P$ und $Q$ ergänzungsgleich, d. h. es gibt endlich viele Polytope $P_1,\ldots,P_n,
+		Q_1\ldots,Q_n$ mit $P_i\cong Q_i$ für alle $i\in{1,\ldots,n}$, sd. 
+		$P'=P+P_1+\ldots+P_n$ und $Q'=Q+Q_1+\ldots+Q_n$ zerlegungsgleich sind. Nach 
+		Proposition \ref{prop:zerl,vol} gilt dann also auch $vol(P')=vol(Q')$. Damit folgt
+		\[vol(P)+vol(P_1)+\ldots+vol(P_n)=vol(P')=vol(Q')=vol(Q)+vol(Q_1)+\ldots+vol(Q_n)\]
+		und da mit $P_i\cong Q_i$ für alle $i\in{1,\ldots,n}$ nach Proposition \ref{prop:cong,vol} 
+		auch $vol(P_i)=vol(Q_i)$ gilt, folgt $vol(P)=vol(Q)$.
 	\end{proof}
 	
 	\begin{theorem} \label{thm:zerlerg}
@@ -285,9 +290,11 @@
 			\begin{align}
 				nP &\overset{\ref{thm:zerlerg;9}}{\sim} P_0+n^i \cdot P \notag\\
 				&\sim n^iA +D+n^i \cdot P \notag\\
-				&\cong D+n^i\cdot(A+P) \notag\\ &\overset{\ref{thm:zerlerg;1}}{\sim} D+n^i\cdot(Q+B) \notag\\
+				&\overset{\ref{coroll:vervielfältigung}}{\sim} D+n^i\cdot(A+P) \notag\\ 
+				&\overset{\ref{thm:zerlerg;1}}{\sim} D+n^i\cdot(Q+B) \notag\\
 				&\overset{\ref{thm:zerlerg;2}}{\sim} D+n^i\cdot(Q+A) \notag\\
-				&\cong Q+n^i\cdot Q +n^i\cdot A \notag\\
+				&\overset{\ref{coroll:vervielfältigung}}{\sim}
+				Q+n^i\cdot Q +n^i\cdot A \notag\\
 				&\overset{\ref{thm:zerlerg;9}}{\sim} P_0+n^i \cdot Q. \label{thm:zerlerg;10}
 			\end{align}
 			Analog zu \ref{thm:zerlerg;6} finden wir für $Q$ ebenso ein 

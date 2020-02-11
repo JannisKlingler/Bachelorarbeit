@@ -130,7 +130,9 @@
 	\newpage
 	\setcounter{page}{1}
 	
-	\section{Zerlegungsgleichheit und Ergänzungsgleichheit von Polytopen}
+	\section{Einleitung}
+	
+	\section{Einführung}
 	
 	\subsection{Polytope}
 	
@@ -174,22 +176,32 @@
 		$g(P)=Q$. Wir schreiben dann $P\cong Q$.
 	\end{definition}
 
-	 Eine Isometrie ist hierbei eine Abbildung, die die Abstände zweier beliebiger Punkte erhält. Sie lässt sich auch schreiben als die Summe einer 
-	 Translation und einer Drehung.
+	 Mit Isometrien meinen wir hier längenerhaltende Affinitäten, also bijektive affine Abbildungen, die den Abstand zweier beliebiger Punkte erhalten. 
+	 Isometrien sind als gerade Bewegungen, das heißt sie setzen sich 
+	 gerade aus einer Translation und einer Drehung zusammen. Eine 
+	 Isometrie $f:\setR^d\to \setR^d$ hat also die Darstellung 
+	 $f(x)=\alpha + Q(x)$ für alle $x\in \setR^d$, wobei $\alpha\in\setR^d$ ein Vektor und $Q\in O(d)$ hier eine orthogonale Matrix ist, also eine 
+	 Drehung. Da das Skalarprodukt translationsinvariant ist und 
+	 auch invariant unter Drehungen, ist das Skalarprodukt auch invariant 
+	 unter Isometrien. Weiter bilden Isometrien Halbräume wieder auf 
+	 Halbräume ab und damit auch Polytope auf Polytope. Die Menge 
+	 der Isometrien $\{f:\setR^d\to\setR^d\ \vert f\text{ ist Isometrie}\}$ ist eine Gruppe mit der Verknüpfung von Abbildungen als 
+	 Operation und der Identitätsabbildung als neutralem Element. 
 
 	\begin{remark}
-		Isometrien sind bijektiv und die Umkehrfunktion ist wieder eine 
-		Isometrie. Betrachten wir dazu eine Isometrie $f:\setR^d\to \setR^d$ mit 
-		
-		Krongruenz ist eine Äquivalenzrelation, da Isometrien bijektiv sind und 
-		die Umkehrfunktion wieder eine Isometrie ist.
+		Wir stellen fest, dass Kongruenz eine Äquivalenzrelation ist. 
+		Die Reflexivität und Symmetrie sind klar. Zur Transitivität seien 
+		$P,Q,R$ drei $d$-Polytope mit $P\cong Q$ und $Q\cong R$, es gibt also 
+		Isometrien $f,g$, sd. $f(P)=Q$ und $g(Q)=R$. Dann ist $g\circ f$ 
+		wieder eine Isometrie und wir erhalten 
+		\[(g\circ f)(P)=g(f(P))=g(Q)=R,\]
+		also $P\cong R$. 
 	\end{remark}
 	
-	%Im Folgenden meinen wir mit $P_1+\ldots+P_n$ die bis auf $(d-1)$-Facetten bzw. niedriger dimensionale Seiten 
-	%disjunkte Vereinigung. Wobei 
-	%eine $(d-1)$-Facette beispielsweise für $d=2$, also eine Fläche, eine Kante ist und für $d=1$, also eine Strecke, 
-	%ein Eckpunkt.
-	%
+	Wir können uns nun also der Zerlegungsgleichheit von Polytopen widmen.
+	
+	\subsection{Zerlegungsgleichheit}
+	
 	\begin{definition}[Zerlegungsgleichheit]
 		Zwei $d$-Polytope $P$ und $Q$ heißen \textsl{zerlegungsgleich}, wenn es endlich viele $d$-Polytope 
 		$P_1,\ldots,P_n,Q_1,\ldots,Q_n$ mit $P=P_1 +\ldots +P_n$,  $Q=Q_1 +\ldots+Q_n$ 
@@ -198,35 +210,20 @@
 		für alle $i\in\{1,\ldots,n\}$. Wir schreiben $P\sim Q$.
 	\end{definition}
 	
-	\begin{definition}[Ergänzungsgleich]
-		Zwei $d$-Polytope $P$ und $Q$ heißen \textsl{ergänzungsgleich}, wenn es endlich viele $d$-Polytope 
-		$P_1,\ldots,P_n$, $Q_1,\ldots,Q_n$ gibt, wobei gilt $P_i\cong Q_i$ für alle $i\in\{1,\ldots,n\}$, sd. die Polytope
-		\[P'=P+P_1+\ldots+P_n,\qquad Q'=Q+Q_1+\ldots+Q_n\]
-		zerlegungsgleich sind.
-	\end{definition}
-
-	Man sieht leicht, dass folgendes gilt:
-	
-	\begin{proposition} \label{prop:zerl,erg}
-		Zerlegungsgleiche Polytope sind ergänzungsgleich.
-	\end{proposition}
-	
-	\begin{proof}	
-		Haben wir zwei zerlegungsgleiche Polytope, so müssen wir kein weiteres Polytop ergänzen, damit die Ergänzungen zerlegungsgleich sind, also folgt bereits die Ergänzungsgleichheit.
-	\end{proof}
-	
-
-	Wir wollen uns anschauen, wie sich das Volumen von Polytopen verhält. Dabei ist 
-	vor allem die Invarianz des Volumens unter Zerschneidung von Polytopen, die wir in Proposition \ref{prop:zerl,vol} beweisen werden, ein wichtiges Resultat. Mit dem Volumen eines Polytops 
-	meinen wir im Folgenden das $d$-dimensionale Lebesgue-Maß.
+	Wir stellen fest, dass die Kongruenz zweier Polytope auch deren 
+	Zerlegungsgleichheit impliziert, dazu betrachten wir als Zerlegung einfach 
+	die Polytope selbst. Wir wollen nun des Begriff des Volumens eines Polytops anschauen. Dabei ist 
+	vor allem die Invarianz des Volumens unter Zerschneidung von Polytopen, die wir in Proposition \ref{prop:zerl,vol} beweisen werden, ein wichtiges Resultat. Mit dem Volumen eines Polytops meinen wir im Folgenden das 
+	$d$-dimensionale Lebesgue-Maß. Da unsere Polytope abgeschlossene Mengen 
+	sind, liegen sie in der Borelalgebra und sind damit auch Lebesgue-messbar.
 	
 	\begin{proposition} \label{prop:cong,vol}
 		Seien $P$ und $Q$ zwei $d$-Polytope, sd. $P\cong Q$, dann gilt $vol(P)=vol(Q)$.
 	\end{proposition}
 	
 	\begin{proof}
-		Da sich eine Isometrie für alle $x\in\setR$ darstellen lässt als $f(x)=Ux+a$ für eine orthogonale Matrix $U\in O(d)$ und ein 
-		$a\in\setR^d$ ergibt sich die Aussage mit der Transformationsformel 
+		Da sich eine Isometrie für alle $x\in\setR$ darstellen lässt als $f(x)=\alpha +Q(x)$ für eine orthogonale Matrix $Q\in O(d)$ und ein 
+		$\alpha\in\setR^d$ ergibt sich die Aussage mit der Transformationsformel 
 		aus der Analysis.
 	\end{proof}
 	
@@ -265,20 +262,8 @@
 		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Wir erhalten mit Proposition \ref{prop:cong,vol} und Lemma \ref{lemma:nullmenge} 
 		\[vol(P)=vol(P_1+\ldots+P_n)=\sum_{i=1}^n vol(P_i)=\sum_{i=1}^n vol(Q_i)=vol(Q_1+\ldots+Q_n)=vol(Q).\]
 	\end{proof}
-
-	\begin{proposition}
-		Seien $P$ und $Q$ zwei ergänzungsgleiche Polytope, dann gilt $vol(P)=vol(Q)$.
-	\end{proposition}
 	
-	\begin{proof}
-		Seien $P$ und $Q$ ergänzungsgleich, d. h. es gibt endlich viele Polytope $P_1,\ldots,P_n,
-		Q_1\ldots,Q_n$ mit $P_i\cong Q_i$ für alle $i\in{1,\ldots,n}$, sd. 
-		$P'=P+P_1+\ldots+P_n$ und $Q'=Q+Q_1+\ldots+Q_n$ zerlegungsgleich sind. Nach 
-		Proposition \ref{prop:zerl,vol} gilt dann also auch $vol(P')=vol(Q')$. Damit folgt
-		\[vol(P)+vol(P_1)+\ldots+vol(P_n)=vol(P')=vol(Q')=vol(Q)+vol(Q_1)+\ldots+vol(Q_n)\]
-		und da mit $P_i\cong Q_i$ für alle $i\in{1,\ldots,n}$ nach Proposition \ref{prop:cong,vol} 
-		auch $vol(P_i)=vol(Q_i)$ gilt, folgt $vol(P)=vol(Q)$.
-	\end{proof}
+	\section{Zerlegungsgleichheit im 2-dimensionalen}
 	
 	\subsection{Bolyai-Gerwien Theorem}
 	
@@ -627,6 +612,8 @@
 		\[D(P)=D(P_1+\ldots+P_n)=\sum_{i=1}^n D(P_i) =\sum_{i=1}^n D(Q_i)=D(Q_1+\ldots+Q_n)=D(Q).\]
 	\end{proof}
 	
+	\subsection{Lokalisierung des Tensorprodukts}
+	
 	Wir wollen uns nun zur Berechnung der Dehn-Invariante einiger Polyeder ein paar Eigenschaften des Tensorprodukts $\setR\otimes_{\setZ}\setR /\pi\setZ$ anschauen. Dazu wollen wir zeigen, dass unser Tensorprodukt isomorph zum Tensorprodukt  
 	$\setR\otimes_{\setQ}\setR /\pi\setQ$ ist, hierzu benötigen wir ein 
 	paar Resultate 
@@ -930,6 +917,8 @@
 	
 	Wir können nun die Dehn-Invarianten einiger Polyeder berechnen.
 	
+	\subsection{Dehns Lösung}
+	
 	\begin{example}[Quader] \label{exp:quader}
 		Sei $P$ ein dreidimensionaler Quader. Dann gilt für alle Kanten $k$ von $P$, dass $w(k)=\frac{\pi}{2}$. 
 		Also gilt $w(k)\in \pi\setQ$ für alle Kanten $k$ und nach Bemerkung \ref{bem:dehn=0} folgt
@@ -1019,6 +1008,276 @@
 		Was ein Widerspruch ist. \\
 		Damit sind $Q$ und $T$ nicht zerlegungsgleich.
 	\end{corollary}	
+	
+	\newpage
+	
+	\section{Ergänzungsgleichheit von Polytopen}
+	
+	Wir wollen uns nun dem zweiten Teil von Hilberts Problem widmen und zwar der 
+	Ergänzungsgleichheit von Polytopen. Wir wollen in diesem Kapitel zeigen, dass 
+	Zerlegungsgleichheit und Ergänzungsgleichheit gleichbedeutend sind. Der 
+	Beweis hierzu ist nicht gerade trivial, weswegen wir vorweg noch einige 
+	Kenntnisse über Polytope benötigen. Das Kapitel richtet sich nach 
+	\cite{Hadwiger}. 
+	Im Folgenden meinen wir mit Polytopen wieder $d$-Polytope. 
+	
+	\subsection{Ein wenig Polyedertheorie}
+	
+	Wir wollen uns zunächst überlegen, wie wir Polytope vervielfältigen, sowie 
+	über eine Dilation stauchen und strecken können. 
+	
+	\begin{itemize}
+		\item \textsl{Dilation:} Unter einer Dilation mit einem Faktor $\lambda>0$ 
+		verstehen wir eine Streckung bzw. Stauchung aller Punkte 
+		im Koordinatensystem. Ein Punkt $p\in\setR^d$ wird also auf 
+		sein skalares Vielfaches $\lambda\cdot p$ abgebildet. Im Zusammenhang mit 
+		Polytopen erhalten wir mit dem Faktor $\lambda$ das dilatierte Polytop 
+		$\lambda P$. \\
+		Wir bemerken, dass wenn wir diese Abbildungen auf Polytope anwenden wir wieder Polytope erhalten, da Halbräume auf Halbräume abgebildet werden.
+		\item \textsl{Vervielfältigung:} Eine ganze Vervielfachung eines Polytop 
+		$P$, mit einer natürlichen Zahl $n$, ist ein Polytop $Q$, 
+		das sich in $n$ viele Polytope zerlegen lässt, die alle kongruent zu 
+		$P$ sind. Wir schreiben für das Polytop $Q$ auch $n\cdot P$. Formal 
+		bedeutet dies, dass es Polytope $P_1,\ldots,P_n$ gibt, sd.
+		\[n\cdot P=P_1+\ldots+P_n,\]
+		wobei $P_i\cong P$ für alle $i=1,\ldots,n$. \\
+		Wir bemerken, dass die Lage der Polyeder $P_i$ nicht eindeutig festgelegt 
+		ist, was jedoch beim eigentlichen zerlegen keine Rolle spielt.
+	\end{itemize}
+	
+	Es ergeben sich beim Vervielfältigen, wie man leicht sieht folgende Eigenschaften.
+	\begin{corollary} \label{coroll:vervielfältigung}
+		Seien $P$ und $Q$ zwei Polytope und $n$ eine natürliche Zahl, dann gilt
+		\[n\cdot(P+Q)\sim n\cdot P+n\cdot Q.\]
+	\end{corollary}
+	
+	\begin{proof}
+		Wir finden also $n$ viele Polytope $R_1,\ldots,R_n$ mit 
+		$R_i\cong (P+Q)$ für alle $i=1,\ldots,n$, sd. 
+		$n\cdot(P+Q)=R_1+\ldots+R_n$. Das heißt aber auch, dass sich jedes 
+		$R_i$ darstellen lässt durch Polytope $P_i$ und $Q_i$ für alle 
+		$i=1,\ldots,n$, wobei $P_i\cong P$ und $Q_i\cong Q$. Ebenso finden wir 
+		aber auch jeweils $n$ viele Polytope 
+		$P_1',\ldots,P_n'$ und $Q_1',\ldots,Q_n'$ mit $P_i'\cong P$ und 
+		$Q_i'\cong Q$ für alle $i=1,\ldots,n$, sd. $n\cdot P=P_1'+\ldots+P_n'$ und 
+		$n\cdot Q=Q_1'+\ldots+Q_n'$. Mit der Transitivität der Kongruenz 
+		gilt also auch $P_i\cong P_i'$ und $Q_i\cong Q_i'$ für alle 
+		$i=1,\ldots,n$. Wir erhalten also die Zerlegungen
+		\begin{align*}
+		n\cdot(P+Q)&=R_1+\ldots+R_n=P_1+Q_1+\ldots+P_n+Q_n \qquad\text{und}\\
+		n\cdot P+n\cdot Q&=P_1'+\ldots+P_n'+Q_1'+\ldots+Q_n'=
+		P_1'+Q_1'+\ldots+P_n'+Q_n'.
+		\end{align*}
+		Damit sind $n\cdot (P+Q)$ und $n\cdot P+n\cdot Q$ zerlegungsgleich.
+	\end{proof}
+	
+	\begin{definition}[Minkowski-Summe]
+		Seien $A$ und $B$ Mengen, dann ist die Minkowski-Summe $A\times B$ 
+		von $A$ und $B$ mit der vektoriellen Addition definiert als
+		\[A\times B=\left.\{a+b\ \right\vert\ a\in A,b\in B\}.\]
+	\end{definition}
+	
+	Die Minkowski-Addition ist offensichtlich kommutativ und assoziativ. 
+	
+	\begin{definition}[$i$-stufiger Zylinder]
+		Ein Polytop $P$ ist ein $i$-stufiger Zylinder, falls es eine Darstellung 
+		der Form
+		\[P=P_1 \times\ldots\times P_i\]
+		gibt, wobei $P_i$ hier konvexe Polytope sind, die jeweils in einer $d_i$-dimensionalen Ebene $E_{d_i}$ liegen. Hierbei soll $\sum_1^i d_i =d$
+		gelten und die Ebenen $E_{d_i}$ befinden sich paarweise in allgemeiner Lage.
+	\end{definition}
+	
+	\begin{definition}[Zylinderklassen]
+		Ein Polytop $P$ ist ein $i$-stufiges Zylinderpolytop, falls 
+		es endlich viele $i$-stufige Polytope $P_1,\ldots,P_n$ gibt, sd.
+		\[P=P_1+\ldots+P_n.\]
+		Wir wollen mit der Zylinderklasse $\mathfrak{B}_i$ die Menge aller 
+		Polytope, die zu einem $i$-stufigen Zylinderpolytop zerlegungsgleich 
+		sind, wobei $\emptyset\in\mathfrak{B}_i$. Die Stufenzahl $i$, 
+		mit $1\leq i\leq  d$, ist die Ordnung der Zylinderklasse $\mathfrak{B}_i$.
+	\end{definition}
+	
+	Besonders interessant sind hierbei die erste und die $d$-te Zylinderklasse. 
+	Es lässt sich nämlich feststellen, dass die erste Zylinderklasse gerade 
+	der Menge aller Polytope entspricht. Jedes Polytop lässt sich nach 
+	
+	%... Jedes Polytop lässt sich in endlich viele Simplizes zerlegen
+	
+	in endlich viele Simplizes zerlegen und jedes Simplex ist ein $1$-stufiger 
+	Zylinder.
+	
+	%... Aussage oben drüber
+	
+	Die $d$te Zylinderklasse entspricht gerade Polytopen, welche mit einem 
+	Parallelotop zerlegungsgleich sind. Es gilt sogar die folgende Eigenschaft.
+	
+	\begin{remark} \label{bem:dteZylinderklasse}
+		Sei $P\in\mathfrak{B}_d$ ein Polytop, dann gibt es ein $\lambda>0$, sd. 
+		$P$ zerlegungsgleich mit $\lambda W_d$ ist. $W_d$ ist hierbei 
+		der $d$-dimensionale Einheitswürfel.
+		
+		%... evtl Begründung über Parallelotope siehe Hadwiger Formel (72)
+		
+	\end{remark}
+	
+	Wir stellen fest, dass jeder $i$-stufige Zylinder auch ein $j$-stufiger 
+	Zylinder für ein $j<i$ ist und damit erhalten wir
+	\[\mathfrak{B}_1\supset \mathfrak{B}_2\supset \ldots\supset\mathfrak{B}_d.\]
+	Die Zylinderklassen sind vor allem deswegen für uns interessant, da sie 
+	Beweisverfahren nach dem Prinzip der vollständigen Induktion ermöglichen. 
+	So können wir Aussagen für alle Polytope mittels Induktion über die 
+	Zylinderklassen beweisen. Wir werden dieses Verfahren beim Beweis zu Satz 
+	\ref{thm:zerlerg} verwenden.
+	
+	\subsection{Ergänzungsgleich und Zerlegungsgleichheit}
+	
+	Wir wollen noch einmal kurz die Definition der Zerlegungsgleichheit wiederholen.
+	
+	\begin{definition}[Zerlegungsgleichheit]
+		Zwei $d$-Polytope $P$ und $Q$ heißen \textsl{zerlegungsgleich}, wenn es endlich viele $d$-Polytope 
+		$P_1,\ldots,P_n,Q_1,\ldots,Q_n$ mit $P=P_1 +\ldots +P_n$,  $Q=Q_1 +\ldots+Q_n$ 
+		gibt, sd. 
+		\[P_i\cong Q_i\]
+		für alle $i\in\{1,\ldots,n\}$. Wir schreiben $P\sim Q$.
+	\end{definition}
+	
+	Nun können wir die Ergänzungsgleichheit definieren.
+	
+	\begin{definition}[Ergänzungsgleich]
+		Zwei $d$-Polytope $P$ und $Q$ heißen \textsl{ergänzungsgleich}, wenn es endlich viele $d$-Polytope 
+		$P_1,\ldots,P_n$, $Q_1,\ldots,Q_n$ gibt, wobei gilt $P_i\cong Q_i$ für alle $i\in\{1,\ldots,n\}$, sd. die Polytope
+		\[P'=P+P_1+\ldots+P_n,\qquad Q'=Q+Q_1+\ldots+Q_n\]
+		zerlegungsgleich sind.
+	\end{definition}
+	
+	Alternativ ist auch die schreibweise üblich, dass zwei Poltope $P$ und $Q$
+	ergänzungsgleich sind, falls es zwei zerlegungsgleiche Polytope 
+	$A$ und $B$ gibt, sd. $P+A\sim Q+B$ gilt. \\
+	Man sieht leicht, dass die Folgende Aussage gilt.
+	
+	\begin{proposition}\label{coroll:ergvol}
+		Seien $P$ und $Q$ zwei ergänzungsgleiche Polytope, dann gilt $vol(P)=vol(Q)$.
+	\end{proposition}
+	
+	\begin{proof}
+		Seien $P$ und $Q$ ergänzungsgleich, d. h. es gibt endlich viele Polytope $P_1,\ldots,P_n,
+		Q_1\ldots,Q_n$ mit $P_i\cong Q_i$ für alle $i\in{1,\ldots,n}$, sd. 
+		$P'=P+P_1+\ldots+P_n$ und $Q'=Q+Q_1+\ldots+Q_n$ zerlegungsgleich sind. Nach 
+		Proposition \ref{prop:zerl,vol} gilt dann also auch $vol(P')=vol(Q')$. Damit folgt
+		\[vol(P)+vol(P_1)+\ldots+vol(P_n)=vol(P')=vol(Q')=vol(Q)+vol(Q_1)+\ldots+vol(Q_n)\]
+		und da mit $P_i\cong Q_i$ für alle $i\in{1,\ldots,n}$ nach Proposition \ref{prop:cong,vol} 
+		auch $vol(P_i)=vol(Q_i)$ gilt, folgt $vol(P)=vol(Q)$.
+	\end{proof}
+	
+	\begin{theorem} \label{thm:zerlerg}
+		Zwei Polyeder $P$ und $Q$ sind genau dann zerlegungsgleich, wenn sie 
+		ergänzungsgleich sind.
+	\end{theorem}
+	
+	Der Beweis richtet sich nach \cite[Satz III]{Hadwiger}.
+	
+	\begin{proof}
+		\noindent
+		\begin{itemize}
+			\item[$"\Rightarrow"$:] Haben wir zwei zerlegungsgleiche Polytope, so müssen wir kein weiteres Polytop ergänzen, damit die Ergänzungen zerlegungsgleich sind, also folgt bereits die Ergänzungsgleichheit.
+			
+			\item[$"\Leftarrow"$:] Die Rückrichtung funktioniert per 
+			Induktion über die Zylinderklassen. Seien also Polytope 
+			$P,Q,R,S$ gegeben, sd. 
+			\begin{align}
+			P+R\sim Q+S \label{thm:zerlerg;1}
+			\end{align}
+			und
+			\begin{align}
+			R\sim S. \label{thm:zerlerg;2}
+			\end{align}
+			Falls nun $P,Q\in \mathfrak{B}_d$ gilt, dann gibt es mit Bemerkung 
+			\ref{bem:dteZylinderklasse} 
+			$\lambda_1,\lambda_2 >0$, sd. $P\sim \lambda_1 W_d$ und 
+			$Q\sim \lambda_2 W_d$, wobei mit hier $W_d$ der $d$-dimensionale 
+			Einheitswürfel gemeint ist. Da mit Folgerung \ref{coroll:ergvol} 
+			folgt, dass $vol(P)=vol(Q)$, muss $\lambda_1 =\lambda_2$ und 
+			damit $P\sim Q$. \\
+			Wir nehmen nun also induktiv an, dass die Aussage bereits für alle 
+			Polytope $P,Q\in\mathfrak{B}_{i+1}$ gilt. Es sei nun also 
+			$P,Q\in\mathfrak{B}_i$ für ein beliebiges $1\leq i\leq d-1$. 
+			Da $d-i>0$ und o.B.d.A. $vol(R)>0$ gibt es eine natürliche Zahl $n$, sd. 
+			\begin{align}
+			n^{d-i}>1+\frac{vol(R)}{vol(P)}. \label{thm:zerlerg;3}
+			\end{align}
+			Weiterhin gilt mit \ref{thm:zerlerg;1} und 
+			
+			%... n(A+B)=nA+nB und aus A sim B folgt nA sim nB
+			
+			\begin{align}
+			nP+nR\sim nQ+nS \label{thm:zerlerg;4}
+			\end{align}
+			und
+			\begin{align}
+			nR\sim nS. \label{thm:zerlerg;5}
+			\end{align}
+			Mit 
+			
+			%... Hilfssatz I
+			
+			gibt es nun ein Polytop $P_0\in\mathfrak{B}_{i+1}$, sd.
+			\begin{align}
+			nP\sim P_0 +n^i\cdot P \label{thm:zerlerg;6}
+			\end{align}
+			und mit Proposition \ref{prop:zerl,vol} folgt dann
+			\begin{align*}
+			vol(nP)=vol(P_0+n^i\cdot P)=vol(P_0)+vol(n^i\cdot P)=vol(P_0)+
+			n^i\cdot vol(P).
+			\end{align*}
+			Nach 
+			
+			%... Volumen bei Dilation für d-dim. Polytop: vol(nP)=n^d vol(P)
+			
+			gilt $vol(nP)=n^d vol(P)$ und damit 
+			\begin{align}
+			vol(P_0)=(n^d -n^i)vol(P). \label{thm:zerlerg;7}
+			\end{align}
+			Weiter folgt mit der Ungleichung \ref{thm:zerlerg;3}, dass 
+			$n^d > n^i+n^i\frac{vol(R)}{vol(P)}$ und damit
+			\begin{align}
+			vol(P_0)=(n^d -n^i)vol(P)>n^i vol(R)=vol(n^i\cdot R) \label{thm:zerlerg;8}.
+			\end{align}
+			Mit
+			
+			%... Formel (37)
+			
+			ist $n^i\cdot R$ nun also zerlegungsgleich zu einem Teilpolytop von $P_0$, dh. es gibt Polytope $C,D\subset P_0$ mit $P+Q=P_0$ und $n^i\cdot R\sim C$, sd. 
+			\begin{align}
+			P_0=C+D\sim n^i\cdot R+D. \label{thm:zerlerg;9}
+			\end{align}
+			Damit gilt 
+			\begin{align}
+			nP &\overset{\ref{thm:zerlerg;9}}{\sim} P_0+n^i \cdot P \notag\\
+			&\sim n^iR +D+n^i \cdot P \notag\\
+			&\overset{\ref{coroll:vervielfältigung}}{\sim} D+n^i\cdot(R+P) \notag\\ 
+			&\overset{\ref{thm:zerlerg;1}}{\sim} D+n^i\cdot(Q+S) \notag\\
+			&\overset{\ref{thm:zerlerg;2}}{\sim} D+n^i\cdot(Q+R) \notag\\
+			&\overset{\ref{coroll:vervielfältigung}}{\sim}
+			Q+n^i\cdot Q +n^i\cdot R \notag\\
+			&\overset{\ref{thm:zerlerg;9}}{\sim} P_0+n^i \cdot Q. \label{thm:zerlerg;10}
+			\end{align}
+			Analog zu \ref{thm:zerlerg;6} finden wir für $Q$ ebenso ein 
+			$Q_0\in\mathfrak{B}_{i+1}$ mit $nQ\sim Q_0+n^i\cdot Q$. Wir erhalten 
+			\[P_0+n^i\cdot Q+nR\overset{\ref{thm:zerlerg;10}}{\sim}
+			nP+nR\overset{\ref{thm:zerlerg;4}}{\sim}nQ+nS\sim Q_0+n^i\cdot Q+nS.\]
+			Wegen \ref{thm:zerlerg;5} gilt $n^i\cdot Q+nR\sim n^i\cdot Q +nS$ und 
+			mit der Induktionsvoraussetzung folgt für $P_0,Q_0\mathfrak{B}_{i+1}$, dass 
+			$P_0\sim Q_0$ und damit folgt mit \ref{thm:zerlerg;10} und der 
+			analogen Folgerung, dass 
+			\[nP\sim nQ\]
+			gilt. Mit
+			
+			%... aus nP sim nQ folgt P sim Q. Folgerung bei Dilation
+			
+			gilt also \[P\sim Q.\]
+		\end{itemize}
+	\end{proof}
+	
 	%
 	%Wir werden im folgenden immer kommutative Ringe mit Eins betrachen.
 	%
