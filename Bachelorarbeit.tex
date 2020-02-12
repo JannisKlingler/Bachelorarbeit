@@ -1023,29 +1023,89 @@
 	
 	\subsection{Ein wenig Polyedertheorie}
 	
-	Wir wollen uns zunächst überlegen, wie wir Polytope vervielfältigen, sowie 
-	über eine Dilation stauchen und strecken können. 
+	Wir beginnen mit dem einfachsten Polytop, dem Simplex. Ein Simplex hat 
+	gerade $d+1$ ausgezeichnete Ecken und hat damit gerade soviele Kanten, dass 
+	wir ein konvexes Polytop erhalten. Im zwei-dimensionalen Fall ist ein 
+	Simplex ein Dreieck und im drei-dimensionalen ein Tetraeder. Wir werden 
+	feststellen, dass sich jedes konvexe Polytop in endlich viele Simplizes 
+	zerlegen lässt. Diese Simplizialzerlegung von Polytopen spielt bei 
+	der Zerlegungsgleichheit von Polytopen eine wichtige Rolle, wie wir schon im 
+	Beweis des Bolyai-Gerwien-Theorems (Satz \ref{theorem:bolyai-gerwien}) 
+	gesehen haben. Ebenso war, wie sich schon aus der Formulierung des dritten Problem von Hilbert herauslesen lässt, klar, dass es eine der einfachsten Lösungen ist, zwei Simplizes mit gleichem Volumen zu finden, die nicht zerlegungsgleich sind.
 	
-	\begin{itemize}
-		\item \textsl{Dilation:} Unter einer Dilation mit einem Faktor $\lambda>0$ 
+	\begin{definition}[Simplex]
+		Ein Simplex $S$ ist die konvexe Hülle einer Menge von $d+1$ Punkten 
+		$p_0,\ldots,p_d$, die sich im Raum in allgemeiner Lage befinden, also 
+		nicht alle in einer Ebene liegen. Die Punkte bezeichnen wir als 
+		Ecken des Simplex.
+	\end{definition}
+	
+	\begin{theorem}[Simplizialzerlegung von Polytopen]
+		Sei $P$ ein Polytop, dann lässt sich $P$ in endlich viele 
+		Simplizes $S_1,\ldots,S_n$ zerlegen, also
+		\[P=S_1+\ldots+S_n.\]
+	\end{theorem}
+	
+	\begin{proof}
+		Das Polytop $P$ lässt sich nach der Definition als Vereinigung endlich 
+		viele konvexer Polytope darstellen. Wir müssen also 
+		zeigen, dass sich jedes konvexe Polytop $P'$ in endlich viele Simplizes 
+		zerlegen lässt. Wir wollen dies per Induktion über die Dimension 
+		unseres Vektorraumes zeigen. Für $d=1$ ist die Aussage klar, da 
+		jedes konvexe $1$-Polytop gerade eine Strecke ist und damit auch ein 
+		Simplex. Wir nehmen also an, die Aussage sei für die Dimension $d-1$ 
+		bewiesen. Betrachten wir also die $d-1$-dimensionalen Seiten von 
+		$P'$, dann wissen wir nach Induktionsvoraussetzung, dass diese 
+		sich in endliche viele $d-1$-dimnesionale Simplizes $S_i'$ zerlegen lassen. 
+		Betrachten wir also einen beliebigen Punkt $p'\in P'$, dann 
+		bildet die konvexe Hülle des Punktes $p'$ und des Simplex $S_i'$ ein 
+		neues Simplex $S_i$. Führen wir das fort auf alle Simplizes der Seiten 
+		von $P'$, so erhalten wir eine Zerlegung von $P'$ in endlich viele 
+		Simplizes. Weiter erhalten wir also auch eine Zerlegung von 
+		$P$ in Simplizes.
+	\end{proof}
+	
+	Wir wollen uns zunächst überlegen, wie wir Polytope vervielfältigen, sowie 
+	über eine Dilatation stauchen und strecken können. 
+	
+	\begin{definition}[Dilatation]
+		Unter einer Dilatation mit einem Faktor $\lambda>0$ 
 		verstehen wir eine Streckung bzw. Stauchung aller Punkte 
 		im Koordinatensystem. Ein Punkt $p\in\setR^d$ wird also auf 
 		sein skalares Vielfaches $\lambda\cdot p$ abgebildet. Im Zusammenhang mit 
 		Polytopen erhalten wir mit dem Faktor $\lambda$ das dilatierte Polytop 
-		$\lambda P$. \\
-		Wir bemerken, dass wenn wir diese Abbildungen auf Polytope anwenden wir wieder Polytope erhalten, da Halbräume auf Halbräume abgebildet werden.
-		\item \textsl{Vervielfältigung:} Eine ganze Vervielfachung eines Polytop 
+		$\lambda P$.
+	\end{definition}
+	
+	Wir bemerken, dass wenn wir diese Abbildungen auf Polytope anwenden wir wieder Polytope erhalten, da Halbräume auf Halbräume abgebildet werden.
+	
+	\begin{remark}\label{bem:dilvol}
+		Gegeben $\lambda >0$, dann können wir eine Dilatation mittels der Matrix
+		\[M=\begin{pmatrix}
+		\lambda &\ & 0\\
+		\ &\ddots &\ \\
+		0 &\ &\lambda
+		\end{pmatrix}\] 
+		darstellen. Für das Volumen eines Polytops $P$ erhält man also mit 
+		der Transformationsformel aus der Analysis
+		\[vol(\lambda P)=\abs{det(M)}\cdot vol(P)=\lambda^d\cdot vol(P).\]
+	\end{remark}
+	
+	\begin{definition}[Vervielfachung]
+		Eine ganze Vervielfachung eines Polytop 
 		$P$, mit einer natürlichen Zahl $n$, ist ein Polytop $Q$, 
 		das sich in $n$ viele Polytope zerlegen lässt, die alle kongruent zu 
 		$P$ sind. Wir schreiben für das Polytop $Q$ auch $n\cdot P$. Formal 
 		bedeutet dies, dass es Polytope $P_1,\ldots,P_n$ gibt, sd.
 		\[n\cdot P=P_1+\ldots+P_n,\]
-		wobei $P_i\cong P$ für alle $i=1,\ldots,n$. \\
-		Wir bemerken, dass die Lage der Polyeder $P_i$ nicht eindeutig festgelegt 
-		ist, was jedoch beim eigentlichen zerlegen keine Rolle spielt.
-	\end{itemize}
+		wobei $P_i\cong P$ für alle $i=1,\ldots,n$.
+	\end{definition}
+	
+	Wir bemerken, dass die Lage der Polyeder $P_i$ nicht eindeutig festgelegt 
+	ist, was jedoch beim eigentlichen zerlegen keine Rolle spielt.
 	
 	Es ergeben sich beim Vervielfältigen, wie man leicht sieht folgende Eigenschaften.
+	
 	\begin{corollary} \label{coroll:vervielfältigung}
 		Seien $P$ und $Q$ zwei Polytope und $n$ eine natürliche Zahl, dann gilt
 		\[n\cdot(P+Q)\sim n\cdot P+n\cdot Q.\]
@@ -1113,7 +1173,8 @@
 	
 	\begin{remark} \label{bem:dteZylinderklasse}
 		Sei $P\in\mathfrak{B}_d$ ein Polytop, dann gibt es ein $\lambda>0$, sd. 
-		$P$ zerlegungsgleich mit $\lambda W_d$ ist. $W_d$ ist hierbei 
+		\[P\sim \lambda W_d.\] 
+		$W_d$ ist hierbei 
 		der $d$-dimensionale Einheitswürfel.
 		
 		%... evtl Begründung über Parallelotope siehe Hadwiger Formel (72)
@@ -1127,7 +1188,15 @@
 	Beweisverfahren nach dem Prinzip der vollständigen Induktion ermöglichen. 
 	So können wir Aussagen für alle Polytope mittels Induktion über die 
 	Zylinderklassen beweisen. Wir werden dieses Verfahren beim Beweis zu Satz 
-	\ref{thm:zerlerg} verwenden.
+	\ref{thm:zerlerg} verwenden. 
+	
+	\begin{theorem}
+		Sei $P$ ein Polytop, das in der $i$-ten Zylinderklasse $\mathfrak{B}_i$ ist 
+		und $n$ eine natürliche Zahl, dann gilt
+		\[nP\sim n^i\cdot P+P_0,\]
+		wobei $P_0\in\mathfrak{B}{i+1}$ ein (von $n$ abhängiges) Polytop ist. 
+		Falls $i=d$ ist $P_0=\emptyset$.
+	\end{theorem}
 	
 	\subsection{Ergänzungsgleich und Zerlegungsgleichheit}
 	
@@ -1140,6 +1209,36 @@
 		\[P_i\cong Q_i\]
 		für alle $i\in\{1,\ldots,n\}$. Wir schreiben $P\sim Q$.
 	\end{definition}
+
+	\begin{proposition}
+		Seien $P$ und $Q$ zwei Polytope, dann ist $vol(P)<vol(Q)$ genau dann, wenn $P$ zerlegungsgleich zu 
+		einem Teilpolytop von $Q$ ist.
+	\end{proposition}
+	
+	Anders ausgedrückt gibt es also Polytope $Q_1,Q_2\subset Q$ 
+	mit $Q_1+Q_2=Q$, sd. $P\sim Q_1$. Wir werden diese Proposition per 
+	Induktion über die Zylinderklassen beweisen.
+
+	\begin{proof}
+		\noindent
+		\begin{itemize}
+			\item[$"\Rightarrow"$:] Ist also $P$ zerlegungsgleich zu einem 
+			Teilpolytop von $Q$, dann ist auch das Volumen von $P$ gleich 
+			dem des Teilpolytops und mit der Monotonie des Maßes folgt die 
+			Aussage.
+			\item[$"\Leftarrow"$:] Sei also $vol(P)<vol(Q)$, dann gibt es ein 
+			$\lambda>0$, sd. $vol(Q)-vol(P)=\lambda^d$. Wir beginnen 
+			mit dem Induktionsanfang. Für $P,Q\in\mathfrak{B}_d$ gibt es 
+			nach Bemerkung \ref{bem:dteZylinderklasse} $alpha,beta>0$, sd. 
+			$P\sim alpha W_d$ und $Q\sim \beta W_d$. Es ergibt sich also 
+			\[\lambda^d =vol(P)=vol(Q)=vol(\alpha W_d)-vol(\beta W_d)=\alpha^d -\beta^d\]
+			und damit $\beta >\alpha$, da $\lambda>0$. Der Würfel $\alpha W_d$ 
+			ist also ein Teilpolyeder des Würfels $\beta W_d$ und damit 
+			folgt die Aussage. Wir nehmen nun also an, dass die Aussage 
+			bereits für alle Polytope der Zylinderklasse $\mathfrak{B}_{i+1}$ 
+			gilt, wobei $1\leq i\leq d-1$. Seien also $P,Q\in\mathfrak{B}_i$.
+		\end{itemize}
+	\end{proof}
 	
 	Nun können wir die Ergänzungsgleichheit definieren.
 	
@@ -1229,18 +1328,14 @@
 			vol(nP)=vol(P_0+n^i\cdot P)=vol(P_0)+vol(n^i\cdot P)=vol(P_0)+
 			n^i\cdot vol(P).
 			\end{align*}
-			Nach 
-			
-			%... Volumen bei Dilation für d-dim. Polytop: vol(nP)=n^d vol(P)
-			
-			gilt $vol(nP)=n^d vol(P)$ und damit 
+			Nach Bemerkung \ref{bem:dilvol} gilt $vol(nP)=n^d vol(P)$ und damit 
 			\begin{align}
 			vol(P_0)=(n^d -n^i)vol(P). \label{thm:zerlerg;7}
 			\end{align}
 			Weiter folgt mit der Ungleichung \ref{thm:zerlerg;3}, dass 
 			$n^d > n^i+n^i\frac{vol(R)}{vol(P)}$ und damit
 			\begin{align}
-			vol(P_0)=(n^d -n^i)vol(P)>n^i vol(R)=vol(n^i\cdot R) \label{thm:zerlerg;8}.
+				vol(P_0)=(n^d -n^i)vol(P)>n^i vol(R)=vol(n^i\cdot R)\label{thm:zerlerg;8}.
 			\end{align}
 			Mit
 			
@@ -1266,13 +1361,14 @@
 			\[P_0+n^i\cdot Q+nR\overset{\ref{thm:zerlerg;10}}{\sim}
 			nP+nR\overset{\ref{thm:zerlerg;4}}{\sim}nQ+nS\sim Q_0+n^i\cdot Q+nS.\]
 			Wegen \ref{thm:zerlerg;5} gilt $n^i\cdot Q+nR\sim n^i\cdot Q +nS$ und 
-			mit der Induktionsvoraussetzung folgt für $P_0,Q_0\mathfrak{B}_{i+1}$, dass 
+			mit der Induktionsvoraussetzung folgt für $P_0,Q_0\mathfrak{B}_{i+1}
+			$, dass 
 			$P_0\sim Q_0$ und damit folgt mit \ref{thm:zerlerg;10} und der 
 			analogen Folgerung, dass 
 			\[nP\sim nQ\]
 			gilt. Mit
 			
-			%... aus nP sim nQ folgt P sim Q. Folgerung bei Dilation
+			%... aus nP sim nQ folgt P sim Q. Folgerung bei Dilatation
 			
 			gilt also \[P\sim Q.\]
 		\end{itemize}
