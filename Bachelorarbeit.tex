@@ -136,9 +136,14 @@
 	
 	\subsection{Polytope}
 	
+	Zu Beginn wollen Polytope formal über Vektorräumen einführen. Später werden 
+	wir dann vor allem auf dem Euklidischen Raum $\setR^d$ arbeiten. 
+	Wir betrachten dazu einen Vektorraum $V$ über einem Körper $k$ mit Dimension $d$. 
+	
 	\begin{repetition}[Dual-Raum]
-		Der Dualraum $V^*$ eines $k$-Vektorraums $V$ ist die Menge aller linearen Abbildungen von $V$ in den Körper 	$k$.
+		Der Dualraum $V^*$ eines $k$-Vektorraums $V$ ist die Menge aller linearen Abbildungen von $V$ in den Körper $k$.
 	\end{repetition}
+	Wir bemerken, dass der Dualraum wieder ein Vektorraum ist.
 	
 	\begin{definition}[Halbraum]
 		Ein Halbraum in einem reellen Vektorraum ist eine Teilmenge der Form
@@ -149,15 +154,24 @@
 	\begin{definition}[konvexes Polytop]
 		Ein konvexes $d$-Polytop $P$ in einem $d$-dimensionalen reellen Vektorraum $V$ ist der Schnitt endlich vieler 
 		Halbräume. $P$ ist beschränkt, falls für jedes $\alpha\in V^*\setminus\{0\}$ ein $r\in \setR$ existiert, sd. 
-		$\alpha(x)\leq r$ für alle $x\in P$ gilt. \\
-		Für $d=0$ ist $P$ eine Ecke, für $d=1$ ist $P$ eine Strecke, für $d=2$ ist $P$ ein Polygon und für $d=3$ 
-		ist $P$ ein Polyeder.
+		$\alpha(x)\leq r$ für alle $x\in P$ gilt.
 	\end{definition}
 	
+	Wir wollen die Dimension eines konvexen Polytops $P$ definieren als das 
+	Maximum der Anzahl der linear unabhängigen Vektoren, die wir in $P$ finden. 
 	Hierbei ist es auch möglich, dass das, durch die Halbräume entstehende, Polytop 
 	von niedrigerer Dimension ist als der ursprünglich zugrunde liegende 
-	Vektorraum, das Polytop also keine inneren Punkte hat. Der Einfachheit halber 
-	wollen wir diese Polytope nicht zulassen. \\
+	Vektorraum, das Polytop also keine inneren Punkte hat. 
+	
+	\begin{definition}[Polytop]
+		Ein $d$-Polytop $P$ ist die Vereinigung endlich vieler konvexer 
+		$d$-Polytope.
+	\end{definition}
+	
+	Weiter nennen wir ein $0$-dimensionales Polytop eine Ecke, ein $1$-dimensionales Polytop eine Strecke bzw. Kante, ein $2$-dimensionales Polytop ein Polygon und ein $3$-dimensionales Polytop einen Polyeder.
+	
+	%... hier eventuell noch alles auf Polytope verallgemeinern
+	
 	Wir werden im Folgenden immer beschränkte konvexe $d$-Polytope betrachten. Wir stellen außerdem fest, dass 
 	der Schnitt konvexer Polytope wieder ein konvexes Polytop ist. Hierbei kann der Schnitt auch niedrigerdimensional 
 	sein. Wir sagen zwei Polytope $P_1$ und $P_2$ sind disjunkt, wenn $dim(P_1\cap P_2)<d$. Wir schreiben dann 
@@ -177,11 +191,13 @@
 	\end{definition}
 
 	 Mit Isometrien meinen wir hier längenerhaltende Affinitäten, also bijektive affine Abbildungen, die den Abstand zweier beliebiger Punkte erhalten. 
-	 Isometrien sind als gerade Bewegungen, das heißt sie setzen sich 
-	 gerade aus einer Translation und einer Drehung zusammen. Eine 
-	 Isometrie $f:\setR^d\to \setR^d$ hat also die Darstellung 
-	 $f(x)=\alpha + Q(x)$ für alle $x\in \setR^d$, wobei $\alpha\in\setR^d$ ein Vektor und $Q\in O(d)$ hier eine orthogonale Matrix ist, also eine 
-	 Drehung. Da das Skalarprodukt translationsinvariant ist und 
+	 Isometrien sind Bewegungen, das heißt sie setzen sich 
+	 gerade aus einer Translation und einer Drehung zusammen. Zu jeder 
+	 Isometrie $f:\setR^d\to\setR^d$ lässt sich also ein Vektor 
+	 $\alpha\in\setR^d$ und eine orthogonale Matrix $Q\in O(d)$, also 
+	 eine Drehung, finden, sd. wir 
+	 die Darstellung $f(x)=\alpha + Q(x)$ für alle $x\in \setR^d$ erhalten. 
+	 Da das Skalarprodukt translationsinvariant ist und 
 	 auch invariant unter Drehungen, ist das Skalarprodukt auch invariant 
 	 unter Isometrien. Weiter bilden Isometrien Halbräume wieder auf 
 	 Halbräume ab und damit auch Polytope auf Polytope. Die Menge 
@@ -224,7 +240,7 @@
 	\begin{proof}
 		Da sich eine Isometrie für alle $x\in\setR$ darstellen lässt als $f(x)=\alpha +Q(x)$ für eine orthogonale Matrix $Q\in O(d)$ und ein 
 		$\alpha\in\setR^d$ ergibt sich die Aussage mit der Transformationsformel 
-		aus der Analysis.
+		aus der Analysis (siehe auch \cite[Satz 4.7]{SkriptAna3}).
 	\end{proof}
 	
 	\begin{lemma}\label{lemma:nullmenge}
@@ -262,6 +278,8 @@
 		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Wir erhalten mit Proposition \ref{prop:cong,vol} und Lemma \ref{lemma:nullmenge} 
 		\[vol(P)=vol(P_1+\ldots+P_n)=\sum_{i=1}^n vol(P_i)=\sum_{i=1}^n vol(Q_i)=vol(Q_1+\ldots+Q_n)=vol(Q).\]
 	\end{proof}
+
+	\newpage
 	
 	\section{Zerlegungsgleichheit im 2-dimensionalen}
 	
@@ -304,14 +322,6 @@
 		gefunden. Als letztes überlegen wir uns, dass gilt $f_i(F_{ij})\cong g_j(F_{ij})$. Betrachte hierzu die Isometrie 
 		$g_j\circ f_i^{-1}$, dann gilt $g_j(f_i^{-1}(f_i(F_{ij})))=g_j(F_{ij})$. Also finden wir für $P$ und $R$ jeweils eine 
 		Zerlegung aus kongruenten Polygonen und damit sind auch $P$ und $R$ zerlegungsgleich bzw. $P\sim R$.
-	\end{proof}
-	
-	\begin{lemma}
-		Sei $P$ ein beliebiges Polygon, dann lässt sich $P$ in eine endliche Anzahl von Dreiecken zerlegen.
-	\end{lemma}
-	
-	\begin{proof}
-		Kommt noch.
 	\end{proof}
 	
 	\begin{lemma}
@@ -415,7 +425,7 @@
 	\end{theorem}
 	
 	\begin{proof}
-		Sei $P$ ein Polygon. Dann kann $P$ in endlich viele disjunkte Dreiecke zerlegt werden und jedes dieser 
+		Sei $P$ ein Polygon. Dann kann $P$, wie wir später in Satz \ref{thm:simplzerl} sehen werden, in endlich viele disjunkte Dreiecke zerlegt werden und jedes dieser 
 		Dreiecke ist nach Lemma \ref{lemma:dreieck,rechteck} zerlegungsgleich zu einem Rechteck. Wir finden 
 		also für $P$ die Darstellung
 		\[ P\sim P_1+\ldots+P_n,\]
@@ -449,7 +459,9 @@
 	sein drittes von 23 Problemen stellte, vermutete er wohl schon, dass die Antwort 'Nein' ist. Im Folgenden wollen wir 
 	uns zwei Beweise anschauen, die zeigen, dass es Polyeder gibt, die nicht zerlegungs- und ergänzungsgleich sind. 
 	Der erste bezieht sich auf die Arbeit Max Dehn's, ein Schüler Hilberts, der ein Jahr später in seiner Habitilationsarbeit 
-	die Aussage mithilfe der von ihm erfundenen Dehn-Invariante widerlegte. Der zweite Beweis...
+	die Aussage mithilfe der von ihm erfundenen Dehn-Invariante widerlegte.
+	
+	\newpage
 	
 	\section{Zerlegungsgleichheit von Polyedern; Dehn-Invariante}
 	
@@ -1040,7 +1052,7 @@
 		Ecken des Simplex.
 	\end{definition}
 	
-	\begin{theorem}[Simplizialzerlegung von Polytopen]
+	\begin{theorem}[Simplizialzerlegung von Polytopen]\label{thm:simplzerl}
 		Sei $P$ ein Polytop, dann lässt sich $P$ in endlich viele 
 		Simplizes $S_1,\ldots,S_n$ zerlegen, also
 		\[P=S_1+\ldots+S_n.\]
@@ -1087,7 +1099,7 @@
 		0 &\ &\lambda
 		\end{pmatrix}\] 
 		darstellen. Für das Volumen eines Polytops $P$ erhält man also mit 
-		der Transformationsformel aus der Analysis
+		der Transformationsformel aus der Analysis (siehe auch \cite[Satz 4.7]{SkriptAna3})
 		\[vol(\lambda P)=\abs{det(M)}\cdot vol(P)=\lambda^d\cdot vol(P).\]
 	\end{remark}
 	
@@ -1147,6 +1159,9 @@
 		gelten und die Ebenen $E_{d_i}$ befinden sich paarweise in allgemeiner Lage.
 	\end{definition}
 	
+	Jedes Simplex ist also offensichtlich ein $1$-stufiger Zylinder. Genauso 
+	ist jedes Parallelotop ein $k$-stufiger Zylinder.
+	
 	\begin{definition}[Zylinderklassen]
 		Ein Polytop $P$ ist ein $i$-stufiges Zylinderpolytop, falls 
 		es endlich viele $i$-stufige Polytope $P_1,\ldots,P_n$ gibt, sd.
@@ -1159,17 +1174,10 @@
 	
 	Besonders interessant sind hierbei die erste und die $d$-te Zylinderklasse. 
 	Es lässt sich nämlich feststellen, dass die erste Zylinderklasse gerade 
-	der Menge aller Polytope entspricht. Jedes Polytop lässt sich nach 
-	
-	%... Jedes Polytop lässt sich in endlich viele Simplizes zerlegen
-	
-	in endlich viele Simplizes zerlegen und jedes Simplex ist ein $1$-stufiger 
-	Zylinder.
-	
-	%... Aussage oben drüber
-	
-	Die $d$te Zylinderklasse entspricht gerade Polytopen, welche mit einem 
-	Parallelotop zerlegungsgleich sind. Es gilt sogar die folgende Eigenschaft.
+	der Menge aller Polytope entspricht. Jedes Polytop lässt sich nach Satz  
+	\ref{thm:simplzerl} in endlich viele Simplizes zerlegen und jedes Simplex ist ein $1$-stufiger Zylinder. 
+	Die $d$te Zylinderklasse entspricht gerade Polytopen, welche mit endlich vielen 
+	Parallelotopen zerlegungsgleich sind. Es gilt sogar die folgende Eigenschaft.
 	
 	\begin{remark} \label{bem:dteZylinderklasse}
 		Sei $P\in\mathfrak{B}_d$ ein Polytop, dann gibt es ein $\lambda>0$, sd. 
@@ -1197,6 +1205,10 @@
 		wobei $P_0\in\mathfrak{B}{i+1}$ ein (von $n$ abhängiges) Polytop ist. 
 		Falls $i=d$ ist $P_0=\emptyset$.
 	\end{theorem}
+	
+	\begin{proof}
+		Falls $i=1$ ist das Polytop $P$ ein Simplex und damit auch $nP$.
+	\end{proof}
 	
 	\subsection{Ergänzungsgleich und Zerlegungsgleichheit}
 	
