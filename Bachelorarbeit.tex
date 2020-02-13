@@ -196,7 +196,7 @@
 	 Isometrie $f:\setR^d\to\setR^d$ lässt sich also ein Vektor 
 	 $\alpha\in\setR^d$ und eine orthogonale Matrix $Q\in O(d)$, also 
 	 eine Drehung, finden, sd. wir 
-	 die Darstellung $f(x)=\alpha + Q(x)$ für alle $x\in \setR^d$ erhalten. 
+	 die Darstellung $f(x)=\alpha + Qx$ für alle $x\in \setR^d$ erhalten. 
 	 Da das Skalarprodukt translationsinvariant ist und 
 	 auch invariant unter Drehungen, ist das Skalarprodukt auch invariant 
 	 unter Isometrien. Weiter bilden Isometrien Halbräume wieder auf 
@@ -238,8 +238,10 @@
 	\end{proposition}
 	
 	\begin{proof}
-		Da sich eine Isometrie für alle $x\in\setR$ darstellen lässt als $f(x)=\alpha +Q(x)$ für eine orthogonale Matrix $Q\in O(d)$ und ein 
-		$\alpha\in\setR^d$ ergibt sich die Aussage mit der Transformationsformel 
+		Sei $f$ also die Isometrie, sd. $f(P)=Q$. Dann finden wir ein 
+		$\alpha\in\setR^d$ und eine orthogonale Matrix $Q\in O(d)$, sd. für 
+		alle $x\in\setR^d$ gilt $f(x)=\alpha+Qx$. Damit ergibt sich die Aussage 
+		mit der Transformationsformel 
 		aus der Analysis (siehe auch \cite[Satz 4.7]{SkriptAna3}).
 	\end{proof}
 	
@@ -1089,7 +1091,9 @@
 		$\lambda P$.
 	\end{definition}
 	
-	Wir bemerken, dass wenn wir diese Abbildungen auf Polytope anwenden wir wieder Polytope erhalten, da Halbräume auf Halbräume abgebildet werden.
+	Wir bemerken, dass wenn wir diese Abbildungen auf Polytope anwenden wir wieder Polytope erhalten, da Halbräume auf Halbräume abgebildet werden. 
+	Eine Dilatation um den Faktor $\lambda=1$ lässt die Punkte unverändert und 
+	hat somit keine Auswirkung. 
 	
 	\begin{remark}\label{bem:dilvol}
 		Gegeben $\lambda >0$, dann können wir eine Dilatation mittels der Matrix
@@ -1102,6 +1106,79 @@
 		der Transformationsformel aus der Analysis (siehe auch \cite[Satz 4.7]{SkriptAna3})
 		\[vol(\lambda P)=\abs{det(M)}\cdot vol(P)=\lambda^d\cdot vol(P).\]
 	\end{remark}
+	
+	Weiter stellen wir fest, dass wenn wir eine Zerlegung eines Polytops strecken, 
+	es das gleiche ist, wenn wir die Zerlegung der gestreckten Polytopen 
+	betrachten.
+	
+	\begin{lemma} \label{lemma:dilzerl}
+		Sei $P$ ein Polytop und $P_1,\ldots,P_n$ endlich viele Polytope, sd. 
+		$P=P_1+\ldots+P_n$ und $\lambda>0$ gegeben, dann gilt 
+		\[\lambda P=\lambda P_1+\ldots+\lambda P_n.\]
+	\end{lemma}
+	
+	\begin{proof}
+		Es gilt
+		\begin{align*}
+			\lambda P&=\lambda(P_1+\ldots+P_n)\\
+			&=\{\lambda p\ \vert\ p\in P_1 	\lor\ldots\lor p\in P_n\}\\
+			&=\{\lambda p\ \vert\ p\in P_1\}\cup\ldots\cup
+			\{\lambda p\ \vert\ p\in P_n\}\\
+			&=\lambda P_1 +\ldots+\lambda P_n.
+		\end{align*}
+	\end{proof}
+	
+	\begin{lemma} \label{lemma:dilkong}
+		Seien $P$ und $Q$ zwei Polytope und $\lambda>0$ gegeben, dann gilt 
+		$P\cong Q$ genau dann, wenn $\lambda P\cong \lambda Q$.
+	\end{lemma}
+	
+	\begin{proof}
+		Seien für die Hinrichtung $P\cong Q$, also gibt es eine Isometrie 
+		$f$, sd. gilt $f(P)=Q$. Dann gilt mit der Linearität von $f$ also
+		\[f(\lambda P)=\{f(\lambda p)\ \vert\ p\in P\} =\{\lambda f(p)\ \vert\ p\in P\}=\lambda f(P)=\lambda Q.\]
+		Damit sind also $\lambda P$ und $\lambda Q$ kongruent. \\
+		Seien also für die Rückrichtung nun $\lambda P\cong \lambda Q$, also 
+		gibt es eine Isometrie $f$, sd. $f(\lambda P)=\lambda Q$. Dann 
+		gilt mit der Dilatation $\frac{1}{\lambda}$, dass
+		\[f(P)=1\cdot f(P)=\frac{1}{\lambda}\lambda f(P)=\frac{1}{\lambda} f(\lambda P)=\frac{1}{\lambda} \lambda Q =1\cdot Q=Q.\]
+		Die Polytope $P$ und $Q$ sind also kongruent.
+	\end{proof}
+	
+	\begin{proposition} \label{prop:dilzerl}
+		Seien $P$ und $Q$ Polytope und $\lambda>0$ gegeben, dann gilt 
+		$P\sim Q$ genau dann, wenn $\lambda P\sim \lambda Q$.
+	\end{proposition}
+	
+	\begin{proof}
+		Seien für die Hinrichtung $P$ und $Q$ zerlegungsgleich, also gibt 
+		es endlich viele Polytope $P_1,\ldots,P_n$ und $Q_1\ldots,Q_n$ mit 
+		$P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots Q_n$, sd. $P_i\cong Q_i$ 
+		für alle $i=1,\ldots, n$. Nach Lemma \ref{lemma:dilzerl} können wir 
+		die Zerlegungen der gestreckten Polytope betrachten, also
+		\begin{align*}
+			\lambda P&=\lambda (P_1+\ldots P_n)=\lambda P_1 +\ldots+\lambda P_n \\
+			\lambda Q&=\lambda (Q_1+\ldots Q_n)=\lambda Q_1 +\ldots+\lambda Q_n.
+		\end{align*}
+		Weiter gilt mit Lemma \ref{lemma:dilkong}, dass aus $P_i\cong Q_i$ 
+		für alle $i=1,\ldots,n$ folgt, dass auch $\lambda P_i\cong\lambda Q_i$ 
+		für alle $i=1,\ldots,n$ gilt. Damit folgt $\lambda P\sim \lambda Q$. \\
+		Für die Rückrichtung seien $\lambda P\sim \lambda Q$, dann gibt 
+		endlich viele Polytop $P_1,\ldots P_n$ und $Q_1\ldots Q_n$ mit 
+		$\lambda P=P_1+\ldots+P_n$ und $\lambda Q=Q_1+\ldots+Q_n$, sd. 
+		$P_i\cong Q_i$ für alle $i=1,\ldots,n$. Wir betrachten die 
+		Zerlegungen
+		\begin{align*}
+			P&=1\cdot P=\frac{1}{\lambda}\lambda P=\frac{1}{\lambda}(P_1+\ldots+P_n)
+			=\frac{1}{\lambda}P_1+\ldots+\frac{1}{\lambda}P_n \\
+			Q&=1\cdot Q=\frac{1}{\lambda}\lambda Q=\frac{1}{\lambda}(Q_1+\ldots+Q_n)
+			=\frac{1}{\lambda}Q_1+\ldots+\frac{1}{\lambda}Q_n.
+		\end{align*}
+		Dann sind mit Lemma \ref{lemma:dilkong}, wegen der Kongruenz der $P_i$ und 
+		$Q_i$ für alle $i=1,\ldots,n$, die Polytope $\frac{1}{\lambda}P_i$ und 
+		$\frac{1}{\lambda}Q_i$ für alle $i=1,\ldots,n$ kongurent. 
+		Die Polytope $P$ und $Q$ sind also zerlegungsgleich.
+	\end{proof}
 	
 	\begin{definition}[Vervielfachung]
 		Eine ganze Vervielfachung eines Polytop 
