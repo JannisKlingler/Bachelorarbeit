@@ -1135,13 +1135,26 @@
 	
 	\begin{proof}
 		Seien für die Hinrichtung $P\cong Q$, also gibt es eine Isometrie 
-		$f$, sd. gilt $f(P)=Q$. Dann gilt mit der Linearität von $f$ also
-		\[f(\lambda P)=\{f(\lambda p)\ \vert\ p\in P\} =\{\lambda f(p)\ \vert\ p\in P\}=\lambda f(P)=\lambda Q.\]
+		$f$, sd. gilt $f(P)=Q$. Wir können die Isometrie $f$ durch ein $\alpha\in
+		\setR^d$ und eine orthogonale Matrix $U\in O(d)$ darstellen, sd. 
+		$f(P)=\alpha + UP$ gilt. Betrachte die Isometrie $f_{\lambda}$, die wir 
+		durch $f_{\lambda}(x)=\lambda\cdot \alpha +Ux$ für alle $x\in\setR^d$ definieren. 
+		Offensichtlich ist $f_{\lambda}$ wieder eine Isometrie. 
+		Dann gilt
+		\[f_{\lambda}(\lambda P)=\lambda\cdot \alpha+U \lambda P =\lambda\cdot 
+		\alpha+\lambda U P =\lambda(\alpha+ U P)=\lambda f(P)=\lambda Q\]
 		Damit sind also $\lambda P$ und $\lambda Q$ kongruent. \\
 		Seien also für die Rückrichtung nun $\lambda P\cong \lambda Q$, also 
-		gibt es eine Isometrie $f$, sd. $f(\lambda P)=\lambda Q$. Dann 
-		gilt mit der Dilatation $\frac{1}{\lambda}$, dass
-		\[f(P)=1\cdot f(P)=\frac{1}{\lambda}\lambda f(P)=\frac{1}{\lambda} f(\lambda P)=\frac{1}{\lambda} \lambda Q =1\cdot Q=Q.\]
+		gibt es eine Isometrie $f$, sd. $f(\lambda P)=\lambda Q$. Es gibt 
+		also wieder $\alpha\in\setR^d$ und $U\in O(d)$, sd. 
+		$f(x)=\alpha + Ux$ für alle $x\in\setR^d$ gilt. Betrachte die Isometrie 
+		$f_{\lambda}$, die wir durch 
+		$f_{\lambda}(x)=\frac{1}{\lambda}\cdot \alpha +U x$ für alle $x\in\setR^d$ 
+		definieren. Diese ist wieder eine Isometrie. Dann gilt 
+		\[f_{\lambda}(P)=\frac{1}{\lambda}\cdot \alpha +U P 
+		=\frac{1}{\lambda}(\alpha+\lambda U P)
+		=\frac{1}{\lambda}(\alpha + U \lambda P)
+		=\frac{1}{\lambda} f(\lambda P)=\frac{1}{\lambda} \lambda Q =1\cdot Q=Q.\]
 		Die Polytope $P$ und $Q$ sind also kongruent.
 	\end{proof}
 	
@@ -1393,10 +1406,9 @@
 			\begin{align}
 			n^{d-i}>1+\frac{vol(R)}{vol(P)}. \label{thm:zerlerg;3}
 			\end{align}
-			Weiterhin gilt mit \ref{thm:zerlerg;1} und 
-			
-			%... n(A+B)=nA+nB und aus A sim B folgt nA sim nB
-			
+			Betrachten wir nun Gleichung \ref{thm:zerlerg;1}, dann erhalten wir 
+			mit Lemma \ref{lemma:dilzerl}, dass $n(P+R)=nP+nR$ und $n(Q+S)=nQ+nS$ 
+			gilt. Mit Proposition \ref{prop:dilzerl} erhalten wir also
 			\begin{align}
 			nP+nR\sim nQ+nS \label{thm:zerlerg;4}
 			\end{align}
@@ -1434,15 +1446,14 @@
 			\begin{align}
 			P_0=C+D\sim n^i\cdot R+D. \label{thm:zerlerg;9}
 			\end{align}
-			Damit gilt 
+			Wir erhalten mit Folgerung \ref{coroll:vervielfältigung} also
 			\begin{align}
-			nP &\overset{\ref{thm:zerlerg;9}}{\sim} P_0+n^i \cdot P \notag\\
-			&\sim n^iR +D+n^i \cdot P \notag\\
-			&\overset{\ref{coroll:vervielfältigung}}{\sim} D+n^i\cdot(R+P) \notag\\ 
+			nP &\overset{\ref{thm:zerlerg;6}}{\sim} P_0+n^i \cdot P \notag\\
+			&\overset{\ref{thm:zerlerg;9}}{\sim} n^i\cdot R +D+n^i \cdot P \notag\\
+			&\sim D+n^i\cdot(R+P) \notag\\ 
 			&\overset{\ref{thm:zerlerg;1}}{\sim} D+n^i\cdot(Q+S) \notag\\
 			&\overset{\ref{thm:zerlerg;2}}{\sim} D+n^i\cdot(Q+R) \notag\\
-			&\overset{\ref{coroll:vervielfältigung}}{\sim}
-			Q+n^i\cdot Q +n^i\cdot R \notag\\
+			&\sim Q+n^i\cdot Q +n^i\cdot R \notag\\
 			&\overset{\ref{thm:zerlerg;9}}{\sim} P_0+n^i \cdot Q. \label{thm:zerlerg;10}
 			\end{align}
 			Analog zu \ref{thm:zerlerg;6} finden wir für $Q$ ebenso ein 
@@ -1455,11 +1466,8 @@
 			$P_0\sim Q_0$ und damit folgt mit \ref{thm:zerlerg;10} und der 
 			analogen Folgerung, dass 
 			\[nP\sim nQ\]
-			gilt. Mit
-			
-			%... aus nP sim nQ folgt P sim Q. Folgerung bei Dilatation
-			
-			gilt also \[P\sim Q.\]
+			gilt. Mit Proposition \ref{prop:dilzerl} erhalten wir also insgesamt 
+			\[P\sim Q.\]
 		\end{itemize}
 	\end{proof}
 	
