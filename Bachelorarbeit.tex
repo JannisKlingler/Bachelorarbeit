@@ -1208,6 +1208,13 @@
 	
 	Es ergeben sich beim Vervielfältigen, wie man leicht sieht folgende Eigenschaften.
 	
+	\begin{remark}[Additionssatz]
+		Seien $P,Q,R,S$ vier Polytope, sd. $P\sim Q$ und $R\sim S$, dann gilt
+		\[P+R\sim Q+S.\]
+		Wir summieren hierbei einfach die Zerlegungen der einzelnen Polytope 
+		auf und erhalten damit die Zerlegungsgleichheit.
+	\end{remark}
+	
 	\begin{corollary} \label{coroll:vervielfältigung}
 		Seien $P$ und $Q$ zwei Polytope und $n$ eine natürliche Zahl, dann gilt
 		\[n\cdot(P+Q)\sim n\cdot P+n\cdot Q.\]
@@ -1269,15 +1276,22 @@
 	Die $d$te Zylinderklasse entspricht gerade Polytopen, welche mit endlich vielen 
 	Parallelotopen zerlegungsgleich sind. Es gilt sogar die folgende Eigenschaft.
 	
-	\begin{remark} \label{bem:dteZylinderklasse}
+	\begin{theorem} \label{bem:dteZylinderklasse}
 		Sei $P\in\mathfrak{B}_d$ ein Polytop, dann gibt es ein $\lambda>0$, sd. 
-		\[P\sim \lambda W_d.\] 
-		$W_d$ ist hierbei 
+		\[P\sim \lambda W.\] 
+		$W$ ist hierbei 
 		der $d$-dimensionale Einheitswürfel.
-		
-		%... evtl Begründung über Parallelotope siehe Hadwiger Formel (72)
-		
-	\end{remark}
+	\end{theorem}
+	
+	\begin{proof}
+		Da $P$ ein Polytop aus der $d$-ten Zylinderklasse ist, finden 
+		wir endlich viele Parallelotope $P_1,\ldots, P_n$, sd. 
+		$P=P_1+\ldots+P_n$. Wir definieren $\lambda$ durch 
+		\[\lambda^d =\sum_{i=1}^n \mathfrak{D}(P_i).\]
+		Weiter definieren wir $\lambda_i =\frac{\mathfrak{D}(P_i)}{\lambda^d}$ 
+		für alle $i=1,\ldots,n$. Dann lässt der Einheitswürfel in $n$ viele 
+		Parallelotope $W_1,\ldots,W_n$ zerlegen, indem wir 
+	\end{proof}
 	
 	Wir stellen fest, dass jeder $i$-stufige Zylinder auch ein $j$-stufiger 
 	Zylinder für ein $j<i$ ist und damit erhalten wir
