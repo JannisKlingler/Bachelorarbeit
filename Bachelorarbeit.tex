@@ -1204,11 +1204,12 @@
 	\end{definition}
 	
 	Wir bemerken, dass die Lage der Polyeder $P_i$ nicht eindeutig festgelegt 
-	ist, was jedoch beim eigentlichen zerlegen keine Rolle spielt.
+	ist, was jedoch beim eigentlichen zerlegen keine Rolle spielt. Wir wollen 
+	die Polytope so verschieben, dass sie paarweise disjunkt sind.
 	
 	Es ergeben sich beim Vervielfältigen, wie man leicht sieht folgende Eigenschaften.
 	
-	\begin{remark}[Additionssatz]
+	\begin{remark}[Additionssatz] \label{bem:addsatz}
 		Seien $P,Q,R,S$ vier Polytope, sd. $P\sim Q$ und $R\sim S$, dann gilt
 		\[P+R\sim Q+S.\]
 		Wir summieren hierbei einfach die Zerlegungen der einzelnen Polytope 
@@ -1239,6 +1240,13 @@
 		\end{align*}
 		Damit sind $n\cdot (P+Q)$ und $n\cdot P+n\cdot Q$ zerlegungsgleich.
 	\end{proof}
+
+	Um Polytope besser charakterisieren, werden wir in diesem Abschnitt 
+	sogenannte Zylinderklassen einführen. Wir werden später feststellen, 
+	dass diese Charakterisierung beim Beweisen einiger Resultate sehr 
+	hilfreich ist.
+
+	\subsection{Zylinderklassen}
 	
 	\begin{definition}[Minkowski-Summe]
 		Seien $A$ und $B$ Mengen, dann ist die Minkowski-Summe $A\times B$ 
@@ -1247,6 +1255,65 @@
 	\end{definition}
 	
 	Die Minkowski-Addition ist offensichtlich kommutativ und assoziativ. 
+	
+	\begin{definition}[Parallelotop]
+		Seien $p_1,\ldots,p_d$ linear unabhängige Vektoren und $S_1,\ldots,S_d$ 
+		die Strecken, die die Richtung und Länge der Vektoren $p_1,\ldots,p_d$ 
+		haben
+		
+		%... noch nicht klar in welchem Punkt die Strecken starten evtl über 
+		% ausgezeichnete Ecke einführen.
+		
+		. Dann ist das Parallelotop $P$ definiert durch 
+		\[P=S_1\times\ldots\times S_d.\]
+		Wir sagen, das Parallelotop wird durch die Vektoren $p_1,\ldots,p_d$ 
+		erzeugt.
+	\end{definition}
+	
+	\begin{definition}[Gramsches Funktional]
+		Sei $P$ das durch die Vektoren $p_1,\ldots,p_d$ 
+		erzeugte Parallelotop, dann ordnen wir dem Parallelotop $P$ das 
+		Gramsche Funktional $\mathfrak{D}(P)>0$ zu, das definiert ist durch
+		\[\mathfrak{D}(P)=\left(det \begin{pmatrix}
+		\langle p_1,p_1\rangle & \cdots &\langle p_1,p_d\rangle \\
+		\vdots & \ddots & \vdots \\
+		\langle p_d,p_1 \rangle & \cdots & \langle p_d,p_d \rangle
+		\end{pmatrix}\right)^{1/2}.\]
+	\end{definition}
+	
+	Wir meinen mit $\langle p_i,p_j\rangle$ hier das Standardskalarprodukt. 
+	
+	\begin{remark}
+		Wir stellen fest, dass das Gramsche Funktional folgende Eigenschaften 
+		erfüllt.
+		\begin{enumerate}
+			\item Sind $P$ und $Q$ zwei kongruente Parallelotope, dann gilt mit 
+			der Invarianz des Skalarprodukts unter Isometrien
+			\[\mathfrak{D}(P)=\mathfrak{D}(Q).\]
+			\item Sei $P$ ein Parallelotop und $\lambda>0$ gegeben, dann gilt 
+			\[\mathfrak{D}(\lambda P)=\lambda^d \mathfrak{D}(P).\]
+		\end{enumerate}
+	\end{remark}
+	
+	\begin{theorem} \label{thm:zerlgram}
+		Die Parallelotope $P$ und $Q$ sind zerlegungsgleich, falls ihre 
+		Gramschen Funktionale übereinstimmen, dh. $\mathfrak{D}(P)=\mathfrak{D}(Q)$.
+	\end{theorem}
+	
+	\begin{proof}
+		Beweisskizze: Der Beweis des Satzes ergibt sich auch zwei 
+		Resultaten. Es lässt sich feststellen, dass zwei Parallelotope 
+		scherungsäquivalent sind, falls ihre Gramschen Funktionale übereinstimmen. 
+		Vergleiche mit \cite{Hadwiger}[Kapitel 1, Satz III].
+		Mit scherungsäquivalent meinen wir hier, dass wir die 
+		Vektoren, die die Parallelotope erzeugen so verändern, dass wir 
+		in endlich vielen Scherungen die Parallelotope ineinander 
+		überführen können. Bei einer Scherung addieren wir auf einen 
+		dieser Vektoren ein Vielfaches eines anderen Vektors von diesen.
+		Weiter kann man dann aus der Scherungsäquivalenz der Parallelotope folgern, 
+		dass diese auch zerlegungsgleich sind. Siehe dazu 
+		\cite{Hadwiger}[Kapitel 1,Satz IV].
+	\end{proof}
 	
 	\begin{definition}[$i$-stufiger Zylinder]
 		Ein Polytop $P$ ist ein $i$-stufiger Zylinder, falls es eine Darstellung 
@@ -1257,7 +1324,7 @@
 	\end{definition}
 	
 	Jedes Simplex ist also offensichtlich ein $1$-stufiger Zylinder. Genauso 
-	ist jedes Parallelotop ein $k$-stufiger Zylinder.
+	ist jedes Parallelotop ein $k$-stufiger Zylinder. 
 	
 	\begin{definition}[Zylinderklassen]
 		Ein Polytop $P$ ist ein $i$-stufiges Zylinderpolytop, falls 
@@ -1279,18 +1346,40 @@
 	\begin{theorem} \label{bem:dteZylinderklasse}
 		Sei $P\in\mathfrak{B}_d$ ein Polytop, dann gibt es ein $\lambda>0$, sd. 
 		\[P\sim \lambda W.\] 
-		$W$ ist hierbei 
-		der $d$-dimensionale Einheitswürfel.
 	\end{theorem}
+	
+	Hierbei ist $W$ der $d$-dimensionale Einheitswürfel, den wir erhalten, 
+	indem wir die Minkowski-Summe der Strecken $S_1,\ldots,S_n$, 
+	die die Richtung und Länge der Standardbasisvektoren $e_1,\ldots, e_d$ 
+	des $\setR^d$ haben, bilden.
 	
 	\begin{proof}
 		Da $P$ ein Polytop aus der $d$-ten Zylinderklasse ist, finden 
 		wir endlich viele Parallelotope $P_1,\ldots, P_n$, sd. 
 		$P=P_1+\ldots+P_n$. Wir definieren $\lambda$ durch 
 		\[\lambda^d =\sum_{i=1}^n \mathfrak{D}(P_i).\]
-		Weiter definieren wir $\lambda_i =\frac{\mathfrak{D}(P_i)}{\lambda^d}$ 
+		Weiter definieren wir 
+		\begin{align}
+			\lambda_i =\frac{\mathfrak{D}(P_i)}{\lambda^d} \label{thm:dtezyl;1}
+		\end{align}
 		für alle $i=1,\ldots,n$. Dann lässt der Einheitswürfel in $n$ viele 
-		Parallelotope $W_1,\ldots,W_n$ zerlegen, indem wir 
+		Parallelotope $W_1,\ldots,W_n$ zerlegen, wobei
+		\[W_i:=(S_1\times\ldots S_{d-1}\times \lambda_i S_d)+
+		\sum_{k=1}^{i-1} \lambda_i e_d\]
+		für alle $i=1,\ldots,n$ gilt. Der Einheitswürfel $W$ wird hierbei 
+		sozusagen in $n$ viele Scheiben der Länge $\lambda_i$ geschnitten. 
+		Es gilt 
+		\[\mathfrak{D}(\lambda W_i)=\lambda^d \mathfrak{D}(W_i)=
+		\lambda^d \left(det \left(\begin{smallmatrix}
+		1 & \ &\ &0 \\
+		\ &\ddots &\ &\ \\
+		\ & \ &  1 &\ \\
+		0 & \ & \ & \lambda_i
+		\end{smallmatrix}\right)\right)^{1/2}=\lambda^d \lambda_i\overset{\ref{thm:dtezyl;1}}{=}\mathfrak{D}(P_i)\]
+		für alle $i=1,\ldots,n$. Mit Satz \ref{thm:zerlgram} 
+		sind also $P_i$ und $\lambda W_i$ für alle $i=1,\ldots,n$ zerlegungsgleich 
+		und mit dem Additionssatz (Satz \ref{bem:addsatz}) 
+		sind auch $P$ und $\lambda W$ zerlegungsgleich.
 	\end{proof}
 	
 	Wir stellen fest, dass jeder $i$-stufige Zylinder auch ein $j$-stufiger 
