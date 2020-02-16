@@ -1259,7 +1259,27 @@
 		\[A\times \emptyset =\emptyset\times A=\emptyset.\]
 	\end{definition}
 	
-	Die Minkowski-Addition ist offensichtlich kommutativ und assoziativ. 
+	\begin{remark} \label{bem:mink}
+		\begin{itemize}
+			\item Die Minkowski-Addition ist offensichtlich kommutativ und assoziativ, d. h. 
+			es gilt
+			\[A\times B=B\times A\qquad\text{und}\qquad A\times(B\times C)=(A\times B)\times C.\]
+			
+			\item Weiter gelten auch die Distributivgesetze, also 
+			\[(A\cup B)\times C=(A\times C)\cup (B\times C)\]
+			und mit der Kommutativität das Zweite. Wenden wir dies nun auf Polytope 
+			$P,Q,R$ an, dann gilt
+			\begin{align}
+			(P+Q)\times R =(P\times R)+(Q\times R)\qquad\text{und}\qquad
+			P\times (Q+R)=(P\times Q)+(P\times R). \label{bem:minkowsk;distr}
+			\end{align}
+			\item \label{bem:mink;1}In Verbindung mit der Dilatation ergibt sich für Polytope 
+			$P$ und $Q$ und ein $\lambda>0$, dass
+			\[\lambda P\times \lambda Q=\lambda(P\times Q)\]
+			gilt.
+		\end{itemize}
+	\end{remark}
+	
 	
 	\begin{definition}[Parallelotop]
 		Seien $p_1,\ldots,p_d$ linear unabhängige Vektoren und $S_1,\ldots,S_d$ 
@@ -1324,16 +1344,20 @@
 		Ein Polytop $P$ ist ein $i$-stufiger Zylinder, falls es eine Darstellung 
 		der Form
 		\[P=P_1 \times\ldots\times P_i\]
-		gibt, wobei $P_i$ hier konvexe Polytope sind, die jeweils in einer $d_i$-dimensionalen Ebene $E_{d_i}$ liegen. Hierbei soll $\sum_1^i d_i =d$
+		gibt, wobei $P_k$ für alle $k=1,\ldots,i$ hier konvexe Polytope sind, die jeweils in einer $d_k$-dimensionalen Ebene $E_{d_k}$ liegen. Hierbei soll $\sum_{k=1}^i d_k =d$ und $d_k\geq 1$ für alle $k=1,\ldots,i$ gelten.
 		gelten und die Ebenen $E_{d_i}$ befinden sich paarweise in allgemeiner Lage.
 	\end{definition}
+	
+	Wir bemerken, dass die konvexen Polytope in der Minkowski-Summe uneigentliche 
+	Polytope sind. Dennoch gibt es die Möglichkeit diese in ihrer Ebene 
+	$E_{d_k}$ als ein eigentliches Polytop aufzufassen.
 	
 	Jedes Simplex ist also offensichtlich ein $1$-stufiger Zylinder. Genauso 
 	ist jedes Parallelotop ein $k$-stufiger Zylinder. 
 	
 	\begin{definition}[Zylinderklassen]
 		Ein Polytop $P$ ist ein $i$-stufiges Zylinderpolytop, falls 
-		es endlich viele $i$-stufige Polytope $P_1,\ldots,P_n$ gibt, sd.
+		es endlich viele $i$-stufige Zylinder $P_1,\ldots,P_n$ gibt, sd.
 		\[P=P_1+\ldots+P_n.\]
 		Die $i$-te Zylinderklasse $\mathfrak{B}_i$ ist die Menge aller 
 		Polytope, die zu einem $i$-stufigen Zylinderpolytop zerlegungsgleich 
@@ -1447,7 +1471,7 @@
 			für konvexe Polytope $P_1\ldots,P_i$ die in $d_k$-dimensionalen 
 			Ebenen $E_{d_k}$ liegen, mit $\sum_{k=1}^i d_k =d$ und 
 			$d_k\geq 1$ ist, wobei $k=1,\ldots i$ 
-			gilt. Es gilt also auch
+			gilt. Es gilt also mit Bemerkung \ref{bem:mink} auch
 			\[nP=nP_1\times\ldots\times nP_i.\]
 			Betrachten wir Zylinderklassen in den Räumen $\setR^{d_k}$, in denen 
 			die Ebenen $E_{d_k}$ liegen. Dann sind die konvexen Polytope 
@@ -1464,10 +1488,7 @@
 			für alle $j =1,\ldots,n$ ist. Wir erhalten also die Relation 
 			\[nP=nP_1\times\ldots\times nP_i \sim (P_{1,0}+P_{1,1}+\ldots+P_{1,n})
 			\times\ldots\times (P_{i,0}+P_{i,1}+\ldots+P_{i,n}),\]
-			die wir mit den Distributivgesetzen 
-			
-			%... Distributivgesetz für minkowski und +
-			
+			die wir mit den Distributivgesetzen \ref{bem:minkowsk;distr} 
 			umformen können zu
 			\[nP\sim \sum_{\genfrac{}{}{0pt}{1}{\mu=(\mu_1,\ldots,\mu_i)}{\in \{0,1,\ldots,n\}^i}}
 			\bigtimes_{k=1}^i P_{k,\mu_k}.\]
