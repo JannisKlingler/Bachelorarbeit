@@ -1686,7 +1686,9 @@
 			in diesem Würfel enthalten ist. Weiter sei eine 
 			natürliche Zahl $n$ so gewählt, dass wenn wir $\lambda$ 
 			definieren durch
-			\[\lambda=\left(\frac{\gamma}{2}\right)(n^{d-i}-1)^{1/d}\]
+			\begin{align}
+				\lambda=\left(\frac{\gamma}{2}\right)(n^{d-i}-1)^{1/d} \label{lemma:teilzerl;6}
+			\end{align}
 			dann $\lambda>\delta$ gilt. Wir sehen, dass dann auch 
 			$P\sim_{\subset}\lambda W$ gilt und mit dem 
 			Multiplikationssatz (
@@ -1694,7 +1696,9 @@
 			%... Multiplikationssatz
 			
 			) gilt weiter
-			\[n^i\cdot P\sim_{\subset}n^i \cdot \lambda W.\]
+			\begin{align}
+				n^i\cdot P\sim_{\subset}n^i \cdot \lambda W.\label{lemma:teilzerl;1}
+			\end{align}
 			Wir stellen fest, dass das Polytop $n^i\cdot \lambda W$ 
 			in der Zylinderklasse $\mathfrak{B}_d$ ist, da es sich 
 			aus $n^i$ vielen Würfeln $\lambda W_1\ldots,\lambda W_{n^i}$, 
@@ -1704,17 +1708,25 @@
 			\ref{bem:dteZylinderklasse} gibt es also ein $\mu$, sd. 
 			$n^i\cdot \lambda W\sim \mu W$, wobei das $\mu$ definiert 
 			ist durch
-			\[\mu^d =\sum_{j=1}^{n^i}\mathfrak{D}(\lambda W_j)
-			=\sum_{j=1}^{n^i}\lambda^d \mathfrak{D}(W)=
-			n^i\lambda^d.\]
+			\begin{align}
+				\mu^d =\sum_{j=1}^{n^i}\mathfrak{D}(\lambda W_j)
+				=\sum_{j=1}^{n^i}\lambda^d \mathfrak{D}(W)=
+				n^i\lambda^d. \label{lemma:teilzerl;5}
+			\end{align}
 			Wir haben hierbei die Eigenschaft Bemerkung \ref{bem:gramfunk} 
-			genutzt. Weiter erhalten wir für die Dilatation der 
+			genutzt. Also gilt mit \ref{lemma:teilzerl;1} auch
+			\begin{align}
+				n^i\cdot P\sim_{\subset} \mu W.\label{lemma:teilzerl;2}
+			\end{align}
+			Weiter erhalten wir für die Dilatation der 
 			Polytope $P$ und $Q$ mit $n$ aus Satz \ref{thm:hilfssatz} 
 			die Relationen
-			\begin{align*}
-				nP&\sim P_0+ n^i\cdot P \\
-				nQ&\sim Q_0+ n^i\cdot Q,
-			\end{align*}
+			\begin{align}
+				\begin{split}
+					nP&\sim P_0+ n^i\cdot P \\
+					nQ&\sim Q_0+ n^i\cdot Q, \label{lemma:teilzerl;3}
+				\end{split}
+			\end{align}
 			wobei $P_0$ und $Q_0$ Polytope der Zylinderklasse 
 			$\mathfrak{B}_{i+1}$ sind. Es gilt also für das Volumen mit 
 			
@@ -1728,12 +1740,47 @@
 			\[vol(Q_0)=vol(Q)(n^d -n^i).\]
 			Zusammengesetzt ergibt das also 
 			\begin{align}
-				vol(Q_0)-vol(P_0)=(vol(Q)-vol(P))(n^d -n^i)=\gamma^d(n^d-n^i). \label{lemma:teilzerl;1}
+				vol(Q_0)-vol(P_0)=(vol(Q)-vol(P))(n^d -n^i)=\gamma^d(n^d-n^i). \label{lemma:teilzerl;4}
 			\end{align}
+			Mit den Relationen \ref{lemma:teilzerl;2} und 
+			\ref{lemma:teilzerl;3} gilt also 
+			\begin{align}
+				nP\sim P_0+n^i\cdot P \sim_{\subset} P_0 + \mu W. \label{lemma:teilzerl;7}
+			\end{align}
+			Wir berechnen nun
+			\begin{align*}
+				vol(P_0+\mu W) &= vol(P_0)+\mu^d \\
+				&\overset{\ref{lemma:teilzerl;5}}{=} vol(P_0)+n^i\lambda^d \\
+				&\overset{\ref{lemma:teilzerl;6}}{=}
+				 vol(P_0)+n^i\left(\left(\frac{\gamma}{2}
+				(n^{d-i}-1)^{1/d}\right)\right)^d \\
+				&=vol(P_0)+\left(\frac{\gamma}{2}\right)^d (n^d-n^i).
+			\end{align*}
+			Weiter gilt 
+			\begin{align*}
+				vol(Q_0)-vol(P_0+\mu W)&= vol(Q_0)-vol(A_0)-
+				\left(\frac{\gamma}{2}\right)^d (n^d-n^i) \\
+				&\overset{\ref{lemma:teilzerl;4}}{=} \gamma^d(n^d-n^i)-
+				\left(\frac{\gamma}{2}\right)^d (n^d-n^i) \\
+				&>0.
+			\end{align*}
+			Damit erhalten wir $vol(Q_0)>vol(P_0+\mu W)$. Wir stellen fest, 
+			dass $Q_0,P_0\in\mathfrak{B}_{i+1}$ und $\mu W\in \mathfrak{B}_d$, 
+			also auch $\mu W\in\mathfrak{B}_{i+1}$ und damit auch 
+			$P_0+\mu W\in\mathfrak{B}_{i+1}$ gilt. Mit der Induktionsvoraussetzung 
+			folgt also nun, dass 
+			\[P_0+\mu W\sim_{\subset} Q_0\]
+			gilt und mit \ref{lemma:teilzerl;7} also auch $nP\sim_{\subset}Q_0$ 
+			also erst recht auch
+			\[nP\sim_{\subset}nQ\]
+			und mit Proposition \ref{prop:dilzerl}
+			\[P\sim_{\subset}Q.\]
 		\end{itemize}
+	Damit sind wir fertig.
 	\end{proof}
 	
-	Der Beweis richtet sich nach \cite[Satz III]{Hadwiger}.
+	Nun haben wir alle Voraussetzungen um den Satz \ref{thm:zerlerg} zu 
+	beweisen. Der Beweis richtet sich nach \cite[Satz III]{Hadwiger}.
 	
 	\begin{proof}
 		\noindent
