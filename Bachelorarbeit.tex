@@ -109,7 +109,7 @@
 			\begin{tabular}{@{}l@{}}\hline
 				Datum, Ort \hspace{4.2cm}
 			\end{tabular}
-		\end{minipage}%
+		\end{minipage}
 		\hfill
 		\begin{minipage}{0.43\textwidth} 
 			\begin{tabular}{@{}l@{}}\hline
@@ -188,7 +188,7 @@
 	%	konvexer $d$-Polytope.
 	%\end{definition}
 	%
-	\begin{definition}[Kongruenz]
+	\begin{definition}[Kongruenz] \label{def:kong}
 		Wir nennen zwei $d$-Polytope $P$ und $Q$ \textsl{kongruent}, wenn es eine Isometrie $g$ gibt, sd. 
 		$g(P)=Q$. Wir schreiben dann $P\cong Q$.
 	\end{definition}
@@ -197,15 +197,20 @@
 	 Isometrien sind Bewegungen, das heißt sie setzen sich 
 	 gerade aus einer Translation und einer Drehung zusammen. Zu jeder 
 	 Isometrie $f:\setR^d\to\setR^d$ lässt sich also ein Vektor 
-	 $\alpha\in\setR^d$ und eine orthogonale Matrix $Q\in O(d)$, also 
+	 $\alpha\in\setR^d$ und eine orthogonale Matrix $U\in O(d)$, also 
 	 eine Drehung, finden, sd. wir 
-	 die Darstellung $f(x)=\alpha + Qx$ für alle $x\in \setR^d$ erhalten. 
+	 die Darstellung $f(x)=\alpha + Ux$ für alle $x\in \setR^d$ erhalten. 
 	 Da das Skalarprodukt translationsinvariant ist und 
 	 auch invariant unter Drehungen, ist das Skalarprodukt auch invariant 
 	 unter Isometrien. Weiter bilden Isometrien Halbräume wieder auf 
 	 Halbräume ab und damit auch Polytope auf Polytope. Die Menge 
 	 der Isometrien $\{f:\setR^d\to\setR^d\ \vert f\text{ ist Isometrie}\}$ ist eine Gruppe mit der Verknüpfung von Abbildungen als 
-	 Operation und der Identitätsabbildung als neutralem Element. 
+	 Operation und der Identitätsabbildung als neutralem Element. Wir wollen 
+	 diese Gruppe die Isometriegruppe nennen. Wir bemerken außerdem, dass 
+	 wir die Isometrien auf Translationen einschränken können und erhalten 
+	 so eine Untergruppe der Isometriegruppe, die Tranlationsgruppe. Die 
+	 Translationsgruppe hat also Untergruppe also die gleiche Eigenschaften wie die 
+	 Isometriegruppe. Wir werden diese im späteren Verlauf benötigen.
 
 	\begin{remark}
 		Wir stellen fest, dass Kongruenz eine Äquivalenzrelation ist. 
@@ -242,8 +247,8 @@
 	
 	\begin{proof}
 		Sei $f$ also die Isometrie, sd. $f(P)=Q$. Dann finden wir ein 
-		$\alpha\in\setR^d$ und eine orthogonale Matrix $Q\in O(d)$, sd. für 
-		alle $x\in\setR^d$ gilt $f(x)=\alpha+Qx$. Damit ergibt sich die Aussage 
+		$\alpha\in\setR^d$ und eine orthogonale Matrix $U\in O(d)$, sd. für 
+		alle $x\in\setR^d$ gilt $f(x)=\alpha+Ux$. Damit ergibt sich die Aussage 
 		mit der Transformationsformel 
 		aus der Analysis (siehe auch \cite[Satz 4.7]{SkriptAna3}).
 	\end{proof}
@@ -1260,24 +1265,35 @@
 	\end{definition}
 	
 	\begin{remark} \label{bem:mink}
-		\begin{itemize}
+		\begin{enumerate}
+			Seien $A,B,C$ Mengen dann ergeben sich folgende Eigenschaften 
+			mit der Minkowski-Summe.
 			\item Die Minkowski-Addition ist offensichtlich kommutativ und assoziativ, d. h. 
 			es gilt
 			\[A\times B=B\times A\qquad\text{und}\qquad A\times(B\times C)=(A\times B)\times C.\]
 			
-			\item Weiter gelten auch die Distributivgesetze, also 
+			\item \label{bem:mink;3} 
+			Weiter gelten auch die Distributivgesetze, also 
 			\[(A\cup B)\times C=(A\times C)\cup (B\times C)\]
 			und mit der Kommutativität das Zweite. Wenden wir dies nun auf Polytope 
 			$P,Q,R$ an, dann gilt
 			\begin{align}
 			(P+Q)\times R =(P\times R)+(Q\times R)\qquad\text{und}\qquad
-			P\times (Q+R)=(P\times Q)+(P\times R). \label{bem:minkowsk;distr}
+			P\times (Q+R)=(P\times Q)+(P\times R).
 			\end{align}
 			\item \label{bem:mink;1}In Verbindung mit der Dilatation ergibt sich für Polytope 
 			$P$ und $Q$ und ein $\lambda>0$, dass
 			\[\lambda P\times \lambda Q=\lambda(P\times Q)\]
 			gilt.
-		\end{itemize}
+			\item \label{bem:mink;2} 
+			Wir hatten im Zusammenhang mit der Definition der 
+			Kongruenz \ref{def:kong} bereits die Translationsgruppe 
+			erwähnt, die Untergruppe der Isometriegruppe, welche ausschließlich 
+			aus Translationen besteht. Wir stellen fest, dass für zwei 
+			Translationen $f,g$ im Zusammenhang mit der Minkowski-Summe 
+			\[f(A)\times g(B)=(f\circ g)(A\times B)\]
+			gilt.
+		\end{enumerate}
 	\end{remark}
 	
 	
@@ -1308,7 +1324,7 @@
 	
 	Wir meinen mit $\langle p_i,p_j\rangle$ hier das Standardskalarprodukt. 
 	
-	\begin{remark}
+	\begin{remark} \label{bem:gramfunk}
 		Wir stellen fest, dass das Gramsche Funktional folgende Eigenschaften 
 		erfüllt.
 		\begin{enumerate}
@@ -1366,6 +1382,8 @@
 		der Zylinderklasse $\mathfrak{B}_i$.
 	\end{definition}
 	
+	Es ist klar, dass für zwei Polytope $P,Q\in \mathfrak{B}_i$ 
+	auch $P+Q\in\mathfrak{B}_i$ gilt. 
 	Besonders interessant sind hierbei die erste und die $d$-te Zylinderklasse. 
 	Es lässt sich nämlich feststellen, dass die erste Zylinderklasse gerade 
 	der Menge aller Polytope entspricht. Jedes Polytop lässt sich nach Satz  
@@ -1373,10 +1391,10 @@
 	Die $d$te Zylinderklasse entspricht gerade Polytopen, welche mit endlich vielen 
 	Parallelotopen zerlegungsgleich sind. Es gilt sogar die folgende Eigenschaft.
 	
-	\begin{theorem} \label{bem:dteZylinderklasse}
+	\begin{proposition} \label{bem:dteZylinderklasse}
 		Sei $P\in\mathfrak{B}_d$ ein Polytop, dann gibt es ein $\lambda>0$, sd. 
 		\[P\sim \lambda W.\] 
-	\end{theorem}
+	\end{proposition}
 	
 	Hierbei ist $W$ der $d$-dimensionale Einheitswürfel, den wir erhalten, 
 	indem wir die Minkowski-Summe der Strecken $S_1,\ldots,S_n$, 
@@ -1423,13 +1441,23 @@
 	und die Vervielfachung von Polytopen in Verbinung und ist damit sehr 
 	hilfreicht, wenn wir Polytope darstellen wollen.
 	
-	\begin{theorem}
+	\begin{theorem}\label{thm:hilfssatz}
 		Sei $P$ ein Polytop, das in der $i$-ten Zylinderklasse $\mathfrak{B}_i$ ist 
 		und $n$ eine natürliche Zahl, dann gilt
 		\[nP\sim n^i\cdot P+P_0,\]
 		wobei $P_0\in\mathfrak{B}{i+1}$ ein (von $n$ abhängiges) Polytop ist. 
 		Falls $i=d$ ist $P_0=\emptyset$.
 	\end{theorem}
+	
+	Wir wollen für den Beweis noch die Translationsgleichheit von Polytopen 
+	einführen. Dazu erinnern wir uns an die Translationsgruppe, die 
+	Untergruppe der Isometriegruppe, die ausschließlich aus Translationen besteht. 
+	Hierbei wollen wir zwei Polytope translationsgleich nennen, falls 
+	diese sich durch eine Translation ineinander überführen lassen, analog zur 
+	Kongruenz von Polytopen. Wir schreiben $P\cong_t Q$. Da wir im 
+	Beweis der Aussage lediglich die Streckung und Vervielfachung von Polytopen 
+	betrachten, haben wir an einigen Stellen sogar die Translationsgleichheit 
+	von Polytopen.
 	
 	\begin{proof}
 		\begin{enumerate}
@@ -1443,7 +1471,7 @@
 			\begin{align*}
 				(n-j +1)P\sim(n-j )P+P_k+P_{j, 0} 
 			\end{align*}
-			für alle $j=1,\ldots,n$, wobei $P_{j}\cong P$ und 
+			für alle $j=1,\ldots,n$, wobei $P_{j}\cong_t P$ und 
 			$P_{j, 0}\in\mathfrak{B}_2$ gilt. Wir schreiben die Relationen 
 			aus als
 			\begin{align*}
@@ -1471,7 +1499,8 @@
 			für konvexe Polytope $P_1\ldots,P_i$ die in $d_k$-dimensionalen 
 			Ebenen $E_{d_k}$ liegen, mit $\sum_{k=1}^i d_k =d$ und 
 			$d_k\geq 1$ ist, wobei $k=1,\ldots i$ 
-			gilt. Es gilt also mit Bemerkung \ref{bem:mink} auch
+			gilt. Es gilt also mit Bemerkung \ref{bem:mink} Eigenschaft  
+			\ref{bem:mink;1} auch 
 			\[nP=nP_1\times\ldots\times nP_i.\]
 			Betrachten wir Zylinderklassen in den Räumen $\setR^{d_k}$, in denen 
 			die Ebenen $E_{d_k}$ liegen. Dann sind die konvexen Polytope 
@@ -1484,11 +1513,12 @@
 			\ref{thm:zyl;1}) folgt also für 
 			die Polytope, dass für alle $k=1,\ldots,i$ gilt
 			\[nP_k\sim P_{k,0}+n\cdot P_k=P_{k,0}+P_{k,1}+\ldots+P_{k,n},\]
-			wobei $P_{k,0}\in \mathfrak{B}_2^{(d_k)}$ und $P_{k,j}\cong P_k$ 
+			wobei $P_{k,0}\in \mathfrak{B}_2^{(d_k)}$ und $P_{k,j}\cong_t P_k$ 
 			für alle $j =1,\ldots,n$ ist. Wir erhalten also die Relation 
 			\[nP=nP_1\times\ldots\times nP_i \sim (P_{1,0}+P_{1,1}+\ldots+P_{1,n})
 			\times\ldots\times (P_{i,0}+P_{i,1}+\ldots+P_{i,n}),\]
-			die wir mit den Distributivgesetzen \ref{bem:minkowsk;distr} 
+			die wir mit den Distributivgesetzen aus Bemerkung 
+			\ref{bem:mink} \ref{bem:mink;3} 
 			umformen können zu
 			\[nP\sim \sum_{\genfrac{}{}{0pt}{1}{\mu=(\mu_1,\ldots,\mu_i)}{\in \{0,1,\ldots,n\}^i}}
 			\bigtimes_{k=1}^i P_{k,\mu_k}.\]
@@ -1502,11 +1532,12 @@
 			von $\mu$ verschwindet und somit $\mu_k\neq 0$ für alle 
 			$k=1,\ldots,i$ gilt. Dies sind insgesamt $n^i$ viele Kombinationen, 
 			da in diesem Fall $\mu\in\{1,\ldots,n\}^i$ ist. Dann gilt 
-			\[P_{k,\mu_k}\cong P_k\]
-			für alle $\mu_k=1,\ldots,n$ und damit
+			\[P_{k,\mu_k}\cong_t P_k\]
+			für alle $\mu_k=1,\ldots,n$ und damit erhalten wir mit 
+			Bemerkung \ref{bem:mink} Eigenschaft \ref{bem:mink;2}
 			\[\bigtimes_{k=1}^i P_{k,\mu_k}=
-			P_{1,\mu_1}\times\ldots\times P_{i,\mu_i} \cong 
-			P_1\times\ldots P_i =P.\]
+			P_{1,\mu_1}\times\ldots\times P_{i,\mu_i} \cong_t 
+			P_1\times\ldots\times P_i =P.\]
 			Wir haben also $n^i$ viele Summanden die kongruent zu $P$ sind, also 
 			können wir diese zu $n^i \cdot P$ zusammenfassen. \\
 			Betrachten wir nun also die übrigen Summanden, in denen mindestens 
@@ -1601,9 +1632,106 @@
 	\end{proof}
 	
 	\begin{theorem} \label{thm:zerlerg}
-		Zwei Polyeder $P$ und $Q$ sind genau dann zerlegungsgleich, wenn sie 
-		ergänzungsgleich sind.
+		Zwei Polyeder $P$ und $Q$ sind genau dann zerlegungsgleich, wenn 
+		sie ergänzungsgleich sind.
 	\end{theorem}
+	
+	Um den Satz zu Beweisen benötigen wir noch eine Aussage. Dazu wollen 
+	wir, dass ein Polytop $P$ zerlegungsgleich zu einem Teilpolytop 
+	des Polytops $Q$ ist. Also soll es ein Polytop gegeben zu dem 
+	$P$ zerlegungsgleich ist und das in $Q$ enthalten ist. Wir schreiben 
+	\[P\sim_{\subset} Q\]
+	hierfür.
+	
+	\begin{lemma} \label{lemma:teilzerl}
+		Seien $P$ und $Q$ Polytope, dann ist $P$ genau dann zu 
+		einem Teilpolytop von $Q$ zerlegungsgleich, d. h. $P\sim_{\subset}Q$, wenn $vol(P)<vol(Q)$.
+	\end{lemma}
+	
+	\begin{proof}
+		\noindent
+		\begin{itemize}
+			\item[$"\Rightarrow"$:] Die Hinrichtung ist klar, denn wenn $P$ zu einem Teilpolytop 
+			von $Q$ zerlegungsgleich ist, ist mit 
+			Proposition \ref{prop:zerl,vol} auch das Volumen
+			dieser Polytope gleich und da wir ein Teilpolytop von $Q$ 
+			haben, folgt die Aussage mit der Monotonie des Maßes.
+			\item[$"\Leftarrow"$:] Betrachten wir also die Rückrichtung. 
+			Es gelte $vol(P)<vol(Q)$, dann gibt es ein $\gamma>0$, sd. 
+			$vol(Q)-vol(P)=\gamma^d$ gilt. Wir beweisen die Aussage 
+			per Induktion über die Zylinderklassen. Seien also 
+			$P,Q\in\mathfrak{B}_d$, dann gibt es nach Proposition 
+			\ref{bem:dteZylinderklasse} $\alpha,\beta>0$, sd. 
+			$P\sim \alpha W$ und $Q\sim \beta W$, wobei $W$ 
+			der $d$-dimensionale Einheitswürfel ist. Also gilt 
+			mit Proposition \ref{prop:zerl,vol} und Bemerkung 
+			\ref{bem:dilvol} auch
+			\[0<\gamma^d =vol(Q)-vol(P)=vol(\beta W)-vol(\alpha W)
+			=\beta^d -\alpha^d.\]
+			Damit folgt $\beta>\alpha$ also ist der Würfel $\alpha W$ 
+			in dem Würfel $\beta W$ enthalten und damit finden wir 
+			das gesuchte Teilpolytop von $Q$, nämlich gerade 
+			das dilatierte Polytop $\frac{\alpha}{\beta}Q$. Denn 
+			mit $\beta W\sim Q$ erhalten wir mit 
+			Proposition \ref{prop:dilzerl} auch 
+			$\alpha W\sim \frac{\alpha}{\beta}Q$ und mit der 
+			Transitivität der Zerlegungsgleichheit 
+			gilt dann auch $P\sim \frac{\alpha}{\beta}Q$. Damit ist 
+			die Aussage für die letzte Zylinderklasse bewiesen und 
+			wir nehmen an, dass die Aussage für alle Polytope 
+			der Zylinderklasse $\mathfrak{B}_{i+1}$ gilt. Seien also 
+			$P,Q\in\mathfrak{B}_i$. Es gibt ein $\delta>0$ für das 
+			$P\sim_{\subset}\alpha W$ gilt. Diese $\delta$ existiert, 
+			wir können es einfach so groß wählen, dass das Polytop $P$ 
+			in diesem Würfel enthalten ist. Weiter sei eine 
+			natürliche Zahl $n$ so gewählt, dass wenn wir $\lambda$ 
+			definieren durch
+			\[\lambda=\left(\frac{\gamma}{2}\right)(n^{d-i}-1)^{1/d}\]
+			dann $\lambda>\delta$ gilt. Wir sehen, dass dann auch 
+			$P\sim_{\subset}\lambda W$ gilt und mit dem 
+			Multiplikationssatz (
+			
+			%... Multiplikationssatz
+			
+			) gilt weiter
+			\[n^i\cdot P\sim_{\subset}n^i \cdot \lambda W.\]
+			Wir stellen fest, dass das Polytop $n^i\cdot \lambda W$ 
+			in der Zylinderklasse $\mathfrak{B}_d$ ist, da es sich 
+			aus $n^i$ vielen Würfeln $\lambda W_1\ldots,\lambda W_{n^i}$, 
+			die alle kongruent zu $\lambda W$ sind, 
+			zusammensetzt und diese Würfel 
+			natürlich $d$-stufige Zylinder sind. Mit Proposition 
+			\ref{bem:dteZylinderklasse} gibt es also ein $\mu$, sd. 
+			$n^i\cdot \lambda W\sim \mu W$, wobei das $\mu$ definiert 
+			ist durch
+			\[\mu^d =\sum_{j=1}^{n^i}\mathfrak{D}(\lambda W_j)
+			=\sum_{j=1}^{n^i}\lambda^d \mathfrak{D}(W)=
+			n^i\lambda^d.\]
+			Wir haben hierbei die Eigenschaft Bemerkung \ref{bem:gramfunk} 
+			genutzt. Weiter erhalten wir für die Dilatation der 
+			Polytope $P$ und $Q$ mit $n$ aus Satz \ref{thm:hilfssatz} 
+			die Relationen
+			\begin{align*}
+				nP&\sim P_0+ n^i\cdot P \\
+				nQ&\sim Q_0+ n^i\cdot Q,
+			\end{align*}
+			wobei $P_0$ und $Q_0$ Polytope der Zylinderklasse 
+			$\mathfrak{B}_{i+1}$ sind. Es gilt also für das Volumen mit 
+			
+			%... vol(n^i \cdot P)=n^i vol(P)
+			
+			\[n^d vol(P)=vol(nP)=vol(P_0+n^i P)=vol(P_0)+vol(n^i\cdot P)
+			=vol(P_0)+n^i vol(P).\]
+			Also gilt
+			\[vol(P_0)=vol(P)(n^d -n^i).\]
+			Analog erhalten wir also auch
+			\[vol(Q_0)=vol(Q)(n^d -n^i).\]
+			Zusammengesetzt ergibt das also 
+			\begin{align}
+				vol(Q_0)-vol(P_0)=(vol(Q)-vol(P))(n^d -n^i)=\gamma^d(n^d-n^i). \label{lemma:teilzerl;1}
+			\end{align}
+		\end{itemize}
+	\end{proof}
 	
 	Der Beweis richtet sich nach \cite[Satz III]{Hadwiger}.
 	
@@ -1622,8 +1750,8 @@
 			\begin{align}
 			R\sim S. \label{thm:zerlerg;2}
 			\end{align}
-			Falls nun $P,Q\in \mathfrak{B}_d$ gilt, dann gibt es mit Bemerkung 
-			\ref{bem:dteZylinderklasse} 
+			Falls nun $P,Q\in \mathfrak{B}_d$ gilt, dann gibt es mit 
+			Proposition \ref{bem:dteZylinderklasse} 
 			$\lambda_1,\lambda_2 >0$, sd. $P\sim \lambda_1 W_d$ und 
 			$Q\sim \lambda_2 W_d$, wobei mit hier $W_d$ der $d$-dimensionale 
 			Einheitswürfel gemeint ist. Da mit Folgerung \ref{coroll:ergvol} 
