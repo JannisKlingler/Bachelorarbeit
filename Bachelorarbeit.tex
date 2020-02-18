@@ -132,6 +132,24 @@
 	
 	\section{Einleitung}
 	
+	Schon in der Antike beschäftigten sich die Menschen mit der Berechnung 
+	von Flächeninhalten und Volumina geometrischer Figuren. So auch 
+	der griechische Mathematiker Euklid. Dabei galt es vor allem 
+	einfache Methoden zu finden. So versuchte man schon damals komplizierte 
+	Objekte mit bekannten darzustellen, um diese besser berechnen zu können. 
+	Beispielweise greift man bei der Berechnung des Flächeninhalts eines 
+	Dreiecks auf die Berechnung bei einem Parallelogramm zurück und hier 
+	wiederum auf die Berechnung bei einem Rechteck. Je nach dem wie 
+	detailiert manche Objekte sind, gestaltet sich dies jedoch als äußerst 
+	schwierige Aufgabe. Wir wollen uns in dieser Arbeit mit Polytopen, 
+	salopp gesagt mit Vielecken beschäftigen. Zwei Polytope sind 
+	zerlegungsgleich, wenn sie sich in endlich viele paarweise kongruente 
+	Stücke zerlegen lassen. Die Frage, ob das Volumen zweier Polytope genau 
+	dann gleich ist, wenn diese zerlegungsgleich sind spielt in dieser 
+	Arbeit eine zentrale Rolle. Eine derartige Aussage würde es erlauben 
+	auf die Methoden der Infitesimalrechnung, bei der Volumenberechung von 
+	unterschiedlichen Figuren, zu verzichten. Bereits 1844 
+	
 	\section{Einführung}
 	
 	\subsection{Polytope}
@@ -157,39 +175,39 @@
 		$\alpha(x)\leq r$ für alle $x\in P$ gilt.
 	\end{definition}
 	
-	Wir wollen die Dimension eines konvexen Polytops $P$ definieren als das 
+	Der Schnitt zweier konvexer $d$-Polytope ist offensichtlich wieder ein konvexes $d$-Polytop. 
+	Wir wollen die Dimension eines konvexen $d$-Polytops $P$ definieren als das 
 	Maximum der Anzahl der linear unabhängigen Vektoren, die wir in $P$ finden. 
-	Hierbei ist es auch möglich, dass das, durch die Halbräume entstehende, Polytop 
-	von niedrigerer Dimension ist als der ursprünglich zugrunde liegende 
-	Vektorraum, das Polytop also keine inneren Punkte hat. Ein solches Polytop 
-	wollen wir uneigentlich nennen. Ein Polytop, das innere Punkte besitzt, 
-	nennen wir dementsprechend eigentlich. Wir meinen in dieser Arbeit, falls 
-	nicht anders genannt, mit Polytopen immer eigentliche Polytope.
+	Hierbei ist es auch möglich, dass das, durch die Halbräume entstehende, 
+	konvexe $d$-Polytop von niedrigerer Dimension ist als der ursprünglich 
+	zugrunde liegende Vektorraum, das Polytop also keine inneren Punkte hat. 
+	Ein solches Polytop wollen wir uneigentlich nennen. Ein Polytop, dessen 
+	Dimension gleich der des Vektorraums ist bzw. das innere Punkte besitzt, 
+	nennen wir dementsprechend eigentlich. Wenn von Polytopen die Rede ist 
+	sprechen wir, falls nicht anders genannt, immer von eigentlichen Polytopen.
+	Wir wollen zwei konvexe $d$-Polytope disjunkt nennen, falls der Schnitt der 
+	beiden Polytope ein uneigentliches Polytop ist, also eine niedrigere 
+	Dimension hat, als der zugrunde liegende Vektorraum. Für die Vereinigung 
+	zweier disjunkter, konvexer $d$-Polytope $P$ und $Q$ schreiben wir $P+Q$.
 	
 	\begin{definition}[Polytop]
-		Ein $d$-Polytop $P$ ist die Vereinigung endlich vieler konvexer 
-		$d$-Polytope.
+		Ein $d$-Polytop $P$ ist die Vereinigung endlich vieler disjunkter, konvexer 
+		und beschränkter $d$-Polytope. \\
+		Wir nennen ein $0$-dimensionales Polytop eine Ecke, ein 
+		$1$-dimensionales Polytop eine Strecke bzw. Kante, ein 
+		$2$-dimensionales Polytop ein Polygon und ein 
+		$3$-dimensionales Polytop einen Polyeder.
 	\end{definition}
 	
-	Weiter nennen wir ein $0$-dimensionales Polytop eine Ecke, ein $1$-dimensionales Polytop eine Strecke bzw. Kante, ein $2$-dimensionales Polytop ein Polygon und ein $3$-dimensionales Polytop einen Polyeder.
+	Die Eigenschaften die wir oben für konvexe $d$-Polytope genannt haben, 
+	lassen sich genauso auf $d$-Polytope übertragen. Weiter gilt nun, dass 
+	die Vereinigung von $d$-Polytopen wieder ein $d$-Polytop ist. 
+	Wir werden in dieser Arbeit viel mit der Vereinigung von Polytopen arbeiten 
+	hierbei impliziert die Schreibweise $P+Q$ bei der Vereinigung von Polytopen, 
+	deren Disjunktheit. Wir schreiben im Folgenden statt, $d$-Polytop einfach Polytop.
 	
-	%... hier eventuell noch alles auf Polytope verallgemeinern
-	
-	Wir werden im Folgenden immer beschränkte konvexe $d$-Polytope betrachten. Wir stellen außerdem fest, dass 
-	der Schnitt konvexer Polytope wieder ein konvexes Polytop ist. Hierbei kann der Schnitt auch niedrigerdimensional 
-	sein. Wir sagen zwei Polytope $P_1$ und $P_2$ sind disjunkt, wenn $dim(P_1\cap P_2)<d$. Wir schreiben dann 
-	für die Vereinigung zweier disjunkter Polytope $P_1+P_2$.
-	
-	Wir definieren $dim(P_1\cap P_2):=max\{k\in\setN_0\ \vert\ \exists p_0,\ldots,p_k\in P_1\cap P_2\ :
-	\ (p_0-p_1),\dots,(p_{k-1}-p_k)\text{ linear unabhängig}\}$.
-	
-	%\begin{definition}[Polytop]
-	%	Ein $d$-Polytop $P$ in einem $d$-dimensionalen reellen Vektorraum ist die Vereinigung endlich vieler 
-	%	konvexer $d$-Polytope.
-	%\end{definition}
-	%
 	\begin{definition}[Kongruenz] \label{def:kong}
-		Wir nennen zwei $d$-Polytope $P$ und $Q$ \textsl{kongruent}, wenn es eine Isometrie $g$ gibt, sd. 
+		Wir nennen zwei Polytope $P$ und $Q$ \textsl{kongruent}, wenn es eine Isometrie $g$ gibt, sd. 
 		$g(P)=Q$. Wir schreiben dann $P\cong Q$.
 	\end{definition}
 
@@ -222,7 +240,7 @@
 		also $P\cong R$. 
 	\end{remark}
 	
-	Wir können uns nun also der Zerlegungsgleichheit von Polytopen widmen.
+	Wir können uns nun also der Zerlegungsgleichheit von Polytopen beschäftigen.
 	
 	\subsection{Zerlegungsgleichheit}
 	
@@ -1202,11 +1220,10 @@
 	\end{proof}
 	
 	\begin{definition}[Vervielfachung]
-		Eine ganze Vervielfachung eines Polytop 
-		$P$, mit einer natürlichen Zahl $n$, ist ein Polytop $Q$, 
+		Sei $P$ ein Polytop, dann ist die ganze Vervielfachung von $P$ mit 
+		einer natürlichen Zahl $n$ ein Polytop, wir schreiben $n\cdot P$, 
 		das sich in $n$ viele Polytope zerlegen lässt, die alle kongruent zu 
-		$P$ sind. Wir schreiben für das Polytop $Q$ auch $n\cdot P$. Formal 
-		bedeutet dies, dass es Polytope $P_1,\ldots,P_n$ gibt, sd.
+		$P$ sind. Formal bedeutet das, dass es Polytope $P_1,\ldots,P_n$ gibt, sd.
 		\[n\cdot P=P_1+\ldots+P_n,\]
 		wobei $P_i\cong P$ für alle $i=1,\ldots,n$.
 	\end{definition}
@@ -1217,11 +1234,27 @@
 	
 	Es ergeben sich beim Vervielfältigen, wie man leicht sieht folgende Eigenschaften.
 	
+	\begin{remark}
+		Wir wollen uns überlegen wie sich das Volumen bei einer Vervielfachung 
+		verhält. Dazu sei $P$ ein Polytop und $n$ eine natürliche Zahl. 
+		Das Polytop $n\cdot P$ lässt sich also in endlich viele Polytope 
+		$P_1\ldots,P_n$ zerlegen, also $n\cdot P=P_1+\ldots+P_n$ und für alle 
+		$i=1,\ldots,n$ soll $P_i\cong P$ gelten. Mit Proposition 
+		\ref{prop:cong,vol} gilt dann 
+		\[vol(n\cdot P)=vol(P_1+\ldots+P_n)=vol(P_1)+\ldots+vol(P_n)=n\cdot vol(P).\]
+	\end{remark}
+	
 	\begin{remark}[Additionssatz] \label{bem:addsatz}
 		Seien $P,Q,R,S$ vier Polytope, sd. $P\sim Q$ und $R\sim S$, dann gilt
 		\[P+R\sim Q+S.\]
 		Wir summieren hierbei einfach die Zerlegungen der einzelnen Polytope 
 		auf und erhalten damit die Zerlegungsgleichheit.
+	\end{remark}
+	
+	\begin{remark}[Multiplikationssatz] \label{bem:multsatz}
+		Seien $P$ und $Q$ zwei Polytope und $n$ eine natürliche Zahl. 
+		Dann sind die Polytope $n\cdot P$ und $n\cdot Q$ zerlegungsgleich, falls 
+		$P$ und $Q$ zerlegungsgleich sind.
 	\end{remark}
 	
 	\begin{corollary} \label{coroll:vervielfältigung}
@@ -1572,36 +1605,6 @@
 		\[P_i\cong Q_i\]
 		für alle $i\in\{1,\ldots,n\}$. Wir schreiben $P\sim Q$.
 	\end{definition}
-
-	\begin{proposition}
-		Seien $P$ und $Q$ zwei Polytope, dann ist $vol(P)<vol(Q)$ genau dann, wenn $P$ zerlegungsgleich zu 
-		einem Teilpolytop von $Q$ ist.
-	\end{proposition}
-	
-	Anders ausgedrückt gibt es also Polytope $Q_1,Q_2\subset Q$ 
-	mit $Q_1+Q_2=Q$, sd. $P\sim Q_1$. Wir werden diese Proposition per 
-	Induktion über die Zylinderklassen beweisen.
-
-	\begin{proof}
-		\noindent
-		\begin{itemize}
-			\item[$"\Rightarrow"$:] Ist also $P$ zerlegungsgleich zu einem 
-			Teilpolytop von $Q$, dann ist auch das Volumen von $P$ gleich 
-			dem des Teilpolytops und mit der Monotonie des Maßes folgt die 
-			Aussage.
-			\item[$"\Leftarrow"$:] Sei also $vol(P)<vol(Q)$, dann gibt es ein 
-			$\lambda>0$, sd. $vol(Q)-vol(P)=\lambda^d$. Wir beginnen 
-			mit dem Induktionsanfang. Für $P,Q\in\mathfrak{B}_d$ gibt es 
-			nach Bemerkung \ref{bem:dteZylinderklasse} $alpha,beta>0$, sd. 
-			$P\sim alpha W_d$ und $Q\sim \beta W_d$. Es ergibt sich also 
-			\[\lambda^d =vol(P)=vol(Q)=vol(\alpha W_d)-vol(\beta W_d)=\alpha^d -\beta^d\]
-			und damit $\beta >\alpha$, da $\lambda>0$. Der Würfel $\alpha W_d$ 
-			ist also ein Teilpolyeder des Würfels $\beta W_d$ und damit 
-			folgt die Aussage. Wir nehmen nun also an, dass die Aussage 
-			bereits für alle Polytope der Zylinderklasse $\mathfrak{B}_{i+1}$ 
-			gilt, wobei $1\leq i\leq d-1$. Seien also $P,Q\in\mathfrak{B}_i$.
-		\end{itemize}
-	\end{proof}
 	
 	Nun können wir die Ergänzungsgleichheit definieren.
 	
@@ -1639,9 +1642,27 @@
 	Um den Satz zu Beweisen benötigen wir noch eine Aussage. Dazu wollen 
 	wir, dass ein Polytop $P$ zerlegungsgleich zu einem Teilpolytop 
 	des Polytops $Q$ ist. Also soll es ein Polytop gegeben zu dem 
-	$P$ zerlegungsgleich ist und das in $Q$ enthalten ist. Wir schreiben 
+	$P$ zerlegungsgleich ist und das in $Q$ enthalten ist. Formal 
+	ausgedrückt finden wir Polytope $Q_1,Q_2\subset Q$ mit 
+	$Q_1+Q_2=Q$, sd. $P\sim Q_1$ ist. Wir schreiben 
 	\[P\sim_{\subset} Q\]
-	hierfür.
+	hierfür. Wir bemerken, dass dies Relation transitiv ist. Seien 
+	dazu Polytope $P,Q,R$ gegeben, sd. $P\sim_{\subset}Q$ und $Q\sim_{\subset}R$ 
+	gilt, d. h. es gibt ein Polytop $Q'\subset Q$, sd. $P\sim Q'$ und ein Polytop 
+	$R'\subset R$, sd. $Q\sim R'$. Weiter gibt es endlich viele Polytope 
+	$Q_1,\ldots,Q_n$ und $R_1',\ldots,R_n'$ mit $Q=Q_1+\ldots+Q_n$ und 
+	$R'=R_1'+\ldots R_n'$, sd. für alle $i=1,\ldots,n$ die 
+	Kongruenz $Q_i\cong R_i'$ gilt. 
+	Seien also $f_1,\ldots,f_n$ die Isometrien für die für 
+	alle $i=1,\ldots,n$ die Gleichungen $f_i(Q_i)=R_i'$ gelten. Dann erhalten wir 
+	die Zerlegung
+	\[Q'=Q'\cap Q=Q'\cap(Q_1+\ldots+Q_n)=(Q'\cap Q_1)+\ldots+(Q'\cap Q_n)\]
+	und für das Polytop $R''\subset R$, das definiert ist durch 
+	\[R''=(f_1(Q')\cap R_1)+\ldots+(f_n(Q')).\]
+	Mit der Bijektivität der Isometrien gilt für alle $i=1,\ldots,n$
+	\[f_i(Q'\cap Q_i)=f_i(Q')\cap f_i(Q_i)=f_i(Q')\cap R_i.\]
+	Damit ist das Polytop $R''$ nicht leer und es gilt $Q'\sim R''$, also auch 
+	$P\sim R''$ und damit ist die Transitivität gezeigt.
 	
 	\begin{lemma} \label{lemma:teilzerl}
 		Seien $P$ und $Q$ Polytope, dann ist $P$ genau dann zu 
@@ -1691,11 +1712,7 @@
 			\end{align}
 			dann $\lambda>\delta$ gilt. Wir sehen, dass dann auch 
 			$P\sim_{\subset}\lambda W$ gilt und mit dem 
-			Multiplikationssatz (
-			
-			%... Multiplikationssatz
-			
-			) gilt weiter
+			Multiplikationssatz (Bemerkung \ref{bem:multsatz}) gilt weiter
 			\begin{align}
 				n^i\cdot P\sim_{\subset}n^i \cdot \lambda W.\label{lemma:teilzerl;1}
 			\end{align}
@@ -1770,10 +1787,10 @@
 			$P_0+\mu W\in\mathfrak{B}_{i+1}$ gilt. Mit der Induktionsvoraussetzung 
 			folgt also nun, dass 
 			\[P_0+\mu W\sim_{\subset} Q_0\]
-			gilt und mit \ref{lemma:teilzerl;7} also auch $nP\sim_{\subset}Q_0$ 
-			also erst recht auch
+			gilt. Weiter gilt mit \ref{lemma:teilzerl;7} und er Transitivität von $"\sim_{\subset}"$ auch $nP\sim_{\subset}Q_0$, 
+			damit erst recht 
 			\[nP\sim_{\subset}nQ\]
-			und mit Proposition \ref{prop:dilzerl}
+			und mit Proposition \ref{prop:dilzerl} folgt
 			\[P\sim_{\subset}Q.\]
 		\end{itemize}
 	Damit sind wir fertig.
