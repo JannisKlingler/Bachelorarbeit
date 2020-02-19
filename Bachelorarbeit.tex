@@ -130,7 +130,7 @@
 	\newpage
 	\setcounter{page}{1}
 	
-	\section*{Einleitung}
+	\section*{Vorwort}
 	
 	Schon in der Antike beschäftigten sich die Menschen mit der Berechnung 
 	von Flächeninhalten und Volumina geometrischer Figuren. So auch 
@@ -160,7 +160,32 @@
 	Mathematiker David Hilbert auf dem zweiten internationalen Mathematikerkongress 
 	seine berühmte Liste von 23 mathematischen Problemen vorstellte, stellte 
 	er diese Frage als sein drittes Problem vor. Hilbert vermutete bereits, 
-	dass die Aussage nicht stimmt und formulierte 
+	dass die Aussage nicht stimmt. Er sagte, dass ein Unmöglichkeitsbeweis 
+	erbracht sei, sobald es gelinge
+	\begin{quote}
+		\textsl{$"$zwei Tetraeder mit gleicher Grundfläche
+			und von gleicher Höhe anzugeben, die sich auf keine Weise in
+			congruente Tetraeder zerlegen lassen und die sich auch durch Hin-
+			zufügung congruenter Tetraeder nicht zu solchen Polyedern ergänzen
+			lassen, für die ihrerseits eine Zerlegung in congruente Tetraeder
+			möglich ist.$"$}(Hilbert 1900)\footnote{Vergleiche dazu auch \cite{Hilbert1900}}
+	\end{quote}
+	Bereits ein Jahr nach dem Vortrag löste Hilberts Schüler Max Dehn 
+	das Problem. Dehn definierte die sogenannte Dehn-Invariant, eine 
+	Invariante, die sich auf die Kanten von Polyedern bezieht und sich 
+	beim Zerschneiden nicht ändert. Die Dehn-Invariante ist für jeden Polyeder 
+	also, wie das Volumen, ein ausgezeichnetes Charakteristikum. 
+	Wir wollen uns in dieser Arbeit zunächst die Zerlegungsgleichheit 
+	von Polytopen genauer betrachten, um dann den zweidimensionalen Beweis, 
+	das Bolyai-Gerwien-Theorem, zu beweisen. Danach wollen wir zum 
+	dreidimensionalen Fall übergehen und uns Dehns Lösung anschauen. 
+	Als zweiten größeren Abschnitt wollen wir den Zusammenhang zwischen 
+	der Zerlegungsgleichheit und der Ergänzungsgleichheit von Polytopen 
+	betrachten und uns überlegen, ob eine Unterscheidung von Zerlegungs- 
+	und Ergänzungsgleichheit bei der Frage der Volumenberechnung überhaupt 
+	notwendig ist. 
+	%Am Schluss werden wir noch ein paar Ausblicke auf 
+	%ähnliche Fragestellungen in anderen Räumen geben.
 	
 	\newpage
 	
@@ -236,8 +261,9 @@
 	 auch invariant unter Drehungen, ist das Skalarprodukt auch invariant 
 	 unter Isometrien. Weiter bilden Isometrien Halbräume wieder auf 
 	 Halbräume ab und damit auch Polytope auf Polytope. Die Menge 
-	 der Isometrien $\{f:\setR^d\to\setR^d\ \vert f\text{ ist Isometrie}\}$ ist eine Gruppe mit der Verknüpfung von Abbildungen als 
-	 Operation und der Identitätsabbildung als neutralem Element. Wir wollen 
+	 der Isometrien bildet, mit der Verknüpfung von Abbildungen als 
+	 Operation und der Identitätsabbildung als neutralem Element, eine Gruppe. 
+	 Wir wollen 
 	 diese Gruppe die Isometriegruppe nennen. Wir bemerken außerdem, dass 
 	 wir die Isometrien auf Translationen einschränken können und erhalten 
 	 so eine Untergruppe der Isometriegruppe, die Tranlationsgruppe. Die 
@@ -1073,12 +1099,11 @@
 	Beweis hierzu ist nicht gerade trivial, weswegen wir vorweg noch einige 
 	Kenntnisse über Polytope benötigen. Das Kapitel richtet sich nach 
 	\cite{Hadwiger}. 
-	Im Folgenden meinen wir mit Polytopen wieder $d$-Polytope. 
 	
 	\subsection{Ein wenig Polyedertheorie}
 	
 	Wir beginnen mit dem einfachsten Polytop, dem Simplex. Ein Simplex hat 
-	gerade $d+1$ ausgezeichnete Ecken und hat damit gerade soviele Kanten, dass 
+	$d+1$ ausgezeichnete Ecken und damit gerade soviele Kanten, dass 
 	wir ein konvexes Polytop erhalten. Im zwei-dimensionalen Fall ist ein 
 	Simplex ein Dreieck und im drei-dimensionalen ein Tetraeder. Wir werden 
 	feststellen, dass sich jedes konvexe Polytop in endlich viele Simplizes 
@@ -1907,6 +1932,21 @@
 		\end{itemize}
 	\end{proof}
 	
+	Zusammenfassend können wir also sagen, dass es bei der Volumenberechnung 
+	also keinen Unterschied macht die Zerlegungsgleichheit oder die 
+	Ergänzungsgleichheit von Polytopen zu betrachten. Dennoch erscheint die 
+	Zerlegungsgleichheit oftmals als intuitivere Variante und auch die Beweise 
+	hierbei sind oftmals leichter zu führen, als bei der Ergänzungsgleichheit. 
+	Für Hilberts Problem reicht es dennoch aus, die Beweise für eine 
+	der beiden Relationen zu führen.
+
+	%\section{Ausblicke}
+	%
+	%Zum Schluss wollen wir noch ein paar Ausblicke auf ähnliche Fragestellungen 
+	%geben. So lässt sich die Frage der Zerlegungsgleichheit beispielsweise 
+	%auf die Sphäre verallgemeinern. Als Kanten eines Polytops betrachten 
+	%wir Geodäten. Es stellt sich heraus, dass 
+	%
 	%
 	%Wir werden im folgenden immer kommutative Ringe mit Eins betrachen.
 	%
@@ -1953,6 +1993,6 @@
 	%	
 	\cite[def 3.1]{Boltianskii}
 	\newpage
-	\bibliographystyle{plain}
+	\bibliographystyle{alpha}
 	\bibliography{MeineBib}
 \end{document}
