@@ -1089,6 +1089,70 @@
 		Damit sind $Q$ und $T$ nicht zerlegungsgleich.
 	\end{corollary}	
 	
+	Damit haben wir gezeigt, dass es Polyeder gibt, die gleiches Volumen haben, 
+	jedoch nicht zerlegungsgleich sind. Wir wollen uns nun zwei Tetraeder 
+	überlegen mit gleicher Grundseite und gleicher Höhe, die nicht 
+	zerlegungsgleich sind, wie Hilbert vorschlug. Wir betrachten hier 
+	die Beispiele 2 und 3 aus \cite{Proofsfromthebook}[Kapitel 10].
+	
+	\begin{example}
+		Sei $T_1$ der Tetraeder mit den Eckpunkten $A,B,C,D$ und der Grundseite 
+		$ABC$, das durch die drei zueinander orthogonal liegenden Kanten 
+		$\overline{AB}$, $\overline{AC}$ und $\overline{AD}$, die jeweils 
+		die Länge $l$ haben, aufgespannt wird. Siehe 
+		Abbildung \ref{Abb.5}. 
+		An den drei zueinander orthogonal liegenden Kanten befinden sich 
+		offentbar rechte Winkel. Die anderen drei Kanten haben alle 
+		die gleiche Länge $\sqrt{2}l$ und alle Diederwinkel 
+		haben den gleich Wert $\varphi$. Sei $E$ der Mittelpunkt der Kante 
+		$\overline{BC}$, dann gilt $\abs{AE}=\frac{1}{\sqrt{2}}l$. Das 
+		Dreieck $ADE$ hat in $A$ einen rechten Winkel, also ergibt sich
+		\[\abs{DE}=\sqrt{\abs{AD}^2 +\abs{AE}^2}=\sqrt{l^2 +\left(\frac{1}{\sqrt{2}}l\right)^2}=\sqrt{\frac{3}{2}}l.\]
+		Es gilt für den Winkel $\varphi$ an $E$ also
+		\[cos(\varphi)=\frac{\abs{AE}}{\abs{DE}}=\frac{\frac{1}{\sqrt{2}}l}{\sqrt{\frac{3}{2}}l}=\frac{1}{\sqrt{3}}\]
+		und damit $\varphi=\arccos\left(\frac{1}{\sqrt{3}}\right)$. 
+		Wir erhalten für die Dehn-Invariante von $T_1$ also
+		\[D(T_1)=3\cdot\underbrace{\left(l\otimes\frac{\pi}{2}\right)}_{=0}+3\cdot\left(\sqrt{2}l\otimes\arccos\left(\frac{1}{\sqrt{3}}\right)\right)=\left(3\sqrt{2}l\otimes\arccos\left(\frac{1}{\sqrt{3}}\right)\right).\]
+		Mit Proposition \ref{prop:irr} gilt für $n=3$, dass 
+		$\frac{1}{\pi}\arccos\left(\frac{1}{\sqrt{3}}\right)$ irrational ist 
+		und damit liegt $\arccos\left(\frac{1}{\sqrt{3}}\right)$ nicht 
+		in $\pi\setQ$. Mit Satz \ref{bem:dehn=0} gilt also 
+		\[D(T_1)\neq 0.\]
+	\end{example}
+	
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[scale=0.35]{Tetraeder1}
+		\caption{Der Tetraeder $T_1$}
+		\label{Abb.5}
+	\end{figure}
+	
+	\begin{example}
+		Sei $T_2$ ein Tetraeder mit drei aufeinander folgenden Kanten 
+		$\overline{AB}$, $\overline{BC}$ und $\overline{CD}$, die jeweils 
+		orthogonal aufeinander stehen und die gleiche Länge $l$ haben. 
+		Siehe dazu Abbildung \ref{Abb.6}. 
+		Der Tetraeder $T_2$ hat die Grundseite $ABC$ und die Höhe $l$. 
+		Drei der Diederwinkel haben hierbei den Wert $\frac{\pi}{2}$, 
+		zwei den Wert $\frac{\pi}{4}$ und einer den Wert $\frac{\pi}{3}$. 
+		Damit liegen alle Diederwinkel von $T_2$ in $\pi\setQ$ und damit 
+		gilt 
+		\[D(T_2)=0.\]
+	\end{example}
+	
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[scale=0.4]{Tetraeder2}
+		\caption{Der Tetraeder $T_2$}
+		\label{Abb.6}
+	\end{figure}
+	
+	Wir sehen also, dass die beiden Tetraeder $T_1$ und $T_2$ beide die 
+	gleiche Grundseite und Höhe haben, jedoch unterschiedliche Dehn-Invariante. 
+	Damit sind sie nicht zerlegungsgleich. Wir haben also die vollständige 
+	Lösung für Hilberts drittes Problem für die Zerlegungsgleichheit von 
+	Polyeder gefunden.
+	
 	\newpage
 	
 	\section{Ergänzungsgleichheit von Polytopen}
