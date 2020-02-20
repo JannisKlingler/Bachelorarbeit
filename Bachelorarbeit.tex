@@ -294,7 +294,52 @@
 	
 	Wir stellen fest, dass die Kongruenz zweier Polytope auch deren 
 	Zerlegungsgleichheit impliziert, dazu betrachten wir als Zerlegung einfach 
-	die Polytope selbst. Wir wollen nun des Begriff des Volumens eines Polytops anschauen. Dabei ist 
+	die Polytope selbst. Die Zerlegungsgleichheit von Polytopen ist eine 
+	Äquivalenzrelation. Die Reflexivität und Symmetrie sind klar. Die 
+	Transitivität müssen wir noch zeigen.
+	
+	\begin{lemma}[Transitivität der Zerlegungsgleichheit] \label{lemma:transitiv}
+		Seien $P$, $Q$ und $R$ Polytope und es gilt $P\sim Q$ und $Q\sim R$. Dann folgt $P\sim R$.
+	\end{lemma}
+	
+	\begin{proof}
+		Seien die Zerlegungen der Polytope wie folgt gegeben
+		\begin{align*}
+		P &= P_1+\ldots+P_n \\
+		Q &= Q_1+\ldots+Q_n = Q_1'+\ldots+Q_m' \\
+		R &= R_1+\ldots+R_m,
+		\end{align*}
+		wobei $P_i\cong Q_i$ für alle $i=1,\ldots,n$ und $Q_j'\cong R_j$ für alle $j=1,\ldots,m$. 
+		Seien $f_1,\ldots,f_n$ die Isometrien, die alle $Q_i$ in $P_i$ überführen, 
+		d. h. $f_i(Q_i)=P_i$ und 
+		$g_1,\ldots,g_m$ die Isometrien, die alle $R_j$ in $Q_j'$ überführen, d. h. $g_j(R_j)=Q_j'$.
+		Wir definieren
+		\[ F_{ij}:=Q_i\cap Q_j',\]
+		für $i=1,\ldots,n$ und $j=1,\ldots,m$. Beachte, dass $F_{ij}$ leer sein kann. Zwei verschiedene 
+		$F_{ij}$ sind disjunkt, denn für $i_1,i_2\in\{1,\ldots\,n\}$ mit $i_1\neq i_2$ gilt 
+		\[F_{i_1 j}\cap F_{i_2 j}=(Q_{i_1}\cap Q_j')\cap(Q_{i_2}\cap Q_j')=(Q_{i_1}\cap Q_{i_2})\cap Q_j'.\] 
+		Da $Q_{i_1}$ und $Q_{i_2}$ disjunkt sind, d. h. der Schnitt niedrigerdimensional ist, ist 
+		auch dieser Schnitt mit $Q_j'$ niedrigerdimensional, also sind $F_{i_1j}$ und $F_{i_2j}$ disjunkt. Außerdem gilt
+		\begin{align}
+		\bigcup_{j=1}^m F_{ij} = \bigcup_{j=1}^m \left( Q_i \cap Q_j' \right) = 
+		Q_i \cap \left( \bigcup_{j=1}^m Q_j' \right)=Q_i \cap Q = Q_i. \label{lemma:transitiv;1}
+		\end{align}
+		Also lässt sich $P$ folgendermaßen darstellen
+		\[ P=\bigcup_{i=1}^n P_i = \bigcup_{i=1}^n f_i(Q_i) \overset{\ref{lemma:transitiv;1}}{=}\bigcup_{i=1}^n f_i 
+		\left(\bigcup_{j=1}^m F_{ij} \right) =
+		\bigcup_{i=1}^n \bigcup_{j=1}^m f_i(F_{ij}), \]
+		und für $R$ gilt analog
+		\[ R=\bigcup_{i=1}^n \bigcup_{j=1}^m g_j(F_{ij}). \]
+		Damit haben wir sowohl für $P$, als auch für $R$ eine Zerlegung in 
+		disjunkte Polytope gefunden. Als letztes überlegen wir uns, 
+		dass gilt $f_i(F_{ij})\cong g_j(F_{ij})$. Betrachte hierzu die 
+		Isometrie $g_j\circ f_i^{-1}$, dann gilt 
+		$g_j(f_i^{-1}(f_i(F_{ij})))=g_j(F_{ij})$. Also finden wir für $P$ und 
+		$R$ jeweils eine Zerlegung aus kongruenten Polytopen und damit sind 
+		auch $P$ und $R$ zerlegungsgleich bzw. $P\sim R$.
+	\end{proof}
+	
+	Wir wollen nun des Begriff des Volumens eines Polytops anschauen. Dabei ist 
 	vor allem die Invarianz des Volumens unter Zerschneidung von Polytopen, die wir in Proposition \ref{prop:zerl,vol} beweisen werden, ein wichtiges Resultat. Mit dem Volumen eines Polytops meinen wir im Folgenden das 
 	$d$-dimensionale Lebesgue-Maß. Da unsere Polytope abgeschlossene Mengen 
 	sind, liegen sie in der Borelalgebra und sind damit auch Lebesgue-messbar.
@@ -346,51 +391,19 @@
 		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Wir erhalten mit Proposition \ref{prop:cong,vol} und Lemma \ref{lemma:nullmenge} 
 		\[vol(P)=vol(P_1+\ldots+P_n)=\sum_{i=1}^n vol(P_i)=\sum_{i=1}^n vol(Q_i)=vol(Q_1+\ldots+Q_n)=vol(Q).\]
 	\end{proof}
+	
+	Wir haben nun also die Voraussetzungen, um uns den Fall in der Ebene 
+	anzuschauen. Wir wollen also beweisen, dass zwei Polygone genau 
+	dann zerlegungsgleich sind, wenn sie das gleiche Volumen haben. 
+	Diese Aussage liefert uns das Bolyai-Gerwien Theorem.
 
 	\newpage
 	
-	\section{Zerlegungsgleichheit im 2-dimensionalen}
+	\section{Zerlegungsgleichheit in der Ebene}
 	
 	\subsection{Bolyai-Gerwien Theorem}
 	
 	Im Folgenden setzen wir $d=2$ und betrachten also Polygone.
-	
-	\begin{lemma} \label{lemma:transitiv}
-		Seien $P$, $Q$ und $R$ Polygone und es gilt $P\sim Q$ und $Q\sim R$. Dann folgt $P\sim R$.
-	\end{lemma}
-	
-	\begin{proof}
-		Seien die Zerlegungen der Polygone wie folgt gegeben
-		\begin{align*}
-			P &= P_1+\ldots+P_n \\
-			Q &= Q_1+\ldots+Q_n = Q_1'+\ldots+Q_m' \\
-			R &= R_1+\ldots+R_m,
-		\end{align*}
-		wobei $P_i\cong Q_i$ für alle $i\in\{1,\ldots,n\}$ und $Q_j'\cong R_j$ für alle $j\in\{1,\ldots,m\}$. 
-		Seien $f_1,\ldots,f_n$ die Isometrien, die alle $Q_i$ in $P_i$ überführen (d. h. $f_i(Q_i)=P_i$) und 
-		$g_1,\ldots,g_m$ die Isometrien, die alle $R_j$ in $Q_j'$ überführen (d. h. $g_j(R_j)=Q_j'$).
-		Wir definieren
-		\[ F_{ij}:=Q_i\cap Q_j',\]
-		für $i\in\{1,\ldots,n\}$ und $j\in\{1,\ldots,m\}$ (Beachte, dass $F_{ij}$ leer sein kann). Zwei verschiedene 
-		$F_{ij}$ sind disjunkt, denn für $i_1,i_2\in\{1,\ldots\,n\}$ mit $i_1\neq i_2$ gilt 
-		\[F_{i_1 j}\cap F_{i_2 j}=(Q_{i_1}\cap Q_j')\cap(Q_{i_2}\cap Q_j')=(Q_{i_1}\cap Q_{i_2})\cap Q_j'.\] 
-		Da $Q_{i_1}$ und $Q_{i_2}$ disjunkt sind, d. h. der Schnitt niedrigerdimensional ist, ist 
-		auch dieser Schnitt mit $Q_j'$ niedrigerdimensional, also sind $F_{i_1j}$ und $F_{i_2j}$ disjunkt. Außerdem gilt
-		\begin{align}
-			\bigcup_{j=1}^m F_{ij} = \bigcup_{j=1}^m \left( Q_i \cap Q_j' \right) = 
-			Q_i \cap \left( \bigcup_{j=1}^m Q_j' \right)=Q_i \cap Q = Q_i. \label{lemma:transitiv;1}
-		\end{align}
-		Also lässt sich $P$ folgendermaßen darstellen
-		\[ P=\bigcup_{i=1}^n P_i = \bigcup_{i=1}^n f_i(Q_i) \overset{\ref{lemma:transitiv;1}}{=}\bigcup_{i=1}^n f_i 
-		\left(\bigcup_{j=1}^m F_{ij} \right) =
-		\bigcup_{i=1}^n \bigcup_{j=1}^m f_i(F_{ij}), \]
-		und für $R$ gilt analog
-		\[ R=\bigcup_{i=1}^n \bigcup_{j=1}^m g_j(F_{ij}). \]
-		Damit haben wir sowohl für $P$, als auch für $R$ eine Zerlegung in disjunkte Polygone 
-		gefunden. Als letztes überlegen wir uns, dass gilt $f_i(F_{ij})\cong g_j(F_{ij})$. Betrachte hierzu die Isometrie 
-		$g_j\circ f_i^{-1}$, dann gilt $g_j(f_i^{-1}(f_i(F_{ij})))=g_j(F_{ij})$. Also finden wir für $P$ und $R$ jeweils eine 
-		Zerlegung aus kongruenten Polygonen und damit sind auch $P$ und $R$ zerlegungsgleich bzw. $P\sim R$.
-	\end{proof}
 	
 	\begin{lemma}
 		Sei $P$ ein Dreieck, dann gibt es ein Rechteck $Q$, sd. $P\sim Q$. \label{lemma:dreieck,rechteck}
@@ -1122,11 +1135,20 @@
 	
 	\begin{figure}[!htbp]
 		\centering
-		\includegraphics[scale=0.35]{Tetraeder1}
-		\caption{Der Tetraeder $T_1$}
-		\label{Abb.5}
+		\begin{minipage}[m]{0.4\textwidth}
+			\hspace{-1cm}
+			\includegraphics[scale=0.37]{Tetraeder1}
+			\caption{Der Tetraeder $T_1$}
+			\label{Abb.5}
+		\end{minipage}
+		\begin{minipage}[m]{0.4\textwidth}
+			\hspace{1cm}
+			\includegraphics[scale=0.38]{Tetraeder2}
+			\caption{Der Tetraeder $T_2$}
+			\label{Abb.6}
+		\end{minipage}
 	\end{figure}
-	
+
 	\begin{example}
 		Sei $T_2$ ein Tetraeder mit drei aufeinander folgenden Kanten 
 		$\overline{AB}$, $\overline{BC}$ und $\overline{CD}$, die jeweils 
@@ -1140,12 +1162,7 @@
 		\[D(T_2)=0.\]
 	\end{example}
 	
-	\begin{figure}[!htbp]
-		\centering
-		\includegraphics[scale=0.4]{Tetraeder2}
-		\caption{Der Tetraeder $T_2$}
-		\label{Abb.6}
-	\end{figure}
+	
 	
 	Wir sehen also, dass die beiden Tetraeder $T_1$ und $T_2$ beide die 
 	gleiche Grundseite und Höhe haben, jedoch unterschiedliche Dehn-Invariante. 
