@@ -1137,13 +1137,13 @@
 		\centering
 		\begin{minipage}[m]{0.4\textwidth}
 			\hspace{-1cm}
-			\includegraphics[scale=0.37]{Tetraeder1}
+			\includegraphics[scale=0.3]{Tetraeder1}
 			\caption{Der Tetraeder $T_1$}
 			\label{Abb.5}
 		\end{minipage}
 		\begin{minipage}[m]{0.4\textwidth}
 			\hspace{1cm}
-			\includegraphics[scale=0.38]{Tetraeder2}
+			\includegraphics[scale=0.311]{Tetraeder2.1}
 			\caption{Der Tetraeder $T_2$}
 			\label{Abb.6}
 		\end{minipage}
@@ -1161,8 +1161,6 @@
 		gilt 
 		\[D(T_2)=0.\]
 	\end{example}
-	
-	
 	
 	Wir sehen also, dass die beiden Tetraeder $T_1$ und $T_2$ beide die 
 	gleiche Grundseite und Höhe haben, jedoch unterschiedliche Dehn-Invariante. 
@@ -1193,12 +1191,25 @@
 	Beweis des Bolyai-Gerwien-Theorems (Satz \ref{theorem:bolyai-gerwien}) 
 	gesehen haben. Ebenso war, wie sich schon aus der Formulierung des dritten Problem von Hilbert herauslesen lässt, klar, dass es eine der einfachsten Lösungen ist, zwei Simplizes mit gleichem Volumen zu finden, die nicht zerlegungsgleich sind.
 	
-	\begin{definition}[Simplex]
+	\begin{definition}[Simplex]\label{def:simplex}
 		Ein Simplex $S$ ist die konvexe Hülle einer Menge von $d+1$ Punkten 
 		$p_0,\ldots,p_d$, die sich im Raum in allgemeiner Lage befinden, also 
 		nicht alle in einer Ebene liegen. Die Punkte bezeichnen wir als 
-		Ecken des Simplex.
+		Ecken des Simplex. Wir wollen das Simplex durch Wahl der 
+		ausgezeichneten Ecke $p=p_0$ und der Kantenvektoren 
+		$s_i=p_i -p_{i-1}$ für alle $i=1,\ldots,d$ charaktersiesieren. 
+		Wir schreiben für das Simplex S auch
+		\[S=\langle p;s_1\ldots s_d\rangle.\]
 	\end{definition}
+	
+	Ein Simplex ist offensichtlich ein spezielles konvexes Polytop. 
+	
+	\begin{remark}[Parameterdarstellung des Simplex]\label{bem:paradarst;simplex}
+		Für ein Simplex $S=\langle p;s_1,\ldots s_n\rangle$ stellen wir 
+		fest, dass sich jeder Punkt $s$ des Simplex darstellen lässt, also 
+		\[s=p+\sum_{i=1}^d \alpha_i s_i\]
+		für Parameter $1\geq \alpha_1\geq\ldots\geq\alpha_d\geq 0$. 
+	\end{remark}
 	
 	\begin{theorem}[Simplizialzerlegung von Polytopen]\label{thm:simplzerl}
 		Sei $P$ ein Polytop, dann lässt sich $P$ in endlich viele 
@@ -1354,7 +1365,7 @@
 	
 	Es ergeben sich beim Vervielfältigen, wie man leicht sieht folgende Eigenschaften.
 	
-	\begin{remark}
+	\begin{remark}\label{bem:vervielf;vol}
 		Wir wollen uns überlegen wie sich das Volumen bei einer Vervielfachung 
 		verhält. Dazu sei $P$ ein Polytop und $n$ eine natürliche Zahl. 
 		Das Polytop $n\cdot P$ lässt sich also in endlich viele Polytope 
@@ -1583,18 +1594,58 @@
 		sind auch $P$ und $\lambda W$ zerlegungsgleich.
 	\end{proof}
 	
-	Wir stellen fest, dass jeder $i$-stufige Zylinder auch ein $j$-stufiger 
-	Zylinder für ein $j<i$ ist und damit erhalten wir
-	\[\mathfrak{B}_1\supset \mathfrak{B}_2\supset \ldots\supset\mathfrak{B}_d.\]
+	\begin{remark}
+		Wir stellen fest, dass jeder $i$-stufige Zylinder auch ein $j$-stufiger 
+		Zylinder für ein $j<i$ ist und damit erhalten wir
+		\[\mathfrak{B}_1\supset \mathfrak{B}_2\supset \ldots\supset\mathfrak{B}_d.\]
+	\end{remark}
+	
 	Die Zylinderklassen sind vor allem deswegen für uns interessant, da sie 
 	Beweisverfahren nach dem Prinzip der vollständigen Induktion ermöglichen. 
 	So können wir Aussagen für alle Polytope mittels Induktion über die 
 	Zylinderklassen beweisen. Wir werden dieses Verfahren beim Beweis zu Satz 
-	\ref{thm:zerlerg} verwenden. Der folgende Satz bringt die Dilatation 
-	und die Vervielfachung von Polytopen in Verbinung und ist damit sehr 
-	hilfreicht, wenn wir Polytope darstellen wollen.
+	\ref{thm:zerlerg} verwenden. Im nächsten Abschnitt werden wir uns 
+	einen Hilfssatz anschauen, der die Dilatation von Polytopen 
+	in Verbindung mit der Vervielfachung von Polytopen setzen wird. 
+	Wir werden sehen, dass dieser Satz von zentraler Bedeutung für 
+	die darauffolgenden Beweise ist und somit ein sehr wichtiges Resultat ist. 
 	
-	\begin{theorem}\label{thm:hilfssatz}
+	\subsection{Hilfssatz}
+	
+	Bevor wir zu dem Hilfssatz kommen, wollen wir uns die kanonische 
+	Simplexzerlegung anschauen. 
+	
+	\begin{definition}[Simplotop]
+		Sei $p$ ein Vektor und  $s_1\ldots,s_i$ und 
+		$t_1,\ldots,t_{d-i}$ insgesamt 
+		$d$ linear unabhängige Vektoren, wobei $1\leq i\leq d-1$ ist. Dann ist 
+		das Simplotop $S$ gerade das Polytop, dessen Vektoren $s$ 
+		dargestellt werden durch
+		\[s=p\sum_{k=1}^i \alpha_k s_k +\sum_{j=1}^{d-i}\beta_j t_j,\]
+		für alle $1\geq \alpha_1\geq\ldots\geq\alpha_i\geq 0$ und 
+		$1\geq \beta_1\geq\ldots\geq\beta_{d-i}\geq 0$.
+	\end{definition}
+	
+	Erinnern wir uns zurück an die Definition des Simplex (Definition \ref{def:simplex}) dann fallen uns in dieser Definition einige Gemeinsamkeiten 
+	auf. Tatsächlich ergibt sich die folgende Bemerkung.
+	
+	\begin{remark}
+		Wir stellen fest, dass wir ein wie oben definiertes Simplotop $S$ 
+		als Minkowski-Summe eines Punktes $p$ und zweier 
+		im Ursprung liegender Simplexe $S_1=\langle 0;s_1,\ldots,s_i\rangle$ 
+		und $S_2=\langle 0;t_1\ldots,t_{d-i}\rangle$ darstellen lässt. 
+		Es gilt also 
+		\[S=p\times S_1 \times S_2.\]
+	\end{remark}
+	
+	Wir betrachten nun die Zerlegung eines Simplex in $d+1$ viele konvexe 
+	Teilpolytope, die sogenannte kanonische Simplexzerlegung. 
+	
+	\begin{theorem}[Kanonische Simplexzerlegung]
+		Sei $S=\langle p;s_1\ldots,s_d\rangle$ ein Simplex. 
+	\end{theorem}
+	
+	\begin{theorem}[Hilfssatz]\label{thm:hilfssatz}
 		Sei $P$ ein Polytop, das in der $i$-ten Zylinderklasse $\mathfrak{B}_i$ ist 
 		und $n$ eine natürliche Zahl, dann gilt
 		\[nP\sim n^i\cdot P+P_0,\]
@@ -1622,7 +1673,7 @@
 			siehe dazu auch \cite{Hadwiger}[Abschnitt 1.2.6], dadurch erhält 
 			man die Relationen
 			\begin{align*}
-				(n-j +1)P\sim(n-j )P+P_k+P_{j, 0} 
+				(n-j +1)P\sim(n-j )P+P_j+P_{j, 0} 
 			\end{align*}
 			für alle $j=1,\ldots,n$, wobei $P_{j}\cong_t P$ und 
 			$P_{j, 0}\in\mathfrak{B}_2$ gilt. Wir schreiben die Relationen 
@@ -1632,7 +1683,7 @@
 				(n-1)P &\sim (n-2)P+P_2 +P_{2,0} \\
 				&\ \vdots \\
 				2P &\sim P +P_{n-1}+P_{n-1,0} \\
-				P&\sim P_n P_{n,0}.
+				P&\sim P_n+ P_{n,0}.
 			\end{align*}
 			Es lässt sich also durch sukzessives Einsetzen erkennen, dass wir 
 			schreiben können 
@@ -1719,7 +1770,7 @@
 	Wir wollen noch einmal kurz die Definition der Zerlegungsgleichheit wiederholen.
 	
 	\begin{definition}[Zerlegungsgleichheit]
-		Zwei $d$-Polytope $P$ und $Q$ heißen \textsl{zerlegungsgleich}, wenn es endlich viele $d$-Polytope 
+		Zwei Polytope $P$ und $Q$ heißen \textsl{zerlegungsgleich}, wenn es endlich viele Polytope 
 		$P_1,\ldots,P_n,Q_1,\ldots,Q_n$ mit $P=P_1 +\ldots +P_n$,  $Q=Q_1 +\ldots+Q_n$ 
 		gibt, sd. 
 		\[P_i\cong Q_i\]
@@ -1729,7 +1780,7 @@
 	Nun können wir die Ergänzungsgleichheit definieren.
 	
 	\begin{definition}[Ergänzungsgleich]
-		Zwei $d$-Polytope $P$ und $Q$ heißen \textsl{ergänzungsgleich}, wenn es endlich viele $d$-Polytope 
+		Zwei Polytope $P$ und $Q$ heißen \textsl{ergänzungsgleich}, wenn es endlich viele Polytope 
 		$P_1,\ldots,P_n$, $Q_1,\ldots,Q_n$ gibt, wobei gilt $P_i\cong Q_i$ für alle $i\in\{1,\ldots,n\}$, sd. die Polytope
 		\[P'=P+P_1+\ldots+P_n,\qquad Q'=Q+Q_1+\ldots+Q_n\]
 		zerlegungsgleich sind.
@@ -1866,9 +1917,7 @@
 			\end{align}
 			wobei $P_0$ und $Q_0$ Polytope der Zylinderklasse 
 			$\mathfrak{B}_{i+1}$ sind. Es gilt also für das Volumen mit 
-			
-			%... vol(n^i \cdot P)=n^i vol(P)
-			
+			Bemerkung \ref{bem:vervielf;vol} 
 			\[n^d vol(P)=vol(nP)=vol(P_0+n^i P)=vol(P_0)+vol(n^i\cdot P)
 			=vol(P_0)+n^i vol(P).\]
 			Also gilt
@@ -1958,11 +2007,8 @@
 			\begin{align}
 			nR\sim nS. \label{thm:zerlerg;5}
 			\end{align}
-			Mit 
-			
-			%... Hilfssatz I
-			
-			gibt es nun ein Polytop $P_0\in\mathfrak{B}_{i+1}$, sd.
+			Mit Satz \ref{thm:hilfssatz} gibt es nun ein Polytop 
+			$P_0\in\mathfrak{B}_{i+1}$, sd.
 			\begin{align}
 			nP\sim P_0 +n^i\cdot P \label{thm:zerlerg;6}
 			\end{align}
@@ -1980,10 +2026,7 @@
 			\begin{align}
 				vol(P_0)=(n^d -n^i)vol(P)>n^i vol(R)=vol(n^i\cdot R)\label{thm:zerlerg;8}.
 			\end{align}
-			Mit
-			
-			%... Formel (37)
-			
+			Mit Lemma \ref{lemma:teilzerl} 
 			ist $n^i\cdot R$ nun also zerlegungsgleich zu einem Teilpolytop von $P_0$, dh. es gibt Polytope $C,D\subset P_0$ mit $P+Q=P_0$ und $n^i\cdot R\sim C$, sd. 
 			\begin{align}
 			P_0=C+D\sim n^i\cdot R+D. \label{thm:zerlerg;9}
