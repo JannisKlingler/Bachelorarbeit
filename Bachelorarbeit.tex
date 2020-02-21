@@ -302,6 +302,8 @@
 		Seien $P$, $Q$ und $R$ Polytope und es gilt $P\sim Q$ und $Q\sim R$. Dann folgt $P\sim R$.
 	\end{lemma}
 	
+	Der Beweis hiervon richtet sich nach \cite{Boltianskii}[Lemma 1, Kapitel 2].
+	
 	\begin{proof}
 		Seien die Zerlegungen der Polytope wie folgt gegeben
 		\begin{align*}
@@ -403,7 +405,8 @@
 	
 	\subsection{Bolyai-Gerwien Theorem}
 	
-	Im Folgenden setzen wir $d=2$ und betrachten also Polygone.
+	Im Folgenden setzen wir $d=2$ und betrachten also Polygone. 
+	Dieses Kapitel richtet sich nach dem zweiten Kapitel von \cite{Boltianskii}.
 	
 	\begin{lemma}
 		Sei $P$ ein Dreieck, dann gibt es ein Rechteck $Q$, sd. $P\sim Q$. \label{lemma:dreieck,rechteck}
@@ -2139,52 +2142,6 @@
 	%geben. So lässt sich die Frage der Zerlegungsgleichheit beispielsweise 
 	%auf die Sphäre verallgemeinern. Als Kanten eines Polytops betrachten 
 	%wir Geodäten. Es stellt sich heraus, dass 
-	%
-	%
-	%Wir werden im folgenden immer kommutative Ringe mit Eins betrachen.
-	%
-	%\begin{remark}
-	%	Sei $R$ ein kommutativer Ring mit Eins und seien $M$ und $N$ zwei $R$-Moduln. Dann betrachten wir 
-	%	zunächst die Elemente $(m,n)$ der Menge $M\times N$. Diese Menge erzeugt einen freien Modul 
-	%	$R^{(M\times N)}$, dessen Elemente typischerweise eine Linearkombination der Form
-	%	\[ \sum_{i=1}^n (m_i,n_i)\cdot r_i \]
-	%	sind, wobei für alle $i=1,\ldots,n$ gilt $m_i\in M$, $n_i\in N$ und $r_i\in R$.
-	%	Wir möchten nun für Elemente $m,m'\in M$, $n,n'\in N$ und $r,r'\in R$ gerne identifizieren:
-	%	\begin{align*}
-	%		(mr+m'r',n)\quad \text{mit}&\quad (m,n)\cdot r +(m',n)\cdot r' \\
-	%		\text{und } (m,nr+n'r') \quad \text{mit}&\quad (m,n)\cdot r+(m,n')\cdot r'.
-	%	\end{align*}
-	%	Die Idee hierfür ist, dass für eine bilineare Abbildung $f$ beispielsweise gilt $f(m+m',n)=f(m,n)+f(m',n)$. 
-	%	Um dies so durchzuführen, dass wir am Ende wieder ein Modul erhalten, betrachten wir in $R^{(M\times N)}$ 
-	%	Elemente der Form
-	%	Nun teilen wir den von ihnen erzeugten Untermodul heraus und erhalten einen Modul, der von den 
-	%	Paaren $(m,n)\in M\times N$ erzeugt wird und in dem die obigen Relationen gelten.
-	%\end{remark}
-	%
-	%\begin{definition}[Tensorprodukt]
-	%	Sei $R$ ein kommutativer Ring mit Eins und seien $M$, $N$ zwei $R$-Moduln. Dann definieren wir 
-	%	das \textsl{Tensorprodukt} von $M$ und $N$ über $R$ durch
-	%	\[ M\times_R N= R^{(M\times N)}/\langle T \rangle, \]
-	%	wobei die Menge $T\subset R^{(M\times N)}$ von Relationen definiert ist 
-	%	\begin{align*}
-	%		T =& \{ (m+m',n)-(m,n)-(m',n)\ \vert\ m,m'\in M, n\in N\} \\
-	%		\cup& \{ (mr,n)-(m,n)\cot r \ \vert\ m\in M, n\in N, r\in R\} \\
-	%		\cup& \{ (
-	%
-	%\section{Zerlegungsgleichheit von Polyedern; Bricard}
-	% 
-	%
-	%
-	%\section{Ausblicke}
-	%
-	%Im folgenden wollen wir uns anschauen, ob es ähnliche Resultate auch im sphärischen oder hyperbolischen Raum 
-	%gibt.
-	%
-	%\subsection{Zerlegungsgleichheit im Sphärischen}
-	%
-	%\subsection{Zerlegungsgleichheit im Hyperbolischen}
-	%	
-	\cite[def 3.1]{Boltianskii}
 	\newpage
 	\bibliographystyle{alpha}
 	\bibliography{MeineBib}
