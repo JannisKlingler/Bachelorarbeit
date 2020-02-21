@@ -1612,9 +1612,40 @@
 	
 	\subsection{Hilfssatz}
 	
+	Wir wollen noch die Translationsgleichheit, analog zur Kongruenz, 
+	von Polytopen einführen. 
+	Dazu erinnern wir uns an die Translationsgruppe, die 
+	Untergruppe der Isometriegruppe, die ausschließlich aus Translationen besteht. 
+	Wir brauchen an einigen Stellen in den Beweisen in diesem Abschnitt 
+	die Translationsgleichheit. Letztendlich können wir dann den Hilfssatz 
+	auf die Zerlegungsgleichheit verallgemeinern, da die translative 
+	Zerlegungsgleichheit die Zerlegungsgleichheit impliziert.
+	
+	\begin{definition}[Translationsgleichheit, translative Zerlegungsgleichheit]
+		Wir nennen zwei Polytop $P$ und $Q$ translationsgleich, wenn es 
+		eine Translation $f$ aus der Translationsgruppe gibt, sd. 
+		$f(P)=Q$ gilt. Wir schreiben $P\cong_t Q$. \\
+		Die Translationsgleichheit ist wie die Kongruenz eine 
+		Äquivalenzrelation. \\
+		Weiter nennen wir zwei Polytope $P$ und $Q$ translativ 
+		zerlegungsgleich, wenn es endlich viele $P_1,\ldots,P_n$ und 
+		$Q_1,\ldots,Q_n$ gibt mit $P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots+Q_n$, sd. 
+		für alle $i=1,\ldots,n$ die Polytope $P_i$ und $Q_i$ translationsgleich 
+		sind. Wir schreiben $P\approx Q$.
+	\end{definition}
+	
+	\begin{remark}
+		Es ist klar, dass aus Translationsgleichheit von Polytopen auch die 
+		Kongruenz folgt. Damit folgt auch aus der translativen Zerlegungsgleichheit 
+		die Zerlegungsgleichheit. Wir bemerken, dass die Eigenschaften 
+		in diesem Kapitel, 
+		die wir für die Zerlegungsgleichheit gezeigt haben, 
+		auch für die translative Zerlegungsgleichheit gelten. 
+	\end{remark}
+	
 	Bevor wir zu dem Hilfssatz kommen, wollen wir uns die kanonische 
 	Simplexzerlegung anschauen. 
-	
+		
 	\begin{definition}[Simplotop]
 		Sei $p$ ein Vektor und  $s_1\ldots,s_i$ und 
 		$t_1,\ldots,t_{d-i}$ insgesamt 
@@ -1641,9 +1672,47 @@
 	Wir betrachten nun die Zerlegung eines Simplex in $d+1$ viele konvexe 
 	Teilpolytope, die sogenannte kanonische Simplexzerlegung. 
 	
-	\begin{theorem}[Kanonische Simplexzerlegung]
-		Sei $S=\langle p;s_1\ldots,s_d\rangle$ ein Simplex. 
+	\begin{theorem}[Folgerung aus der Kanonischen Simplexzerlegung]\label{thm:kanonsimpl}
+		Sei $S$ ein Simplex und $0<\lambda<1$ gegeben, dann 
+		gibt es ein $S_0\in\mathfrak{B}_2$, sd.
+		\[S\approx \lambda S+(1-\lambda)S +S_0.\]
 	\end{theorem}
+	
+	Dieser Satz ist ein spezielles Resultat aus der Kanonischen Simplexzerlegung 
+	in \cite{Hadwiger}[1.2.6]. Wir wollen uns hier die Konstruktion, mit 
+	der wir auf die Zerlegungsrelation kommen, anschauen, den vollständigen 
+	Beweis jedoch nicht.
+	
+	\begin{proof}
+		Sei $S=\langle p;s_1\ldots,s_d\rangle$ das Simplex und 
+		$0<\lambda<1$ gegeben. Wir wollen 
+		zunächst diesem Simplex für alle $i=1,\ldots,d-1$ zwei 
+		uneigentliche Simplexe $S_i'=\langle p;s_1,\ldots,s_i\rangle$ und 
+		$S_{d-i}''=\langle p+\sum_{k=1}^i s_k ;s_{i+1},\ldots,s_d\rangle$ 
+		zuordnen. Die beiden Simplexe $S_i'$ und $S_{d-i}''$ liegen 
+		in allgemeiner Lage in komplementären Räumen. Wir ergänzen 
+		unsere Konstruktion durch $S_0'=p$, $S_0''=q=p+\sum_{k=1}^i s_k$ und 
+		$S_d'=S_d''=S$. Seien nun die Simplotope 
+		$W_0(\lambda),\ldots,W_d(\lambda)$ gegeben durch
+		\[W_i(\lambda)=(1-\lambda)S_i' \times \lambda S_{d-i}''\]
+		für alle $i=0,\ldots,d$. Besonders das erste und letzte Simplotop 
+		sind hierbei interessant. Es gilt nämlich 
+		$W_0(\lambda)=(1-\lambda)p\times \lambda S$, was translationsgleich 
+		zu $\lambda S$ ist, und $W_d(\lambda)=\lambda q\times (1-\lambda) S$, 
+		was translationsgleich zu $(1-\lambda)S$ ist. Damit gilt dann 
+		die Zerlegung
+		\[S=W_0(\lambda)+\ldots+W_d(\lambda).\]
+		Diese Resultat ist die kanonische Simplexzerlegung. Für den Beweis 
+		davon sei auf \cite{Hadwiger}[1.2.6] verwiesen. 
+		Wir stellen also fest, dass die Simplotope $W_1(\lambda),\ldots,W_{d-1}(\lambda)$, als 
+		Minkowski-Summe zweier uneigentlicher Simplexe, alle $2$-stufige Zylinder 
+		sind und damit in $\mathfrak{B}_2$ liegen. Damit auch 
+		$W_1(\lambda)+\ldots+W_{d-1}(\lambda)\in\mathfrak{B}_2$. Wir 
+		definieren also $S_0=W_1(\lambda)+\ldots+W_{d-1}(\lambda)$. 
+		Weiter gilt $W_0(\lambda)\approx \lambda S$ und 
+		$W_d(\lambda)\approx (1-\lambda)S$ also erhalten wir
+		\[S=W_0(\lambda)+\ldots+W_d(\lambda)\approx \lambda S+(1-\lambda)S+S_0.\]
+	\end{proof}
 	
 	\begin{theorem}[Hilfssatz]\label{thm:hilfssatz}
 		Sei $P$ ein Polytop, das in der $i$-ten Zylinderklasse $\mathfrak{B}_i$ ist 
@@ -1653,12 +1722,7 @@
 		Falls $i=d$ ist $P_0=\emptyset$.
 	\end{theorem}
 	
-	Wir wollen für den Beweis noch die Translationsgleichheit von Polytopen 
-	einführen. Dazu erinnern wir uns an die Translationsgruppe, die 
-	Untergruppe der Isometriegruppe, die ausschließlich aus Translationen besteht. 
-	Hierbei wollen wir zwei Polytope translationsgleich nennen, falls 
-	diese sich durch eine Translation ineinander überführen lassen, analog zur 
-	Kongruenz von Polytopen. Wir schreiben $P\cong_t Q$. Da wir im 
+	Da wir im 
 	Beweis der Aussage lediglich die Streckung und Vervielfachung von Polytopen 
 	betrachten, haben wir an einigen Stellen sogar die Translationsgleichheit 
 	von Polytopen.
@@ -1667,28 +1731,33 @@
 		\begin{enumerate}
 			\item Fall: Es gilt $i=1$ dann reicht es, aufgrund 
 			der Simplizialzerlegung eines Polytops, die 
-			Behauptung für ein Simplex $P$ nachzuweisen. Man kann jedes 
-			Simplex in einer kanonischen Simplexzerlegung in endlich 
-			viele Simplizes zerlegen, 
-			siehe dazu auch \cite{Hadwiger}[Abschnitt 1.2.6], dadurch erhält 
-			man die Relationen
+			Behauptung für ein Simplex $P$ nachzuweisen. Für alle $j=1,\ldots,n-1$ 
+			gilt nun, dass $n-j\in\{1,\ldots,n-1\}$ und $n-j+1\in\{2,\ldots,n\}$ 
+			und damit auch $0<\frac{n-j}{n-j+1}<1$. Wir wenden nun  
+			Satz \ref{thm:kanonsimpl} mit den Parametern 
+			$\lambda_j=\frac{n-j}{n-j+1}$ an und 
+			erhalten für alle $j=1,\ldots,n-1$ die Relationen 
+			\[P\sim \frac{n-j}{n-j+1} P+\left(1-\frac{n-j}{n-j+1}\right)P+P_{j,0}
+			=\frac{n-j}{n-j+1}P+\frac{1}{n-j+1}P+P_{j,0},\]
+			wobei $P_{j,0}\in\mathfrak{B}_2$ gilt. Mit Dilatation mit 
+			$n-j+1$ erhalten wir dann die Relationen 
 			\begin{align*}
 				(n-j +1)P\sim(n-j )P+P_j+P_{j, 0} 
 			\end{align*}
-			für alle $j=1,\ldots,n$, wobei $P_{j}\cong_t P$ und 
+			für alle $j=1,\ldots,n-1$, wobei $P_{j}\cong_t P$ und 
 			$P_{j, 0}\in\mathfrak{B}_2$ gilt. Wir schreiben die Relationen 
 			aus als
 			\begin{align*}
 				nP &\sim (n-1)P+P_1+P_{1,0} \\
 				(n-1)P &\sim (n-2)P+P_2 +P_{2,0} \\
 				&\ \vdots \\
-				2P &\sim P +P_{n-1}+P_{n-1,0} \\
-				P&\sim P_n+ P_{n,0}.
+				3P &\sim P +P_{n-2}+P_{n-2,0} \\
+				2P &\sim P +P_{n-1}+P_{n-1,0}
 			\end{align*}
 			Es lässt sich also durch sukzessives Einsetzen erkennen, dass wir 
 			schreiben können 
-			\[nP\sim (P_1+\ldots+P_n)+(P_{1,0}+\ldots+P_{n,0}).\]
-			Wir können die Summe der $P_{j}$ also zusammenfassen zu $n \cdot P$ 
+			\[nP\sim (P+P_1+\ldots+P_{n-1})+(P_{1,0}+\ldots+P_{n-1,0}).\]
+			Wir können die erste Summe also zusammenfassen zu $n \cdot P$ 
 			und da alle $P_{j,0}$ in $\mathfrak{B}_2$ liegen, liegt auch 
 			die Summe darin und wir erhalten
 			\begin{align}
