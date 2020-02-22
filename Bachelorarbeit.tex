@@ -723,9 +723,10 @@
 		\[D(P)=D(P_1+\ldots+P_n)=\sum_{i=1}^n D(P_i) =\sum_{i=1}^n D(Q_i)=D(Q_1+\ldots+Q_n)=D(Q).\]
 	\end{proof}
 	
-	Im Jahr 1965 bewies der schweizer Mathematiker Jean-Pierre Sydler 
+	Im Jahr 1965 bewies der schweizer Mathematiker Jean-Pierre Sydler in 
+	\cite{Sydler1965} 
 	sogar, dass dies eine notwendige Bedingung ist und 
-	es ergibt sich der folgende Satz (siehe dazu auch \cite{Sydler1965}).
+	es ergibt sich der folgende Satz.
 	
 	\begin{theorem}[Dehn-Sydler Theorem]
 		Seien $P$ und $Q$ Polyeder, dann sind $P$ und $Q$ genau 
@@ -738,7 +739,8 @@
 	Wir wollen uns nun zur Berechnung der Dehn-Invariante einiger Polyeder ein paar Eigenschaften des Tensorprodukts $\setR\otimes_{\setZ}\setR /\pi\setZ$ anschauen. Dazu wollen wir zeigen, dass unser Tensorprodukt isomorph zum Tensorprodukt  
 	$\setR\otimes_{\setQ}\setR /\pi\setQ$ ist, hierzu benötigen wir ein 
 	paar Resultate 
-	aus der Kommutativen Algebra. \\
+	aus der Kommutativen Algebra. Wir richten uns in diesem Abschnitt 
+	nach \cite{introductiontocomalg}[Kapitel 3].\\
 	Sei im Folgenden $R$ ein Integritätsring, wir wollen nun 
 	Brüche einführen. Sei dazu $S$ eine multiplikative Teilmenge von $R$, das heißt  
 	$1\in S$ und $S$ ist unter Multiplikation abgeschlossen, also ein Monoid. Wir 
@@ -750,7 +752,8 @@
 	Es gelte also $(r_1,s_1)\equiv(r_2,s_2)$ und $(r_2,s_2)\equiv(r_3,s_3)$ für 
 	$r_1,r_2,r_3\in R$ und $s_1,s_2,s_3\in S$, also gilt $r_1 s_2= r_2 s_1$ und 
 	$r_2 s_3 =r_3 s_2$ und damit $r_1 s_2 r_2 s_3 =r_2 s_1 r_3 s_2$. Falls $r_2=0$ 
-	ist klar, dass $(r_1,s_1)\equiv(r_3,s_3)$ gilt, falls $r_2\neq 0$ können wir $r_2$ aus der Gleichung streichen und es folgt 
+	oder $s_2=0$ 
+	ist klar, dass $(r_1,s_1)\equiv(r_3,s_3)$ gilt, falls $r_2\neq 0$ können wir $r_2$ und $s_2$ aus der Gleichung streichen und es folgt 
 	$r_1 s_3=r_3 s_1$ und damit $(r_1,s_1)\equiv(r_3,s_3)$. \\
 	Wir schreiben $\frac{r}{s}$ für die Äquivalenzklasse von $(r,s)$ und $S^{-1}R$ 
 	für die Menge aller Äquivalenzklassen. Wir können $S^{-1}R$ nun eine Ringstruktur geben, indem wir die Addition und Multiplikation wie folgt definieren
@@ -774,9 +777,9 @@
 	der Addition und skalaren Multiplikation. Haben wir nun einen 
 	$R$-Modulhomomorphismus $f:M\to N$, dann führt uns dies zu einem 
 	$S^{-1}R$-Modulhomomorphismus $S^{-1}f:S^{-1}M\to S^{-1}N$, indem $S^{-1}f$ 
-	Elemente $\frac{m}{s}$ auf $\frac{f(m)}{s}$ abbildet. Damit gilt also 
-	\[S^{-1}(f\circ g)=(S^{-1}f)\circ(S^{-1}g),\]
-	für Modulhomomorphismen $f$ und $g$.
+	Elemente $\frac{m}{s}$ aus $S^{-1}M$ auf Elemente $\frac{f(m)}{s}$ 
+	aus $S^{-1}N$ abbildet. Für Modulhomomorphismen $f$ und $g$ gilt also 
+	\[S^{-1}(f\circ g)=(S^{-1}f)\circ(S^{-1}g).\]
 	
 	\begin{lemma} \label{lemma:Buch;exakt}
 		Sei $R$ ein Integritätsring und $M,M_1,M_2$ seien $R$-Moduln. Weiter 
@@ -795,8 +798,8 @@
 	\begin{proof}
 		Sei $m_1\in M_1$ dann gilt $f(m_1)\in im(f)=ker(g)$, wegen der Exaktheit 
 		von \ref{lemma:exakt;1} in $M$ und damit ist $g(f(m_1))=0$. Also gilt 
-		$g\circ f=0$ und weiterhin
-		\[S^{-1}g \circ S^{-1}f = S^{-1}(g\circ f)=S^{-1}(0)=0.\]
+		$g\circ f=0$ und damit erhalten wir
+		\[(S^{-1}g) \circ (S^{-1}f) = S^{-1}(g\circ f)=S^{-1}(0)=0.\]
 		Wir erhalten also
 		\[im(S^{-1}f)\subset ker(S^{-1}g).\]
 		Um die umgekehrte Inklusion zu zeigen wählen wir 
@@ -810,7 +813,7 @@
 		\[ker(S^{-1}g)\subset im(S^{-1}f).\]
 	\end{proof}
 
-	Nun zurück zu unserem Problem. Wir wollen nun wissen, was passiert wenn 
+	Nun zurück zu unserem Problem. Wir wollen nun wissen, was passiert, wenn 
 	wir in dem $\setZ$-Modul $\setR /\pi\setZ$ Brüche einführen. Um das 
 	zu verstehen, hilft uns das folgende Resultat.
 	
@@ -832,12 +835,12 @@
 		ist die Sequenz in $M$ exakt. \\
 		Weiter ist $im(g)=M/N$ und da $h$ die Nullabbildung ist, gilt $ker(h)=M/N$. 
 		Also ist die Sequenz auch in $M/N$ exakt. \\
-		Wir wenden nun $S^{-1}$ auf die exakte Sequenz an, dann ist die Sequenz
+		Wir wenden nun $S^{-1}$ auf die Sequenz an, dann ist die Sequenz
 		\begin{align}
 			0\to S^{-1}N \xrightarrow{S^{-1}f} S^{-1}M \xrightarrow{S^{-1}g}
 			S^{-1}(M/N)\to 0 \label{lemma:Brüche;1}
 		\end{align}
-		mit Lemma \ref{lemma:Buch;exakt} exakt. \\
+		mit Lemma \ref{lemma:Buch;exakt} in $S^{-1}M$ und $S^{-1}(M/N)$ exakt. \\
 		Wir wollen nun den Homomorphiesatz\footnote{Für einen Modulhomomorphismus 
 		$f:M\to N$, induziert der Homomorphiesatz einen Isomorphismus 
 		$g:M/ker(f)\to im(f)$.} auf den Modulhomomorphismus 
