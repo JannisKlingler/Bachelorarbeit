@@ -147,8 +147,8 @@
 	Stücke zerlegen lassen. Die Frage, ob das Volumen zweier Polytope genau 
 	dann gleich ist, wenn diese zerlegungsgleich sind spielt in dieser 
 	Arbeit eine zentrale Rolle. Eine derartige Aussage würde es erlauben 
-	auf die Methoden der Infitesimalrechnung, bei der Volumenberechung von 
-	unterschiedlichen Figuren, zu verzichten. Im zweidimensionalen 
+	auf die Methoden wie die Exhaustionsmethode, bei der Volumenberechung von 
+	unterschiedlichen Figuren, zu verzichten. In der Ebene 
 	bewiesen der ungarische Mathematiker Farkas Bolyai (im Jahr 1832) und 
 	der deutsche Polizist und Mathematiker Paul Gerwien (im Jahr 1833) 
 	die Aussage unabhängig von einandern (siehe dazu auch \cite{Boltianskii}). 
@@ -172,15 +172,16 @@
 	\end{quote}
 	Bereits ein Jahr nach dem Vortrag löste Hilberts Schüler Max Dehn 
 	das Problem. Dehn definierte die sogenannte Dehn-Invariant, eine 
-	Invariante, die sich auf die Kanten von Polyedern bezieht und sich 
+	Invariante, die sich auf die Kanten eines Polyeders bezieht und sich 
 	beim Zerschneiden nicht ändert. Die Dehn-Invariante ist für jeden Polyeder 
 	also, wie das Volumen, ein ausgezeichnetes Charakteristikum. 
-	Wir wollen uns in dieser Arbeit zunächst die Zerlegungsgleichheit 
-	von Polytopen genauer betrachten, um dann den zweidimensionalen Beweis, 
-	das Bolyai-Gerwien-Theorem, zu beweisen. Danach wollen wir zum 
+	Wir wollen in dieser Arbeit zunächst die Zerlegungsgleichheit 
+	von Polytopen genauer betrachten, um dann die Aussage in der Ebene, 
+	das Bolyai-Gerwien Theorem, zu beweisen. Danach wollen wir zum 
 	dreidimensionalen Fall übergehen und uns Dehns Lösung anschauen. 
 	Als zweiten größeren Abschnitt wollen wir den Zusammenhang zwischen 
-	der Zerlegungsgleichheit und der Ergänzungsgleichheit von Polytopen 
+	der Zerlegungsgleichheit und der schon 
+	von Hilbert erwähnten Ergänzungsgleichheit von Polytopen 
 	betrachten und uns überlegen, ob eine Unterscheidung von Zerlegungs- 
 	und Ergänzungsgleichheit bei der Frage der Volumenberechnung überhaupt 
 	notwendig ist. 
@@ -193,49 +194,56 @@
 	
 	\subsection{Polytope}
 	
-	Zu Beginn wollen Polytope formal über Vektorräumen einführen. Später werden 
+	Zu Beginn wollen wir Polytope formal über Vektorräumen einführen. Später werden 
 	wir dann vor allem auf dem Euklidischen Raum $\setR^d$ arbeiten. 
 	Wir betrachten dazu einen Vektorraum $V$ über einem Körper $k$ mit Dimension $d$. 
 	
 	\begin{repetition}[Dual-Raum]
-		Der Dualraum $V^*$ eines $k$-Vektorraums $V$ ist die Menge aller linearen Abbildungen von $V$ in den Körper $k$.
+		Der \textsl{Dualraum} $V^*$ eines $k$-Vektorraums $V$ ist die Menge aller linearen Abbildungen von $V$ in den Körper $k$.
 	\end{repetition}
 	Wir bemerken, dass der Dualraum wieder ein Vektorraum ist.
 	
 	\begin{definition}[Halbraum]
-		Ein Halbraum in einem reellen Vektorraum ist eine Teilmenge der Form
+		Ein \textsl{Halbraum} in einem reellen Vektorraum ist eine Teilmenge 
+		der Form
 		\[ H= \{ v\in V \  \vert\  \alpha(v)\leq r \}, \]
-		wobei $\alpha\in V^*\setminus\{0\}$ und $r\in\setR$.
+		wobei $\alpha\in V^*\setminus\{0\}$ und $r\in\setR$. Verwenden 
+		wir in der Definition die Gleichheit dann erhalten wir eine
+		\textsl{Hyperebene}.
 	\end{definition}
 	
 	\begin{definition}[konvexes Polytop]
-		Ein konvexes $d$-Polytop $P$ in einem $d$-dimensionalen reellen Vektorraum $V$ ist der Schnitt endlich vieler 
+		Ein \textsl{konvexes} $d$-\textsl{Polytop} $P$ in einem $d$-dimensionalen reellen Vektorraum $V$ ist der Schnitt endlich vieler 
 		Halbräume. $P$ ist beschränkt, falls für jedes $\alpha\in V^*\setminus\{0\}$ ein $r\in \setR$ existiert, sd. 
 		$\alpha(x)\leq r$ für alle $x\in P$ gilt.
 	\end{definition}
 	
 	Der Schnitt zweier konvexer $d$-Polytope ist offensichtlich wieder ein konvexes $d$-Polytop. 
-	Wir wollen die Dimension eines konvexen $d$-Polytops $P$ definieren als das 
+	Wir wollen die \textsl{Dimension} eines konvexen $d$-Polytops $P$ 
+	definieren als das 
 	Maximum der Anzahl der linear unabhängigen Vektoren, die wir in $P$ finden. 
 	Hierbei ist es auch möglich, dass das, durch die Halbräume entstehende, 
 	konvexe $d$-Polytop von niedrigerer Dimension ist als der ursprünglich 
 	zugrunde liegende Vektorraum, das Polytop also keine inneren Punkte hat. 
-	Ein solches Polytop wollen wir uneigentlich nennen. Ein Polytop, dessen 
+	Ein solches Polytop wollen wir \textsl{uneigentlich} nennen. 
+	Ein Polytop, dessen 
 	Dimension gleich der des Vektorraums ist bzw. das innere Punkte besitzt, 
-	nennen wir dementsprechend eigentlich. Wenn von Polytopen die Rede ist 
+	nennen wir dementsprechend \textsl{eigentlich}. 
+	Wenn von Polytopen die Rede ist 
 	sprechen wir, falls nicht anders genannt, immer von eigentlichen Polytopen.
-	Wir wollen zwei konvexe $d$-Polytope disjunkt nennen, falls der Schnitt der 
+	Wir wollen zwei konvexe $d$-Polytope \textsl{disjunkt} nennen, 
+	falls der Schnitt der 
 	beiden Polytope ein uneigentliches Polytop ist, also eine niedrigere 
 	Dimension hat, als der zugrunde liegende Vektorraum. Für die Vereinigung 
 	zweier disjunkter, konvexer $d$-Polytope $P$ und $Q$ schreiben wir $P+Q$.
 	
 	\begin{definition}[Polytop]
-		Ein $d$-Polytop $P$ ist die Vereinigung endlich vieler disjunkter, konvexer 
-		und beschränkter $d$-Polytope. \\
-		Wir nennen ein $0$-dimensionales Polytop eine Ecke, ein 
-		$1$-dimensionales Polytop eine Strecke bzw. Kante, ein 
-		$2$-dimensionales Polytop ein Polygon und ein 
-		$3$-dimensionales Polytop einen Polyeder.
+		Ein $d$-\textsl{Polytop} $P$ ist die Vereinigung endlich vieler 
+		disjunkter, konvexer, beschränkter $d$-Polytope. \\
+		Wir nennen ein $0$-dimensionales Polytop eine \textsl{Ecke}, ein 
+		$1$-dimensionales Polytop eine \textsl{Strecke} bzw. \textsl{Kante}, ein 
+		$2$-dimensionales Polytop ein \textsl{Polygon} und ein 
+		$3$-dimensionales Polytop einen \textsl{Polyeder}.
 	\end{definition}
 	
 	Die Eigenschaften die wir oben für konvexe $d$-Polytope genannt haben, 
@@ -243,20 +251,22 @@
 	die Vereinigung von $d$-Polytopen wieder ein $d$-Polytop ist. 
 	Wir werden in dieser Arbeit viel mit der Vereinigung von Polytopen arbeiten 
 	hierbei impliziert die Schreibweise $P+Q$ bei der Vereinigung von Polytopen, 
-	deren Disjunktheit. Wir schreiben im Folgenden statt, $d$-Polytop einfach Polytop.
+	deren Disjunktheit. Wir schreiben im Folgenden statt, $d$-Polytop einfach Polytop. Weiter wollen wir als zugrunde liegenden Vektorraum $\setR^d$ 
+	betrachten.
 	
 	\begin{definition}[Kongruenz] \label{def:kong}
 		Wir nennen zwei Polytope $P$ und $Q$ \textsl{kongruent}, wenn es eine Isometrie $g$ gibt, sd. 
 		$g(P)=Q$. Wir schreiben dann $P\cong Q$.
 	\end{definition}
 
-	 Mit Isometrien meinen wir hier längenerhaltende Affinitäten, also bijektive affine Abbildungen, die den Abstand zweier beliebiger Punkte erhalten. 
+	 Mit \textsl{Isometrien} meinen wir hier längenerhaltende Affinitäten, 
+	 also bijektive affine Abbildungen, die den Abstand zweier beliebiger Punkte erhalten. 
 	 Isometrien sind Bewegungen, das heißt sie setzen sich 
-	 gerade aus einer Translation und einer Drehung zusammen. Zu jeder 
+	 aus einer Translation und einer Drehung zusammen. Zu jeder 
 	 Isometrie $f:\setR^d\to\setR^d$ lässt sich also ein Vektor 
 	 $\alpha\in\setR^d$ und eine orthogonale Matrix $U\in O(d)$, also 
-	 eine Drehung, finden, sd. wir 
-	 die Darstellung $f(x)=\alpha + Ux$ für alle $x\in \setR^d$ erhalten. 
+	 eine Drehung, finden, sd. wir für alle $x\in \setR^d$ 
+	 die Darstellung $f(x)=\alpha + Ux$ erhalten. 
 	 Da das Skalarprodukt translationsinvariant ist und 
 	 auch invariant unter Drehungen, ist das Skalarprodukt auch invariant 
 	 unter Isometrien. Weiter bilden Isometrien Halbräume wieder auf 
@@ -264,32 +274,32 @@
 	 der Isometrien bildet, mit der Verknüpfung von Abbildungen als 
 	 Operation und der Identitätsabbildung als neutralem Element, eine Gruppe. 
 	 Wir wollen 
-	 diese Gruppe die Isometriegruppe nennen. Wir bemerken außerdem, dass 
+	 diese Gruppe die \textsl{Isometriegruppe} nennen. Wir bemerken außerdem, dass 
 	 wir die Isometrien auf Translationen einschränken können und erhalten 
-	 so eine Untergruppe der Isometriegruppe, die Tranlationsgruppe. Die 
-	 Translationsgruppe hat also Untergruppe also die gleiche Eigenschaften wie die 
+	 so eine Untergruppe der Isometriegruppe, die \textsl{Tranlationsgruppe}. Die 
+	 Translationsgruppe hat als Untergruppe also die gleiche Eigenschaften wie die 
 	 Isometriegruppe. Wir werden diese im späteren Verlauf benötigen.
 
 	\begin{remark}
 		Wir stellen fest, dass Kongruenz eine Äquivalenzrelation ist. 
 		Die Reflexivität und Symmetrie sind klar. Zur Transitivität seien 
 		$P,Q,R$ drei $d$-Polytope mit $P\cong Q$ und $Q\cong R$, es gibt also 
-		Isometrien $f,g$, sd. $f(P)=Q$ und $g(Q)=R$. Dann ist $g\circ f$ 
+		Isometrien $f$ und $g$, sd. $f(P)=Q$ und $g(Q)=R$ gilt. Dann ist $g\circ f$ 
 		wieder eine Isometrie und wir erhalten 
 		\[(g\circ f)(P)=g(f(P))=g(Q)=R,\]
 		also $P\cong R$. 
 	\end{remark}
 	
-	Wir können uns nun also der Zerlegungsgleichheit von Polytopen beschäftigen.
+	Wir können uns nun mit der Zerlegungsgleichheit von Polytopen beschäftigen.
 	
 	\subsection{Zerlegungsgleichheit}
 	
 	\begin{definition}[Zerlegungsgleichheit]
-		Zwei $d$-Polytope $P$ und $Q$ heißen \textsl{zerlegungsgleich}, wenn es endlich viele $d$-Polytope 
+		Zwei Polytope $P$ und $Q$ heißen \textsl{zerlegungsgleich}, wenn es endlich viele Polytope 
 		$P_1,\ldots,P_n,Q_1,\ldots,Q_n$ mit $P=P_1 +\ldots +P_n$,  $Q=Q_1 +\ldots+Q_n$ 
 		gibt, sd. 
 		\[P_i\cong Q_i\]
-		für alle $i\in\{1,\ldots,n\}$. Wir schreiben $P\sim Q$.
+		für alle $i=1,\ldots,n$. Wir schreiben $P\sim Q$.
 	\end{definition}
 	
 	Wir stellen fest, dass die Kongruenz zweier Polytope auch deren 
@@ -298,9 +308,9 @@
 	Äquivalenzrelation. Die Reflexivität und Symmetrie sind klar. Die 
 	Transitivität müssen wir noch zeigen.
 	
-	\begin{lemma}[Transitivität der Zerlegungsgleichheit] \label{lemma:transitiv}
+	\begin{proposition}[Transitivität der Zerlegungsgleichheit] \label{lemma:transitiv}
 		Seien $P$, $Q$ und $R$ Polytope und es gilt $P\sim Q$ und $Q\sim R$. Dann folgt $P\sim R$.
-	\end{lemma}
+	\end{proposition}
 	
 	Der Beweis hiervon richtet sich nach \cite{Boltianskii}[Lemma 1, Kapitel 2].
 	
@@ -341,13 +351,13 @@
 		auch $P$ und $R$ zerlegungsgleich bzw. $P\sim R$.
 	\end{proof}
 	
-	Wir wollen nun des Begriff des Volumens eines Polytops anschauen. Dabei ist 
-	vor allem die Invarianz des Volumens unter Zerschneidung von Polytopen, die wir in Proposition \ref{prop:zerl,vol} beweisen werden, ein wichtiges Resultat. Mit dem Volumen eines Polytops meinen wir im Folgenden das 
+	Wir wollen nun den Begriff des Volumens eines Polytops anschauen. Dabei ist 
+	vor allem die Invarianz des Volumens unter Zerschneidung von Polytopen, die wir in Proposition \ref{prop:zerl,vol} beweisen werden, ein wichtiges Resultat. Mit dem \textsl{Volumen} $vol$ eines Polytops meinen wir im Folgenden das 
 	$d$-dimensionale Lebesgue-Maß. Da unsere Polytope abgeschlossene Mengen 
 	sind, liegen sie in der Borelalgebra und sind damit auch Lebesgue-messbar.
 	
 	\begin{proposition} \label{prop:cong,vol}
-		Seien $P$ und $Q$ zwei $d$-Polytope, sd. $P\cong Q$, dann gilt $vol(P)=vol(Q)$.
+		Seien $P$ und $Q$ zwei Polytope, sd. $P\cong Q$, dann gilt $vol(P)=vol(Q)$.
 	\end{proposition}
 	
 	\begin{proof}
@@ -364,19 +374,18 @@
 	\end{lemma}
 
 	\begin{proof}
-		Sei $\setR^d$ der zugrundeliegende Vektorraum und $vol=vol_d$ das $d$-dimensionale 
-		Lebesgue-Maß. Seien weiter $P$ und $Q$ zwei Polytope in $\setR^d$ 
-		mit $k:=dim(P\cap Q)<d$. Mit der Siebformel erhalten wir nun
+		Seien $P$ und $Q$ zwei Polytope in $\setR^d$ 
+		mit $k:=dim(P\cap Q)<d$. Es gilt nun 
 		\[vol(P+Q)=vol(P)+vol(Q)-vol(P\cap Q).\]
 		Wir wollen also zeigen, dass der Schnitt von $P$ und $Q$ eine Nullmenge bezüglich unseres Maßes ist. 
 		Wir definieren $\mathfrak{L}:=P\cap Q \subset \setR^k$. Sei nun  $M:=\mathfrak{L}\times[0,1]^{d-k}\subset\setR^d$ ein $d$-dimensionaler Quader, der 
 		$\mathfrak{L}$ einschließt. Für die Aufzählung $\mathfrak{L}_q:=\mathfrak{L}+(0,q)$, wobei $q\in(\setQ\cap[0,1])^{d-k}$, gilt dann mit der $\sigma$-Additivität des Lebesgue-Maßes
 		\begin{align}
-			vol_d \left(\bigcup_q\mathfrak{L}_q\right)=\sum_q vol_d(\mathfrak{L}_q), \label{lemma:nullmenge;1}
+			vol \left(\bigcup_q\mathfrak{L}_q\right)=\sum_q vol(\mathfrak{L}_q), \label{lemma:nullmenge;1}
 		\end{align}
 		da diese Aufzählung abzählbar ist und die einzelnen $\mathfrak{L}_q$ jeweils einen leeren Schnitt haben. Es gilt also mit der Monotonie und der Translationsinvarianz des Lebesgue-Maßes
-		\[\infty>vol_d(M)\geq vol_d\left(\bigcup_q \mathfrak{L}_q\right)\overset{\ref{lemma:nullmenge;1}}{=}\sum_q vol_d(\mathfrak{L}_q)=\sum_q vol_d(\mathfrak{L}).\]
-		Also muss gelten $vol_d(\mathfrak{L})=0$, da wir eine abzählbar große Summe haben. 
+		\[\infty>vol(M)\geq vol\left(\bigcup_q \mathfrak{L}_q\right)\overset{\ref{lemma:nullmenge;1}}{=}\sum_q vol(\mathfrak{L}_q)=\sum_q vol(\mathfrak{L}).\]
+		Also muss gelten $vol(\mathfrak{L})=0$, da wir eine abzählbar große Summe haben. 
 		Damit ergibt sich also
 		\[vol(P+Q)=vol(P)+vol(Q).\]
 	\end{proof}
@@ -385,12 +394,12 @@
 	Polytopen funktioniert. Mit diesem Resultat ergibt sich die folgende Proposition.
 	
 	\begin{proposition} \label{prop:zerl,vol}
-		Seien $P$ und $Q$ zerlegungsgleiche $d$-Polytope, dann gilt $vol(P)=vol(Q)$.
+		Seien $P$ und $Q$ zerlegungsgleiche Polytope, dann gilt $vol(P)=vol(Q)$.
 	\end{proposition}
 	
 	\begin{proof}
 		Seien $P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots+Q_n$ die Zerlegungen von $P$ und 
-		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Wir erhalten mit Proposition \ref{prop:cong,vol} und Lemma \ref{lemma:nullmenge} 
+		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Wir erhalten mit Proposition \ref{prop:cong,vol} und Lemma \ref{lemma:nullmenge} dann 
 		\[vol(P)=vol(P_1+\ldots+P_n)=\sum_{i=1}^n vol(P_i)=\sum_{i=1}^n vol(Q_i)=vol(Q_1+\ldots+Q_n)=vol(Q).\]
 	\end{proof}
 	
@@ -405,7 +414,7 @@
 	
 	\subsection{Bolyai-Gerwien Theorem}
 	
-	Im Folgenden setzen wir $d=2$ und betrachten also Polygone. 
+	Im Folgenden setzen wir die Dimension $d$ auf $2$ und betrachten also Polygone. 
 	Dieses Kapitel richtet sich nach dem zweiten Kapitel von \cite{Boltianskii}.
 	
 	\begin{lemma}
@@ -426,10 +435,11 @@
 		$b$ mit der Lotgerade, die durch $m$ und $n$ verläuft, $g$. Dadurch erhalten wir ein Rechteck $Q$ mit den 
 		Eckpunkten $a,b,g,f$. Wir stellen fest, dass die Dreiecke mit den Eckpunkten $m,e,c$ und $a,m,f$, welche in 
 		Abbildung \ref{Abb.1} grau hinterlegt sind, kongruent sind, da mit dem Strahlensatz der Winkel an dem 
-		Punkt $m$ in den beiden Dreiecken gleich ist und somit beiden Dreiecke gleiche Basis und Höhe haben. 
+		Punkt $m$ in den beiden Dreiecken gleich ist und somit haben die 
+		Dreiecke jeweils drei gleiche Winkel und sind damit kongruent. 
 		Weiterhin sind mit dem gleichen Argument die Dreiecke mit den Eckpunkten $e,n,c$ und $b,g,n$, welche weiß 
 		hinterlegt sind, kongruent. Damit lassen sich $P$ und $Q$ in die beiden 
-		kongruenten Dreiecke und den schraffierten Trapezoid, mit den Eckpunkten $a,b,n,m$, zerlegen und sind somit 
+		kongruenten Dreiecke und das schraffierte Trapez, mit den Eckpunkten $a,b,n,m$, zerlegen und sind somit 
 		zerlegungsgleich.
 	\end{proof}
 	
@@ -441,7 +451,7 @@
 	\end{figure}
 	
 	\begin{lemma} \label{lemma:rechtecke}
-		Zwei beliebige Rechtecke mit dem gleichen Flächeninhalt, sind zerlegungsgleich.
+		Zwei beliebige Rechtecke mit dem gleichen Flächeninhalt sind zerlegungsgleich.
 	\end{lemma}
 	
 	\begin{proof}
@@ -457,19 +467,20 @@
 			\caption{Zerlegung zweier Rechtecke}
 			\label{Abb.2}
 		\end{figure}
-		Seien $o,a,b,c$ die Eckpunkte des Dreiecks $P$ und $o,m,n,p$ die Eckpunkte des Dreiecks $Q$, siehe 
+		Seien $o,a,b,c$ die Eckpunkte des Rechtecks $P$ und $o,m,n,p$ die Eckpunkte des Rechtecks $Q$, siehe 
 		Abbildung \ref{Abb.2}. 
 		Wir verschieben hier $Q$ so auf auf $P$, dass beide eine gemeinsame Ecke $o$ mit rechtem Winkel haben. 
 		Dies ändert nichts am Resultat. 
 		Die Höhe $h_P$ soll also der Länge der Strecken $\overline{co}$ und $\overline{ab}$ entsprechen. Die 
 		Breite $b_P$ soll der Länge der Strecken $\overline{oa}$ und $\overline{bc}$ entsprechen. Analog soll 
 		$h_Q$ der Länge der Strecken $\overline{po}$ und $\overline{mn}$ und $b_Q$ der Länge der Strecken 
-		$\overline{om}$ und $\overline{np}$ entsprechen. Wegen \ref{lemma:rechteck;1} sehen wir also, dass 
+		$\overline{om}$ und $\overline{np}$ entsprechen. Wegen Gleichung  \ref{lemma:rechteck;1} sehen wir also, dass 
 		die Strecken $\overline{mc}$ und $\overline{ap}$ parallel sind. Außerdem stellen wir fest, dass gilt
 		\[ (b_P-b_Q)h_P=b_P h_P-b_Q h_P=h_Qb_Q-b_Qh_P=b_Q(h_Q-h_P) \]
 		also auch
 		\[\frac{b_P-b_Q}{h_Q-h_P}=\frac{b_Q}{h_P}. \]
-		Damit folgt, dass die Dreiecke $oap$ und $dbn$ ähnlich sind und folglich sind die Strecken $\overline{ap}$ 
+		Damit folgt, dass die Dreiecke $omc$ und $dbn$ ähnlich sind, d. h. 
+		sie haben die gleichen Seitenverhältnisse und folglich sind die Strecken $\overline{mc}$ 
 		und $\overline{nb}$ parallel. Hierbei sei $d$ der Schnittpunkt der Strecken $\overline{mn}$ und 
 		$\overline{bc}$. Also sind die drei Strecken $\overline{mc}$, $\overline{ap}$ und $\overline{nb}$ 
 		parallel. Nun unterscheiden wir zwei Fälle
@@ -492,7 +503,9 @@
 			Sei die Breite dieses Rechtecks nun $b'$, die offensichtlich die Bedingung
 			\[ 2b'>b_P \]
 			erfüllt. Damit können wir nach dem ersten Fall sagen, dass die Rechtecke $P$ und $otuv$ 
-			zerlegungsgleich sind. Nach Lemma \ref{lemma:transitiv} sind also auch $P$ und $Q$ zerlegungsgleich.
+			zerlegungsgleich sind. Mit der Transitivität der 
+			Zerlegungsgleichheit (Proposition \ref{lemma:transitiv}) sind 
+			also auch $P$ und $Q$ zerlegungsgleich.
 		\end{enumerate}
 		Damit sind $P$ und $Q$ zerlegungsgleich.
 	\end{proof}
@@ -520,14 +533,17 @@
 		welches wir $R_i$ nennen, dem Flächeninhalt des Rechtecks $P_i$ entspricht, wobei $i=1,\ldots,n$. 
 		Nach Lemma \ref{lemma:rechtecke} gilt also $P_i\sim R_i$ für alle $i$ und damit
 		\[ P_1+\ldots+P_n\sim R_1+\ldots+R_n. \]
-		Da $P\sim P_1+\ldots+P_n$ gilt also mit Lemma \ref{lemma:transitiv}
+		Da $P\sim P_1+\ldots+P_n$ gilt also mit Proposition \ref{lemma:transitiv}
 		\[ P\sim R_1+\ldots+R_n\]
 		und damit zum Rechteck $a_0b_0b_na_n$. Damit ist jedes Polygon zerlegungsgleich zu einem Rechteck. \\
 		Seien nun $P$ und $Q$ zwei Polygone mit gleichem Flächeninhalt, dann finden wir wie oben gezeigt 
 		Rechtecke $R_1$ und $R_2$, sd.
 		\[ P\sim R_1,\quad Q\sim R_2.\]
-		Nach Lemma \ref{lemma:rechtecke} gilt also nun auch $R_1\sim R_2$ und damit folgt mit Lemma 
-		\ref{lemma:transitiv} $P\sim Q$.
+		Nach Proposition \ref{prop:zerl,vol} haben $R_1$ und $_2$ also das 
+		gleiche Volumen und Lemma \ref{lemma:rechtecke} gilt also nun auch 
+		$R_1\sim R_2$ und damit folgt mit der Transitivität 
+		der Zerlegungsgleichheit 
+		(Proposition \ref{lemma:transitiv}), dass $P\sim Q$ gilt.
 	\end{proof}
 	
 	Wir haben also nun gesehen, dass sich jedes beliebige Polygon in Dreiecke zerlegen lässt. Diese Dreiecke 
@@ -535,31 +551,44 @@
 	Flächeninhalt. Zuletzt können wir mit Satz \ref{theorem:bolyai-gerwien} die Rechtecke zerlegen zu Rechtecken 
 	mit gleicher Grundseite. Dieses Verfahren können wir nun auf beliebige Polygone mit gleichem Flächeninhalt 
 	anwenden. Da diese Rechtecke nach Lemma \ref{lemma:rechtecke} zerlegungsgleich sind folgt mit der 
-	Transitivität der Zerlegungsgleichheit aus Lemma \ref{lemma:transitiv} die Zerlegungsgleichheit der Polygone und 
-	mit Proposition \ref{prop:zerl,erg} auch die Ergänzungsgleichheit. 
-	Dies führt uns zu der Frage, ob das gleiche auch für dreidimensionale Polytope, also Polyeder, möglich ist.
-	
-	\textsl{Motivation:} Als Hilbert 1900 diese Frage auf dem internationalen Mathematikerkongress in Paris als 
-	sein drittes von 23 Problemen stellte, vermutete er wohl schon, dass die Antwort 'Nein' ist. Im Folgenden wollen wir 
-	uns zwei Beweise anschauen, die zeigen, dass es Polyeder gibt, die nicht zerlegungs- und ergänzungsgleich sind. 
-	Der erste bezieht sich auf die Arbeit Max Dehn's, ein Schüler Hilberts, der ein Jahr später in seiner Habitilationsarbeit 
-	die Aussage mithilfe der von ihm erfundenen Dehn-Invariante widerlegte.
+	Transitivität der Zerlegungsgleichheit aus Proposition \ref{lemma:transitiv} die Zerlegungsgleichheit der Polygone. \\
+	Wir haben also den Fall in der Ebene abgeschlossen und können in 
+	den dreidimensionalen Raum übergehen. 
 	
 	\newpage
 	
 	\section{Zerlegungsgleichheit von Polyedern; Dehn-Invariante}
 	
-	Im Folgenden setzen wir $d=3$ und betrachten Polyeder.
+	Im Folgenden setzen wir die Dimension $d$ auf $3$ und betrachten Polyeder. 
 	
-	Wir müssen uns zunächst überlegen, was mit den Kanten eines Polyeders $P$ passiert, wenn wir diesen in zwei 
-	Polyeder $P_1$ und $P_2$ zerlegen. Sei $k$ also eine Kante des Polyeders $P$. Diese Kante hat die Länge 
-	$\ell(k)=l$. Außerdem ist die Kante $k$ die Schnittmenge der zwei anliegenden Seitenflächen. Den Winkel zweier 
-	solcher Flächen nennt man Diederwinkel. Sei also $w(k)=\varphi$ der zu $k$ gehörige Diederwinkel. Dann können 
-	beim zerschneiden folgende Fälle eintreten
+	Wir wollen zunächst ein paar Begriffe einführen.
+	\begin{definition}
+		Wir wollen den Schnitt 
+		einer der Hyperebenen, durch die der Polyeder definiert ist, mit dem 
+		Polyeder eine \textsl{Seite} des Polyeders nennen. Den Schnitt 
+		zweier Seiten nennen wir eine \textsl{Kante} und den Schnitt zweier 
+		Kanten eine \textsl{Ecke} des Polyeders.
+	\end{definition}
+	Es war vor allem die Idee von Dehn entscheidend, 
+	dass die Kanten des Polyeders der Teil sind, der beim Zerschneiden 
+	eine besonders wichtige Rolle spielt. Die Kanten sind sozusagen 
+	der Knackpunkt.
+	Deshalb müssen uns zunächst überlegen, was mit den Kanten eines Polyeders $P$ passiert, wenn wir diesen in zwei 
+	Polyeder $P_1$ und $P_2$ zerlegen. 
+	\begin{definition}
+		Sei $k$ also eine Kante des Polyeders $P$.  Wir wollen jeder Kante $k$ ihre \textsl{Länge} $\ell(k)\in\setR_+$, also den größten 
+		Abstand der Punkte der Kante und den \textsl{Diederwinkel} $w(k)\in(0,2\pi)$, 
+		also der Winkel innerhalb des Polyeders, zwischen den beiden Hyperebenen, 
+		durch die die Kante $k$ entsteht, zuordnen.
+	\end{definition}
+	Sei also $\ell(k)=l$ die Länge der Kante $k$ und $w(k)=\varphi$ der 
+	dazugehörige Diederwinkel. Dann können 
+	beim zerschneiden folgende Fälle eintreten (diese orientieren sich nach 
+	den Fällen in \cite{SkriptLA}[7.4]).
 	\begin{enumerate}
 		\item \label{bem:dehn;1} 
 		Wir schneiden durch die Kante: Also enstehen zwei neue Kanten $k_1$ von $P_1$ und $k_2$ von $P_2$, 
-		deren Kantenlängen sich zu der von $k$ addieren lassen und deren Winkel gleich dem von $k$ bleibt. 
+		deren Kantenlängen sich zu der von $k$ addieren lassen und deren Winkel gleich dem von $k$ sind. 
 		D. h. für $\ell(k_1)=l_1$ und $\ell(k_2)=l_2$ gilt $l=l_1 +l_2$.
 		\item \label{bem:dehn;2} 
 		Wir schneiden entlang der Kante: Also entstehen zwei neue Kanten $k_1$ von $P_1$ und $k_2$ von 
@@ -570,8 +599,7 @@
 		wiederfinden und sowohl Kantenlänge, als auch Diederwinkel bleiben gleich.
 		\item \label{bem:dehn;4} 
 		Bleibt nur noch der Sonderfall, wenn wir durch eine der Flächen von $P$ schneiden. Hierbei entstehen 
-		aus dem nichts zwei neue Kanten $k_1$ von $P_1$ und $k_2$ von $P_2$, deren Länge der Länge des 
-		Schnitts entsprechen und deren Winkel sich zu $\pi$ addieren lässt. D. h. für $w(k_1)=\varphi_1$ und 
+		aus dem nichts zwei neue Kanten $k_1$ von $P_1$ und $k_2$ von $P_2$, deren Längen gleich sind und deren Winkel sich zu $\pi$ addieren lassen. D. h. für $w(k_1)=\varphi_1$ und 
 		$w(k_2)=\varphi_2$ gilt $\varphi_1 +\varphi_2 =\pi$.
 	\end{enumerate}
 	Wir wollen also eine Operation, die in beiden Argumenten, sowohl in Länge als auch Diederwinkel, linear ist 
@@ -581,28 +609,6 @@
 	
 	Wir kennen Tensoren bereits aus der linearen Algebra. Deshalb wiederholen wir noch einmal die universelle 
 	Eigenschaft dieser.
-	
-	%\begin{proposition}[Universelle Eigenschaft]
-	%	Sei $R$ ein kommutativer Ring mit Eins und seien $M$ und $N$ zwei $R$-Moduln. Dann gilt
-	%	\begin{enumerate}
-	%		\item Die Abbildung $\otimes: M\times N \to M\otimes_R N$ ist $R$-bilinear.
-	%		\item Sei nun $L$ ein weiterer $R$-Modul und $\phi: M\times N \to L$ eine bilineare Abbildung. Dann 
-	%		existiert genau eine lineare Abbildung $\eta: M\otimes_R N \to L$, sd. das folgende Diagramm 
-	%		kommutiert:
-	%		\begin{center}
-	%			\begin{tikzpicture}
-	%				\node(R1) at (0,0){$M\times N$};
-	%				\node[right = 2 of R1](k){$L$};
-	%				\node[below = 1 of R1](R2){$M\otimes N$};
-	%				
-	%				\draw[->] (R1) -- (k) node[midway,above]{$\phi$};
-	%				\draw[->] (R1) -- (R2) node[midway,left]{$\otimes$};
-	%				\draw[->,dashed] (R2) -- (k) node[midway,below]{$\exists ! \eta$};
-	%			\end{tikzpicture}
-	%		\end{center}
-	%	\end{enumerate}
-	%	Der $R$-Modul $M\otimes N$ ist bis auf Isomorphie eindeutig.
-	%\end{proposition}
 	
 	\begin{proposition}[Universelle Eigenschaft] \label{prop:univeig}
 		Sei $R$ ein kommutativer Ring mit Eins und seien $M$ und $N$ zwei $R$-Moduln. Dann ist das 
@@ -640,7 +646,9 @@
 	
 	Damit ist der bilineare Operator gefunden. Wir wollen für unser Problem den Spezialfall 
 	$\setR \otimes_{\setZ} \setR / \pi\setZ$ betrachen. Hierbei identifizieren wir die Länge einer Kante mit dem 
-	ersten Argument und tensorieren dies mit einem Winkel, wobei wir den Winkel $\pi$ mit 0 identifizieren.
+	ersten Argument und den Winkel einer Kante mit dem zweiten Argument. 
+	Den Winkel $\pi$ identifizieren wir in $\setR/\pi\setZ$ mit $0$. Das 
+	Tensorprodukt erfüllt also alle gewollten Eigenschaften. 
 	
 	\subsection{Die Dehn-Invariante}
 	
@@ -665,28 +673,35 @@
 		reicht die Fälle zu betrachten, die wir am Anfang des Kapitels erwähnt haben.
 		\begin{itemize}
 			\item Zu \ref{bem:dehn;1}: Beim schneiden durch eine Kante $k$ von $P$ entstehen zwei 
-			neue Kanten $k_1$ von $P_1$ und $k_2$ von $P_2$, wobei die Längen sich addieren und der Winkel 
-			gleich bleibt. Es gilt
-			\[ \ell(k_1)\otimes_{\setZ}w(k) + \ell(k_2)\otimes_{\setZ}w(k)=(\ell(k_1)+\ell(k_2))\otimes_{\setZ}w(k)=
-			\ell(k)\otimes_{\setZ}w(k).\]
+			neue Kanten $k_1$ von $P_1$ und $k_2$ von $P_2$, wobei die Längen sich addieren und die Winkel  
+			gleich bleiben. Es gilt
+			\[ \ell(k_1)\otimes w(k) + \ell(k_2)\otimes w(k)=(\ell(k_1)+\ell(k_2))\otimes w(k)=
+			\ell(k)\otimes w(k).\]
 			Also verändert sich die Dehn-Invariante nicht.
 			\item Zu \ref{bem:dehn;2}: Beim schneiden entlang einer Kante $k$ von $P$ entstehen zwei neue Kanten 
 			$k_1$ von $P_1$ und $k_2$ von $P_2$, wobei die Längen gleich bleiben und die Winkel sich addieren. 
 			Es gilt
-			\[ \ell(k)\otimes_{\setZ} w(k_1)+\ell(k)\otimes_{\setZ}w(k_2)=\ell(k)\otimes_{\setZ}(w(k_1)+w(k_2))=
-			\ell(k)\otimes_{\setZ}w(k). \]
+			\[ \ell(k)\otimes  w(k_1)+\ell(k)\otimes w(k_2)=\ell(k)\otimes (w(k_1)+w(k_2))=
+			\ell(k)\otimes w(k).\]
 			Also verändert sich auch hier die Dehn-Invariante nicht.
-			\item Zu \ref{bem:dehn;3}: Wir schneiden nicht durch die Kante $k$ von $P$, also ändert sich auch der 
-			Summand nicht und damit die Dehn-Invariante.
+			\item Zu \ref{bem:dehn;3}: Wir schneiden nicht durch die Kante $k$ von $P$, also finden wir die Kante mit gleicher Länge und gleichem 
+			Winkel in $P_1$ oder $P_2$ wieder und damit bleibt 
+			der Summand und somit die Dehn-Invariante gleich. 
 			\item Zu \ref{bem:dehn;4}: Beim Schneiden durch eine Fläche entstehen zwei neue Kanten $k_1$ von 
-			$P_1$ und $k_2$ von $P_2$, deren Länge gleich ist und Winkel sich zu $\pi$ addieren lässt. Es gilt 
-			\[ \ell(k_1)\otimes_{\setZ}w(k_1)+\ell(k_1)\otimes_{\setZ}w(k_2)=\ell(k_1)\otimes_{\setZ}(w(k_1)+w(k_2))=
-			\ell(k_1)\otimes_{\setZ}\pi=\ell(k_1)\otimes_{\setZ}0=0. \]
+			$P_1$ und $k_2$ von $P_2$, deren Längen gleich sind und Winkel sich zu $\pi$ addieren lassen. Es gilt 
+			\[ \ell(k_1)\otimes w(k_1)+\ell(k_1)\otimes w(k_2)=\ell(k_1)\otimes (w(k_1)+w(k_2))=
+			\ell(k_1)\otimes \pi=\ell(k_1)\otimes 0=0. \]
 			Also ändert auch dies nichts an der Dehn-Invariante.
 		\end{itemize}
-		Im Beweis haben wir lediglich die Bilinearität des Tensorprodukts ausgenutzt.		
+		Damit gilt für alle Kanten $k$ von $P$ und alle Kanten $k_1$ von $P_1$ 
+		und $k_2$ von $P_2$ also
+		\[D(P)=\sum_k \ell(k)\otimes w(k)=\sum_{k_1}\ell(k_1)\otimes w(k_1)+
+		\sum_{k_2}\ell(k_2)\otimes w(k_2)=D(P_1)+D(P_2).\]
 	\end{proof}
 	
+	Im Beweis haben wir lediglich die Bilinearität des Tensorprodukts ausgenutzt. 
+	Wir können dieses Resultat auf endlich viele Zerlegungen von $P$ fortsetzen. 
+		
 	\begin{proposition} \label{prop:cong,dehn}
 		Seien $P$ und $Q$ zwei Polyeder, sd. $P\cong Q$, dann gilt $D(P)=D(Q)$.
 	\end{proposition}
@@ -707,6 +722,16 @@
 		und mit Proposition \ref{prop:invarianz}
 		\[D(P)=D(P_1+\ldots+P_n)=\sum_{i=1}^n D(P_i) =\sum_{i=1}^n D(Q_i)=D(Q_1+\ldots+Q_n)=D(Q).\]
 	\end{proof}
+	
+	Im Jahr 1965 bewies der schweizer Mathematiker Jean-Pierre Sydler 
+	sogar, dass dies eine notwendige Bedingung ist und 
+	es ergibt sich der folgende Satz (siehe dazu auch \cite{Sydler1965}).
+	
+	\begin{theorem}[Dehn-Sydler Theorem]
+		Seien $P$ und $Q$ Polyeder, dann sind $P$ und $Q$ genau 
+		dann zerlegungsgleich, wenn die Dehn-Invariante und das Volumen 
+		der Polyeder gleich sind.
+	\end{theorem}
 	
 	\subsection{Lokalisierung des Tensorprodukts}
 	
