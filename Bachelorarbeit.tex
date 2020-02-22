@@ -885,7 +885,7 @@
 		\end{align*}
 		für alle $r_1,r_2,\lambda_1,\lambda_2\in R$, $s_1,s_2 \in S$ und 
 		$m_1,m_2\in M$ gilt. Damit gibt es mit der universellen Eigenschaft 
-		des Tensorprodukts (Proposition \ref{prop:univeig}) einen 
+		des Tensorprodukts (Proposition \ref{prop:univeig}) genau einen 
 		$R$-Modulhomomorphismus $f:S^{-1}R\otimes_R M\to S^{-1}M$, sd. 
 		\ref{lemma:lociso;1} gilt. Es ist klar, dass $f$ surjektiv ist, 
 		dazu wählen wir $r=1$ und erhalten somit alle Elemente aus 
@@ -948,19 +948,23 @@
 		\quad\text{ und }\quad S^{-1}N\simeq\setR /\pi\setQ.
 	\end{align*}
 	Weiterhin gilt
-	\[S^{-1}(M\otimes_R N)\simeq \setR\otimes_\setZ\setR/\pi\setZ,\]
+	\[S^{-1}(M\otimes_R N)=(\setZ\setminus\{0\})^{-1}(\setR\otimes_{\setZ}\setR/\pi\setZ)\simeq \setR\otimes_\setZ\setR/\pi\setZ,\]
 	denn mit der Bilinearität des Tensorprodukt gilt für 
 	\begin{align*}
-		(\setZ\setminus\{0\})^{-1}(\setR /\pi\setZ)&\simeq
-		\left.\left\langle \left\{\frac{r\otimes s}{z}\right\vert
-		 r\in\setR,s\in\setR/\pi\setZ,s\in\setZ\setminus\{0\}\right\}\right\rangle \\
-		 &\simeq \left.\left\langle \left\{\frac{r}{z}\otimes s\right\vert r\in\setR,s\in\setR/\pi\setZ,s\in\setZ\setminus\{0\}\right\}
+		(\setZ\setminus\{0\})^{-1}(\setR\otimes_{\setZ}\setR /\pi\setZ)&\simeq
+		\left.\left\langle \left\{\frac{m\otimes n}{z}\right\vert
+		 m\in\setR,n\in\setR/\pi\setZ,z\in\setZ\setminus\{0\}\right\}\right\rangle \\
+		 &\simeq \left.\left\langle \left\{\frac{m}{z}\otimes n\right\vert m\in\setR,n\in\setR/\pi\setZ,z\in\setZ\setminus\{0\}\right\}
 		 \right\rangle \\
 		 &\simeq (\setZ\setminus\{0\})^{-1}\setR\ \ \otimes_\setZ\  \setR/\pi\setZ \\
 		 &\simeq \setR\otimes_\setZ \setR/\pi\setZ,
 	\end{align*}
 	wobei wir mit $\langle\ \cdot\ \rangle$ hier das Erzeugnis meinen.
 	Insgesamt erhalten wir also mit der Proposition
+	\begin{align*}
+		\setR\otimes_\setZ\setR/\pi\setZ\simeq S^{-1}(M\otimes_R N)\simeq S^{-1}M\otimes_{S^{-1}R}S^{-1}N\simeq\setR\otimes_\setQ\setR/\pi\setQ.
+	\end{align*}
+	Also gilt
 	\begin{align}
 		\setR\otimes_\setZ\setR/\pi\setZ\simeq\setR\otimes_\setQ\setR/\pi\setQ. \label{tensor=0}
 	\end{align}
@@ -979,8 +983,8 @@
 		\[ x\otimes y =x\otimes\pi \frac{p}{q} =xp\otimes\frac{\pi}{q} =q\frac{xp}{q}
 		\otimes\frac{\pi}{q} = \frac{xp}{q}\otimes\pi =\frac{xp}{q}\otimes 0=0.\]
 		Dabei haben wir $p$ zuerst nach links und danach $q$ nach rechts bewegt. \\
-		Zur Hinrichtung: Betrachte $\pi\setQ$ ist $1$-dimensionaler $\setQ$-
-		Vektorraum mit Basis $\{\pi\}$ und $\pi\setQ\subset\setR$ ist 
+		Zur Hinrichtung: Betrachte $\pi\setQ$ ist $1$-dimensionaler 
+		$\setQ$-Vektorraum mit Basis $\{\pi\}$ und $\pi\setQ\subset\setR$ ist 
 		Untervektorraum von $\setR$ als $\setQ$-Vektorraum. Wir können also nun 
 		unsere Basis mit dem Lemma von Zorn auf ganz $\setR$ fortsetzen. 
 		Also hat $\setR$ als $\setQ$-Vektorraum die Basis
@@ -998,12 +1002,12 @@
 		Darstellung
 		\begin{align*}
 			x&=\alpha\pi+\sum_{b\in B}\beta_b b \\
-			y&= \qquad\ \sum_{b'\in B}\gamma_{b'}b,
+			y&= \qquad\ \sum_{b'\in B}\gamma_{b'}b',
 		\end{align*}
 		wobei $\alpha,\beta_b,\gamma_{b'}\in\setQ$ für alle $b,b'\in B$ sind. 
 		Falls nun $x\otimes y=0$ gilt also
 		\[0=x\otimes y=\left(\alpha\pi+\sum_{b\in B}\beta_b b\right)\otimes
-		\left(\sum_{b'\in B}\gamma_{b'}b\right)=\sum_{b'\in 
+		\left(\sum_{b'\in B}\gamma_{b'}b'\right)=\sum_{b'\in 
 		B}\alpha\gamma_{b'}(\pi\otimes b')+\sum_{\genfrac{}{}{0pt}{1}{b\in B}
 		{b'\in B}} \beta_b\gamma_{b'}(b\otimes b').\]
 		Da $(\pi\otimes b')$ und $(b\otimes b')$ linear unabhängig sind für alle  
@@ -1023,12 +1027,10 @@
 		Damit haben wir die Aussage gezeigt.
 	\end{proof}
 
-	Wir bemerken, dass wir für die Hinrichtung also das Auswahl-Axiom 
+	Wir bemerken, dass wir für die Hinrichtung das Auswahl-Axiom 
 	benutzt haben. Jedoch ist klar, dass wir bei einer konkreten Berechnung der 
 	Dehn-Invariante nur endlich viele Polyeder haben, diese somit auch 
-	nur einen endlich-dimensionalen $\setQ$-Untervektorraum von $\setR$ aufspannen und wir somit nicht auf das Auswahl-Axiom angewiesen sind. Wir 
-	werden später sehen, dass wir im Beweis der Bricardschen Bedingung 
-	vollkommen auf dieses verzichten können.
+	nur einen endlich-dimensionalen $\setQ$-Untervektorraum von $\setR$ aufspannen und wir somit nicht auf das Auswahl-Axiom angewiesen sind.
 	
 	Wir erhalten also auch:
 	
