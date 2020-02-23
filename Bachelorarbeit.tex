@@ -1213,15 +1213,15 @@
 	\section{Ergänzungsgleichheit von Polytopen}
 	
 	Wir wollen uns nun dem zweiten Teil von Hilberts Problem widmen und zwar der 
-	Ergänzungsgleichheit von Polytopen. Wir wollen in diesem Kapitel zeigen, dass 
-	Zerlegungsgleichheit und Ergänzungsgleichheit gleichbedeutend sind. Der 
-	Beweis hierzu ist nicht gerade trivial, weswegen wir vorweg noch einige 
-	Kenntnisse über Polytope benötigen. Das Kapitel richtet sich nach 
+	Ergänzungsgleichheit von Polytopen. In diesem Kapitel zeigen, dass 
+	Zerlegungsgleichheit und Ergänzungsgleichheit gleichbedeutend sind. Für den 
+	Beweis hierzu benötigen wir vorweg noch einige Kenntnisse über Polytope. Das Kapitel richtet sich nach 
 	\cite{Hadwiger}. 
 	
 	\subsection{Ein wenig Polyedertheorie}
 	
-	Wir beginnen mit dem einfachsten Polytop, dem Simplex. Ein Simplex hat 
+	Wir beginnen mit dem einfachsten Polytop, dem Simplex. Ein Simplex 
+	im $\setR^d$ hat 
 	$d+1$ ausgezeichnete Ecken und damit gerade soviele Kanten, dass 
 	wir ein konvexes Polytop erhalten. Im zwei-dimensionalen Fall ist ein 
 	Simplex ein Dreieck und im drei-dimensionalen ein Tetraeder. Wir werden 
@@ -1229,10 +1229,11 @@
 	zerlegen lässt. Diese Simplizialzerlegung von Polytopen spielt bei 
 	der Zerlegungsgleichheit von Polytopen eine wichtige Rolle, wie wir schon im 
 	Beweis des Bolyai-Gerwien-Theorems (Satz \ref{theorem:bolyai-gerwien}) 
-	gesehen haben. Ebenso war, wie sich schon aus der Formulierung des dritten Problem von Hilbert herauslesen lässt, klar, dass es eine der einfachsten Lösungen ist, zwei Simplizes mit gleichem Volumen zu finden, die nicht zerlegungsgleich sind.
+	gesehen haben. Ebenso war, wie sich schon aus der Formulierung des dritten Problems von Hilbert herauslesen lässt, ersichtlich, dass es eine der einfachsten Lösungen ist, zwei Simplizes mit gleichem Volumen zu finden, die nicht zerlegungsgleich sind.
 	
 	\begin{definition}[Simplex]\label{def:simplex}
-		Ein Simplex $S$ ist die konvexe Hülle einer Menge von $d+1$ Punkten 
+		Ein Simplex $S$ im $\setR^d$ ist die konvexe Hülle einer Menge von 
+		$d+1$ Punkten 
 		$p_0,\ldots,p_d$, die sich im Raum in allgemeiner Lage befinden, also 
 		nicht alle in einer Ebene liegen. Die Punkte bezeichnen wir als 
 		Ecken des Simplex. Wir wollen das Simplex durch Wahl der 
@@ -1245,33 +1246,35 @@
 	Ein Simplex ist offensichtlich ein spezielles konvexes Polytop. 
 	
 	\begin{remark}[Parameterdarstellung des Simplex]\label{bem:paradarst;simplex}
-		Für ein Simplex $S=\langle p;s_1,\ldots s_n\rangle$ stellen wir 
-		fest, dass sich jeder Punkt $s$ des Simplex darstellen lässt, also 
+		Für einen Simplex $S=\langle p;s_1,\ldots s_n\rangle$ stellen wir 
+		fest, dass sich jeder Punkt $s$ des Simplex in folgender Form darstellen 
+		lässt
 		\[s=p+\sum_{i=1}^d \alpha_i s_i\]
 		für Parameter $1\geq \alpha_1\geq\ldots\geq\alpha_d\geq 0$. 
 	\end{remark}
 	
 	\begin{theorem}[Simplizialzerlegung von Polytopen]\label{thm:simplzerl}
 		Sei $P$ ein Polytop, dann lässt sich $P$ in endlich viele 
-		Simplizes $S_1,\ldots,S_n$ zerlegen, also
+		Simplizes $S_1,\ldots,S_n$ zerlegen, das heißt
 		\[P=S_1+\ldots+S_n.\]
 	\end{theorem}
 	
 	\begin{proof}
 		Das Polytop $P$ lässt sich nach der Definition als Vereinigung endlich 
-		viele konvexer Polytope darstellen. Wir müssen also 
+		vieler konvexer Polytope darstellen. Wir müssen also 
 		zeigen, dass sich jedes konvexe Polytop $P'$ in endlich viele Simplizes 
 		zerlegen lässt. Wir wollen dies per Induktion über die Dimension 
-		unseres Vektorraumes zeigen. Für $d=1$ ist die Aussage klar, da 
-		jedes konvexe $1$-Polytop gerade eine Strecke ist und damit auch ein 
+		des umgebenen Vektorraumes zeigen. Für $d=1$ ist die Aussage klar, da 
+		jedes konvexe $1$-Polytop eine Strecke ist und damit auch ein 
 		Simplex. Wir nehmen also an, die Aussage sei für die Dimension $d-1$ 
-		bewiesen. Betrachten wir also die $d-1$-dimensionalen Seiten von 
+		bewiesen. Betrachten wir die $d-1$-dimensionalen Seiten von 
 		$P'$, dann wissen wir nach Induktionsvoraussetzung, dass diese 
 		sich in endliche viele $d-1$-dimnesionale Simplizes $S_i'$ zerlegen lassen. 
-		Betrachten wir also einen beliebigen Punkt $p'\in P'$, dann 
+		Betrachten wir einen beliebigen festen Punkt $p'$ im inneren von $P'$, dann 
 		bildet die konvexe Hülle des Punktes $p'$ und des Simplex $S_i'$ ein 
 		neues Simplex $S_i$. Führen wir das fort auf alle Simplizes der Seiten 
-		von $P'$, so erhalten wir eine Zerlegung von $P'$ in endlich viele 
+		von $P'$, so erhalten wir eine, wegen der Konvexität von $P'$, disjunkte 
+		Zerlegung von $P'$ in endlich viele 
 		Simplizes. Weiter erhalten wir also auch eine Zerlegung von 
 		$P$ in Simplizes.
 	\end{proof}
@@ -1283,12 +1286,13 @@
 		Unter einer Dilatation mit einem Faktor $\lambda>0$ 
 		verstehen wir eine Streckung bzw. Stauchung aller Punkte 
 		im Koordinatensystem. Ein Punkt $p\in\setR^d$ wird also auf 
-		sein skalares Vielfaches $\lambda\cdot p$ abgebildet. Im Zusammenhang mit 
-		Polytopen erhalten wir mit dem Faktor $\lambda$ das dilatierte Polytop 
-		$\lambda P$.
+		sein skalares Vielfaches $\lambda\cdot p$ abgebildet. Im Bezug auf 
+		Polytope erhalten wir mit dem Faktor $\lambda$ das dilatierte Polytop 
+		\[\lambda P=\{\lambda p\ \vert\ p\in P\}.\]
 	\end{definition}
 	
-	Wir bemerken, dass wenn wir diese Abbildungen auf Polytope anwenden wir wieder Polytope erhalten, da Halbräume auf Halbräume abgebildet werden. 
+	Wir bemerken, dass diese Abbildung angewendet auf Polytope, wieder neue 
+	Polytope erzeugt, da Halbräume auf Halbräume abgebildet werden. 
 	Eine Dilatation um den Faktor $\lambda=1$ lässt die Punkte unverändert und 
 	hat somit keine Auswirkung. 
 	
@@ -1305,7 +1309,7 @@
 	\end{remark}
 	
 	Weiter stellen wir fest, dass wenn wir eine Zerlegung eines Polytops strecken, 
-	es das gleiche ist, wenn wir die Zerlegung der gestreckten Polytopen 
+	es das gleiche ist, als wenn wir die Zerlegung der gestreckten Polytope 
 	betrachten.
 	
 	\begin{lemma} \label{lemma:dilzerl}
@@ -1331,7 +1335,7 @@
 	\end{lemma}
 	
 	\begin{proof}
-		Seien für die Hinrichtung $P\cong Q$, also gibt es eine Isometrie 
+		Seien für die Hinrichtung $P\cong Q$ gegeben, also gibt es eine Isometrie 
 		$f$, sd. gilt $f(P)=Q$. Wir können die Isometrie $f$ durch ein $\alpha\in
 		\setR^d$ und eine orthogonale Matrix $U\in O(d)$ darstellen, sd. 
 		$f(P)=\alpha + UP$ gilt. Betrachte die Isometrie $f_{\lambda}$, die wir 
@@ -1341,7 +1345,7 @@
 		\[f_{\lambda}(\lambda P)=\lambda\cdot \alpha+U \lambda P =\lambda\cdot 
 		\alpha+\lambda U P =\lambda(\alpha+ U P)=\lambda f(P)=\lambda Q\]
 		Damit sind also $\lambda P$ und $\lambda Q$ kongruent. \\
-		Seien also für die Rückrichtung nun $\lambda P\cong \lambda Q$, also 
+		Seien für die Rückrichtung nun $\lambda P\cong \lambda Q$, also 
 		gibt es eine Isometrie $f$, sd. $f(\lambda P)=\lambda Q$. Es gibt 
 		also wieder $\alpha\in\setR^d$ und $U\in O(d)$, sd. 
 		$f(x)=\alpha + Ux$ für alle $x\in\setR^d$ gilt. Betrachte die Isometrie 
@@ -1361,7 +1365,7 @@
 	\end{proposition}
 	
 	\begin{proof}
-		Seien für die Hinrichtung $P$ und $Q$ zerlegungsgleich, also gibt 
+		Seien für die Hinrichtung $P$ und $Q$ zerlegungsgleich, dann gibt 
 		es endlich viele Polytope $P_1,\ldots,P_n$ und $Q_1\ldots,Q_n$ mit 
 		$P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots Q_n$, sd. $P_i\cong Q_i$ 
 		für alle $i=1,\ldots, n$. Nach Lemma \ref{lemma:dilzerl} können wir 
@@ -1399,11 +1403,12 @@
 		wobei $P_i\cong P$ für alle $i=1,\ldots,n$.
 	\end{definition}
 	
-	Wir bemerken, dass die Lage der Polyeder $P_i$ nicht eindeutig festgelegt 
+	Wir bemerken, dass die Lage und Ausrichtung der Polyeder $P_i$ nicht 
+	eindeutig festgelegt 
 	ist, was jedoch beim eigentlichen zerlegen keine Rolle spielt. Wir wollen 
 	die Polytope so verschieben, dass sie paarweise disjunkt sind.
 	
-	Es ergeben sich beim Vervielfältigen, wie man leicht sieht folgende Eigenschaften.
+	Es ergeben sich beim Vervielfältigen folgende Eigenschaften.
 	
 	\begin{remark}\label{bem:vervielf;vol}
 		Wir wollen uns überlegen wie sich das Volumen bei einer Vervielfachung 
@@ -1418,7 +1423,7 @@
 	\begin{remark}[Additionssatz] \label{bem:addsatz}
 		Seien $P,Q,R,S$ vier Polytope, sd. $P\sim Q$ und $R\sim S$, dann gilt
 		\[P+R\sim Q+S.\]
-		Wir summieren hierbei einfach die Zerlegungen der einzelnen Polytope 
+		Wir iterieren hierbei einfach die Zerlegungen der einzelnen Polytope 
 		auf und erhalten damit die Zerlegungsgleichheit.
 	\end{remark}
 	
@@ -1434,12 +1439,14 @@
 	\end{corollary}
 	
 	\begin{proof}
-		Wir finden also $n$ viele Polytope $R_1,\ldots,R_n$ mit 
+		Wir finden $n$ viele Polytope $R_1,\ldots,R_n$ mit 
 		$R_i\cong (P+Q)$ für alle $i=1,\ldots,n$, sd. 
-		$n\cdot(P+Q)=R_1+\ldots+R_n$. Das heißt aber auch, dass sich jedes 
+		$n\cdot(P+Q)=R_1+\ldots+R_n$. Da Schnitte von Polytope wieder 
+		Polytope sind folgt, dass sich jedes 
 		$R_i$ darstellen lässt durch Polytope $P_i$ und $Q_i$ für alle 
 		$i=1,\ldots,n$, wobei $P_i\cong P$ und $Q_i\cong Q$. Ebenso finden wir 
-		aber auch jeweils $n$ viele Polytope 
+		mit der Definition der Polytope $n\cdot P$ und $n\cdot Q$ auch jeweils 
+		$n$ viele Polytope 
 		$P_1',\ldots,P_n'$ und $Q_1',\ldots,Q_n'$ mit $P_i'\cong P$ und 
 		$Q_i'\cong Q$ für alle $i=1,\ldots,n$, sd. $n\cdot P=P_1'+\ldots+P_n'$ und 
 		$n\cdot Q=Q_1'+\ldots+Q_n'$. Mit der Transitivität der Kongruenz 
@@ -1453,7 +1460,7 @@
 		Damit sind $n\cdot (P+Q)$ und $n\cdot P+n\cdot Q$ zerlegungsgleich.
 	\end{proof}
 
-	Um Polytope besser charakterisieren, werden wir in diesem Abschnitt 
+	Um Polytope besser zu charakterisieren, werden wir in diesem Abschnitt 
 	sogenannte Zylinderklassen einführen. Wir werden später feststellen, 
 	dass diese Charakterisierung beim Beweisen einiger Resultate sehr 
 	hilfreich ist.
@@ -1472,14 +1479,15 @@
 		\begin{enumerate}
 			Seien $A,B,C$ Mengen dann ergeben sich folgende Eigenschaften 
 			mit der Minkowski-Summe.
-			\item Die Minkowski-Addition ist offensichtlich kommutativ und assoziativ, d. h. 
+			\item Die Minkowski-Addition erbt die Kommutativität und Assoziativität von der Addtion, d. h. 
 			es gilt
 			\[A\times B=B\times A\qquad\text{und}\qquad A\times(B\times C)=(A\times B)\times C.\]
 			
 			\item \label{bem:mink;3} 
 			Weiter gelten auch die Distributivgesetze, also 
 			\[(A\cup B)\times C=(A\times C)\cup (B\times C)\]
-			und mit der Kommutativität das Zweite. Wenden wir dies nun auf Polytope 
+			und mit der Kommutativität der Minkowski-Addition erhalten wir das zweite 
+			Distributivgesetz. Wenden wir dies nun auf Polytope 
 			$P,Q,R$ an, dann gilt
 			\begin{align}
 			(P+Q)\times R =(P\times R)+(Q\times R)\qquad\text{und}\qquad
@@ -1495,21 +1503,19 @@
 			erwähnt, die Untergruppe der Isometriegruppe, welche ausschließlich 
 			aus Translationen besteht. Wir stellen fest, dass für zwei 
 			Translationen $f,g$ im Zusammenhang mit der Minkowski-Summe 
-			\[f(A)\times g(B)=(f\circ g)(A\times B)\]
-			gilt.
+			\[f(A)\times g(B)=(g\circ f)(A\times B)\]
+			gilt (siehe dazu auch \cite{Hadwiger}[1.2.2]).
 		\end{enumerate}
 	\end{remark}
 	
 	
 	\begin{definition}[Parallelotop]
 		Seien $p_1,\ldots,p_d$ linear unabhängige Vektoren und $S_1,\ldots,S_d$ 
-		die Strecken, die die Richtung und Länge der Vektoren $p_1,\ldots,p_d$ 
-		haben
-		
-		%... noch nicht klar in welchem Punkt die Strecken starten evtl über 
-		% ausgezeichnete Ecke einführen.
-		
-		. Dann ist das Parallelotop $P$ definiert durch 
+		die durch die Vektoren $p_1,\ldots,p_d$ für alle $i=1,\ldots,n$ 
+		definierten Strecken
+		\[S_i=\{tp_i\ \vert\ t\in[0,1]\},\]
+		die die Richtung und Länge der Vektoren $p_1,\ldots,p_d$ 
+		haben. Dann ist das Parallelotop $P$ definiert durch 
 		\[P=S_1\times\ldots\times S_d.\]
 		Wir sagen, das Parallelotop wird durch die Vektoren $p_1,\ldots,p_d$ 
 		erzeugt.
@@ -1546,7 +1552,7 @@
 	\end{theorem}
 	
 	\begin{proof}
-		Beweisskizze: Der Beweis des Satzes ergibt sich auch zwei 
+		Beweisskizze: Der Beweis des Satzes ergibt sich aus zwei 
 		Resultaten. Es lässt sich feststellen, dass zwei Parallelotope 
 		scherungsäquivalent sind, falls ihre Gramschen Funktionale übereinstimmen. 
 		Vergleiche mit \cite{Hadwiger}[Kapitel 1, Satz III].
@@ -1564,11 +1570,12 @@
 		Ein Polytop $P$ ist ein $i$-stufiger Zylinder, falls es eine Darstellung 
 		der Form
 		\[P=P_1 \times\ldots\times P_i\]
-		gibt, wobei $P_k$ für alle $k=1,\ldots,i$ hier konvexe Polytope sind, die jeweils in einer $d_k$-dimensionalen Ebene $E_{d_k}$ liegen. Hierbei soll $\sum_{k=1}^i d_k =d$ und $d_k\geq 1$ für alle $k=1,\ldots,i$ gelten.
-		gelten und die Ebenen $E_{d_i}$ befinden sich paarweise in allgemeiner Lage.
+		gibt, wobei $P_k$ für alle $k=1,\ldots,i$ hier konvexe Polytope sind, die jeweils in einer $d_k$-dimensionalen Ebene $E_{d_k}$ liegen. Hierbei soll $\sum_{k=1}^i d_k =d$ und $d_k\geq 1$ für alle $k=1,\ldots,i$ 
+		gelten. Die Ebenen $E_{d_i}$ befinden sich paarweise in allgemeiner Lage, d. h. dass diese paarweise keine gleichen Richtungen aufweisen 
+		bzw. als Räume komplementär in $\setR^d$ liegen.
 	\end{definition}
 	
-	Wir bemerken, dass die konvexen Polytope in der Minkowski-Summe uneigentliche 
+	Wir bemerken, dass die konvexen Polytope $P_1,\ldots,P_n$ uneigentliche 
 	Polytope sind. Dennoch gibt es die Möglichkeit diese in ihrer Ebene 
 	$E_{d_k}$ als ein eigentliches Polytop aufzufassen.
 	
@@ -1592,7 +1599,7 @@
 	Es lässt sich nämlich feststellen, dass die erste Zylinderklasse gerade 
 	der Menge aller Polytope entspricht. Jedes Polytop lässt sich nach Satz  
 	\ref{thm:simplzerl} in endlich viele Simplizes zerlegen und jedes Simplex ist ein $1$-stufiger Zylinder. 
-	Die $d$te Zylinderklasse entspricht gerade Polytopen, welche mit endlich vielen 
+	Die $d$-te Zylinderklasse entspricht gerade Polytopen, welche mit endlich vielen 
 	Parallelotopen zerlegungsgleich sind. Es gilt sogar die folgende Eigenschaft.
 	
 	\begin{proposition} \label{bem:dteZylinderklasse}
@@ -1602,7 +1609,7 @@
 	
 	Hierbei ist $W$ der $d$-dimensionale Einheitswürfel, den wir erhalten, 
 	indem wir die Minkowski-Summe der Strecken $S_1,\ldots,S_n$, 
-	die die Richtung und Länge der Standardbasisvektoren $e_1,\ldots, e_d$ 
+	welche die Richtung und Länge der Standardbasisvektoren $e_1,\ldots, e_d$ 
 	des $\setR^d$ haben, bilden.
 	
 	\begin{proof}
@@ -1618,8 +1625,7 @@
 		Parallelotope $W_1,\ldots,W_n$ zerlegen, wobei
 		\[W_i:=(S_1\times\ldots S_{d-1}\times \lambda_i S_d)+
 		\sum_{k=1}^{i-1} \lambda_i e_d\]
-		für alle $i=1,\ldots,n$ gilt. Der Einheitswürfel $W$ wird hierbei 
-		sozusagen in $n$ viele Scheiben der Länge $\lambda_i$ geschnitten. 
+		für alle $i=1,\ldots,n$ gilt. Anschaulich wird der Einheitswürfel $W$  hierbei in $n$ viele Scheiben der Länge $\lambda_i$ geschnitten. 
 		Es gilt 
 		\[\mathfrak{D}(\lambda W_i)=\lambda^d \mathfrak{D}(W_i)=
 		\lambda^d \left(det \left(\begin{smallmatrix}
@@ -1643,26 +1649,25 @@
 	Die Zylinderklassen sind vor allem deswegen für uns interessant, da sie 
 	Beweisverfahren nach dem Prinzip der vollständigen Induktion ermöglichen. 
 	So können wir Aussagen für alle Polytope mittels Induktion über die 
-	Zylinderklassen beweisen. Wir werden dieses Verfahren beim Beweis zu Satz 
+	Zylinderklassen beweisen. Wir werden dieses Verfahren im Beweis zu Satz 
 	\ref{thm:zerlerg} verwenden. Im nächsten Abschnitt werden wir uns 
 	einen Hilfssatz anschauen, der die Dilatation von Polytopen 
-	in Verbindung mit der Vervielfachung von Polytopen setzen wird. 
+	in Verbindung mit der Vervielfachung von Polytopen bringen wird. 
 	Wir werden sehen, dass dieser Satz von zentraler Bedeutung für 
-	die darauffolgenden Beweise ist und somit ein sehr wichtiges Resultat ist. 
+	die darauffolgenden Beweise ist.
 	
 	\subsection{Hilfssatz}
 	
 	Wir wollen noch die Translationsgleichheit, analog zur Kongruenz, 
 	von Polytopen einführen. 
-	Dazu erinnern wir uns an die Translationsgruppe, die 
-	Untergruppe der Isometriegruppe, die ausschließlich aus Translationen besteht. 
+	Dazu erinnern wir uns an die Translationsgruppe.  
 	Wir brauchen an einigen Stellen in den Beweisen in diesem Abschnitt 
 	die Translationsgleichheit. Letztendlich können wir dann den Hilfssatz 
 	auf die Zerlegungsgleichheit verallgemeinern, da die translative 
 	Zerlegungsgleichheit die Zerlegungsgleichheit impliziert.
 	
 	\begin{definition}[Translationsgleichheit, translative Zerlegungsgleichheit]
-		Wir nennen zwei Polytop $P$ und $Q$ translationsgleich, wenn es 
+		Wir nennen zwei Polytope $P$ und $Q$ translationsgleich, wenn es 
 		eine Translation $f$ aus der Translationsgruppe gibt, sd. 
 		$f(P)=Q$ gilt. Wir schreiben $P\cong_t Q$. \\
 		Die Translationsgleichheit ist wie die Kongruenz eine 
@@ -1690,10 +1695,10 @@
 		Sei $p$ ein Vektor und  $s_1\ldots,s_i$ und 
 		$t_1,\ldots,t_{d-i}$ insgesamt 
 		$d$ linear unabhängige Vektoren, wobei $1\leq i\leq d-1$ ist. Dann ist 
-		das Simplotop $S$ gerade das Polytop, dessen Vektoren $s$ 
+		das Simplotop $S$ gerade das Polytop, dessen Elemente $s$ 
 		dargestellt werden durch
-		\[s=p\sum_{k=1}^i \alpha_k s_k +\sum_{j=1}^{d-i}\beta_j t_j,\]
-		für alle $1\geq \alpha_1\geq\ldots\geq\alpha_i\geq 0$ und 
+		\[s=p+\sum_{k=1}^i \alpha_k s_k +\sum_{j=1}^{d-i}\beta_j t_j,\]
+		für beliebige $1\geq \alpha_1\geq\ldots\geq\alpha_i\geq 0$ und 
 		$1\geq \beta_1\geq\ldots\geq\beta_{d-i}\geq 0$.
 	\end{definition}
 	
