@@ -395,7 +395,7 @@
 		da diese Aufzählung abzählbar ist und die einzelnen $\mathfrak{L}_q$ jeweils einen leeren Schnitt haben. Es gilt also mit der Monotonie und der Translationsinvarianz des Lebesgue-Maßes
 		\[\infty>vol(M)\geq vol\left(\bigcup_q \mathfrak{L}_q\right)\overset{\ref{lemma:nullmenge;1}}{=}\sum_q vol(\mathfrak{L}_q)=\sum_q vol(\mathfrak{L}).\]
 		Also muss gelten $vol(\mathfrak{L})=0$, da wir eine abzählbar große Summe haben. 
-		Damit ergibt sich also
+		Damit ergibt sich
 		\[vol(P+Q)=vol(P)+vol(Q).\]
 	\end{proof}
 
@@ -408,11 +408,11 @@
 	
 	\begin{proof}
 		Seien $P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots+Q_n$ die Zerlegungen von $P$ und 
-		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Wir erhalten mit Proposition \ref{prop:cong,vol} und Lemma \ref{lemma:nullmenge} dann 
+		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Mit Proposition \ref{prop:cong,vol} und Lemma \ref{lemma:nullmenge} erhalten wir 
 		\[vol(P)=vol(P_1+\ldots+P_n)=\sum_{i=1}^n vol(P_i)=\sum_{i=1}^n vol(Q_i)=vol(Q_1+\ldots+Q_n)=vol(Q).\]
 	\end{proof}
 	
-	Wir haben nun die Voraussetzungen, um uns den Fall in der Ebene 
+	Wir haben nun die nötigen Voraussetzungen, um uns den Fall in der Ebene 
 	anzuschauen. Wir wollen also beweisen, dass zwei Polygone genau 
 	dann zerlegungsgleich sind, wenn sie das gleiche Volumen haben. 
 	Diese Aussage liefert uns das Bolyai-Gerwien Theorem.
@@ -423,7 +423,7 @@
 	
 	\subsection{Bolyai-Gerwien Theorem}
 	
-	Im Folgenden setzen wir die Dimension $d$ auf $2$ und betrachten also Polygone. 
+	Im Folgenden setzen wir die Dimension $d$ auf $2$ d. h. wir betrachten Polygone. 
 	Dieses Kapitel richtet sich nach dem zweiten Kapitel von \cite{Boltianskii}.
 	
 	\begin{lemma}
@@ -433,21 +433,22 @@
 	\begin{proof}
 		Sei $P$ das Dreieck mit den Ecken $a,b,c$ und sei o.B.d.A $\overline{ab}$ die längste Seite. Wir zeichnen 
 		nun die Lotstrecke auf der Strecke $\overline{ab}$ durch den Punkt $c$ ein und nennen den Lotfußpunkt $d$. 
-		Der Punkt $d$ liegt auf der Strecke $\overline{ab}$, da sonst $\overline{ab}$ nicht die längste Seite war. 
+		Der Punkt $d$ liegt auf der Strecke $\overline{ab}$, da sonst $\overline{ab}$ nicht die längste Seite wäre. 
 		Nun halbieren wir die Lotstrecke $\overline{cd}$ und zeichnen die Lotgerade durch die Punkte $m$ und $n$ 
 		auf dem Mittelpunkt $e$ der Strecke $\overline{cd}$ ein ($m$ und $n$ sind hierbei die Schnittpunkte 
 		dieser Lotgeraden mit dem Dreieck $P$). Da $\overline{cd}$ senkrecht auf $\overline{ab}$ und die Lotgerade 
 		durch die Punkte $m$ und $n$ 
 		senkrecht auf $\overline{cd}$ ist, sind $\overline{ab}$ und die Lotgerade parallel. Wir bilden erneut die 
-		Lotgeraden auf $\overline{ab}$ durch die Punkte $a$ und $b$ und nennen den Schnittpunkt der Lotgerade 
+		Lotgeraden auf $\overline{ab}$ durch die Punkte $a$ und $b$. Wir nennen den Schnittpunkt der Lotgerade 
 		durch $a$ mit der Lotgerade, die durch $m$ und $n$ verläuft, $f$ und den Schnittpunkt der Lotgerade durch 
 		$b$ mit der Lotgerade, die durch $m$ und $n$ verläuft, $g$. Dadurch erhalten wir ein Rechteck $Q$ mit den 
 		Eckpunkten $a,b,g,f$. Wir stellen fest, dass die Dreiecke mit den Eckpunkten $m,e,c$ und $a,m,f$, welche in 
-		Abbildung \ref{Abb.1} grau hinterlegt sind, kongruent sind, da mit dem Strahlensatz der Winkel an dem 
+		Abbildung \ref{Abb.1} grau hinterlegt sind, kongruent sind. Da mit dem Strahlensatz der Winkel im 
 		Punkt $m$ in den beiden Dreiecken gleich ist. Somit haben die 
 		Dreiecke jeweils drei gleiche Winkel und sind damit kongruent. 
 		Weiterhin sind mit dem gleichen Argument die Dreiecke mit den Eckpunkten $e,n,c$ und $b,g,n$, welche weiß 
-		hinterlegt sind, kongruent. Damit lassen sich $P$ und $Q$ in die beiden 
+		hinterlegt sind, kongruent. Damit lassen sich $P$ und $Q$ jeweils 
+		in die beiden 
 		kongruenten Dreiecke und das schraffierte Trapez, mit den Eckpunkten $a,b,n,m$, zerlegen und sind somit 
 		zerlegungsgleich.
 	\end{proof}
@@ -495,7 +496,8 @@
 		parallel. Nun unterscheiden wir zwei Fälle
 		\begin{enumerate}
 			\item \textsl{Fall:} Die Verbindungsstrecke $\overline{ap}$ der Eckpunkte schneidet das 
-			Rechteck $omdc$ in den Punkten $e$, mit der Seite $\overline{dc}$ und $f$, mit der Seite $\overline{md}$, siehe Abbildung \ref{Abb.2}. 
+			Rechteck $omdc$ in den Punkten $e$, mit der Seite $\overline{dc}$, 
+			und $f$, mit der Seite $\overline{md}$, siehe Abbildung \ref{Abb.2}. 
 			Es gilt $2b_Q\geq b_P$.
 			Also sind die beiden in der Abbildung grau hinterlegten Dreiecke $maf$ und $cep$ und die beiden 
 			in der Abbildung hellgrau hinterlegten Dreiecke $abe$ und $fnp$ kongruent. Mit dem übrig gebliebenen, 
@@ -512,7 +514,7 @@
 			Nun zerlegen wir das Rechteck $Q$ in $k$ Rechtecke, deren 
 			Basis parallel ist zur Strecke $\overline{om}$, die wir nun entlang der neu enstandenen Strecke 
 			$\overline{ot}$ legen. Wir erhalten, somit das zu $Q$ zerlegungsgleiche Rechteck $otuv$. 
-			Sei die Breite dieses Rechtecks nun $b'$, die offensichtlich die Bedingung
+			Sei die Breite dieses Rechtecks nun $b'$, die die Bedingung
 			\[ 2b'>b_P \]
 			erfüllt. Damit können wir nach dem ersten Fall sagen, dass die Rechtecke $P$ und $otuv$ 
 			zerlegungsgleich sind. Mit der Transitivität der 
@@ -547,20 +549,21 @@
 		\[ P_1+\ldots+P_n\sim R_1+\ldots+R_n. \]
 		Da $P\sim P_1+\ldots+P_n$ gilt also mit Proposition \ref{lemma:transitiv}
 		\[ P\sim R_1+\ldots+R_n\]
-		und damit zum Rechteck $a_0b_0b_na_n$. Somit ist jedes Polygon zerlegungsgleich zu einem Rechteck. \\
-		Seien nun $P$ und $Q$ zwei Polygone mit gleichem Flächeninhalt, dann finden wir wie oben gezeigt 
+		und damit ist $P$ mit dem Rechteck $a_0b_0b_na_n$ zerlegungsgleich. 
+		Somit ist jedes Polygon zerlegungsgleich zu einem Rechteck. \\
+		Seien nun $P$ und $Q$ zwei Polygone mit gleichem Flächeninhalt, dann finden wir wie bereits oben gezeigt 
 		Rechtecke $R_1$ und $R_2$, s. d.
 		\[ P\sim R_1,\quad Q\sim R_2.\]
-		Nach Proposition \ref{prop:zerl,vol} haben $R_1$ und $_2$ also das 
-		gleiche Volumen und Lemma \ref{lemma:rechtecke} gilt also nun auch 
-		$R_1\sim R_2$ und damit folgt mit der Transitivität 
+		Nach Proposition \ref{prop:zerl,vol} haben $R_1$ und $R_2$ also das 
+		gleiche Volumen und nach Lemma \ref{lemma:rechtecke} gilt also nun auch 
+		$R_1\sim R_2$. Mit der Transitivität 
 		der Zerlegungsgleichheit 
-		(Proposition \ref{lemma:transitiv}), dass $P\sim Q$ gilt.
+		(Proposition \ref{lemma:transitiv}) folgt, dass $P\sim Q$ gilt.
 	\end{proof}
 	
 	Wir haben gesehen, dass sich jedes beliebige Polygon in Dreiecke zerlegen lässt. Diese Dreiecke 
 	sind nach Lemma \ref{lemma:dreieck,rechteck} zerlegungsgleich zu Rechtecken mit gleichem 
-	Flächeninhalt. Zuletzt können wir mit Satz \ref{theorem:bolyai-gerwien} die Rechtecke zerlegen zu Rechtecken 
+	Flächeninhalt. Mit Satz \ref{theorem:bolyai-gerwien} können wir die Rechtecke zerlegen in Rechtecke 
 	mit gleicher Grundseite. Dieses Verfahren können wir nun auf beliebige Polygone mit gleichem Flächeninhalt 
 	anwenden. Da diese Rechtecke nach Lemma \ref{lemma:rechtecke} zerlegungsgleich sind, folgt mit der 
 	Transitivität der Zerlegungsgleichheit aus Proposition \ref{lemma:transitiv} die Zerlegungsgleichheit der Polygone. \\
@@ -571,9 +574,8 @@
 	
 	\section{Zerlegungsgleichheit von Polyedern}
 	
-	Im Folgenden setzen wir die Dimension $d$ auf $3$ und betrachten Polyeder. 
+	Im Folgenden setzen wir die Dimension $d$ auf $3$, d. h. wir betrachten Polyeder. 
 	
-	Wir wollen zunächst ein paar Begriffe einführen.
 	\begin{definition}
 		Wir wollen den Schnitt 
 		einer der Hyperebenen, durch die der Polyeder definiert ist, mit dem 
@@ -581,17 +583,17 @@
 		zweier Seiten nennen wir eine \textsl{Kante} und den Schnitt zweier 
 		Kanten eine \textsl{Ecke} des Polyeders.
 	\end{definition}
-	Es war vor allem die Idee von Dehn entscheidend, 
+	Max Dehn fand bereits 1901 heraus, 
 	dass die Kanten des Polyeders der Teil sind, der beim Zerschneiden 
-	eine besonders wichtige Rolle spielt. Die Kanten sind sozusagen 
-	der Knackpunkt.
+	eine entscheidende Rolle spielt. Sie sind sozusagen 
+	der Knackpunkt. 
 	Deshalb müssen wir uns zunächst überlegen, was mit den Kanten eines Polyeders $P$ passiert, wenn wir diesen in zwei 
 	Polyeder $P_1$ und $P_2$ zerlegen. 
 	\begin{definition}
-		Sei $k$ eine Kante des Polyeders $P$.  Wir wollen jeder Kante $k$ ihre \textsl{Länge} $\ell(k)\in\setR_+$, also den größten 
-		Abstand der Punkte der Kante und den \textsl{Diederwinkel} $w(k)\in(0,2\pi)$, 
-		also der Winkel innerhalb des Polyeders, zwischen den beiden Hyperebenen, 
-		durch die die Kante $k$ entsteht, zuordnen.
+		Sei $k$ eine Kante des Polyeders $P$.  Wir wollen jeder Kante $k$ ihre \textsl{Länge} $\ell(k)\in\setR_+$ zurodnen, also den größten 
+		Abstand zwischen den Punkten der Kante. Weiter ordnen wir $k$ den \textsl{Diederwinkel} $w(k)\in(0,2\pi)$, 
+		also den Winkel innerhalb des Polyeders zwischen den beiden Hyperebenen, 
+		durch die die Kante $k$ entsteht, zu.
 	\end{definition}
 	Sei $\ell(k)=l$ die Länge der Kante $k$ und $w(k)=\varphi$ der 
 	dazugehörige Diederwinkel. Dann können 
@@ -610,17 +612,16 @@
 		Wir schneiden nicht durch die Kante: Die Kante $k$ lässt sich entweder in $P_1$ oder $P_2$ 
 		wiederfinden und sowohl Kantenlänge, als auch Diederwinkel bleiben gleich.
 		\item \label{bem:dehn;4} 
-		Bleibt nur noch der Sonderfall, wenn wir durch eine der Flächen von $P$ schneiden. Hierbei entstehen 
-		aus dem nichts zwei neue Kanten $k_1$ von $P_1$ und $k_2$ von $P_2$, deren Längen gleich sind und deren Winkel sich zu $\pi$ addieren lassen. D. h. für $w(k_1)=\varphi_1$ und 
+		Bleibt nur noch der Sonderfall, wenn wir durch eine der Flächen von $P$ schneiden. Hierbei entstehen zwei neue Kanten $k_1$ von $P_1$ und $k_2$ von $P_2$, deren Längen gleich sind und deren Winkel sich zu $\pi$ addieren lassen. D. h. für $w(k_1)=\varphi_1$ und 
 		$w(k_2)=\varphi_2$ gilt $\varphi_1 +\varphi_2 =\pi$.
 	\end{enumerate}
-	Wir wollen eine Operation, die in beiden Argumenten, sowohl in Länge, als auch Diederwinkel, linear ist 
+	Wir wollen eine Operation, die in beiden Argumenten, sowohl in Länge als auch Diederwinkel, linear ist 
 	und bei der wir einen Diederwinkel $\pi$ mit $0$ identifizieren. Dies führt uns auf das Tensorprodukt.
 	
 	\subsection{Tensoren}
 	
-	Wir kennen Tensoren bereits aus der linearen Algebra. Deshalb wiederholen wir noch einmal die universelle 
-	Eigenschaft dieser.
+	Tensoren sind bereits aus der Linearen Algebra bekannt. Wir wiederholen hier 
+	noch einmal ihre universelle Eigenschaft.
 	
 	\begin{proposition}[Universelle Eigenschaft] \label{prop:univeig}
 		Sei $R$ ein kommutativer Ring mit Eins und seien $M$ und $N$ zwei $R$-Moduln. Dann ist das 
@@ -646,10 +647,11 @@
 	\end{proposition}
 	
 	\begin{proof}
-		Für den Beweis verweise ich auf \cite[Proposition 2.12]{introductiontocomalg} oder \cite[Satz 7.3]{SkriptLA}.
+		Für den Beweis verweise ich auf \cite[Proposition 2.12]{introductiontocomalg} und \cite[Satz 7.3]{SkriptLA}.
 	\end{proof}
 	
-	Demzufolge wissen wir nun, dass das Tensorprodukt folgende Eigenschaften erfüllt. Sei $R$ ein kommutativer Ring 
+	Demzufolge wissen wir nun, dass das Tensorprodukt folgende Eigenschaften erfüllt: \\ 
+	Sei $R$ ein kommutativer Ring 
 	mit Eins und $R$-Moduln $M$ und $N$, dann gilt für alle $m,m'\in M$, $n,n'\in N$ und $r,r'\in R$
 	\begin{align*}
 		(mr+m'r'\otimes n)=(m\otimes n)\cdot r +(m'\otimes n)\cdot r' \\
@@ -730,8 +732,8 @@
 	\begin{proof}
 		Seien $P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots+Q_n$ die Zerlegungen von $P$ und 
 		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Dann folgt mit Proposition \ref{prop:zerl,vol}
-		dass $vol(P)=vol(Q)$. Außerdem gilt mit Proposition \ref{prop:cong,dehn}
-		und mit Proposition \ref{prop:invarianz}
+		dass $vol(P)=vol(Q)$. Außerdem gilt mit den Propositionen \ref{prop:cong,dehn}
+		und \ref{prop:invarianz}
 		\[D(P)=D(P_1+\ldots+P_n)=\sum_{i=1}^n D(P_i) =\sum_{i=1}^n D(Q_i)=D(Q_1+\ldots+Q_n)=D(Q).\]
 	\end{proof}
 	
@@ -1320,7 +1322,8 @@
 		\ &\ddots &\ \\
 		0 &\ &\lambda
 		\end{pmatrix}\] 
-		darstellen. Für das Volumen eines Polytops $P$ erhält man mit 
+		bezüglich der Standardbasis des $\setR^d$ darstellen. Für das Volumen 
+		eines Polytops $P$ erhält man mit 
 		der Transformationsformel aus der Analysis (siehe auch \cite[Satz 4.7]{SkriptAna3})
 		\[vol(\lambda P)=\abs{det(M)}\cdot vol(P)=\lambda^d\cdot vol(P).\]
 	\end{remark}
@@ -1354,8 +1357,9 @@
 		Seien für die Hinrichtung $P\cong Q$ gegeben. Somit gibt es eine Isometrie 
 		$f$, s. d. gilt $f(P)=Q$. Wir können die Isometrie $f$ durch ein $\alpha\in
 		\setR^d$ und eine orthogonale Matrix $U\in O(d)$ darstellen, s. d. 
-		$f(P)=\alpha + UP$ gilt. Betrachte die Isometrie $f_{\lambda}$, die wir 
-		durch $f_{\lambda}(x)=\lambda\cdot \alpha +Ux$ für alle $x\in\setR^d$ definieren. 
+		$f(P)=\alpha + UP$ gilt. Betrachte die Isometrie $f_{\lambda}$, die 
+		für alle $x\in\setR^d$ durch 
+		$f_{\lambda}(x)=\lambda\cdot \alpha +Ux$ definieren. 
 		Offensichtlich ist $f_{\lambda}$ wieder eine Isometrie. 
 		Dann gilt
 		\[f_{\lambda}(\lambda P)=\lambda\cdot \alpha+U \lambda P =\lambda\cdot 
@@ -1431,7 +1435,7 @@
 		Wir wollen uns überlegen, wie sich das Volumen bei einer Vervielfachung 
 		verhält. Dazu sei $P$ ein Polytop und $n$ eine natürliche Zahl. 
 		Das Polytop $n\cdot P$ lässt sich in endlich viele Polytope 
-		$P_1\ldots,P_n$ zerlegen, also $n\cdot P=P_1+\ldots+P_n$ und für alle 
+		$P_1,\ldots,P_n$ zerlegen, also $n\cdot P=P_1+\ldots+P_n$ und für alle 
 		$i=1,\ldots,n$ soll $P_i\cong P$ gelten. Mit Proposition 
 		\ref{prop:cong,vol} gilt dann 
 		\[vol(n\cdot P)=vol(P_1+\ldots+P_n)=vol(P_1)+\ldots+vol(P_n)=n\cdot vol(P).\]
@@ -1458,7 +1462,7 @@
 	\begin{proof}
 		Wir finden $n$ viele Polytope $R_1,\ldots,R_n$ mit 
 		$R_i\cong (P+Q)$ für alle $i=1,\ldots,n$, s. d. 
-		$n\cdot(P+Q)=R_1+\ldots+R_n$. Da Schnitte von Polytope wieder 
+		$n\cdot(P+Q)=R_1+\ldots+R_n$. Da Schnitte von Polytopen wieder 
 		Polytope sind, folgt, dass sich jedes 
 		$R_i$ darstellen lässt durch Polytope $P_i$ und $Q_i$ für alle 
 		$i=1,\ldots,n$, wobei $P_i\cong P$ und $Q_i\cong Q$. Ebenso finden wir 
@@ -1493,9 +1497,9 @@
 	\end{definition}
 	
 	\begin{remark} \label{bem:mink}
+		Seien $A,B,C$ Mengen, dann ergeben sich folgende Eigenschaften 
+		mit der Minkowski-Summe.
 		\begin{enumerate}
-			Seien $A,B,C$ Mengen, dann ergeben sich folgende Eigenschaften 
-			mit der Minkowski-Summe.
 			\item Die Minkowski-Addition erbt die Kommutativität und Assoziativität von der Addtion, d. h. 
 			es gilt
 			\[A\times B=B\times A\qquad\text{und}\qquad A\times(B\times C)=(A\times B)\times C.\]
@@ -1505,9 +1509,9 @@
 			\[(A\cup B)\times C=(A\times C)\cup (B\times C)\]
 			und mit der Kommutativität der Minkowski-Addition erhalten wir das zweite 
 			Distributivgesetz. Wenden wir dies nun auf Polytope 
-			$P,Q,R$ an, dann gilt
+			$P,Q$ und $R$ an, dann gilt
 			\begin{align}
-			(P+Q)\times R =(P\times R)+(Q\times R)\qquad\text{und}\qquad
+			(P+Q)\times R =(P\times R)+(Q\times R)\quad\text{und}\quad
 			P\times (Q+R)=(P\times Q)+(P\times R).
 			\end{align}
 			\item \label{bem:mink;1}In Verbindung mit der Dilatation ergibt sich für Polytope 
@@ -1524,7 +1528,6 @@
 			gilt (siehe dazu auch \cite{Hadwiger}[1.2.2]).
 		\end{enumerate}
 	\end{remark}
-	
 	
 	\begin{definition}[Parallelotop]
 		Seien $p_1,\ldots,p_d$ linear unabhängige Vektoren und $S_1,\ldots,S_d$ 
@@ -1578,7 +1581,7 @@
 		in endlich vielen Scherungen die Parallelotope ineinander 
 		überführen können. Bei einer Scherung addieren wir auf einen 
 		dieser Vektoren ein Vielfaches eines anderen Vektors von diesen.
-		Weiter kann man dann aus der Scherungsäquivalenz der Parallelotope folgern, 
+		Weiter kann man aus der Scherungsäquivalenz der Parallelotope folgern, 
 		dass diese auch zerlegungsgleich sind. Siehe dazu 
 		\cite{Hadwiger}[Kapitel 1,Satz IV].
 	\end{proof}
@@ -1587,8 +1590,8 @@
 		Ein Polytop $P$ ist ein $i$-\textsl{stufiger Zylinder}, falls es eine Darstellung 
 		der Form
 		\[P=P_1 \times\ldots\times P_i\]
-		gibt, wobei $P_k$ für alle $k=1,\ldots,i$ hier konvexe Polytope sind, die jeweils in einer $d_k$-dimensionalen Ebene $E_{d_k}$ liegen. Hierbei soll $\sum_{k=1}^i d_k =d$ und $d_k\geq 1$ für alle $k=1,\ldots,i$ 
-		gelten. Die Ebenen $E_{d_i}$ befinden sich paarweise in allgemeiner Lage, d. h. dass diese paarweise keine gleichen Richtungen aufweisen 
+		gibt, wobei $P_k$ für alle $k=1,\ldots,i$ konvexe Polytope sind, die jeweils in einer $d_k$-dimensionalen Ebene $E_{d_k}$ liegen. Hierbei soll $\sum_{k=1}^i d_k =d$ und $d_k\geq 1$ für alle $k=1,\ldots,i$ 
+		gelten. Die Ebenen $E_{d_k}$ befinden sich paarweise in allgemeiner Lage, d. h. dass diese paarweise keine gleichen Richtungen aufweisen 
 		bzw. als Räume komplementär in $\setR^d$ liegen.
 	\end{definition}
 	
@@ -1638,10 +1641,10 @@
 		\begin{align}
 			\lambda_i =\frac{\mathfrak{D}(P_i)}{\lambda^d} \label{thm:dtezyl;1}
 		\end{align}
-		für alle $i=1,\ldots,n$. Dann lässt der Einheitswürfel in $n$ viele 
+		für alle $i=1,\ldots,n$. Dann lässt sich der Einheitswürfel $W$ in $n$ viele 
 		Parallelotope $W_1,\ldots,W_n$ zerlegen, wobei
 		\[W_i:=(S_1\times\ldots S_{d-1}\times \lambda_i S_d)+
-		\sum_{k=1}^{i-1} \lambda_i e_d\]
+		\sum_{k=1}^{i-1} \lambda_k e_d\]
 		für alle $i=1,\ldots,n$ gilt. Anschaulich wird der Einheitswürfel $W$  hierbei in $n$ viele Scheiben der Länge $\lambda_i$ geschnitten. 
 		Es gilt 
 		\[\mathfrak{D}(\lambda W_i)=\lambda^d \mathfrak{D}(W_i)=
@@ -1697,12 +1700,24 @@
 	\end{definition}
 	
 	\begin{remark}
-		Es ist klar, dass aus Translationsgleichheit von Polytopen auch die 
+		Es ist klar, dass aus der Translationsgleichheit von Polytopen auch die 
 		Kongruenz folgt. Damit folgt aus der translativen Zerlegungsgleichheit 
 		die Zerlegungsgleichheit. Wir bemerken, dass die Eigenschaften 
 		in diesem Kapitel, 
 		die wir für die Zerlegungsgleichheit gezeigt haben, 
 		auch für die translative Zerlegungsgleichheit gelten. 
+	\end{remark}
+	
+	Weiter erhalten wir mit Bemerkung \ref{bem:mink} Eigenschaft \ref{bem:mink;2} 
+	auch die folgende Eigenschaft.
+	\begin{remark}\label{bem:mink;zerl}
+		Seien $P,Q,R,S$ Polytope mit $P\approx R$ und $Q\approx S$, dann gilt 
+		$P\times Q\approx R\times S$. \\
+		Betrachten wir die Zerlegungen der einzelnen Polytope und 
+		die von $P\times Q$ in $R\times S$. So ergeben sich, 
+		durch Ausmultiplizieren mit den Distributivgesetzen der Minkowski-Addition, 
+		Zerlegungen, dessen einzelne Polytope mit Bemerkung 
+		\ref{bem:mink} Eigenschaft \ref{bem:mink;2} translationsgleich sind.
 	\end{remark}
 	
 	Bevor wir zu dem Hilfssatz kommen, wollen wir uns die kanonische 
@@ -1800,31 +1815,31 @@
 			Satz \ref{thm:kanonsimpl} mit den Parametern 
 			$\lambda_j=\frac{n-j}{n-j+1}$ an und 
 			erhalten für alle $j=1,\ldots,n-1$ die Relationen 
-			\[P\sim \frac{n-j}{n-j+1} P+\left(1-\frac{n-j}{n-j+1}\right)P+P_{j,0}
+			\[P\approx \frac{n-j}{n-j+1} P+\left(1-\frac{n-j}{n-j+1}\right)P+P_{j,0}
 			=\frac{n-j}{n-j+1}P+\frac{1}{n-j+1}P+P_{j,0},\]
 			wobei $P_{j,0}\in\mathfrak{B}_2$ gilt. Mit Dilatation mit 
 			$n-j+1$ erhalten wir dann die Relationen 
 			\begin{align*}
-				(n-j +1)P\sim(n-j )P+P_j+P_{j, 0} 
+				(n-j +1)P\approx (n-j )P+P_j+P_{j, 0} 
 			\end{align*}
 			für alle $j=1,\ldots,n-1$, wobei $P_{j}\cong_t P$ und 
 			$P_{j, 0}\in\mathfrak{B}_2$ gilt. Wir schreiben die Relationen 
 			aus als
 			\begin{align*}
-				nP &\sim (n-1)P+P_1+P_{1,0} \\
-				(n-1)P &\sim (n-2)P+P_2 +P_{2,0} \\
+				nP &\approx (n-1)P+P_1+P_{1,0} \\
+				(n-1)P &\approx (n-2)P+P_2 +P_{2,0} \\
 				&\ \vdots \\
-				3P &\sim P +P_{n-2}+P_{n-2,0} \\
-				2P &\sim P +P_{n-1}+P_{n-1,0}
+				3P &\approx P +P_{n-2}+P_{n-2,0} \\
+				2P &\approx P +P_{n-1}+P_{n-1,0}
 			\end{align*}
 			Es lässt sich durch sukzessives Einsetzen erkennen, dass wir 
 			schreiben können 
-			\[nP\sim (P+P_1+\ldots+P_{n-1})+(P_{1,0}+\ldots+P_{n-1,0}).\]
+			\[nP\approx (P+P_1+\ldots+P_{n-1})+(P_{1,0}+\ldots+P_{n-1,0}).\]
 			Wir können die erste Summe zusammenfassen zu $n \cdot P$ 
 			und da alle $P_{j,0}$ in $\mathfrak{B}_2$ liegen, liegt auch 
 			die Summe in $\mathfrak{B}_2$ und wir erhalten
 			\begin{align}
-				nP\sim n\cdot P+ P_0 \label{thm:zyl;1}
+				nP\approx n\cdot P+ P_0 \label{thm:zyl;1}
 			\end{align}
 			für ein $P_0\in\mathfrak{B}_2$. Damit sind wir mit dem 
 			ersten Fall fertig.
@@ -1834,8 +1849,8 @@
 			$P=P_1\times\ldots \times P_i$ 
 			für konvexe Polytope $P_1\ldots,P_i$ die in $d_k$-dimensionalen 
 			Ebenen $E_{d_k}$ liegen, mit $\sum_{k=1}^i d_k =d$ und 
-			$d_k\geq 1$ ist, wobei $k=1,\ldots i$ 
-			gilt. Es gilt mit Bemerkung \ref{bem:mink} Eigenschaft  
+			$d_k\geq 1$ für alle $k=1,\ldots i$. 
+			Es gilt mit Bemerkung \ref{bem:mink} Eigenschaft  
 			\ref{bem:mink;1} auch 
 			\[nP=nP_1\times\ldots\times nP_i.\]
 			Betrachten wir Zylinderklassen in den Räumen $\setR^{d_k}$, in denen 
@@ -1848,15 +1863,16 @@
 			der Ebene $E_{d_k}$ liegen. Mit dem ersten Fall (Relation 
 			\ref{thm:zyl;1}) folgt also für 
 			die Polytope, dass für alle $k=1,\ldots,i$ gilt
-			\[nP_k\sim P_{k,0}+n\cdot P_k=P_{k,0}+P_{k,1}+\ldots+P_{k,n},\]
+			\[nP_k\approx P_{k,0}+n\cdot P_k=P_{k,0}+P_{k,1}+\ldots+P_{k,n},\]
 			wobei $P_{k,0}\in \mathfrak{B}_2^{(d_k)}$ und $P_{k,j}\cong_t P_k$ 
-			für alle $j =1,\ldots,n$ ist. Wir erhalten die Relation 
-			\[nP=nP_1\times\ldots\times nP_i \sim (P_{1,0}+P_{1,1}+\ldots+P_{1,n})
+			für alle $j =1,\ldots,n$ ist. Wir erhalten mit 
+			Bemerkung \ref{bem:mink;zerl} die Relation 
+			\[nP=nP_1\times\ldots\times nP_i \approx (P_{1,0}+P_{1,1}+\ldots+P_{1,n})
 			\times\ldots\times (P_{i,0}+P_{i,1}+\ldots+P_{i,n}),\]
 			die wir mit den Distributivgesetzen aus Bemerkung 
 			\ref{bem:mink} \ref{bem:mink;3} 
 			umformen können zu
-			\[nP\sim \sum_{\genfrac{}{}{0pt}{1}{\mu=(\mu_1,\ldots,\mu_i)}{\in \{0,1,\ldots,n\}^i}}
+			\[nP\approx \sum_{\genfrac{}{}{0pt}{1}{\mu=(\mu_1,\ldots,\mu_i)}{\in \{0,1,\ldots,n\}^i}}
 			\bigtimes_{k=1}^i P_{k,\mu_k}.\]
 			Hierbei läuft der Vektor $\mu$ in $i$ Koordinaten alle 
 			Kombinationen von $0$ bis $n$ durch, es gibt also $(n+1)^i$ 
