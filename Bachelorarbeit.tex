@@ -56,7 +56,7 @@
 			\LARGE\textbf{{Bachelorarbeit}}\\
 			\vspace{0.5cm}
 			\normalsize
-			Zur Erlangung des Akademischen Grades\\
+			Zur Erlangung des akademischen Grades\\
 			Bachelor of Science\\
 			\vspace{0.3cm}
 			vorgelegt am 27. Februar 2020 \\
@@ -99,7 +99,7 @@
 		\vspace{1.5cm}
 		
 		\normalsize 
-		Hiermit versichere ich, dass die vorliegende Arbeit von mir selbstständig verfasst wurde und dass keine anderen als die angegebenen Quellen und Hilfsmittel benutzt wurden.\\ Sämtliche Stellen der Arbeit, die im Wortlaut oder dem Sinn nach Publikationen anderer Autoren entsprechen wurden gekennzeichnet.\\
+		Hiermit versichere ich, dass die vorliegende Arbeit von mir selbstständig verfasst wurde und dass keine anderen als die angegebenen Quellen und Hilfsmittel benutzt wurden.\\ Sämtliche Stellen der Arbeit, die im Wortlaut oder dem Sinn nach Publikationen anderer Autoren entsprechen, wurden gekennzeichnet.\\
 		Diese Erklärung bezieht sich auch auf in der Arbeit enthaltene Grafiken und bildliche Darstellungen.\\
 		Darüber hinaus versichere ich, dass diese Arbeit nicht und auch nicht auszugsweise bereits für eine andere Prüfung angefertigt wurde. 
 		\ \\
@@ -135,13 +135,15 @@
 	Schon in der Antike beschäftigten sich die Menschen mit der Berechnung 
 	von Flächeninhalten und Volumina geometrischer Figuren. So auch 
 	der griechische Mathematiker Euklid. Dabei galt es vor allem 
-	einfache Methoden zu finden. So versuchte man schon damals komplizierte 
-	Objekte mit Bekannten darzustellen, um diese besser berechnen zu können. 
+	einfache Methoden zur Berechnung zu finden. So versuchte man schon 
+	damals komplizierte 
+	Objekte mit bereits bekannten Objekten darzustellen, um diese besser 
+	berechnen zu können. 
 	Beispielweise greift man bei der Berechnung des Flächeninhalts eines 
 	Dreiecks auf die Berechnung bei einem Parallelogramm zurück und hier 
 	wiederum auf die Berechnung bei einem Rechteck. Je nachdem wie 
 	detailliert manche Objekte sind, gestaltet sich dies jedoch als äußerst 
-	schwierige Aufgabe. Wir wollen uns in dieser Arbeit mit Polytopen, 
+	schwierig. Wir wollen uns in dieser Arbeit mit Polytopen, 
 	salopp gesagt mit Vielecken, beschäftigen. Zwei Polytope sind 
 	zerlegungsgleich, wenn sie sich in endlich viele paarweise kongruente 
 	Stücke zerlegen lassen. Die Frage, ob das Volumen zweier Polytope genau 
@@ -149,8 +151,8 @@
 	Arbeit eine zentrale Rolle. Eine derartige Aussage würde es erlauben, 
 	auf die Methoden wie die Exhaustionsmethode bei der Volumenberechung von 
 	unterschiedlichen Figuren, zu verzichten. In der Ebene 
-	bewiesen der ungarische Mathematiker Farkas Bolyai (im Jahr 1832) und 
-	der deutsche Polizist und Mathematiker Paul Gerwien (im Jahr 1833) 
+	bewiesen der ungarische Mathematiker Farkas Bolyai (1832) und 
+	der deutsche Polizist und Mathematiker Paul Gerwien (1833) 
 	die Aussage unabhängig voneinander (siehe dazu auch \cite{Boltianskii}). 
 	Es stellt sich nun die Frage, ob die Aussage auch im dreidimensionalen 
 	Raum wahr ist. Der Mathematiker Carl Friedrich Gauß stieß bereits 1844 
@@ -173,7 +175,8 @@
 	Bereits ein Jahr nach dem Vortrag löste Hilberts Schüler Max Dehn 
 	das Problem. Dehn definierte die sogenannte Dehn-Invariant, eine 
 	Invariante, die sich auf die Kanten eines Polyeders bezieht und sich 
-	beim Zerschneiden nicht ändert. Die Dehn-Invariante ist für jeden Polyeder 
+	beim Zerschneiden von Polyedern nicht ändert. 
+	Die Dehn-Invariante ist für jeden Polyeder 
 	also, wie das Volumen, ein ausgezeichnetes Charakteristikum. 
 	Wir wollen in dieser Arbeit zunächst die Zerlegungsgleichheit 
 	von Polytopen genauer betrachten, um dann die Aussage in der Ebene, 
@@ -218,24 +221,29 @@
 		$\alpha(x)\leq r$ für alle $x\in P$ gilt.
 	\end{definition}
 	
-	Der Schnitt zweier konvexer $d$-Polytope ist offensichtlich wieder ein konvexes $d$-Polytop. 
-	Wir wollen die \textsl{Dimension} eines konvexen $d$-Polytops $P$ 
-	definieren als das 
-	Maximum der Anzahl der linear unabhängigen Vektoren, die wir in $P$ finden. 
-	Hierbei ist es auch möglich, dass das, durch die Halbräume entstehende, 
-	konvexe $d$-Polytop von niedrigerer Dimension ist, als der ursprünglich 
-	zugrunde liegende Vektorraum, das Polytop also keine inneren Punkte hat. 
-	Ein solches Polytop wollen wir \textsl{uneigentlich} nennen. 
-	Ein Polytop, dessen 
-	Dimension gleich der des Vektorraums ist bzw. das innere Punkte besitzt, 
-	nennen wir dementsprechend \textsl{eigentlich}. 
-	Wenn von Polytopen die Rede ist 
-	sprechen wir, falls nicht anders genannt, immer von eigentlichen Polytopen.
-	Wir wollen zwei konvexe $d$-Polytope \textsl{disjunkt} nennen, 
-	falls der Schnitt der 
-	beiden Polytope ein uneigentliches Polytop ist, also eine niedrigere 
-	Dimension hat, als der zugrunde liegende Vektorraum. Für die Vereinigung 
-	zweier disjunkter, konvexer $d$-Polytope $P$ und $Q$ schreiben wir $P+Q$.
+	\begin{remark}
+		Der Schnitt zweier konvexer $d$-Polytope ist offensichtlich wieder ein konvexes $d$-Polytop. 
+	\end{remark}
+
+	\begin{definition}
+		Wir wollen die \textsl{Dimension} eines konvexen $d$-Polytops $P$ 
+		definieren als das 
+		Maximum der Anzahl der linear unabhängigen Vektoren, die wir in $P$ finden. 
+		Hierbei ist es auch möglich, dass das, durch die Halbräume entstehende, 
+		konvexe $d$-Polytop von niedrigerer Dimension ist als der ursprünglich 
+		zugrunde liegende Vektorraum, das Polytop also keine inneren Punkte hat. 
+		Ein solches Polytop wollen wir \textsl{uneigentlich} nennen. 
+		Ein Polytop, dessen 
+		Dimension gleich der des Vektorraums ist bzw. das innere Punkte besitzt, 
+		nennen wir dementsprechend \textsl{eigentlich}. 
+		Wenn von Polytopen die Rede ist 
+		sprechen wir, falls nicht anders genannt, immer von eigentlichen Polytopen.
+		Wir wollen zwei konvexe $d$-Polytope \textsl{disjunkt} nennen, 
+		falls der Schnitt der 
+		beiden Polytope ein uneigentliches Polytop ist, also eine niedrigere 
+		Dimension hat, als der zugrunde liegende Vektorraum. Für die Vereinigung 
+		zweier disjunkter, konvexer $d$-Polytope $P$ und $Q$ schreiben wir $P+Q$.
+	\end{definition}
 	
 	\begin{definition}[Polytop]
 		Ein $d$-\textsl{Polytop} $P$ ist die Vereinigung endlich vieler 
@@ -258,7 +266,7 @@
 		Wir nennen zwei Polytope $P$ und $Q$ \textsl{kongruent}, wenn es eine Isometrie $g$ gibt, s. d. 
 		$g(P)=Q$. Wir schreiben dann $P\cong Q$.
 	\end{definition}
-
+	
 	 Mit \textsl{Isometrien} meinen wir hier längenerhaltende Affinitäten, 
 	 also bijektive affine Abbildungen, die den Abstand zweier beliebiger Punkte erhalten. 
 	 Isometrien sind Bewegungen, d. h. sie setzen sich 
@@ -268,11 +276,11 @@
 	 eine Drehung finden, s. d. wir für alle $x\in \setR^d$ 
 	 die Darstellung $f(x)=\alpha + Ux$ erhalten. 
 	 Da das Skalarprodukt translationsinvariant ist und 
-	 auch invariant unter Drehungen, ist das Skalarprodukt auch invariant 
+	 invariant unter Drehungen, ist das Skalarprodukt auch invariant 
 	 unter Isometrien. Weiter bilden Isometrien Halbräume wieder auf 
 	 Halbräume ab und damit auch Polytope auf Polytope. Die Menge 
-	 der Isometrien bildet, mit der Verknüpfung von Abbildungen als 
-	 Operation und der Identitätsabbildung als neutralem Element, eine Gruppe. 
+	 der Isometrien bildet, mit der Hintereinanderausführung von Abbildungen als 
+	 Verknüpfung und der Identitätsabbildung als neutralem Element, eine Gruppe. 
 	 Wir wollen 
 	 diese Gruppe die \textsl{Isometriegruppe} nennen. Wir bemerken außerdem, dass 
 	 wir die Isometrien auf Translationen einschränken können und erhalten 
@@ -281,9 +289,10 @@
 	 Isometriegruppe. Wir werden diese im späteren Verlauf benötigen.
 
 	\begin{remark}
-		Wir stellen fest, dass Kongruenz eine Äquivalenzrelation ist. 
-		Die Reflexivität und Symmetrie sind klar. Zur Transitivität seien 
-		$P,Q,R$ drei $d$-Polytope mit $P\cong Q$ und $Q\cong R$, es gibt also 
+		Wir stellen fest, dass Kongruenz von Polytopen eine Äquivalenzrelation ist. 
+		Die Reflexivität und Symmetrie sind klar. Es bleibt die Transitivität 
+		zu zeigen, dazu seien 
+		$P,Q,R$ drei $d$-Polytope mit $P\cong Q$ und $Q\cong R$. Es gibt also 
 		Isometrien $f$ und $g$, s. d. $f(P)=Q$ und $g(Q)=R$ gilt. Dann ist $g\circ f$ 
 		wieder eine Isometrie und wir erhalten 
 		\[(g\circ f)(P)=g(f(P))=g(Q)=R,\]
@@ -305,11 +314,11 @@
 	Wir stellen fest, dass die Kongruenz zweier Polytope auch deren 
 	Zerlegungsgleichheit impliziert. Dazu betrachten wir als Zerlegung einfach 
 	die Polytope selbst. Die Zerlegungsgleichheit von Polytopen ist eine 
-	Äquivalenzrelation. Die Reflexivität und Symmetrie sind klar. Die 
-	Transitivität müssen wir noch zeigen.
+	Äquivalenzrelation. Reflexivität und Symmetrie sind klar. Die Transitivität 
+	wird in der folgenden Proposition bewiesen.
 	
 	\begin{proposition}[Transitivität der Zerlegungsgleichheit] \label{lemma:transitiv}
-		Seien $P$, $Q$ und $R$ Polytope und es gilt $P\sim Q$ und $Q\sim R$. Dann folgt $P\sim R$.
+		Seien $P$, $Q$ und $R$ Polytope und es gelte $P\sim Q$ und $Q\sim R$. Dann folgt $P\sim R$.
 	\end{proposition}
 	
 	Der Beweis hiervon richtet sich nach \cite{Boltianskii}[Lemma 1, Kapitel 2].
@@ -330,7 +339,7 @@
 		für $i=1,\ldots,n$ und $j=1,\ldots,m$. Beachte, dass $F_{ij}$ leer sein kann. Zwei verschiedene 
 		$F_{ij}$ sind disjunkt, denn für $i_1,i_2\in\{1,\ldots\,n\}$ mit $i_1\neq i_2$ gilt 
 		\[F_{i_1 j}\cap F_{i_2 j}=(Q_{i_1}\cap Q_j')\cap(Q_{i_2}\cap Q_j')=(Q_{i_1}\cap Q_{i_2})\cap Q_j'.\] 
-		Da $Q_{i_1}$ und $Q_{i_2}$ disjunkt sind, d. h. der Schnitt niedrigerdimensional ist, ist 
+		Da $Q_{i_1}$ und $Q_{i_2}$ disjunkt sind, d. h. der Schnitt niedrigerdimensional, als die Dimension des umgebenen Vektorraums ist, ist 
 		auch dieser Schnitt mit $Q_j'$ niedrigerdimensional, also sind $F_{i_1j}$ und $F_{i_2j}$ disjunkt. Außerdem gilt
 		\begin{align}
 		\bigcup_{j=1}^m F_{ij} = \bigcup_{j=1}^m \left( Q_i \cap Q_j' \right) = 
@@ -342,16 +351,16 @@
 		\bigcup_{i=1}^n \bigcup_{j=1}^m f_i(F_{ij}), \]
 		und für $R$ gilt analog
 		\[ R=\bigcup_{i=1}^n \bigcup_{j=1}^m g_j(F_{ij}). \]
-		Damit haben wir sowohl für $P$, als auch für $R$ eine Zerlegung in 
+		Damit haben wir sowohl für $P$ als auch für $R$ eine Zerlegung in 
 		disjunkte Polytope gefunden. Als letztes überlegen wir uns, 
-		dass gilt $f_i(F_{ij})\cong g_j(F_{ij})$. Betrachte hierzu die 
+		dass gilt $f_i(F_{ij})\cong g_j(F_{ij})$. Wir betrachten hierzu die 
 		Isometrie $g_j\circ f_i^{-1}$, dann gilt 
 		$g_j(f_i^{-1}(f_i(F_{ij})))=g_j(F_{ij})$. Also finden wir für $P$ und 
 		$R$ jeweils eine Zerlegung aus kongruenten Polytopen und damit sind 
-		auch $P$ und $R$ zerlegungsgleich bzw. $P\sim R$.
+		auch $P$ und $R$ zerlegungsgleich in Formeln $P\sim R$.
 	\end{proof}
 	
-	Wir wollen nun den Begriff des Volumens eines Polytops anschauen. Dabei ist 
+	Wir wollen nun den Begriff des Volumens eines Polytops betrachten. Dabei ist 
 	vor allem die Invarianz des Volumens unter Zerschneidung von Polytopen, die wir in Proposition \ref{prop:zerl,vol} beweisen werden, ein wichtiges Resultat. Mit dem \textsl{Volumen} $vol$ eines Polytops meinen wir im Folgenden das 
 	$d$-dimensionale Lebesgue-Maß. Da unsere Polytope abgeschlossene Mengen 
 	sind, liegen sie in der Borelalgebra und sind damit auch Lebesgue-messbar.
@@ -560,7 +569,7 @@
 	
 	\newpage
 	
-	\section{Zerlegungsgleichheit von Polyedern; Dehn-Invariante}
+	\section{Zerlegungsgleichheit von Polyedern}
 	
 	Im Folgenden setzen wir die Dimension $d$ auf $3$ und betrachten Polyeder. 
 	
@@ -1071,6 +1080,8 @@
 		\[ D(P)=\sum_{i=1}^6 l\otimes_{\setZ}\arccos\left(\frac{1}{3}\right)=6l\otimes_{\setZ}\arccos\left(\frac{1}{3}\right).\]
 	\end{example}
 	
+	Siehe auch Beispiel 1 \cite{Proofsfromthebook}.
+	
 	\begin{figure}[!htbp]
 		\centering
 		\includegraphics[scale=0.2]{RegulTetraeder}
@@ -1081,6 +1092,8 @@
 	\begin{proposition} \label{prop:irr}
 		Für alle ungeraden $n\in\setN$ mit $n\geq 3$ gilt, dass  $\frac{1}{\pi}\arccos\left(\frac{1}{\sqrt{n}}\right)$ irrational ist.
 	\end{proposition}
+	
+	Wir richten uns hierbei nach \cite{Proofsfromthebook}[Satz 3, Kapitel 8].
 	
 	\begin{proof}
 		Zuerst stellen wir fest, dass mit dem Additionstheorem
@@ -1213,7 +1226,7 @@
 	\section{Ergänzungsgleichheit von Polytopen}
 	
 	Wir wollen uns nun dem zweiten Teil von Hilberts Problem widmen und zwar der 
-	Ergänzungsgleichheit von Polytopen. In diesem Kapitel zeigen, dass 
+	Ergänzungsgleichheit von Polytopen. In diesem Kapitel zeigen wir, dass 
 	Zerlegungsgleichheit und Ergänzungsgleichheit gleichbedeutend sind. Für den 
 	Beweis hierzu benötigen wir vorweg noch einige Kenntnisse über Polytope. Das Kapitel richtet sich nach 
 	\cite{Hadwiger}. 
@@ -1228,15 +1241,15 @@
 	feststellen, dass sich jedes konvexe Polytop in endlich viele Simplizes 
 	zerlegen lässt. Diese Simplizialzerlegung von Polytopen spielt bei 
 	der Zerlegungsgleichheit von Polytopen eine wichtige Rolle, wie wir schon im 
-	Beweis des Bolyai-Gerwien-Theorems (Satz \ref{theorem:bolyai-gerwien}) 
+	Beweis des Bolyai-Gerwien Theorems (Satz \ref{theorem:bolyai-gerwien}) 
 	gesehen haben. Ebenso war, wie sich schon aus der Formulierung des dritten Problems von Hilbert herauslesen lässt, ersichtlich, dass es eine der einfachsten Lösungen ist, zwei Simplizes mit gleichem Volumen zu finden, die nicht zerlegungsgleich sind.
 	
 	\begin{definition}[Simplex]\label{def:simplex}
-		Ein Simplex $S$ im $\setR^d$ ist die konvexe Hülle einer Menge von 
+		Ein \textsl{Simplex} $S$ im $\setR^d$ ist die konvexe Hülle einer Menge von 
 		$d+1$ Punkten 
 		$p_0,\ldots,p_d$, die sich im Raum in allgemeiner Lage befinden, also 
 		nicht alle in einer Ebene liegen. Die Punkte bezeichnen wir als 
-		Ecken des Simplex. Wir wollen das Simplex durch Wahl der 
+		\textsl{Ecken} des Simplex. Wir wollen das Simplex durch Wahl der 
 		ausgezeichneten Ecke $p=p_0$ und der Kantenvektoren 
 		$s_i=p_i -p_{i-1}$ für alle $i=1,\ldots,d$ charakterisieren. 
 		Wir schreiben für das Simplex S auch
@@ -1246,7 +1259,7 @@
 	Ein Simplex ist offensichtlich ein spezielles konvexes Polytop. 
 	
 	\begin{remark}[Parameterdarstellung des Simplex]\label{bem:paradarst;simplex}
-		Für einen Simplex $S=\langle p;s_1,\ldots s_n\rangle$ stellen wir 
+		Für einen Simplex $S=\langle p;s_1,\ldots s_d\rangle$ stellen wir 
 		fest, dass sich jeder Punkt $s$ des Simplex in folgender Form darstellen 
 		lässt
 		\[s=p+\sum_{i=1}^d \alpha_i s_i\]
@@ -1267,13 +1280,17 @@
 		des umgebenen Vektorraumes zeigen. Für $d=1$ ist die Aussage klar, da 
 		jedes konvexe $1$-Polytop eine Strecke ist und damit auch ein 
 		Simplex. Wir nehmen also an, die Aussage sei für die Dimension $d-1$ 
-		bewiesen. Betrachten wir die $d-1$-dimensionalen Seiten von 
-		$P'$, dann wissen wir nach Induktionsvoraussetzung, dass diese 
-		sich in endliche viele $d-1$-dimensionale Simplizes $S_i'$ zerlegen lassen. 
+		bewiesen. Betrachten wir eine beliebige $d-1$-dimensionale Seite von 
+		$P'$, dann wissen wir nach Induktionsvoraussetzung, dass sich diese  
+		in endliche viele $d-1$-dimensionale Simplizes $S_1',\ldots,S_m'$ 
+		zerlegen lassen. 
 		Betrachten wir einen beliebigen festen Punkt $p'$ im Inneren von $P'$, dann 
-		bildet die konvexe Hülle des Punktes $p'$ und des Simplex $S_i'$ ein 
-		neues Simplex $S_i$. Führen wir das fort auf alle Simplizes der Seiten 
-		von $P'$, so erhalten wir eine, wegen der Konvexität von $P'$, disjunkte 
+		bildet für alle $i=1,\ldots,m$ die konvexe Hülle des Punktes $p'$ und 
+		des Simplex $S_i'$ ein 
+		neues $d$-dimensionales Simplex $S_i$. Führen wir das mit $p'$ auf 
+		alle Seiten 
+		von $P'$ fort, so erhalten wir eine, wegen der Konvexität 
+		von $P'$, disjunkte 
 		Zerlegung von $P'$ in endlich viele 
 		Simplizes. Weiter erhalten wir demzufolge auch eine Zerlegung von 
 		$P$ in Simplizes.
@@ -1283,7 +1300,7 @@
 	über eine Dilatation stauchen und strecken können. 
 	
 	\begin{definition}[Dilatation]
-		Unter einer Dilatation mit einem Faktor $\lambda>0$ 
+		Unter einer \textsl{Dilatation} mit einem Faktor $\lambda>0$ 
 		verstehen wir eine Streckung bzw. Stauchung aller Punkte 
 		im Koordinatensystem. Ein Punkt $p\in\setR^d$ wird auf 
 		sein skalares Vielfaches $\lambda\cdot p$ abgebildet. In Bezug auf 
@@ -1394,7 +1411,8 @@
 	\end{proof}
 	
 	\begin{definition}[Vervielfachung]
-		Sei $P$ ein Polytop, dann ist die ganze Vervielfachung von $P$ mit 
+		Sei $P$ ein Polytop, dann ist die \textsl{ganze Vervielfachung} 
+		von $P$ mit 
 		einer natürlichen Zahl $n$ ein Polytop, wir schreiben $n\cdot P$, 
 		das sich in $n$ viele Polytope zerlegen lässt, die alle kongruent zu 
 		$P$ sind. Formal bedeutet das, dass es Polytope $P_1,\ldots,P_n$ gibt, s. d.
@@ -1467,7 +1485,7 @@
 	\subsection{Zylinderklassen}
 	
 	\begin{definition}[Minkowski-Summe]
-		Seien $A$ und $B$ Mengen, dann ist die Minkowski-Summe $A\times B$ 
+		Seien $A$ und $B$ Mengen, dann ist die \textsl{Minkowski-Summe} $A\times B$ 
 		von $A$ und $B$ mit der vektoriellen Addition definiert als
 		\[A\times B=\left.\{a+b\ \right\vert\ a\in A,b\in B\}.\]
 		In Bezug auf die leere Menge gilt
@@ -1514,7 +1532,7 @@
 		definierten Strecken
 		\[S_i=\{tp_i\ \vert\ t\in[0,1]\},\]
 		die die Richtung und Länge der Vektoren $p_1,\ldots,p_d$ 
-		haben. Dann ist das Parallelotop $P$ definiert durch 
+		haben. Dann ist das \textsl{Parallelotop} $P$ definiert durch 
 		\[P=S_1\times\ldots\times S_d.\]
 		Wir sagen, das Parallelotop wird durch die Vektoren $p_1,\ldots,p_d$ 
 		erzeugt.
@@ -1523,7 +1541,7 @@
 	\begin{definition}[Gramsches Funktional]
 		Sei $P$ das durch die Vektoren $p_1,\ldots,p_d$ 
 		erzeugte Parallelotop, dann ordnen wir dem Parallelotop $P$ das 
-		Gramsche Funktional $\mathfrak{D}(P)>0$ zu, das definiert ist durch
+		\textsl{Gramsche Funktional} $\mathfrak{D}(P)>0$ zu, das definiert ist durch
 		\[\mathfrak{D}(P)=\left(det \begin{pmatrix}
 		\langle p_1,p_1\rangle & \cdots &\langle p_1,p_d\rangle \\
 		\vdots & \ddots & \vdots \\
@@ -1566,7 +1584,7 @@
 	\end{proof}
 	
 	\begin{definition}[$i$-stufiger Zylinder]
-		Ein Polytop $P$ ist ein $i$-stufiger Zylinder, falls es eine Darstellung 
+		Ein Polytop $P$ ist ein $i$-\textsl{stufiger Zylinder}, falls es eine Darstellung 
 		der Form
 		\[P=P_1 \times\ldots\times P_i\]
 		gibt, wobei $P_k$ für alle $k=1,\ldots,i$ hier konvexe Polytope sind, die jeweils in einer $d_k$-dimensionalen Ebene $E_{d_k}$ liegen. Hierbei soll $\sum_{k=1}^i d_k =d$ und $d_k\geq 1$ für alle $k=1,\ldots,i$ 
@@ -1582,10 +1600,10 @@
 	ist jedes Parallelotop ein $k$-stufiger Zylinder. 
 	
 	\begin{definition}[Zylinderklassen]
-		Ein Polytop $P$ ist ein $i$-stufiges Zylinderpolytop, falls 
+		Ein Polytop $P$ ist ein $i$-\textsl{stufiges Zylinderpolytop}, falls 
 		es endlich viele $i$-stufige Zylinder $P_1,\ldots,P_n$ gibt, s. d.
 		\[P=P_1+\ldots+P_n.\]
-		Die $i$-te Zylinderklasse $\mathfrak{B}_i$ ist die Menge aller 
+		Die $i$-\textsl{te Zylinderklasse} $\mathfrak{B}_i$ ist die Menge aller 
 		Polytope, die zu einem $i$-stufigen Zylinderpolytop zerlegungsgleich 
 		sind, wobei $\emptyset\in\mathfrak{B}_i$. 
 		Die Stufenzahl $i$, mit $1\leq i\leq  d$, ist die Ordnung 
@@ -1666,13 +1684,13 @@
 	Zerlegungsgleichheit die Zerlegungsgleichheit impliziert.
 	
 	\begin{definition}[Translationsgleichheit, translative Zerlegungsgleichheit]
-		Wir nennen zwei Polytope $P$ und $Q$ translationsgleich, wenn es 
+		Wir nennen zwei Polytope $P$ und $Q$ \textsl{translationsgleich}, wenn es 
 		eine Translation $f$ aus der Translationsgruppe gibt, s. d. 
 		$f(P)=Q$ gilt. Wir schreiben $P\cong_t Q$. \\
 		Die Translationsgleichheit ist wie die Kongruenz eine 
 		Äquivalenzrelation. \\
-		Weiter nennen wir zwei Polytope $P$ und $Q$ translativ 
-		zerlegungsgleich, wenn es endlich viele $P_1,\ldots,P_n$ und 
+		Weiter nennen wir zwei Polytope $P$ und $Q$ \textsl{translativ 
+		zerlegungsgleich}, wenn es endlich viele $P_1,\ldots,P_n$ und 
 		$Q_1,\ldots,Q_n$ gibt, mit $P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots+Q_n$, s. d. 
 		für alle $i=1,\ldots,n$ die Polytope $P_i$ und $Q_i$ translationsgleich 
 		sind. Wir schreiben $P\approx Q$.
@@ -1694,7 +1712,7 @@
 		Sei $p$ ein Vektor und  $s_1\ldots,s_i$ und 
 		$t_1,\ldots,t_{d-i}$ insgesamt 
 		$d$ linear unabhängige Vektoren, wobei $1\leq i\leq d-1$ ist. Dann ist 
-		das Simplotop $S$ gerade das Polytop, dessen Elemente $s$ 
+		das \textsl{Simplotop} $S$ gerade das Polytop, dessen Elemente $s$ 
 		dargestellt werden durch
 		\[s=p+\sum_{k=1}^i \alpha_k s_k +\sum_{j=1}^{d-i}\beta_j t_j,\]
 		für beliebige $1\geq \alpha_1\geq\ldots\geq\alpha_i\geq 0$ und 
@@ -1763,16 +1781,16 @@
 		Sei $P$ ein Polytop, das in der $i$-ten Zylinderklasse $\mathfrak{B}_i$ ist 
 		und $n$ eine natürliche Zahl, dann gilt
 		\[nP\sim n^i\cdot P+P_0,\]
-		wobei $P_0\in\mathfrak{B}{i+1}$ ein (von $n$ abhängiges) Polytop ist. 
+		wobei $P_0\in\mathfrak{B}_{i+1}$ ein (von $n$ abhängiges) Polytop ist. 
 		Falls $i=d$ ist $P_0=\emptyset$.
 	\end{theorem}
 	
 	Da wir im 
 	Beweis der Aussage lediglich die Streckung und Vervielfachung von Polytopen 
-	betrachten, haben wir an einigen Stellen sogar die Translationsgleichheit 
-	von Polytopen.
+	betrachten, gilt an einigen Stellen sogar die Translationsgleichheit.
 	
 	\begin{proof}
+		\noindent
 		\begin{enumerate}
 			\item Fall: Es gilt $i=1$ dann reicht es, aufgrund 
 			der Simplizialzerlegung eines Polytops, die 
@@ -1804,7 +1822,7 @@
 			\[nP\sim (P+P_1+\ldots+P_{n-1})+(P_{1,0}+\ldots+P_{n-1,0}).\]
 			Wir können die erste Summe zusammenfassen zu $n \cdot P$ 
 			und da alle $P_{j,0}$ in $\mathfrak{B}_2$ liegen, liegt auch 
-			die Summe darin und wir erhalten
+			die Summe in $\mathfrak{B}_2$ und wir erhalten
 			\begin{align}
 				nP\sim n\cdot P+ P_0 \label{thm:zyl;1}
 			\end{align}
@@ -1842,12 +1860,11 @@
 			\bigtimes_{k=1}^i P_{k,\mu_k}.\]
 			Hierbei läuft der Vektor $\mu$ in $i$ Koordinaten alle 
 			Kombinationen von $0$ bis $n$ durch, es gibt also $(n+1)^i$ 
-			unterschiedlich viele Kombinationen die $\mu$ annehmen kann. 
+			viele unterschiedliche Kombinationen die $\mu$ annehmen kann. 
 			Jeder Summand hat demnach die Form 
 			$P_{1,\mu_1}\times\ldots\times P_{i,\mu_i}$ mit einer jeweiligen 
 			Kombination. 
-			Betrachten wir zunächst die Summanden, in denen kein Eintrag 
-			von $\mu$ verschwindet und somit $\mu_k\neq 0$ für alle 
+			Betrachten wir zunächst die Summanden, in denen $\mu_k\neq 0$ für alle 
 			$k=1,\ldots,i$ gilt. Dies sind insgesamt $n^i$ viele Kombinationen, 
 			da in diesem Fall $\mu\in\{1,\ldots,n\}^i$ ist. Dann gilt 
 			\[P_{k,\mu_k}\cong_t P_k\]
@@ -1863,7 +1880,7 @@
 			ein Eintrag von $\mu$ verschwindet. Dann stellen wir fest, dass 
 			$P_{k,0}$ entweder leer ist oder in $\mathfrak{B}_2^{(d_k)}$ ist. 
 			Falls ein $P_{k,0}$ leer ist gilt für den Summand
-			\[\bigtimes_{k=1}^i A_{k,\mu_k}=\emptyset\]
+			\[\bigtimes_{k=1}^i P_{k,\mu_k}=\emptyset\]
 			Falls $P_{k,0}$ stattdessen in $\mathfrak{B}_2^{(d_k)}$ liegt, 
 			ist $P_{k,0}$ bezogen auf die Ebene $E_{d_k}$ ein $2$-stufiger 
 			Zylinder, also gibt es zwei konvexe Polytope $P_{k,0}'$ 
@@ -1880,7 +1897,7 @@
 		Damit ist die Aussage gezeigt.
 	\end{proof}
 	
-	\subsection{Ergänzungsgleich und Zerlegungsgleichheit}
+	\subsection{Ergänzungsgleichheit und Zerlegungsgleichheit}
 	
 	Wir wollen noch einmal kurz die Definition der Zerlegungsgleichheit wiederholen.
 	
@@ -1925,30 +1942,36 @@
 		sie ergänzungsgleich sind.
 	\end{theorem}
 	
-	Um den Satz zu beweisen, benötigen wir noch eine Aussage. Dazu wollen 
-	wir, dass ein Polytop $P$ zerlegungsgleich zu einem Teilpolytop 
-	des Polytops $Q$ ist. Also soll es ein Polytop geben, zu dem 
-	$P$ zerlegungsgleich ist und das in $Q$ enthalten ist. Formal 
-	ausgedrückt finden wir Polytope $Q_1,Q_2\subset Q$ mit 
-	$Q_1+Q_2=Q$, s. d. $P\sim Q_1$ ist. Hierfür schreiben wir 
-	\[P\sim_{\subset} Q\]
-	hierfür. Wir bemerken, dass dies Relation transitiv ist. Seien 
-	dazu Polytope $P,Q,R$ gegeben, s. d. $P\sim_{\subset}Q$ und $Q\sim_{\subset}R$ 
-	gilt, d. h. es gibt ein Polytop $Q'\subset Q$, s. d. $P\sim Q'$ und ein Polytop 
-	$R'\subset R$, s. d. $Q\sim R'$. Weiter gibt es endlich viele Polytope 
-	$Q_1,\ldots,Q_n$ und $R_1',\ldots,R_n'$ mit $Q=Q_1+\ldots+Q_n$ und 
-	$R'=R_1'+\ldots R_n'$, s. d. für alle $i=1,\ldots,n$ die 
-	Kongruenz $Q_i\cong R_i'$ gilt. 
-	Seien also $f_1,\ldots,f_n$ die Isometrien, für die für 
-	alle $i=1,\ldots,n$ die Gleichungen $f_i(Q_i)=R_i'$ gelten. Dann erhalten wir 
-	die Zerlegung
-	\[Q'=Q'\cap Q=Q'\cap(Q_1+\ldots+Q_n)=(Q'\cap Q_1)+\ldots+(Q'\cap Q_n)\]
-	und für das Polytop $R''\subset R$, das definiert ist durch 
-	\[R''=(f_1(Q')\cap R_1)+\ldots+(f_n(Q')).\]
-	Mit der Bijektivität der Isometrien gilt für alle $i=1,\ldots,n$
-	\[f_i(Q'\cap Q_i)=f_i(Q')\cap f_i(Q_i)=f_i(Q')\cap R_i.\]
-	Damit ist das Polytop $R''$ nicht leer und es gilt $Q'\sim R''$, also auch 
-	$P\sim R''$. Damit ist die Transitivität gezeigt.
+	Um den Satz zu beweisen, benötigen wir noch eine Definition und ein Lemma.
+	
+	\begin{definition}
+		Ein Polytop $P$ ist \textsl{zerlegungsgleich zu einem Teilpolytop} 
+		des Polytops $Q$ ist, falls es ein Polytop gibt, zu dem 
+		$P$ zerlegungsgleich ist und das in $Q$ enthalten ist. Formal 
+		ausgedrückt finden wir Polytope $Q_1,Q_2\subset Q$ mit 
+		$Q_1+Q_2=Q$, s. d. $P\sim Q_1$ ist. Hierfür schreiben wir 
+		\[P\sim_{\subset} Q.\]
+	\end{definition}
+	
+	\begin{remark}
+		Wir bemerken, dass diese Relation transitiv ist. Seien 
+		dazu Polytope $P,Q,R$ gegeben, s. d. $P\sim_{\subset}Q$ und $Q\sim_{\subset}R$ 
+		gilt, d. h. es gibt ein Polytop $Q'\subset Q$, s. d. $P\sim Q'$ und ein Polytop 
+		$R'\subset R$, s. d. $Q\sim R'$. Weiter gibt es endlich viele Polytope 
+		$Q_1,\ldots,Q_n$ und $R_1',\ldots,R_n'$ mit $Q=Q_1+\ldots+Q_n$ und 
+		$R'=R_1'+\ldots +R_n'$, s. d. für alle $i=1,\ldots,n$ die 
+		Kongruenz $Q_i\cong R_i'$ gilt. 
+		Seien also $f_1,\ldots,f_n$ die Isometrien, für die für 
+		alle $i=1,\ldots,n$ die Gleichungen $f_i(Q_i)=R_i'$ gelten. Dann erhalten wir 
+		die Zerlegung
+		\[Q'=Q'\cap Q=Q'\cap(Q_1+\ldots+Q_n)=(Q'\cap Q_1)+\ldots+(Q'\cap Q_n)\]
+		und für das Polytop $R''\subset R$, das definiert ist durch 
+		\[R''=(f_1(Q')\cap R_1)+\ldots+(f_n(Q')).\]
+		Mit der Bijektivität der Isometrien gilt für alle $i=1,\ldots,n$
+		\[f_i(Q'\cap Q_i)=f_i(Q')\cap f_i(Q_i)=f_i(Q')\cap R_i.\]
+		Damit ist das Polytop $R''$ nicht leer und es gilt $Q'\sim R''$, also auch 
+		$P\sim R''$. Damit ist die Transitivität gezeigt.
+	\end{remark}
 	
 	\begin{lemma} \label{lemma:teilzerl}
 		Seien $P$ und $Q$ Polytope, dann ist $P$ genau dann zu 
@@ -1985,10 +2008,10 @@
 			Transitivität der Zerlegungsgleichheit 
 			gilt auch $P\sim \frac{\alpha}{\beta}Q$. Damit ist 
 			die Aussage für die letzte Zylinderklasse bewiesen und 
-			wir nehmen an, dass die Aussage für alle Polytope 
+			wir nehmen induktiv an, dass die Aussage für alle Polytope 
 			der Zylinderklasse $\mathfrak{B}_{i+1}$ gilt. Seien  
 			$P,Q\in\mathfrak{B}_i$. Es gibt ein $\delta>0$, für das 
-			$P\sim_{\subset}\alpha W$ gilt. Dieses $\delta$ existiert und 
+			$P\sim_{\subset}\delta W$ gilt. Dieses $\delta$ existiert und 
 			wir können es einfach so groß wählen, dass das Polytop $P$ 
 			in diesem Würfel enthalten ist. Desweiteren sei eine 
 			natürliche Zahl $n$ so gewählt, dass $\lambda>\delta$ gilt, wenn 
@@ -2016,8 +2039,8 @@
 				=\sum_{j=1}^{n^i}\lambda^d \mathfrak{D}(W)=
 				n^i\lambda^d. \label{lemma:teilzerl;5}
 			\end{align}
-			Wir haben hierbei die Eigenschaft Bemerkung \ref{bem:gramfunk} 
-			genutzt. Also gilt mit \ref{lemma:teilzerl;1} auch
+			Wir haben hierbei Bemerkung \ref{bem:gramfunk} 
+			verwendet. Also gilt mit \ref{lemma:teilzerl;1} auch
 			\begin{align}
 				n^i\cdot P\sim_{\subset} \mu W.\label{lemma:teilzerl;2}
 			\end{align}
@@ -2101,14 +2124,14 @@
 			Falls nun $P,Q\in \mathfrak{B}_d$ gilt, dann gibt es mit 
 			Proposition \ref{bem:dteZylinderklasse} 
 			$\lambda_1,\lambda_2 >0$, s. d. $P\sim \lambda_1 W$ und 
-			$Q\sim \lambda_2 W$, wobei mit $W$ hier der $d$-dimensionale 
+			$Q\sim \lambda_2 W$, wobei mit $W$ der $d$-dimensionale 
 			Einheitswürfel gemeint ist. Da mit Folgerung \ref{coroll:ergvol} 
-			folgt, dass $vol(P)=vol(Q)$, muss $\lambda_1 =\lambda_2$ und 
+			folgt, dass $vol(P)=vol(Q)$, muss $\lambda_1 =\lambda_2$ sein, und 
 			damit $P\sim Q$. \\
 			Wir nehmen nun induktiv an, dass die Aussage bereits für alle 
 			Polytope $P,Q\in\mathfrak{B}_{i+1}$ gilt. Es sei nun  
 			$P,Q\in\mathfrak{B}_i$ für ein beliebiges $1\leq i\leq d-1$. 
-			Da $d-i>0$ und o.B.d.A. $vol(R)>0$ gibt es eine natürliche Zahl $n$, s. d. 
+			Da $d-i>0$ und o.B.d.A. $vol(R)>0$, dann gibt es eine natürliche Zahl $n$, s. d. 
 			\begin{align}
 			n^{d-i}>1+\frac{vol(R)}{vol(P)}. \label{thm:zerlerg;3}
 			\end{align}
@@ -2142,7 +2165,7 @@
 				vol(P_0)=(n^d -n^i)vol(P)>n^i vol(R)=vol(n^i\cdot R)\label{thm:zerlerg;8}.
 			\end{align}
 			Mit Lemma \ref{lemma:teilzerl} 
-			ist $n^i\cdot R$ zerlegungsgleich zu einem Teilpolytop von $P_0$, d. h. es gibt Polytope $C,D\subset P_0$ mit $P+Q=P_0$ und $n^i\cdot R\sim C$, s. d. 
+			ist $n^i\cdot R$ zerlegungsgleich zu einem Teilpolytop von $P_0$, d. h. es gibt Polytope $C,D\subset P_0$ mit $C+D=P_0$ und $n^i\cdot R\sim C$, s. d. 
 			\begin{align}
 			P_0=C+D\sim n^i\cdot R+D. \label{thm:zerlerg;9}
 			\end{align}
@@ -2153,7 +2176,7 @@
 			&\sim D+n^i\cdot(R+P) \notag\\ 
 			&\overset{\ref{thm:zerlerg;1}}{\sim} D+n^i\cdot(Q+S) \notag\\
 			&\overset{\ref{thm:zerlerg;2}}{\sim} D+n^i\cdot(Q+R) \notag\\
-			&\sim Q+n^i\cdot Q +n^i\cdot R \notag\\
+			&\sim D+n^i\cdot Q +n^i\cdot R \notag\\
 			&\overset{\ref{thm:zerlerg;9}}{\sim} P_0+n^i \cdot Q. \label{thm:zerlerg;10}
 			\end{align}
 			Analog zu \ref{thm:zerlerg;6} finden wir für $Q$ ebenso ein 
@@ -2174,7 +2197,7 @@
 	Zusammenfassend können wir sagen, dass es bei der Volumenberechnung 
 	keinen Unterschied macht, die Zerlegungsgleichheit oder die 
 	Ergänzungsgleichheit von Polytopen zu betrachten. Dennoch erscheint die 
-	Zerlegungsgleichheit oftmals als intuitivere Variante. Auch sind hier bei 
+	Zerlegungsgleichheit oftmals als intuitivere Variante. Auch sind hierbei 
 	die Beweise oft leichter führen, als bei der Ergänzungsgleichheit. 
 	Für Hilberts Problem reicht es aus, die Beweise für eine 
 	der beiden Relationen zu führen.
