@@ -131,6 +131,7 @@
 	\setcounter{page}{1}
 	
 	\section*{Vorwort}
+	\addcontentsline{toc}{section}{Vorwort}
 	
 	Schon in der Antike beschäftigten sich die Menschen mit der Berechnung 
 	von Flächeninhalten und Volumina geometrischer Figuren. So auch 
@@ -411,6 +412,7 @@
 		$Q$, also $P_i\cong Q_i$ für alle $i=1,\ldots,n$. Mit Proposition \ref{prop:cong,vol} und Lemma \ref{lemma:nullmenge} erhalten wir 
 		\[vol(P)=vol(P_1+\ldots+P_n)=\sum_{i=1}^n vol(P_i)=\sum_{i=1}^n vol(Q_i)=vol(Q_1+\ldots+Q_n)=vol(Q).\]
 	\end{proof}
+	\ \\
 	
 	Wir haben nun die nötigen Voraussetzungen, um uns den Fall in der Ebene 
 	anzuschauen. Wir wollen also beweisen, dass zwei Polygone genau 
@@ -463,7 +465,13 @@
 	\begin{lemma} \label{lemma:rechtecke}
 		Zwei beliebige Rechtecke mit dem gleichen Flächeninhalt sind zerlegungsgleich.
 	\end{lemma}
-	
+	\begin{figure}[!htbp]
+		\vspace{-0.2cm}
+		\centering
+		\includegraphics[scale=1.4]{Rechteck}
+		\caption{Zerlegung zweier Rechtecke}
+		\label{Abb.2}
+	\end{figure}
 	\begin{proof}
 		Seien $P$ und $Q$ zwei Rechtecke mit dem gleichen Flächeninhalt, d.~h. falls $h_P$ die Höhe und 
 		$b_P$ die Breite des Rechtecks $P$ und $h_Q$ die Höhe und $b_Q$ die Breite des Rechtecks $Q$ sind, 
@@ -471,12 +479,6 @@
 		\begin{align}
 			\frac{b_P}{h_Q}=\frac{b_Q}{h_P}. \label{lemma:rechteck;1}
 		\end{align}
-		\begin{figure}[!htbp]
-			\centering
-			\includegraphics[scale=1.4]{Rechteck}
-			\caption{Zerlegung zweier Rechtecke}
-			\label{Abb.2}
-		\end{figure}
 		Seien $o,a,b,c$ die Eckpunkte des Rechtecks $P$ und $o,m,n,p$ die Eckpunkte des Rechtecks $Q$, siehe 
 		Abbildung \ref{Abb.2}. 
 		Wir verschieben hier $Q$ so auf $P$, dass beide eine gemeinsame Ecke $o$ mit rechtem Winkel haben. 
@@ -493,7 +495,7 @@
 		sie haben die gleichen Seitenverhältnisse und folglich sind die Strecken $\overline{mc}$ 
 		und $\overline{nb}$ parallel. Hierbei sei $d$ der Schnittpunkt der Strecken $\overline{mn}$ und 
 		$\overline{bc}$. Also sind die drei Strecken $\overline{mc}$, $\overline{ap}$ und $\overline{nb}$ 
-		parallel. Nun unterscheiden wir zwei Fälle
+		parallel.\\Nun unterscheiden wir zwei Fälle 
 		\begin{enumerate}
 			\item \textsl{Fall:} Die Verbindungsstrecke $\overline{ap}$ der Eckpunkte schneidet das 
 			Rechteck $omdc$ in den Punkten $e$, mit der Seite $\overline{dc}$, 
@@ -520,17 +522,24 @@
 			zerlegungsgleich sind. Mit der Transitivität der 
 			Zerlegungsgleichheit (Proposition \ref{lemma:transitiv}) sind 
 			also auch $P$ und $Q$ zerlegungsgleich.
+			\begin{figure}[!htbp]
+				\centering
+				\includegraphics[scale=0.8]{Rechteck2}
+				\caption{Zerlegung zweier Rechtecke}
+				\label{Abb.3}
+			\end{figure}
 		\end{enumerate}
+		\vspace{-0.3cm}
 		Damit sind $P$ und $Q$ zerlegungsgleich.
 	\end{proof}
 	
-	\begin{figure}[!htbp]
-		\centering
-		\includegraphics[scale=0.8]{Rechteck2}
-		\caption{Zerlegung zweier Rechtecke}
-		\label{Abb.3}
-	\end{figure}
-	
+	%\begin{figure}[!htbp]
+	%	\centering
+	%	\includegraphics[scale=0.8]{Rechteck2}
+	%	\caption{Zerlegung zweier Rechtecke}
+	%	\label{Abb.3}
+	%\end{figure}
+	%
 	\begin{theorem}[Bolyai-Gerwien Theorem] \label{theorem:bolyai-gerwien}
 		Zwei beliebige Polygone mit dem gleichen Flächeninhalt sind zerlegungsgleich.
 	\end{theorem}
@@ -658,7 +667,7 @@
 		(m\otimes nr+n'r')=(m\otimes n)\cdot r+(m\otimes n')\cdot r'.
 	\end{align*}
 	
-	Damit ist der bilineare Operator gefunden. Wir wollen für unser Problem den Spezialfall 
+	Damit ist der bilineare Operator gefunden. Wir wollen für unser Problem den Spezialfall \linebreak
 	$\setR \otimes_{\setZ} \setR / \pi\setZ$ betrachen. Hierbei identifizieren wir die Länge einer Kante mit dem 
 	ersten Argument und den Winkel einer Kante mit dem zweiten Argument. 
 	Den Winkel $\pi$ identifizieren wir in $\setR/\pi\setZ$ mit $0$. Das 
@@ -773,7 +782,7 @@
 	$r_1 s_3=r_3 s_1$ und damit $(r_1,s_1)\equiv(r_3,s_3)$. \\
 	Wir schreiben $\frac{r}{s}$ für die Äquivalenzklasse 
 	von $(r,s)$ und $S^{-1}R$ 
-	für die Menge aller Äquivalenzklassen. 
+	für die Menge aller \linebreak Äquivalenzklassen. 
 	Wir können $S^{-1}R$ nun eine Ringstruktur geben, indem wir die Addition und Multiplikation für 
 	alle $r_1,r_2\in R$ und $s_1,s_2\in S$ definieren durch
 	\begin{align*}
@@ -828,6 +837,7 @@
 		\ref{lemma:exakt;1}. Demnach gibt es ein $m_1\in M_1$ mit $f(m_1)=m$ und damit 
 		gilt
 		\[\frac{m}{s}=\frac{f(m_1)}{s}=(S^{-1}f)\left(\frac{m_1}{s}\right)\in im(S^{-1}f).\]
+		\\
 		Es folgt 
 		\[ker(S^{-1}g)\subset im(S^{-1}f).\]
 	\end{proof}
@@ -1070,7 +1080,14 @@
 		Also gilt $w(k)\in \pi\setQ$ für alle Kanten $k$ und mit Bemerkung \ref{bem:dehn=0} folgt
 		\[ D(P)=0. \]
 	\end{example}
-	
+	\vspace{-0.4cm}
+	\begin{figure}[!htbp]
+		\centering
+		\includegraphics[scale=0.2]{RegulTetraeder}
+		\caption{Ein regulärer Tetraeder}
+		\label{Abb.4}
+	\end{figure}
+	\vspace{-0.3cm}
 	\begin{example}[regulärer Tetraeder] \label{exp:regTetr}
 		Sei $P$ ein dreidimensionaler regulärer Tetraeder, d.~h. alle 
 		Kanten von $P$ haben die gleiche Länge $l$ und 
@@ -1085,14 +1102,7 @@
 		\[ D(P)=\sum_{i=1}^6 l\otimes_{\setZ}\arccos\left(\frac{1}{3}\right)=6l\otimes_{\setZ}\arccos\left(\frac{1}{3}\right).\]
 	\end{example}
 	
-	Siehe auch Beispiel 1 \cite{Proofsfromthebook}.
-	
-	\begin{figure}[!htbp]
-		\centering
-		\includegraphics[scale=0.2]{RegulTetraeder}
-		\caption{Ein regulärer Tetraeder}
-		\label{Abb.4}
-	\end{figure}
+	Siehe auch Beispiel 1 \cite{Proofsfromthebook}[Kapitel 10].
 	
 	\begin{proposition} \label{prop:irr}
 		Für alle ungeraden $n\in\setN$ mit $n\geq 3$ gilt, dass  $\frac{1}{\pi}\arccos\left(\frac{1}{\sqrt{n}}\right)$ irrational ist.
@@ -1231,7 +1241,8 @@
 	
 	\section{Ergänzungsgleichheit von Polytopen}
 	
-	Wir wollen uns nun dem zweiten Teil von Hilberts Problem widmen und zwar der 
+	Wir wollen uns nun dem zweiten Teil von Hilberts Problem widmen und zwar 
+	der \linebreak
 	Ergänzungsgleichheit von Polytopen. In diesem Kapitel zeigen wir, dass 
 	Zerlegungsgleichheit und Ergänzungsgleichheit gleichbedeutend sind. Für den 
 	Beweis hierzu benötigen wir vorweg noch einige Kenntnisse über Polytope. Das Kapitel richtet sich nach 
@@ -1550,13 +1561,14 @@
 		Sei $P$ das durch die Vektoren $p_1,\ldots,p_d$ 
 		erzeugte Parallelotop, dann ordnen wir dem Parallelotop $P$ das 
 		\textsl{Gramsche Funktional} $\mathfrak{D}(P)>0$ zu, das definiert ist durch
+		\vspace{-0.38cm}
 		\[\mathfrak{D}(P)=\left(det \begin{pmatrix}
 		\langle p_1,p_1\rangle & \cdots &\langle p_1,p_d\rangle \\
 		\vdots & \ddots & \vdots \\
 		\langle p_d,p_1 \rangle & \cdots & \langle p_d,p_d \rangle
 		\end{pmatrix}\right)^{1/2}.\]
 	\end{definition}
-	
+
 	Mit $\langle p_i,p_j\rangle$ ist hier das Standardskalarprodukt gemeint. 
 	
 	\begin{remark} \label{bem:gramfunk}
@@ -1755,7 +1767,7 @@
 	Teilpolytope, die sogenannte kanonische Simplexzerlegung. 
 	
 	\begin{theorem}[Folgerung aus der Kanonischen Simplexzerlegung]\label{thm:kanonsimpl}
-		Sei $S$ ein Simplex und $0<\lambda<1$ gegeben, dann 
+		Sei $S$ ein Simplex und \linebreak$0<\lambda<1$ gegeben, dann 
 		gibt es ein $S_0\in\mathfrak{B}_2$, s.~d.
 		\[S\approx \lambda S+(1-\lambda)S +S_0.\]
 	\end{theorem}
@@ -1918,7 +1930,7 @@
 		\end{enumerate}
 		Damit ist die Aussage gezeigt.
 	\end{proof}
-	
+	\newpage
 	\subsection{Ergänzungsgleichheit und Zerlegungsgleichheit}
 	
 	Wir wollen noch einmal kurz die Definition der Zerlegungsgleichheit wiederholen.
@@ -1950,7 +1962,7 @@
 	\end{proposition}
 	
 	\begin{proof}
-		Seien $P$ und $Q$ ergänzungsgleich, d.~h. es gibt endlich viele Polytope $P_1,\ldots,P_n,
+		Seien $P$ und $Q$ ergänzungsgleich, d.~h. es gibt endlich viele Polytope $P_1,\ldots,P_n,\linebreak
 		Q_1\ldots,Q_n$ mit $P_i\cong Q_i$ für alle $i\in{1,\ldots,n}$, s.~d. 
 		$P'=P+P_1+\ldots+P_n$ und $Q'=Q+Q_1+\ldots+Q_n$ zerlegungsgleich sind. Nach 
 		Proposition \ref{prop:zerl,vol} gilt dann auch $vol(P')=vol(Q')$. Damit folgt
@@ -2134,8 +2146,8 @@
 	
 	Nun haben wir alle Voraussetzungen, um den Satz \ref{thm:zerlerg} zu 
 	beweisen. Der Beweis richtet sich nach \cite[Satz III]{Hadwiger}.
-	
-	\begin{proof}
+	\newpage
+	\begin{proof}(Satz \ref{thm:zerlerg})
 		\noindent
 		\begin{itemize}
 			\item[$"\Rightarrow"$:] Haben wir zwei zerlegungsgleiche Polytope, so müssen wir kein weiteres Polytop ergänzen, damit die Ergänzungen zerlegungsgleich sind, also folgt bereits die Ergänzungsgleichheit.
@@ -2231,6 +2243,7 @@
 	die Beweise oft leichter zu führen, als bei der Ergänzungsgleichheit. 
 	Für Hilberts Problem reicht es jedoch aus, die Beweise für eine 
 	der beiden Relationen zu führen.
+	\newpage \ 
 
 	%\section{Ausblicke}
 	%
@@ -2241,4 +2254,5 @@
 	\newpage
 	\bibliographystyle{alpha}
 	\bibliography{MeineBib}
+	\addcontentsline{toc}{section}{Literaturverzeichnis}
 \end{document}
