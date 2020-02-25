@@ -217,7 +217,7 @@
 	
 	\begin{definition}[konvexes Polytop]
 		Ein \textsl{konvexes} $d$-\textsl{Polytop} $P$ in einem $d$-dimensionalen reellen Vektorraum $V$ ist der Schnitt endlich vieler 
-		Halbräume. $P$ ist beschränkt, falls für jedes $\alpha\in V^*\setminus\{0\}$ ein $r\in \setR$ existiert, s. d. 
+		Halbräume. $P$ ist beschränkt, falls für jedes $\alpha\in V^*\setminus\{0\}$ ein $r\in \setR$ existiert, s.~d. 
 		$\alpha(x)\leq r$ für alle $x\in P$ gilt.
 	\end{definition}
 	
@@ -263,17 +263,17 @@
 	betrachten.
 	
 	\begin{definition}[Kongruenz] \label{def:kong}
-		Wir nennen zwei Polytope $P$ und $Q$ \textsl{kongruent}, wenn es eine Isometrie $g$ gibt, s. d. 
+		Wir nennen zwei Polytope $P$ und $Q$ \textsl{kongruent}, wenn es eine Isometrie $g$ gibt, s.~d. 
 		$g(P)=Q$. Wir schreiben dann $P\cong Q$.
 	\end{definition}
 	
 	 Mit \textsl{Isometrien} meinen wir hier längenerhaltende Affinitäten, 
 	 also bijektive affine Abbildungen, die den Abstand zweier beliebiger Punkte erhalten. 
-	 Isometrien sind Bewegungen, d. h. sie setzen sich 
+	 Isometrien sind Bewegungen, d.~h. sie setzen sich 
 	 aus einer Translation und einer Drehung zusammen. Zu jeder 
 	 Isometrie $f:\setR^d\to\setR^d$ lässt sich also ein Vektor 
 	 $\alpha\in\setR^d$ und eine orthogonale Matrix $U\in O(d)$, also 
-	 eine Drehung finden, s. d. wir für alle $x\in \setR^d$ 
+	 eine Drehung finden, s.~d. wir für alle $x\in \setR^d$ 
 	 die Darstellung $f(x)=\alpha + Ux$ erhalten. 
 	 Da das Skalarprodukt translationsinvariant ist und 
 	 invariant unter Drehungen, ist das Skalarprodukt auch invariant 
@@ -293,7 +293,7 @@
 		Die Reflexivität und Symmetrie sind klar. Es bleibt die Transitivität 
 		zu zeigen, dazu seien 
 		$P,Q,R$ drei $d$-Polytope mit $P\cong Q$ und $Q\cong R$. Es gibt also 
-		Isometrien $f$ und $g$, s. d. $f(P)=Q$ und $g(Q)=R$ gilt. Dann ist $g\circ f$ 
+		Isometrien $f$ und $g$, s.~d. $f(P)=Q$ und $g(Q)=R$ gilt. Dann ist $g\circ f$ 
 		wieder eine Isometrie und wir erhalten 
 		\[(g\circ f)(P)=g(f(P))=g(Q)=R,\]
 		also $P\cong R$. 
@@ -306,7 +306,7 @@
 	\begin{definition}[Zerlegungsgleichheit]
 		Zwei Polytope $P$ und $Q$ heißen \textsl{zerlegungsgleich}, wenn es endlich viele Polytope 
 		$P_1,\ldots,P_n,Q_1,\ldots,Q_n$ mit $P=P_1 +\ldots +P_n$,  $Q=Q_1 +\ldots+Q_n$ 
-		gibt, s. d. 
+		gibt, s.~d. 
 		\[P_i\cong Q_i\]
 		für alle $i=1,\ldots,n$. Wir schreiben $P\sim Q$.
 	\end{definition}
@@ -332,14 +332,14 @@
 		\end{align*}
 		wobei $P_i\cong Q_i$ für alle $i=1,\ldots,n$ und $Q_j'\cong R_j$ für alle $j=1,\ldots,m$. 
 		Seien $f_1,\ldots,f_n$ die Isometrien, die alle $Q_i$ in $P_i$ überführen, 
-		d. h. $f_i(Q_i)=P_i$ und 
-		$g_1,\ldots,g_m$ die Isometrien, die alle $R_j$ in $Q_j'$ überführen, d. h. $g_j(R_j)=Q_j'$.
+		d.~h. $f_i(Q_i)=P_i$ und 
+		$g_1,\ldots,g_m$ die Isometrien, die alle $R_j$ in $Q_j'$ überführen, d.~h. $g_j(R_j)=Q_j'$.
 		Wir definieren
 		\[ F_{ij}:=Q_i\cap Q_j',\]
 		für $i=1,\ldots,n$ und $j=1,\ldots,m$. Beachte, dass $F_{ij}$ leer sein kann. Zwei verschiedene 
 		$F_{ij}$ sind disjunkt, denn für $i_1,i_2\in\{1,\ldots\,n\}$ mit $i_1\neq i_2$ gilt 
 		\[F_{i_1 j}\cap F_{i_2 j}=(Q_{i_1}\cap Q_j')\cap(Q_{i_2}\cap Q_j')=(Q_{i_1}\cap Q_{i_2})\cap Q_j'.\] 
-		Da $Q_{i_1}$ und $Q_{i_2}$ disjunkt sind, d. h. der Schnitt niedrigerdimensional, als die Dimension des umgebenen Vektorraums ist, ist 
+		Da $Q_{i_1}$ und $Q_{i_2}$ disjunkt sind, d.~h. der Schnitt niedrigerdimensional, als die Dimension des umgebenen Vektorraums ist, ist 
 		auch dieser Schnitt mit $Q_j'$ niedrigerdimensional, also sind $F_{i_1j}$ und $F_{i_2j}$ disjunkt. Außerdem gilt
 		\begin{align}
 		\bigcup_{j=1}^m F_{ij} = \bigcup_{j=1}^m \left( Q_i \cap Q_j' \right) = 
@@ -366,12 +366,12 @@
 	sind, liegen sie in der Borelalgebra und sind damit auch Lebesgue-messbar.
 	
 	\begin{proposition} \label{prop:cong,vol}
-		Seien $P$ und $Q$ zwei Polytope, s. d. $P\cong Q$, dann gilt $vol(P)=vol(Q)$.
+		Seien $P$ und $Q$ zwei Polytope, s.~d. $P\cong Q$, dann gilt $vol(P)=vol(Q)$.
 	\end{proposition}
 	
 	\begin{proof}
-		Sei $f$ also die Isometrie, s. d. $f(P)=Q$. Dann finden wir ein 
-		$\alpha\in\setR^d$ und eine orthogonale Matrix $U\in O(d)$, s. d. für 
+		Sei $f$ also die Isometrie, s.~d. $f(P)=Q$. Dann finden wir ein 
+		$\alpha\in\setR^d$ und eine orthogonale Matrix $U\in O(d)$, s.~d. für 
 		alle $x\in\setR^d$ gilt $f(x)=\alpha+Ux$. Damit ergibt sich die Aussage 
 		mit der Transformationsformel 
 		aus der Analysis (siehe auch \cite[Satz 4.7]{SkriptAna3}).
@@ -423,11 +423,11 @@
 	
 	\subsection{Bolyai-Gerwien Theorem}
 	
-	Im Folgenden setzen wir die Dimension $d$ auf $2$ d. h. wir betrachten Polygone. 
+	Im Folgenden setzen wir die Dimension $d$ auf $2$ d.~h. wir betrachten Polygone. 
 	Dieses Kapitel richtet sich nach dem zweiten Kapitel von \cite{Boltianskii}.
 	
 	\begin{lemma}
-		Sei $P$ ein Dreieck, dann gibt es ein Rechteck $Q$, s. d. $P\sim Q$. \label{lemma:dreieck,rechteck}
+		Sei $P$ ein Dreieck, dann gibt es ein Rechteck $Q$, s.~d. $P\sim Q$. \label{lemma:dreieck,rechteck}
 	\end{lemma}
 	
 	\begin{proof}
@@ -465,7 +465,7 @@
 	\end{lemma}
 	
 	\begin{proof}
-		Seien $P$ und $Q$ zwei Rechtecke mit dem gleichen Flächeninhalt, d. h. falls $h_P$ die Höhe und 
+		Seien $P$ und $Q$ zwei Rechtecke mit dem gleichen Flächeninhalt, d.~h. falls $h_P$ die Höhe und 
 		$b_P$ die Breite des Rechtecks $P$ und $h_Q$ die Höhe und $b_Q$ die Breite des Rechtecks $Q$ sind, 
 		dann soll gelten $h_P \cdot b_P = h_Q \cdot b_Q$ also auch
 		\begin{align}
@@ -489,7 +489,7 @@
 		\[ (b_P-b_Q)h_P=b_P h_P-b_Q h_P=h_Qb_Q-b_Qh_P=b_Q(h_Q-h_P) \]
 		also auch
 		\[\frac{b_P-b_Q}{h_Q-h_P}=\frac{b_Q}{h_P}. \]
-		Damit folgt, dass die Dreiecke $omc$ und $dbn$ ähnlich sind, d. h. 
+		Damit folgt, dass die Dreiecke $omc$ und $dbn$ ähnlich sind, d.~h. 
 		sie haben die gleichen Seitenverhältnisse und folglich sind die Strecken $\overline{mc}$ 
 		und $\overline{nb}$ parallel. Hierbei sei $d$ der Schnittpunkt der Strecken $\overline{mn}$ und 
 		$\overline{bc}$. Also sind die drei Strecken $\overline{mc}$, $\overline{ap}$ und $\overline{nb}$ 
@@ -507,7 +507,7 @@
 			Rechteck $omdc$ nicht, siehe Abbildung \ref{Abb.3}. 
 			Es gilt also $2b_Q<b_P$. Sei nun $e$ der Mittelpunkt der Strecke $\overline{oa}$. Weiter sei $k$ die 
 			kleinste natürliche Zahl, die angibt, wie oft man die Strecke $\overline{om}$ entlang der Strecke $\overline{oa}$ 
-			legen muss, s. d. der äußere Eckpunkt der $k$-ten Verlegung der Strecke 
+			legen muss, s.~d. der äußere Eckpunkt der $k$-ten Verlegung der Strecke 
 			$\overline{om}$ nicht mehr auf der Strecke $\overline{oe}$ liegt, 
 			sondern auf der Strecke $\overline{ea}$. Diesen Eckpunkt wollen 
 			wir $t$ nennen. 
@@ -543,7 +543,7 @@
 		wobei $P_1,\ldots,P_n$ Rechtecke sind. Nun nehmen wir eine beliebige Kante $\overline{a_0b_0}$ und 
 		stellen die Lotgeraden auf den Eckpunkten $a_0$ und $b_0$ durch die Strecke $\overline{a_0b_0}$ 
 		auf. Anschließend ziehen wir $n$ 
-		parallele Strecken zu $\overline{a_0b_0}$, s. d. der Flächeninhalt des Recheckts $a_{i-1}b_{i-1}b_ia_i$, 
+		parallele Strecken zu $\overline{a_0b_0}$, s.~d. der Flächeninhalt des Recheckts $a_{i-1}b_{i-1}b_ia_i$, 
 		welches wir $R_i$ nennen, dem Flächeninhalt des Rechtecks $P_i$ entspricht, wobei $i=1,\ldots,n$. 
 		Nach Lemma \ref{lemma:rechtecke} gilt also $P_i\sim R_i$ für alle $i$ und damit
 		\[ P_1+\ldots+P_n\sim R_1+\ldots+R_n. \]
@@ -552,7 +552,7 @@
 		und damit ist $P$ mit dem Rechteck $a_0b_0b_na_n$ zerlegungsgleich. 
 		Somit ist jedes Polygon zerlegungsgleich zu einem Rechteck. \\
 		Seien nun $P$ und $Q$ zwei Polygone mit gleichem Flächeninhalt, dann finden wir wie bereits oben gezeigt 
-		Rechtecke $R_1$ und $R_2$, s. d.
+		Rechtecke $R_1$ und $R_2$, s.~d.
 		\[ P\sim R_1,\quad Q\sim R_2.\]
 		Nach Proposition \ref{prop:zerl,vol} haben $R_1$ und $R_2$ also das 
 		gleiche Volumen und nach Lemma \ref{lemma:rechtecke} gilt also nun auch 
@@ -574,7 +574,7 @@
 	
 	\section{Zerlegungsgleichheit von Polyedern}
 	
-	Im Folgenden setzen wir die Dimension $d$ auf $3$, d. h. wir betrachten Polyeder. 
+	Im Folgenden setzen wir die Dimension $d$ auf $3$, d.~h. wir betrachten Polyeder. 
 	
 	\begin{definition}
 		Wir wollen den Schnitt 
@@ -603,16 +603,16 @@
 		\item \label{bem:dehn;1} 
 		Wir schneiden durch die Kante: Es entstehen zwei neue Kanten $k_1$ von $P_1$ und $k_2$ von $P_2$, 
 		deren Kantenlängen sich zu der von $k$ addieren lassen und deren Winkel gleich dem von $k$ sind. 
-		D. h. für $\ell(k_1)=l_1$ und $\ell(k_2)=l_2$ gilt $l=l_1 +l_2$.
+		d.~h. für $\ell(k_1)=l_1$ und $\ell(k_2)=l_2$ gilt $l=l_1 +l_2$.
 		\item \label{bem:dehn;2} 
 		Wir schneiden entlang der Kante: Also entstehen zwei neue Kanten $k_1$ von $P_1$ und $k_2$ von 
 		$P_2$, deren Kantenlänge gleich der von $k$ ist und deren Winkel sich zu dem von $k$ addieren lassen. 
-		D. h. für $w(k_1)=\varphi_1$ und $w(k_2)=\varphi_2$ gilt $\varphi=\varphi_1 +\varphi_2$.
+		d.~h. für $w(k_1)=\varphi_1$ und $w(k_2)=\varphi_2$ gilt $\varphi=\varphi_1 +\varphi_2$.
 		\item \label{bem:dehn;3} 
 		Wir schneiden nicht durch die Kante: Die Kante $k$ lässt sich entweder in $P_1$ oder $P_2$ 
 		wiederfinden und sowohl Kantenlänge, als auch Diederwinkel bleiben gleich.
 		\item \label{bem:dehn;4} 
-		Bleibt nur noch der Sonderfall, wenn wir durch eine der Flächen von $P$ schneiden. Hierbei entstehen zwei neue Kanten $k_1$ von $P_1$ und $k_2$ von $P_2$, deren Längen gleich sind und deren Winkel sich zu $\pi$ addieren lassen. D. h. für $w(k_1)=\varphi_1$ und 
+		Bleibt nur noch der Sonderfall, wenn wir durch eine der Flächen von $P$ schneiden. Hierbei entstehen zwei neue Kanten $k_1$ von $P_1$ und $k_2$ von $P_2$, deren Längen gleich sind und deren Winkel sich zu $\pi$ addieren lassen. d.~h. für $w(k_1)=\varphi_1$ und 
 		$w(k_2)=\varphi_2$ gilt $\varphi_1 +\varphi_2 =\pi$.
 	\end{enumerate}
 	Wir wollen eine Operation, die in beiden Argumenten, sowohl in Länge als auch Diederwinkel, linear ist 
@@ -629,7 +629,7 @@
 		$\otimes: M\times N \to M\otimes_R N$ gibt, die die folgende universelle Eigenschaft erfüllt:
 		\begin{center}
 			Sei $L$ ein weiterer $R$-Modul und $\phi: M\times N \to L$ eine bilineare Abbildung. Dann 
-			existiert genau eine lineare Abbildung $\eta: M\otimes_R N \to L$, s. d. das folgende Diagramm 
+			existiert genau eine lineare Abbildung $\eta: M\otimes_R N \to L$, s.~d. das folgende Diagramm 
 			kommutiert:
 			\begin{center}
 				\begin{tikzpicture}
@@ -717,7 +717,7 @@
 	Wir können dieses Resultat auf endlich viele Zerlegungen von $P$ fortsetzen. 
 		
 	\begin{proposition} \label{prop:cong,dehn}
-		Seien $P$ und $Q$ zwei Polyeder, s. d. $P\cong Q$, dann gilt $D(P)=D(Q)$.
+		Seien $P$ und $Q$ zwei Polyeder, s.~d. $P\cong Q$, dann gilt $D(P)=D(Q)$.
 	\end{proposition}
 	
 	\begin{proof}
@@ -737,10 +737,10 @@
 		\[D(P)=D(P_1+\ldots+P_n)=\sum_{i=1}^n D(P_i) =\sum_{i=1}^n D(Q_i)=D(Q_1+\ldots+Q_n)=D(Q).\]
 	\end{proof}
 	
-	Im Jahr 1965 bewies der Schweizer Mathematiker Jean-Pierre Sydler in 
-	\cite{Sydler1965} 
-	sogar, dass dies eine notwendige Bedingung ist und 
-	es ergibt sich der folgende Satz.
+	Im Jahr 1965 bewies der Schweizer Mathematiker Jean-Pierre Sydler (in 
+	\cite{Sydler1965}) 
+	sogar, dass die Zerlegungsgleichheit eine notwendige Bedingung ist und 
+	es ergibt sich der folgende Satz. Wir werden diesen hier nicht beweisen.
 	
 	\begin{theorem}[Dehn-Sydler Theorem]
 		Seien $P$ und $Q$ Polyeder, dann sind $P$ und $Q$ genau 
@@ -750,13 +750,15 @@
 	
 	\subsection{Lokalisierung des Tensorprodukts}
 	
-	Wir wollen uns nun zur Berechnung der Dehn-Invariante einiger Polyeder ein paar Eigenschaften des Tensorprodukts $\setR\otimes_{\setZ}\setR /\pi\setZ$ anschauen. Dazu wollen wir zeigen, dass unser Tensorprodukt isomorph zum Tensorprodukt  
+	Um später die Dehn-Invariante einiger Polyeder berechnen zu können, 
+	wollen wir uns ein paar Eigenschaften des Tensorprodukts 
+	$\setR\otimes_{\setZ}\setR /\pi\setZ$ anschauen. Dazu wollen wir zeigen, dass unser Tensorprodukt isomorph zum Tensorprodukt  
 	$\setR\otimes_{\setQ}\setR /\pi\setQ$ ist, hierzu benötigen wir ein 
 	paar Resultate 
 	aus der Kommutativen Algebra. Wir richten uns in diesem Abschnitt 
 	nach \cite{introductiontocomalg}[Kapitel 3].\\
 	Sei im Folgenden $R$ ein Integritätsring, wir wollen in diesem nun 
-	Brüche einführen. Sei dazu $S$ eine multiplikative Teilmenge von $R$, d. h.
+	Brüche einführen. Sei dazu $S$ eine multiplikative Teilmenge von $R$, d.~h.
 	$1\in S$ und $S$ ist unter Multiplikation abgeschlossen, also ein Monoid. Wir 
 	definieren die Relation $\equiv$ auf $R\times S$ durch
 	\[(r_1,s_1)\equiv(r_2,s_2)\quad \Leftrightarrow\quad r_1 s_2 =r_2 s_1\]
@@ -817,7 +819,7 @@
 		von \ref{lemma:exakt;1} in $M$ und damit ist $g(f(m_1))=0$. Also gilt 
 		$g\circ f=0$ und damit erhalten wir
 		\[(S^{-1}g) \circ (S^{-1}f) = S^{-1}(g\circ f)=S^{-1}(0)=0.\]
-		Wir erhalten demzufolge
+		Demzufolge gilt
 		\[im(S^{-1}f)\subset ker(S^{-1}g).\]
 		Um die umgekehrte Inklusion zu zeigen, wählen wir 
 		$\frac{m}{s}\in ker(S^{-1}g)$, das heißt $S^{-1}g\left(\frac{m}{s}\right)=\frac{g(m)}{s}=0$ in $S^{-1}M_2$. 
@@ -878,7 +880,7 @@
 		Sei $R$ ein Integritätsring und $M$ ein $R$-Modul. Dann gibt es einen 
 		eindeutigen Isomorphismus
 		\[f:S^{-1}R\otimes_R M\to S^{-1}M\]
-		zwischen den $S^{-1}R$-Moduln, s. d.
+		zwischen den $S^{-1}R$-Moduln, s.~d.
 		\begin{align}
 			f\left(\frac{r}{s}\otimes m\right)=\frac{rm}{s} \label{lemma:lociso;1}
 		\end{align}
@@ -903,7 +905,7 @@
 		für alle $r_1,r_2,\lambda_1,\lambda_2\in R$, $s_1,s_2 \in S$ und 
 		$m_1,m_2\in M$ gilt. Damit gibt es mit der universellen Eigenschaft 
 		des Tensorprodukts (Proposition \ref{prop:univeig}) genau einen 
-		$R$-Modulhomomorphismus $f:S^{-1}R\otimes_R M\to S^{-1}M$, s. d. 
+		$R$-Modulhomomorphismus $f:S^{-1}R\otimes_R M\to S^{-1}M$, s.~d. 
 		\ref{lemma:lociso;1} gilt. Es ist klar, dass $f$ surjektiv ist, 
 		dazu wählen wir $r=1$ und erhalten somit alle Elemente aus 
 		$S^{-1}M$. Weiter ist $f$ auch eindeutig bestimmt durch 
@@ -921,7 +923,7 @@
 		Wir können demnach jedes Element aus $S^{-1}R\otimes_R M$ in der Form 
 		\[\frac{1}{s}\otimes m\]
 		schreiben. Betrachten wir nun den Kern von $f$. Sei also 
-		$\frac{1}{s}\otimes m \in ker(f)\subset S^{-1}R\otimes_R M$, d. h. 
+		$\frac{1}{s}\otimes m \in ker(f)\subset S^{-1}R\otimes_R M$, d.~h. 
 		$f\left(\frac{1}{s}\otimes m\right)=0$. Da $R$ ein 
 		Integritätsring ist, folgt mit $f\left(\frac{1}{s}\otimes m\right)=\frac{m}{s}=0$, dass $m=0$ und damit gilt
 		\[\frac{1}{s}\otimes m =\frac{1}{s}\otimes 0=0.\]
@@ -934,7 +936,7 @@
 		Seien $M$ und $N$ zwei $R$-Moduln, dann gibt es einen eindeutigen 
 		Isomorphismus 
 		\[f:S^{-1}M\otimes_{S^{-1}R}S^{-1}N\to S^{-1}(M\otimes_R N)\]
-		zwischen den $S^{-1}R$-Moduln, s. d.
+		zwischen den $S^{-1}R$-Moduln, s.~d.
 		\[f\left(\frac{m}{s_1}\otimes\frac{n}{s_2}\right)=\frac{m\otimes n}{s_1s_2}.\]
 	\end{proposition}
 
@@ -966,7 +968,7 @@
 	\end{align*}
 	Weiterhin gilt
 	\[S^{-1}(M\otimes_R N)=(\setZ\setminus\{0\})^{-1}(\setR\otimes_{\setZ}\setR/\pi\setZ)\simeq \setR\otimes_\setZ\setR/\pi\setZ,\]
-	denn mit der Bilinearität des Tensorproduktes gilt für 
+	denn mit der Bilinearität des Tensorproduktes gilt
 	\begin{align*}
 		(\setZ\setminus\{0\})^{-1}(\setR\otimes_{\setZ}\setR /\pi\setZ)&\simeq
 		\left.\left\langle \left\{\frac{m\otimes n}{z}\right\vert
@@ -976,8 +978,8 @@
 		 &\simeq (\setZ\setminus\{0\})^{-1}\setR\ \ \otimes_\setZ\  \setR/\pi\setZ \\
 		 &\simeq \setR\otimes_\setZ \setR/\pi\setZ,
 	\end{align*}
-	wobei wir mit $\langle\ \cdot\ \rangle$ hier das Erzeugnis meinen.
-	Insgesamt erhalten wir mit der Proposition
+	wobei wir hier mit $\langle\ \cdot\ \rangle$ das Erzeugnis meinen.
+	Insgesamt erhalten wir mit Proposition \ref{prop:tensoriso}
 	\begin{align*}
 		\setR\otimes_\setZ\setR/\pi\setZ\simeq S^{-1}(M\otimes_R N)\simeq S^{-1}M\otimes_{S^{-1}R}S^{-1}N\simeq\setR\otimes_\setQ\setR/\pi\setQ.
 	\end{align*}
@@ -1036,11 +1038,11 @@
 			\item Falls $\alpha\neq 0$, dann sind $\gamma_{b'}=0$ für alle 
 			$b'\in B$ und damit ist $y=0$, also $y\in \pi\setQ$.
 			\item Falls $\alpha=0$, dann sind die $\gamma_{b'}$ beliebig. 
-			Angenommen es gibt also ein $b\in B$, s. d. $\beta_b \neq 0$, dann 
+			Angenommen es gibt also ein $b\in B$, s.~d. $\beta_b \neq 0$, dann 
 			muss $\gamma_{b'}=0$ für alle $b'\in B$ damit $\beta_b\gamma_{b'}=0$ 
 			für alle $b'\in B$ gilt. Das wiederum bedeutet $y=0$ und wir sind hier 
-			fertig. Falls also $\beta_b=0$ für alle $b\in B$, folgt mit $\alpha=0$, 
-			dass $x=0$.
+			fertig. Falls $\beta_b=0$ für alle $b\in B$, folgt mit $\alpha=0$, 
+			dass $x=0$ ist.
 		\end{enumerate}
 		Damit ist die Aussage bewiesen.
 	\end{proof}
@@ -1065,16 +1067,17 @@
 	
 	\begin{example}[Quader] \label{exp:quader}
 		Sei $P$ ein dreidimensionaler Quader. Dann gilt für alle Kanten $k$ von $P$, dass $w(k)=\frac{\pi}{2}$. 
-		Also gilt $w(k)\in \pi\setQ$ für alle Kanten $k$ und nach Bemerkung \ref{bem:dehn=0} folgt
+		Also gilt $w(k)\in \pi\setQ$ für alle Kanten $k$ und mit Bemerkung \ref{bem:dehn=0} folgt
 		\[ D(P)=0. \]
 	\end{example}
 	
 	\begin{example}[regulärer Tetraeder] \label{exp:regTetr}
-		Sei $P$ ein dreidimensionaler regulärer Tetraeder, also haben alle Kanten von $P$ die gleiche Länge $l$ und 
+		Sei $P$ ein dreidimensionaler regulärer Tetraeder, d.~h. alle 
+		Kanten von $P$ haben die gleiche Länge $l$ und 
 		den gleichen Diederwinkel $\alpha$. Seien $A,B,C,D$ die Ecken von $P$ wie in Abbildung \ref{Abb.4}. 
-		Sei $F$ der Mittelpunkt der Strecke $\overline{BC}$, also $|BF|=\frac{l}{2}$ und damit ist nach Pythagoras 
+		Sei $F$ der Mittelpunkt der Strecke $\overline{BC}$, also $|BF|=\frac{l}{2}$ und damit ist nach dem Satz von Pythagoras 
 		$|AF|=\frac{\sqrt{3}}{2}l=|DF|$. Der Mittelpunkt $E$ des Dreiecks $ABC$ hat gerade den Abstand 
-		$\frac{\sqrt{3}}{3 \cdot 2}l=\frac{l}{2\sqrt{3}}$ zu $F$ und schließlich gilt mit Pythagoras
+		$\frac{\sqrt{3}}{3 \cdot 2}l=\frac{l}{2\sqrt{3}}$ zu $F$ und schließlich gilt mit dem Satz von Pythagoras
 		\[\cos(\alpha)=\frac{\frac{l}{2\sqrt{3}}}{\frac{\sqrt{3}}{2}l}=\frac{1}{3}\quad\text{also}
 		\quad \alpha=\arccos\left(\frac{1}{3}\right). \]
 		Damit können wir die Dehn-Invariante berechnen. Es gibt sechs Kanten der Länge $l$, die alle den 
@@ -1157,20 +1160,21 @@
 		Damit sind $Q$ und $T$ nicht zerlegungsgleich.
 	\end{corollary}	
 	
-	Damit haben wir gezeigt, dass es Polyeder gibt, die gleiches Volumen haben, 
-	jedoch nicht zerlegungsgleich sind. Wir wollen uns nun zwei Tetraeder 
-	überlegen mit gleicher Grundseite und gleicher Höhe, die nicht 
-	zerlegungsgleich sind, wie Hilbert vorschlug. Wir betrachten hier 
+	Also haben wir gezeigt, dass es Polyeder gibt, die das gleiche 
+	Volumen haben, 
+	jedoch nicht zerlegungsgleich sind. Wir wollen uns nun, 
+	wie Hilbert bereits vorschlug, zwei Tetraeder, die nicht 
+	zerlegungsgleich sind, aber gleiche Grundseite und Höhe haben, überlegen.  Wir betrachten hier 
 	die Beispiele 2 und 3 aus \cite{Proofsfromthebook}[Kapitel 10].
 	
 	\begin{example}
 		Sei $T_1$ der Tetraeder mit den Eckpunkten $A,B,C,D$ und der Grundseite 
-		$ABC$, das durch die drei zueinander orthogonal liegenden Kanten 
-		$\overline{AB}$, $\overline{AC}$ und $\overline{AD}$, die jeweils 
-		die Länge $l$ haben, aufgespannt wird. Siehe 
+		$ABC$. Der Tetraeder wird durch die drei zueinander orthogonal 
+		liegenden Kanten $\overline{AB}$, $\overline{AC}$ und $\overline{AD}$, die jeweils 
+		die Länge $l$ haben, aufgespannt. Siehe 
 		Abbildung \ref{Abb.5}. 
 		An den drei zueinander orthogonal liegenden Kanten befinden sich 
-		offenbar rechte Winkel. Die anderen drei Kanten haben alle 
+		offensichtlich rechte Winkel. Die anderen drei Kanten haben alle 
 		die gleiche Länge $\sqrt{2}l$ und alle Diederwinkel 
 		haben den gleich Wert $\varphi$. Sei $E$ der Mittelpunkt der Kante 
 		$\overline{BC}$, dann gilt $\abs{AE}=\frac{1}{\sqrt{2}}l$. Das 
@@ -1184,7 +1188,7 @@
 		Mit Proposition \ref{prop:irr} gilt für $n=3$, dass 
 		$\frac{1}{\pi}\arccos\left(\frac{1}{\sqrt{3}}\right)$ irrational ist 
 		und damit liegt $\arccos\left(\frac{1}{\sqrt{3}}\right)$ nicht 
-		in $\pi\setQ$. Mit Satz \ref{bem:dehn=0} gilt also 
+		in $\pi\setQ$. Weiter gilt mit Satz \ref{bem:dehn=0}  
 		\[D(T_1)\neq 0.\]
 	\end{example}
 	
@@ -1217,8 +1221,8 @@
 		\[D(T_2)=0.\]
 	\end{example}
 	
-	Wir sehen, dass die beiden Tetraeder $T_1$ und $T_2$ beide die 
-	gleiche Grundseite und Höhe haben, jedoch unterschiedliche Dehn-Invariante. 
+	Wir sehen, dass die beiden Tetraeder $T_1$ und $T_2$ die 
+	gleiche Grundseite und Höhe haben, jedoch unterschiedliche Dehn-Invarianten. 
 	Damit sind sie nicht zerlegungsgleich. Wir haben also die vollständige 
 	Lösung für Hilberts drittes Problem für die Zerlegungsgleichheit von 
 	Polyeder gefunden.
@@ -1237,22 +1241,23 @@
 	
 	Wir beginnen mit dem einfachsten Polytop, dem Simplex. Ein Simplex 
 	im $\setR^d$ hat 
-	$d+1$ ausgezeichnete Ecken und damit gerade soviele Kanten, dass 
+	$d+1$ Ecken und damit gerade soviele Kanten, dass 
 	wir ein konvexes Polytop erhalten. Im zwei-dimensionalen Fall ist ein 
 	Simplex ein Dreieck und im drei-dimensionalen ein Tetraeder. Wir werden 
 	feststellen, dass sich jedes konvexe Polytop in endlich viele Simplizes 
 	zerlegen lässt. Diese Simplizialzerlegung von Polytopen spielt bei 
 	der Zerlegungsgleichheit von Polytopen eine wichtige Rolle, wie wir schon im 
 	Beweis des Bolyai-Gerwien Theorems (Satz \ref{theorem:bolyai-gerwien}) 
-	gesehen haben. Ebenso war, wie sich schon aus der Formulierung des dritten Problems von Hilbert herauslesen lässt, ersichtlich, dass es eine der einfachsten Lösungen ist, zwei Simplizes mit gleichem Volumen zu finden, die nicht zerlegungsgleich sind.
+	gesehen haben. Ebenso ist, wie sich aus Hilberts Formulierung des 
+	dritten Problems herauslesen lässt, ersichtlich, dass es eine der einfachsten Lösungen ist, zwei Simplizes mit gleichem Volumen zu finden, die nicht zerlegungsgleich sind.
 	
 	\begin{definition}[Simplex]\label{def:simplex}
 		Ein \textsl{Simplex} $S$ im $\setR^d$ ist die konvexe Hülle einer Menge von 
 		$d+1$ Punkten 
 		$p_0,\ldots,p_d$, die sich im Raum in allgemeiner Lage befinden, also 
-		nicht alle in einer Ebene liegen. Die Punkte bezeichnen wir als 
+		nicht alle in einer Ebene liegen. Diese Punkte bezeichnen wir als 
 		\textsl{Ecken} des Simplex. Wir wollen das Simplex durch Wahl der 
-		ausgezeichneten Ecke $p=p_0$ und der Kantenvektoren 
+		Ecke $p=p_0$ und der Kantenvektoren 
 		$s_i=p_i -p_{i-1}$ für alle $i=1,\ldots,d$ charakterisieren. 
 		Wir schreiben für das Simplex S auch
 		\[S=\langle p;s_1\ldots s_d\rangle.\]
@@ -1275,7 +1280,7 @@
 	\end{theorem}
 	
 	\begin{proof}
-		Das Polytop $P$ lässt sich nach der Definition als Vereinigung endlich 
+		Das Polytop $P$ lässt sich nach Definition als Vereinigung endlich 
 		vieler konvexer Polytope darstellen. Wir müssen also 
 		zeigen, dass sich jedes konvexe Polytop $P'$ in endlich viele Simplizes 
 		zerlegen lässt. Wir wollen dies per Induktion über die Dimension 
@@ -1332,7 +1337,7 @@
 	Polytops das Gleiche ist wie die Zerlegung der gestreckten Polytope.
 	
 	\begin{lemma} \label{lemma:dilzerl}
-		Sei $P$ ein Polytop und $P_1,\ldots,P_n$ endlich viele Polytope, s. d. 
+		Sei $P$ ein Polytop und $P_1,\ldots,P_n$ endlich viele Polytope, s.~d. 
 		$P=P_1+\ldots+P_n$ und $\lambda>0$ gegeben, dann gilt 
 		\[\lambda P=\lambda P_1+\ldots+\lambda P_n.\]
 	\end{lemma}
@@ -1355,8 +1360,8 @@
 	
 	\begin{proof}
 		Seien für die Hinrichtung $P\cong Q$ gegeben. Somit gibt es eine Isometrie 
-		$f$, s. d. gilt $f(P)=Q$. Wir können die Isometrie $f$ durch ein $\alpha\in
-		\setR^d$ und eine orthogonale Matrix $U\in O(d)$ darstellen, s. d. 
+		$f$, s.~d. gilt $f(P)=Q$. Wir können die Isometrie $f$ durch ein $\alpha\in
+		\setR^d$ und eine orthogonale Matrix $U\in O(d)$ darstellen, s.~d. 
 		$f(P)=\alpha + UP$ gilt. Betrachte die Isometrie $f_{\lambda}$, die 
 		für alle $x\in\setR^d$ durch 
 		$f_{\lambda}(x)=\lambda\cdot \alpha +Ux$ definieren. 
@@ -1366,8 +1371,8 @@
 		\alpha+\lambda U P =\lambda(\alpha+ U P)=\lambda f(P)=\lambda Q\]
 		Damit sind $\lambda P$ und $\lambda Q$ kongruent. \\
 		Seien für die Rückrichtung nun $\lambda P\cong \lambda Q$, folglich  
-		gibt es eine Isometrie $f$, s. d. $f(\lambda P)=\lambda Q$. Es gibt 
-		also wieder $\alpha\in\setR^d$ und $U\in O(d)$, s. d. 
+		gibt es eine Isometrie $f$, s.~d. $f(\lambda P)=\lambda Q$. Es gibt 
+		also wieder $\alpha\in\setR^d$ und $U\in O(d)$, s.~d. 
 		$f(x)=\alpha + Ux$ für alle $x\in\setR^d$ gilt. Betrachte die Isometrie 
 		$f_{\lambda}$, die wir durch 
 		$f_{\lambda}(x)=\frac{1}{\lambda}\cdot \alpha +U x$ für alle $x\in\setR^d$ 
@@ -1387,7 +1392,7 @@
 	\begin{proof}
 		Seien für die Hinrichtung $P$ und $Q$ zerlegungsgleich, dann gibt 
 		es endlich viele Polytope $P_1,\ldots,P_n$ und $Q_1\ldots,Q_n$ mit 
-		$P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots Q_n$, s. d. $P_i\cong Q_i$ 
+		$P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots Q_n$, s.~d. $P_i\cong Q_i$ 
 		für alle $i=1,\ldots, n$. Nach Lemma \ref{lemma:dilzerl} können wir 
 		die Zerlegungen der gestreckten Polytope betrachten, also
 		\begin{align*}
@@ -1399,7 +1404,7 @@
 		für alle $i=1,\ldots,n$ gilt. Damit folgt $\lambda P\sim \lambda Q$. \\
 		Für die Rückrichtung seien $\lambda P\sim \lambda Q$, dann gibt 
 		endlich viele Polytop $P_1,\ldots P_n$ und $Q_1\ldots Q_n$ mit 
-		$\lambda P=P_1+\ldots+P_n$ und $\lambda Q=Q_1+\ldots+Q_n$, s. d. 
+		$\lambda P=P_1+\ldots+P_n$ und $\lambda Q=Q_1+\ldots+Q_n$, s.~d. 
 		$P_i\cong Q_i$ für alle $i=1,\ldots,n$. Wir betrachten die 
 		Zerlegungen
 		\begin{align*}
@@ -1419,7 +1424,7 @@
 		von $P$ mit 
 		einer natürlichen Zahl $n$ ein Polytop, wir schreiben $n\cdot P$, 
 		das sich in $n$ viele Polytope zerlegen lässt, die alle kongruent zu 
-		$P$ sind. Formal bedeutet das, dass es Polytope $P_1,\ldots,P_n$ gibt, s. d.
+		$P$ sind. Formal bedeutet das, dass es Polytope $P_1,\ldots,P_n$ gibt, s.~d.
 		\[n\cdot P=P_1+\ldots+P_n,\]
 		wobei $P_i\cong P$ für alle $i=1,\ldots,n$.
 	\end{definition}
@@ -1442,7 +1447,7 @@
 	\end{remark}
 	
 	\begin{remark}[Additionssatz] \label{bem:addsatz}
-		Seien $P,Q,R,S$ vier Polytope, s. d. $P\sim Q$ und $R\sim S$, dann gilt
+		Seien $P,Q,R,S$ vier Polytope, s.~d. $P\sim Q$ und $R\sim S$, dann gilt
 		\[P+R\sim Q+S.\]
 		Wir iterieren hierbei einfach die Zerlegungen der einzelnen Polytope 
 		auf und erhalten damit die Zerlegungsgleichheit.
@@ -1461,7 +1466,7 @@
 	
 	\begin{proof}
 		Wir finden $n$ viele Polytope $R_1,\ldots,R_n$ mit 
-		$R_i\cong (P+Q)$ für alle $i=1,\ldots,n$, s. d. 
+		$R_i\cong (P+Q)$ für alle $i=1,\ldots,n$, s.~d. 
 		$n\cdot(P+Q)=R_1+\ldots+R_n$. Da Schnitte von Polytopen wieder 
 		Polytope sind, folgt, dass sich jedes 
 		$R_i$ darstellen lässt durch Polytope $P_i$ und $Q_i$ für alle 
@@ -1469,7 +1474,7 @@
 		mit der Definition der Polytope $n\cdot P$ und $n\cdot Q$ auch jeweils 
 		$n$ viele Polytope 
 		$P_1',\ldots,P_n'$ und $Q_1',\ldots,Q_n'$ mit $P_i'\cong P$ und 
-		$Q_i'\cong Q$ für alle $i=1,\ldots,n$, s. d. $n\cdot P=P_1'+\ldots+P_n'$ und 
+		$Q_i'\cong Q$ für alle $i=1,\ldots,n$, s.~d. $n\cdot P=P_1'+\ldots+P_n'$ und 
 		$n\cdot Q=Q_1'+\ldots+Q_n'$. Mit der Transitivität der Kongruenz 
 		gilt auch $P_i\cong P_i'$ und $Q_i\cong Q_i'$ für alle 
 		$i=1,\ldots,n$. Wir erhalten die Zerlegungen
@@ -1500,7 +1505,7 @@
 		Seien $A,B,C$ Mengen, dann ergeben sich folgende Eigenschaften 
 		mit der Minkowski-Summe.
 		\begin{enumerate}
-			\item Die Minkowski-Addition erbt die Kommutativität und Assoziativität von der Addtion, d. h. 
+			\item Die Minkowski-Addition erbt die Kommutativität und Assoziativität von der Addtion, d.~h. 
 			es gilt
 			\[A\times B=B\times A\qquad\text{und}\qquad A\times(B\times C)=(A\times B)\times C.\]
 			
@@ -1561,14 +1566,14 @@
 			\item Sind $P$ und $Q$ zwei kongruente Parallelotope, dann gilt mit 
 			der Invarianz des Skalarprodukts unter Isometrien
 			\[\mathfrak{D}(P)=\mathfrak{D}(Q).\]
-			\item Sei $P$ ein Parallelotop und $\lambda>0$ gegeben, dann gilt 
+			\item \label{bem:gramfunk;2} Sei $P$ ein Parallelotop und $\lambda>0$ gegeben, dann gilt 
 			\[\mathfrak{D}(\lambda P)=\lambda^d \mathfrak{D}(P).\]
 		\end{enumerate}
 	\end{remark}
 	
 	\begin{theorem} \label{thm:zerlgram}
 		Die Parallelotope $P$ und $Q$ sind zerlegungsgleich, falls ihre 
-		Gramschen Funktionale übereinstimmen, d. h. $\mathfrak{D}(P)=\mathfrak{D}(Q)$.
+		Gramschen Funktionale übereinstimmen, d.~h. $\mathfrak{D}(P)=\mathfrak{D}(Q)$.
 	\end{theorem}
 	
 	\begin{proof}
@@ -1591,7 +1596,7 @@
 		der Form
 		\[P=P_1 \times\ldots\times P_i\]
 		gibt, wobei $P_k$ für alle $k=1,\ldots,i$ konvexe Polytope sind, die jeweils in einer $d_k$-dimensionalen Ebene $E_{d_k}$ liegen. Hierbei soll $\sum_{k=1}^i d_k =d$ und $d_k\geq 1$ für alle $k=1,\ldots,i$ 
-		gelten. Die Ebenen $E_{d_k}$ befinden sich paarweise in allgemeiner Lage, d. h. dass diese paarweise keine gleichen Richtungen aufweisen 
+		gelten. Die Ebenen $E_{d_k}$ befinden sich paarweise in allgemeiner Lage, d.~h. dass diese paarweise keine gleichen Richtungen aufweisen 
 		bzw. als Räume komplementär in $\setR^d$ liegen.
 	\end{definition}
 	
@@ -1604,7 +1609,7 @@
 	
 	\begin{definition}[Zylinderklassen]
 		Ein Polytop $P$ ist ein $i$-\textsl{stufiges Zylinderpolytop}, falls 
-		es endlich viele $i$-stufige Zylinder $P_1,\ldots,P_n$ gibt, s. d.
+		es endlich viele $i$-stufige Zylinder $P_1,\ldots,P_n$ gibt, s.~d.
 		\[P=P_1+\ldots+P_n.\]
 		Die $i$-\textsl{te Zylinderklasse} $\mathfrak{B}_i$ ist die Menge aller 
 		Polytope, die zu einem $i$-stufigen Zylinderpolytop zerlegungsgleich 
@@ -1623,7 +1628,7 @@
 	Parallelotopen zerlegungsgleich sind. Es gilt sogar die folgende Eigenschaft.
 	
 	\begin{proposition} \label{bem:dteZylinderklasse}
-		Sei $P\in\mathfrak{B}_d$ ein Polytop, dann gibt es ein $\lambda>0$, s. d. 
+		Sei $P\in\mathfrak{B}_d$ ein Polytop, dann gibt es ein $\lambda>0$, s.~d. 
 		\[P\sim \lambda W.\] 
 	\end{proposition}
 	
@@ -1634,7 +1639,7 @@
 	
 	\begin{proof}
 		Da $P$ ein Polytop aus der $d$-ten Zylinderklasse ist, finden 
-		wir endlich viele Parallelotope $P_1,\ldots, P_n$, s. d. 
+		wir endlich viele Parallelotope $P_1,\ldots, P_n$, s.~d. 
 		$P=P_1+\ldots+P_n$. Wir definieren $\lambda$ durch 
 		\[\lambda^d =\sum_{i=1}^n \mathfrak{D}(P_i).\]
 		Weiter definieren wir 
@@ -1688,13 +1693,13 @@
 	
 	\begin{definition}[Translationsgleichheit, translative Zerlegungsgleichheit]
 		Wir nennen zwei Polytope $P$ und $Q$ \textsl{translationsgleich}, wenn es 
-		eine Translation $f$ aus der Translationsgruppe gibt, s. d. 
+		eine Translation $f$ aus der Translationsgruppe gibt, s.~d. 
 		$f(P)=Q$ gilt. Wir schreiben $P\cong_t Q$. \\
 		Die Translationsgleichheit ist wie die Kongruenz eine 
 		Äquivalenzrelation. \\
 		Weiter nennen wir zwei Polytope $P$ und $Q$ \textsl{translativ 
 		zerlegungsgleich}, wenn es endlich viele $P_1,\ldots,P_n$ und 
-		$Q_1,\ldots,Q_n$ gibt, mit $P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots+Q_n$, s. d. 
+		$Q_1,\ldots,Q_n$ gibt, mit $P=P_1+\ldots+P_n$ und $Q=Q_1+\ldots+Q_n$, s.~d. 
 		für alle $i=1,\ldots,n$ die Polytope $P_i$ und $Q_i$ translationsgleich 
 		sind. Wir schreiben $P\approx Q$.
 	\end{definition}
@@ -1713,14 +1718,14 @@
 	\begin{remark}\label{bem:mink;zerl}
 		Seien $P,Q,R,S$ Polytope mit $P\approx R$ und $Q\approx S$, dann gilt 
 		$P\times Q\approx R\times S$. \\
-		Betrachten wir die Zerlegungen der einzelnen Polytope und 
-		die von $P\times Q$ in $R\times S$. So ergeben sich, 
-		durch Ausmultiplizieren mit den Distributivgesetzen der Minkowski-Addition, 
-		Zerlegungen, dessen einzelne Polytope mit Bemerkung 
+		Betrachten wir die Zerlegungen der einzelnen Polytope und setzen diese in 
+		$P\times Q$ und $R\times S$ ein. Dann ergeben sich durch Ausmultiplizieren 
+		mit den Distrubivgesetzen der Minkowski-Addition Zerlegungen, dessen 
+		einzelne Polytope mit Bemerkung 
 		\ref{bem:mink} Eigenschaft \ref{bem:mink;2} translationsgleich sind.
 	\end{remark}
 	
-	Bevor wir zu dem Hilfssatz kommen, wollen wir uns die kanonische 
+	Bevor wir zu dem Hilfssatz kommen, wollen wir uns eine Folgerung aus der kanonischen 
 	Simplexzerlegung anschauen. 
 		
 	\begin{definition}[Simplotop]
@@ -1751,7 +1756,7 @@
 	
 	\begin{theorem}[Folgerung aus der Kanonischen Simplexzerlegung]\label{thm:kanonsimpl}
 		Sei $S$ ein Simplex und $0<\lambda<1$ gegeben, dann 
-		gibt es ein $S_0\in\mathfrak{B}_2$, s. d.
+		gibt es ein $S_0\in\mathfrak{B}_2$, s.~d.
 		\[S\approx \lambda S+(1-\lambda)S +S_0.\]
 	\end{theorem}
 	
@@ -1800,9 +1805,9 @@
 		Falls $i=d$ ist $P_0=\emptyset$.
 	\end{theorem}
 	
-	Da wir im 
-	Beweis der Aussage lediglich die Streckung und Vervielfachung von Polytopen 
-	betrachten, gilt an einigen Stellen sogar die Translationsgleichheit.
+	Da wir im Beweis der Aussage lediglich die Streckung und Vervielfachung 
+	von Polytopen betrachten, gilt der Satz sogar für translative Zerlegungsgleichheit, 
+	wir folgern daraus die Zerlegungsgleichheit.
 	
 	\begin{proof}
 		\noindent
@@ -1829,7 +1834,7 @@
 				nP &\approx (n-1)P+P_1+P_{1,0} \\
 				(n-1)P &\approx (n-2)P+P_2 +P_{2,0} \\
 				&\ \vdots \\
-				3P &\approx P +P_{n-2}+P_{n-2,0} \\
+				3P &\approx 2P +P_{n-2}+P_{n-2,0} \\
 				2P &\approx P +P_{n-1}+P_{n-1,0}
 			\end{align*}
 			Es lässt sich durch sukzessives Einsetzen erkennen, dass wir 
@@ -1889,8 +1894,8 @@
 			\[\bigtimes_{k=1}^i P_{k,\mu_k}=
 			P_{1,\mu_1}\times\ldots\times P_{i,\mu_i} \cong_t 
 			P_1\times\ldots\times P_i =P.\]
-			Wir haben $n^i$ viele Summanden die kongruent zu $P$ sind, 
-			also 
+			Wir haben $n^i$ viele Summanden die translationsgleich, also auch 
+			kongruent, zu $P$ sind, demnach 
 			können wir diese zu $n^i \cdot P$ zusammenfassen. \\
 			Betrachten wir nun die übrigen Summanden, in denen mindestens 
 			ein Eintrag von $\mu$ verschwindet. Dann stellen wir fest, dass 
@@ -1900,15 +1905,16 @@
 			Falls $P_{k,0}$ stattdessen in $\mathfrak{B}_2^{(d_k)}$ liegt, 
 			ist $P_{k,0}$ bezogen auf die Ebene $E_{d_k}$ ein $2$-stufiger 
 			Zylinder, also gibt es zwei konvexe Polytope $P_{k,0}'$ 
-			und $P_{k,0}''$, die in zwei Ebenen $E'$ und $E''$ liegen, s. d. 
+			und $P_{k,0}''$, die in zwei Ebenen $E'$ und $E''$ liegen, s.~d. 
 			$P_{k,0}=P_{k,0}'\times P_{k,0}''$ gilt. 
 			Das wiederum bedeutet, dass unser Summand 
 			$\bigtimes_{k=1}^i P_{k,\mu_k}$ in $\mathfrak{B}_{i+1}$ liegt. 
 			Die Summanden in diesem Fall sind folglich entweder leer oder sie 
 			liegen in $\mathfrak{B}_{i+1}$.
 			Demnach erhalten wir insgesamt
-			\[nP\sim n^i\cdot P + P_0,\]
-			wobei $P_0\in \mathfrak{B}_{i+1}$ ist.
+			\[nP\approx n^i\cdot P + P_0,\]
+			wobei $P_0\in \mathfrak{B}_{i+1}$ ist. Also gilt auch 
+			die Zerlegungsgleichheit.
 		\end{enumerate}
 		Damit ist die Aussage gezeigt.
 	\end{proof}
@@ -1920,23 +1926,23 @@
 	\begin{definition}[Zerlegungsgleichheit]
 		Zwei Polytope $P$ und $Q$ heißen \textsl{zerlegungsgleich}, wenn es endlich viele Polytope 
 		$P_1,\ldots,P_n,Q_1,\ldots,Q_n$ mit $P=P_1 +\ldots +P_n$,  $Q=Q_1 +\ldots+Q_n$ 
-		gibt, s. d. 
+		gibt, s.~d. 
 		\[P_i\cong Q_i\]
-		für alle $i\in\{1,\ldots,n\}$. Wir schreiben $P\sim Q$.
+		für alle $i\in\{1,\ldots,n\}$.
 	\end{definition}
 	
 	Nun können wir die Ergänzungsgleichheit definieren.
 	
 	\begin{definition}[Ergänzungsgleich]
 		Zwei Polytope $P$ und $Q$ heißen \textsl{ergänzungsgleich}, wenn es endlich viele Polytope 
-		$P_1,\ldots,P_n$, $Q_1,\ldots,Q_n$ gibt, wobei gilt $P_i\cong Q_i$ für alle $i\in\{1,\ldots,n\}$, s. d. die Polytope
+		$P_1,\ldots,P_n$, $Q_1,\ldots,Q_n$ gibt, wobei gilt $P_i\cong Q_i$ für alle $i\in\{1,\ldots,n\}$, s.~d. die Polytope
 		\[P'=P+P_1+\ldots+P_n,\qquad Q'=Q+Q_1+\ldots+Q_n\]
 		zerlegungsgleich sind.
 	\end{definition}
 	
 	Alternativ ist auch die Schreibweise üblich, dass zwei Poltope $P$ und $Q$
 	ergänzungsgleich sind, falls es zwei zerlegungsgleiche Polytope 
-	$A$ und $B$ gibt, s. d. $P+A\sim Q+B$ gilt. \\
+	$A$ und $B$ gibt, s.~d. $P+A\sim Q+B$ gilt. \\
 	Man sieht leicht, dass die folgende Aussage gilt.
 	
 	\begin{proposition}\label{coroll:ergvol}
@@ -1944,8 +1950,8 @@
 	\end{proposition}
 	
 	\begin{proof}
-		Seien $P$ und $Q$ ergänzungsgleich, d. h. es gibt endlich viele Polytope $P_1,\ldots,P_n,
-		Q_1\ldots,Q_n$ mit $P_i\cong Q_i$ für alle $i\in{1,\ldots,n}$, s. d. 
+		Seien $P$ und $Q$ ergänzungsgleich, d.~h. es gibt endlich viele Polytope $P_1,\ldots,P_n,
+		Q_1\ldots,Q_n$ mit $P_i\cong Q_i$ für alle $i\in{1,\ldots,n}$, s.~d. 
 		$P'=P+P_1+\ldots+P_n$ und $Q'=Q+Q_1+\ldots+Q_n$ zerlegungsgleich sind. Nach 
 		Proposition \ref{prop:zerl,vol} gilt dann auch $vol(P')=vol(Q')$. Damit folgt
 		\[vol(P)+vol(P_1)+\ldots+vol(P_n)=vol(P')=vol(Q')=vol(Q)+vol(Q_1)+\ldots+vol(Q_n)\]
@@ -1965,33 +1971,35 @@
 		des Polytops $Q$ ist, falls es ein Polytop gibt, zu dem 
 		$P$ zerlegungsgleich ist und das in $Q$ enthalten ist. Formal 
 		ausgedrückt finden wir Polytope $Q_1,Q_2\subset Q$ mit 
-		$Q_1+Q_2=Q$, s. d. $P\sim Q_1$ ist. Hierfür schreiben wir 
+		$Q_1+Q_2=Q$, s.~d. $P\sim Q_1$ ist. Hierfür schreiben wir 
 		\[P\sim_{\subset} Q.\]
 	\end{definition}
 	
 	\begin{remark}
 		Wir bemerken, dass diese Relation transitiv ist. Seien 
-		dazu Polytope $P,Q,R$ gegeben, s. d. $P\sim_{\subset}Q$ und $Q\sim_{\subset}R$ 
-		gilt, d. h. es gibt ein Polytop $Q'\subset Q$, s. d. $P\sim Q'$ und ein Polytop 
-		$R'\subset R$, s. d. $Q\sim R'$. Weiter gibt es endlich viele Polytope 
+		dazu Polytope $P,Q,R$ gegeben, s.~d. $P\sim_{\subset}Q$ und $Q\sim_{\subset}R$ 
+		gilt, d.~h. es gibt ein Polytop $Q'\subset Q$, s.~d. $P\sim Q'$ und ein Polytop 
+		$R'\subset R$, s.~d. $Q\sim R'$. Weiter gibt es endlich viele Polytope 
 		$Q_1,\ldots,Q_n$ und $R_1',\ldots,R_n'$ mit $Q=Q_1+\ldots+Q_n$ und 
-		$R'=R_1'+\ldots +R_n'$, s. d. für alle $i=1,\ldots,n$ die 
+		$R'=R_1'+\ldots +R_n'$, s.~d. für alle $i=1,\ldots,n$ die 
 		Kongruenz $Q_i\cong R_i'$ gilt. 
 		Seien also $f_1,\ldots,f_n$ die Isometrien, für die für 
-		alle $i=1,\ldots,n$ die Gleichungen $f_i(Q_i)=R_i'$ gelten. Dann erhalten wir 
-		die Zerlegung
-		\[Q'=Q'\cap Q=Q'\cap(Q_1+\ldots+Q_n)=(Q'\cap Q_1)+\ldots+(Q'\cap Q_n)\]
-		und für das Polytop $R''\subset R$, das definiert ist durch 
-		\[R''=(f_1(Q')\cap R_1)+\ldots+(f_n(Q')).\]
+		alle $i=1,\ldots,n$ die Gleichungen $f_i(Q_i)=R_i'$ gelten. 
+		Wir wollen zeigen, dass $Q'$ zerlegungsgleich zu einem 
+		Teilpolytop von $R$ ist. Wir erhalten von $Q'$ die Zerlegung
+		\[Q'=Q'\cap Q=Q'\cap(Q_1+\ldots+Q_n)=(Q'\cap Q_1)+\ldots+(Q'\cap Q_n).\]
+		Da $Q'$ nicht leer ist, gibt es auch $Q'\cap Q_i$, die nicht leer sind. 
+		Weiter definieren das Polytop $R''\subset R$ durch 
+		\[R''=(f_1(Q')\cap R_1')+\ldots+(f_n(Q')\cap R_n').\]
 		Mit der Bijektivität der Isometrien gilt für alle $i=1,\ldots,n$
-		\[f_i(Q'\cap Q_i)=f_i(Q')\cap f_i(Q_i)=f_i(Q')\cap R_i.\]
-		Damit ist das Polytop $R''$ nicht leer und es gilt $Q'\sim R''$, also auch 
+		\[f_i(Q'\cap Q_i)=f_i(Q')\cap f_i(Q_i)=f_i(Q')\cap R_i'.\]
+		Das Polytop $R''$ ist nicht leer und es gilt $Q'\sim R''$, also auch 
 		$P\sim R''$. Damit ist die Transitivität gezeigt.
 	\end{remark}
 	
 	\begin{lemma} \label{lemma:teilzerl}
 		Seien $P$ und $Q$ Polytope, dann ist $P$ genau dann zu 
-		einem Teilpolytop von $Q$ zerlegungsgleich, d. h. $P\sim_{\subset}Q$, wenn $vol(P)<vol(Q)$.
+		einem Teilpolytop von $Q$ zerlegungsgleich, d.~h. $P\sim_{\subset}Q$, wenn $vol(P)\leq vol(Q)$.
 	\end{lemma}
 	
 	\begin{proof}
@@ -2003,18 +2011,18 @@
 			dieser Polytope gleich. Da wir ein Teilpolytop von $Q$ 
 			haben, folgt die Aussage mit der Monotonie des Maßes.
 			\item[$"\Leftarrow"$:] Betrachten wir nun die Rückrichtung. 
-			Es gelte $vol(P)<vol(Q)$, dann gibt es ein $\gamma>0$, s. d. 
+			Es gelte $vol(P)\leq vol(Q)$, dann gibt es ein $\gamma\geq0$, s.~d. 
 			$vol(Q)-vol(P)=\gamma^d$ gilt. Wir beweisen die Aussage 
 			per Induktion über die Zylinderklassen. Seien  
 			$P,Q\in\mathfrak{B}_d$, dann gibt es nach Proposition 
-			\ref{bem:dteZylinderklasse} $\alpha,\beta>0$, s. d. 
+			\ref{bem:dteZylinderklasse} $\alpha,\beta>0$, s.~d. 
 			$P\sim \alpha W$ und $Q\sim \beta W$, wobei $W$ 
 			der $d$-dimensionale Einheitswürfel ist. Also gilt 
 			mit Proposition \ref{prop:zerl,vol} und Bemerkung 
 			\ref{bem:dilvol} auch
-			\[0<\gamma^d =vol(Q)-vol(P)=vol(\beta W)-vol(\alpha W)
+			\[0\leq \gamma^d =vol(Q)-vol(P)=vol(\beta W)-vol(\alpha W)
 			=\beta^d -\alpha^d.\]
-			Damit folgt $\beta>\alpha$ also ist der Würfel $\alpha W$ 
+			Damit folgt $\beta\geq\alpha$ also ist der Würfel $\alpha W$ 
 			in dem Würfel $\beta W$ enthalten und finden wir 
 			das gesuchte Teilpolytop von $Q$, nämlich gerade 
 			das dilatierte Polytop $\frac{\alpha}{\beta}Q$. Denn 
@@ -2030,7 +2038,7 @@
 			$P\sim_{\subset}\delta W$ gilt. Dieses $\delta$ existiert und 
 			wir können es einfach so groß wählen, dass das Polytop $P$ 
 			in diesem Würfel enthalten ist. Desweiteren sei eine 
-			natürliche Zahl $n$ so gewählt, dass $\lambda>\delta$ gilt, wenn 
+			natürliche Zahl $n$ so gewählt, dass $\lambda\geq\delta$ gilt, wenn 
 			wir $\lambda$ definieren durch 
 			\begin{align}
 				\lambda=\left(\frac{\gamma}{2}\right)(n^{d-i}-1)^{1/d}. \label{lemma:teilzerl;6}
@@ -2047,16 +2055,21 @@
 			die alle kongruent zu $\lambda W$ sind, 
 			zusammensetzt und diese Würfel 
 			natürlich $d$-stufige Zylinder sind. Mit Proposition 
-			\ref{bem:dteZylinderklasse} gibt es ein $\mu$, s. d. 
-			$n^i\cdot \lambda W\sim \mu W$, wobei das $\mu$ definiert 
-			ist durch
+			\ref{bem:dteZylinderklasse} gibt es ein $\mu$, s.~d. 
+			$n^i\cdot \lambda W\sim \mu W$, damit auch 
+			\begin{align}
+				n^i\cdot \lambda W\sim_{\subset} \mu W \label{teilzerl;2neu}
+			\end{align}
+			Das $\mu$ ist hierbei definiert durch 
 			\begin{align}
 				\mu^d =\sum_{j=1}^{n^i}\mathfrak{D}(\lambda W_j)
 				=\sum_{j=1}^{n^i}\lambda^d \mathfrak{D}(W)=
 				n^i\lambda^d. \label{lemma:teilzerl;5}
 			\end{align}
-			Wir haben hierbei Bemerkung \ref{bem:gramfunk} 
-			verwendet. Also gilt mit \ref{lemma:teilzerl;1} auch
+			Dabei haben wir Bemerkung \ref{bem:gramfunk} 
+			verwendet. Also gilt mit den Relationen \ref{lemma:teilzerl;1} und 
+			\ref{teilzerl;2neu} und mit der Transitivität von $"\sim_{\subset}"$ 
+			auch
 			\begin{align}
 				n^i\cdot P\sim_{\subset} \mu W.\label{lemma:teilzerl;2}
 			\end{align}
@@ -2098,13 +2111,13 @@
 			\end{align*}
 			Weiter gilt 
 			\begin{align*}
-				vol(Q_0)-vol(P_0+\mu W)&= vol(Q_0)-vol(A_0)-
+				vol(Q_0)-vol(P_0+\mu W)&= vol(Q_0)-vol(P_0)-
 				\left(\frac{\gamma}{2}\right)^d (n^d-n^i) \\
 				&\overset{\ref{lemma:teilzerl;4}}{=} \gamma^d(n^d-n^i)-
 				\left(\frac{\gamma}{2}\right)^d (n^d-n^i) \\
-				&>0.
+				&\geq 0.
 			\end{align*}
-			Damit erhalten wir $vol(Q_0)>vol(P_0+\mu W)$. Wir stellen fest, 
+			Damit erhalten wir $vol(Q_0)\geq vol(P_0+\mu W)$. Wir stellen fest, 
 			dass $Q_0,P_0\in\mathfrak{B}_{i+1}$ und $\mu W\in \mathfrak{B}_d$, 
 			demnach auch $\mu W\in\mathfrak{B}_{i+1}$ und damit  
 			$P_0+\mu W\in\mathfrak{B}_{i+1}$ gilt. Mit der Induktionsvoraussetzung 
@@ -2129,7 +2142,7 @@
 			
 			\item[$"\Leftarrow"$:] Die Rückrichtung funktioniert per 
 			Induktion über die Zylinderklassen. Seien Polytope 
-			$P,Q,R,S$ gegeben, s. d. 
+			$P,Q,R,S$ gegeben, s.~d. 
 			\begin{align}
 			P+R\sim Q+S \label{thm:zerlerg;1}
 			\end{align}
@@ -2137,9 +2150,10 @@
 			\begin{align}
 			R\sim S. \label{thm:zerlerg;2}
 			\end{align}
+			Wir wollen zeigen, dass $P\sim Q$ gilt. 
 			Falls nun $P,Q\in \mathfrak{B}_d$ gilt, dann gibt es mit 
 			Proposition \ref{bem:dteZylinderklasse} 
-			$\lambda_1,\lambda_2 >0$, s. d. $P\sim \lambda_1 W$ und 
+			$\lambda_1,\lambda_2 >0$, s.~d. $P\sim \lambda_1 W$ und 
 			$Q\sim \lambda_2 W$, wobei mit $W$ der $d$-dimensionale 
 			Einheitswürfel gemeint ist. Da mit Folgerung \ref{coroll:ergvol} 
 			folgt, dass $vol(P)=vol(Q)$, muss $\lambda_1 =\lambda_2$ sein, und 
@@ -2147,7 +2161,7 @@
 			Wir nehmen nun induktiv an, dass die Aussage bereits für alle 
 			Polytope $P,Q\in\mathfrak{B}_{i+1}$ gilt. Es sei nun  
 			$P,Q\in\mathfrak{B}_i$ für ein beliebiges $1\leq i\leq d-1$. 
-			Da $d-i>0$ und o.B.d.A. $vol(R)>0$, dann gibt es eine natürliche Zahl $n$, s. d. 
+			Da $d-i>0$ und o.B.d.A. $vol(R)>0$, dann gibt es eine natürliche Zahl $n$, s.~d. 
 			\begin{align}
 			n^{d-i}>1+\frac{vol(R)}{vol(P)}. \label{thm:zerlerg;3}
 			\end{align}
@@ -2162,7 +2176,7 @@
 			nR\sim nS. \label{thm:zerlerg;5}
 			\end{align}
 			Mit Satz \ref{thm:hilfssatz} gibt es nun ein Polytop 
-			$P_0\in\mathfrak{B}_{i+1}$, s. d.
+			$P_0\in\mathfrak{B}_{i+1}$, s.~d.
 			\begin{align}
 			nP\sim P_0 +n^i\cdot P \label{thm:zerlerg;6}
 			\end{align}
@@ -2181,7 +2195,7 @@
 				vol(P_0)=(n^d -n^i)vol(P)>n^i vol(R)=vol(n^i\cdot R)\label{thm:zerlerg;8}.
 			\end{align}
 			Mit Lemma \ref{lemma:teilzerl} 
-			ist $n^i\cdot R$ zerlegungsgleich zu einem Teilpolytop von $P_0$, d. h. es gibt Polytope $C,D\subset P_0$ mit $C+D=P_0$ und $n^i\cdot R\sim C$, s. d. 
+			ist $n^i\cdot R$ zerlegungsgleich zu einem Teilpolytop von $P_0$, d.~h. es gibt Polytope $C,D\subset P_0$ mit $C+D=P_0$ und $n^i\cdot R\sim C$, s.~d. 
 			\begin{align}
 			P_0=C+D\sim n^i\cdot R+D. \label{thm:zerlerg;9}
 			\end{align}
@@ -2200,8 +2214,8 @@
 			\[P_0+n^i\cdot Q+nR\overset{\ref{thm:zerlerg;10}}{\sim}
 			nP+nR\overset{\ref{thm:zerlerg;4}}{\sim}nQ+nS\sim Q_0+n^i\cdot Q+nS.\]
 			Wegen \ref{thm:zerlerg;5} gilt $n^i\cdot Q+nR\sim n^i\cdot Q +nS$ und 
-			mit der Induktionsvoraussetzung folgt für $P_0,Q_0\mathfrak{B}_{i+1}
-			$, dass 
+			mit der Induktionsvoraussetzung folgt für 
+			$P_0,Q_0\in\mathfrak{B}_{i+1}$, dass 
 			$P_0\sim Q_0$ und damit folgt mit \ref{thm:zerlerg;10} und der 
 			analogen Folgerung, dass 
 			\[nP\sim nQ\]
