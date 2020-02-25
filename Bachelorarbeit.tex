@@ -1359,21 +1359,21 @@
 	\end{lemma}
 	
 	\begin{proof}
-		Seien für die Hinrichtung $P\cong Q$ gegeben. Somit gibt es eine Isometrie 
-		$f$, s.~d. gilt $f(P)=Q$. Wir können die Isometrie $f$ durch ein $\alpha\in
+		Sei für die Hinrichtung $P\cong Q$ gegeben. Somit gibt es eine Isometrie 
+		$f$, s.~d. $f(P)=Q$. Wir können die Isometrie $f$ durch ein $\alpha\in
 		\setR^d$ und eine orthogonale Matrix $U\in O(d)$ darstellen, s.~d. 
-		$f(P)=\alpha + UP$ gilt. Betrachte die Isometrie $f_{\lambda}$, die 
+		$f(P)=\alpha + UP$ gilt. Betrachte die Abbildung $f_{\lambda}$, die 
 		für alle $x\in\setR^d$ durch 
 		$f_{\lambda}(x)=\lambda\cdot \alpha +Ux$ definieren. 
-		Offensichtlich ist $f_{\lambda}$ wieder eine Isometrie. 
+		Offensichtlich ist $f_{\lambda}$ eine Isometrie. 
 		Dann gilt
 		\[f_{\lambda}(\lambda P)=\lambda\cdot \alpha+U \lambda P =\lambda\cdot 
 		\alpha+\lambda U P =\lambda(\alpha+ U P)=\lambda f(P)=\lambda Q\]
 		Damit sind $\lambda P$ und $\lambda Q$ kongruent. \\
-		Seien für die Rückrichtung nun $\lambda P\cong \lambda Q$, folglich  
+		Sei für die Rückrichtung nun $\lambda P\cong \lambda Q$, folglich  
 		gibt es eine Isometrie $f$, s.~d. $f(\lambda P)=\lambda Q$. Es gibt 
 		also wieder $\alpha\in\setR^d$ und $U\in O(d)$, s.~d. 
-		$f(x)=\alpha + Ux$ für alle $x\in\setR^d$ gilt. Betrachte die Isometrie 
+		$f(x)=\alpha + Ux$ für alle $x\in\setR^d$ gilt. Betrachte die Abbildung 
 		$f_{\lambda}$, die wir durch 
 		$f_{\lambda}(x)=\frac{1}{\lambda}\cdot \alpha +U x$ für alle $x\in\setR^d$ 
 		definieren. Diese ist wieder eine Isometrie. Dann gilt 
@@ -1396,14 +1396,14 @@
 		für alle $i=1,\ldots, n$. Nach Lemma \ref{lemma:dilzerl} können wir 
 		die Zerlegungen der gestreckten Polytope betrachten, also
 		\begin{align*}
-			\lambda P&=\lambda (P_1+\ldots P_n)=\lambda P_1 +\ldots+\lambda P_n \\
-			\lambda Q&=\lambda (Q_1+\ldots Q_n)=\lambda Q_1 +\ldots+\lambda Q_n.
+			\lambda P&=\lambda (P_1+\ldots +P_n)=\lambda P_1 +\ldots+\lambda P_n \\
+			\lambda Q&=\lambda (Q_1+\ldots +Q_n)=\lambda Q_1 +\ldots+\lambda Q_n.
 		\end{align*}
 		Weiter gilt mit Lemma \ref{lemma:dilkong}, dass aus $P_i\cong Q_i$ 
 		für alle $i=1,\ldots,n$ folgt, dass auch $\lambda P_i\cong\lambda Q_i$ 
 		für alle $i=1,\ldots,n$ gilt. Damit folgt $\lambda P\sim \lambda Q$. \\
-		Für die Rückrichtung seien $\lambda P\sim \lambda Q$, dann gibt 
-		endlich viele Polytop $P_1,\ldots P_n$ und $Q_1\ldots Q_n$ mit 
+		Für die Rückrichtung seien $\lambda P\sim \lambda Q$, dann gibt es 
+		endlich viele Polytope $P_1,\ldots P_n$ und $Q_1\ldots Q_n$ mit 
 		$\lambda P=P_1+\ldots+P_n$ und $\lambda Q=Q_1+\ldots+Q_n$, s.~d. 
 		$P_i\cong Q_i$ für alle $i=1,\ldots,n$. Wir betrachten die 
 		Zerlegungen
@@ -1422,7 +1422,7 @@
 	\begin{definition}[Vervielfachung]
 		Sei $P$ ein Polytop, dann ist die \textsl{ganze Vervielfachung} 
 		von $P$ mit 
-		einer natürlichen Zahl $n$ ein Polytop, wir schreiben $n\cdot P$, 
+		einer natürlichen Zahl $n$ ein Polytop $n\cdot P$, 
 		das sich in $n$ viele Polytope zerlegen lässt, die alle kongruent zu 
 		$P$ sind. Formal bedeutet das, dass es Polytope $P_1,\ldots,P_n$ gibt, s.~d.
 		\[n\cdot P=P_1+\ldots+P_n,\]
@@ -1434,7 +1434,7 @@
 	ist, was jedoch beim eigentlichen Zerlegen keine Rolle spielt. Wir wollen 
 	die Polytope so verschieben, dass sie paarweise disjunkt sind.
 	
-	Es ergeben sich beim Vervielfältigen folgende Eigenschaften.
+	Die folgenden Eigenschaften ergeben sich beim Vervielfältigen.
 	
 	\begin{remark}\label{bem:vervielf;vol}
 		Wir wollen uns überlegen, wie sich das Volumen bei einer Vervielfachung 
@@ -1503,9 +1503,9 @@
 	
 	\begin{remark} \label{bem:mink}
 		Seien $A,B,C$ Mengen, dann ergeben sich folgende Eigenschaften 
-		mit der Minkowski-Summe.
+		mit der Minkowski-Summe:
 		\begin{enumerate}
-			\item Die Minkowski-Addition erbt die Kommutativität und Assoziativität von der Addtion, d.~h. 
+			\item Die Minkowski-Addition erbt die Kommutativität und Assoziativität von der Addition, d.~h. 
 			es gilt
 			\[A\times B=B\times A\qquad\text{und}\qquad A\times(B\times C)=(A\times B)\times C.\]
 			
@@ -1557,11 +1557,11 @@
 		\end{pmatrix}\right)^{1/2}.\]
 	\end{definition}
 	
-	Wir meinen mit $\langle p_i,p_j\rangle$ hier das Standardskalarprodukt. 
+	Mit $\langle p_i,p_j\rangle$ ist hier das Standardskalarprodukt gemeint. 
 	
 	\begin{remark} \label{bem:gramfunk}
 		Wir stellen fest, dass das Gramsche Funktional folgende Eigenschaften 
-		erfüllt.
+		erfüllt:
 		\begin{enumerate}
 			\item Sind $P$ und $Q$ zwei kongruente Parallelotope, dann gilt mit 
 			der Invarianz des Skalarprodukts unter Isometrien
@@ -1585,7 +1585,7 @@
 		Vektoren, die die Parallelotope erzeugen, so verändern, dass wir 
 		in endlich vielen Scherungen die Parallelotope ineinander 
 		überführen können. Bei einer Scherung addieren wir auf einen 
-		dieser Vektoren ein Vielfaches eines anderen Vektors von diesen.
+		dieser Vektoren ein Vielfaches eines anderen der Vektoren.
 		Weiter kann man aus der Scherungsäquivalenz der Parallelotope folgern, 
 		dass diese auch zerlegungsgleich sind. Siehe dazu 
 		\cite{Hadwiger}[Kapitel 1,Satz IV].
@@ -1695,7 +1695,7 @@
 		Wir nennen zwei Polytope $P$ und $Q$ \textsl{translationsgleich}, wenn es 
 		eine Translation $f$ aus der Translationsgruppe gibt, s.~d. 
 		$f(P)=Q$ gilt. Wir schreiben $P\cong_t Q$. \\
-		Die Translationsgleichheit ist wie die Kongruenz eine 
+		Die Translationsgleichheit ist, wie die Kongruenz, eine 
 		Äquivalenzrelation. \\
 		Weiter nennen wir zwei Polytope $P$ und $Q$ \textsl{translativ 
 		zerlegungsgleich}, wenn es endlich viele $P_1,\ldots,P_n$ und 
@@ -1729,7 +1729,7 @@
 	Simplexzerlegung anschauen. 
 		
 	\begin{definition}[Simplotop]
-		Sei $p$ ein Vektor und  $s_1\ldots,s_i$ und 
+		Sei $p$ ein Vektor und  $s_1,\ldots,s_i$ und 
 		$t_1,\ldots,t_{d-i}$ insgesamt 
 		$d$ linear unabhängige Vektoren, wobei $1\leq i\leq d-1$ ist. Dann ist 
 		das \textsl{Simplotop} $S$ gerade das Polytop, dessen Elemente $s$ 
@@ -1743,7 +1743,7 @@
 	auf. Tatsächlich ergibt sich die folgende Bemerkung.
 	
 	\begin{remark}
-		Wir stellen fest, dass wir ein wie oben definiertes Simplotop $S$ 
+		Wir stellen fest, dass sich ein wie oben definiertes Simplotop $S$ 
 		als Minkowski-Summe eines Punktes $p$ und zweier 
 		im Ursprung liegender Simplexe $S_1=\langle 0;s_1,\ldots,s_i\rangle$ 
 		und $S_2=\langle 0;t_1\ldots,t_{d-i}\rangle$ darstellen lässt. 
@@ -1812,7 +1812,7 @@
 	\begin{proof}
 		\noindent
 		\begin{enumerate}
-			\item Fall: Es gilt $i=1$ dann reicht es, aufgrund 
+			\item Fall: Es gilt $i=1$. Dann reicht es, aufgrund 
 			der Simplizialzerlegung eines Polytops, die 
 			Behauptung für ein Simplex $P$ nachzuweisen. Für alle $j=1,\ldots,n-1$ 
 			gilt nun, dass $n-j\in\{1,\ldots,n-1\}$ und $n-j+1\in\{2,\ldots,n\}$ 
@@ -1849,12 +1849,12 @@
 			für ein $P_0\in\mathfrak{B}_2$. Damit sind wir mit dem 
 			ersten Fall fertig.
 			
-			\item Fall: Es gilt $i>1$, folglich reicht es die Behauptung für einen 
+			\item Fall: Es gilt $i>1$, folglich reicht es, die Behauptung für einen 
 			$i$-stufigen Zylinder $P$ nachzuweisen. Sei also 
 			$P=P_1\times\ldots \times P_i$ 
 			für konvexe Polytope $P_1\ldots,P_i$ die in $d_k$-dimensionalen 
 			Ebenen $E_{d_k}$ liegen, mit $\sum_{k=1}^i d_k =d$ und 
-			$d_k\geq 1$ für alle $k=1,\ldots i$. 
+			$d_k\geq 1$ für alle $k=1,\ldots ,i$. 
 			Es gilt mit Bemerkung \ref{bem:mink} Eigenschaft  
 			\ref{bem:mink;1} auch 
 			\[nP=nP_1\times\ldots\times nP_i.\]
@@ -1935,13 +1935,13 @@
 	
 	\begin{definition}[Ergänzungsgleich]
 		Zwei Polytope $P$ und $Q$ heißen \textsl{ergänzungsgleich}, wenn es endlich viele Polytope 
-		$P_1,\ldots,P_n$, $Q_1,\ldots,Q_n$ gibt, wobei gilt $P_i\cong Q_i$ für alle $i\in\{1,\ldots,n\}$, s.~d. die Polytope
+		$P_1,\ldots,P_n$, $Q_1,\ldots,Q_n$ gibt, wobei $P_i\cong Q_i$ für alle $i\in\{1,\ldots,n\}$ gilt, s.~d. die Polytope
 		\[P'=P+P_1+\ldots+P_n,\qquad Q'=Q+Q_1+\ldots+Q_n\]
 		zerlegungsgleich sind.
 	\end{definition}
 	
-	Alternativ ist auch die Schreibweise üblich, dass zwei Poltope $P$ und $Q$
-	ergänzungsgleich sind, falls es zwei zerlegungsgleiche Polytope 
+	Alternativ sind zwei Poltope $P$ und $Q$ ergänzungsgleich, falls es 
+	zwei zerlegungsgleiche Polytope 
 	$A$ und $B$ gibt, s.~d. $P+A\sim Q+B$ gilt. \\
 	Man sieht leicht, dass die folgende Aussage gilt.
 	
@@ -1994,7 +1994,7 @@
 		Mit der Bijektivität der Isometrien gilt für alle $i=1,\ldots,n$
 		\[f_i(Q'\cap Q_i)=f_i(Q')\cap f_i(Q_i)=f_i(Q')\cap R_i'.\]
 		Das Polytop $R''$ ist nicht leer und es gilt $Q'\sim R''$, also auch 
-		$P\sim R''$. Damit ist die Transitivität gezeigt.
+		$P\sim R''$ und die Transitivität ist gezeigt.
 	\end{remark}
 	
 	\begin{lemma} \label{lemma:teilzerl}
@@ -2023,17 +2023,17 @@
 			\[0\leq \gamma^d =vol(Q)-vol(P)=vol(\beta W)-vol(\alpha W)
 			=\beta^d -\alpha^d.\]
 			Damit folgt $\beta\geq\alpha$ also ist der Würfel $\alpha W$ 
-			in dem Würfel $\beta W$ enthalten und finden wir 
+			in dem Würfel $\beta W$ enthalten und wir finden  
 			das gesuchte Teilpolytop von $Q$, nämlich gerade 
 			das dilatierte Polytop $\frac{\alpha}{\beta}Q$. Denn 
 			mit $\beta W\sim Q$ erhalten wir mit 
 			Proposition \ref{prop:dilzerl} auch 
 			$\alpha W\sim \frac{\alpha}{\beta}Q$ und mit der 
 			Transitivität der Zerlegungsgleichheit 
-			gilt auch $P\sim \frac{\alpha}{\beta}Q$. Damit ist 
+			folgt $P\sim \frac{\alpha}{\beta}Q$. Damit ist 
 			die Aussage für die letzte Zylinderklasse bewiesen und 
 			wir nehmen induktiv an, dass die Aussage für alle Polytope 
-			der Zylinderklasse $\mathfrak{B}_{i+1}$ gilt. Seien  
+			der Zylinderklasse $\mathfrak{B}_{i+1}$ gelte. Seien  
 			$P,Q\in\mathfrak{B}_i$. Es gibt ein $\delta>0$, für das 
 			$P\sim_{\subset}\delta W$ gilt. Dieses $\delta$ existiert und 
 			wir können es einfach so groß wählen, dass das Polytop $P$ 
@@ -2132,7 +2132,7 @@
 	Damit sind wir fertig.
 	\end{proof}
 	
-	Nun haben wir alle Voraussetzungen um den Satz \ref{thm:zerlerg} zu 
+	Nun haben wir alle Voraussetzungen, um den Satz \ref{thm:zerlerg} zu 
 	beweisen. Der Beweis richtet sich nach \cite[Satz III]{Hadwiger}.
 	
 	\begin{proof}
@@ -2228,8 +2228,8 @@
 	keinen Unterschied macht, die Zerlegungsgleichheit oder die 
 	Ergänzungsgleichheit von Polytopen zu betrachten. Dennoch erscheint die 
 	Zerlegungsgleichheit oftmals als intuitivere Variante. Auch sind hierbei 
-	die Beweise oft leichter führen, als bei der Ergänzungsgleichheit. 
-	Für Hilberts Problem reicht es aus, die Beweise für eine 
+	die Beweise oft leichter zu führen, als bei der Ergänzungsgleichheit. 
+	Für Hilberts Problem reicht es jedoch aus, die Beweise für eine 
 	der beiden Relationen zu führen.
 
 	%\section{Ausblicke}
